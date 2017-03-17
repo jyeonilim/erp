@@ -3,16 +3,6 @@ $(document).ready(function() {
     var w = $(window).width();
     var h = $(window).height();
 
-    // $(window).resize(function() {
-    //     var rw = $(window).width();
-    //     if (rw < 767) {
-    //         $(".page-title-box").css({
-    //             'left': 20
-    //         });
-    //     }
-    // });
-
-
     $('.customer-list').slimScroll({
         height: h-330,
         position: 'right',

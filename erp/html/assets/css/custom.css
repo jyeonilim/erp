@@ -44,8 +44,33 @@
 /*******************************
   Table
 *******************************/
+.table.table-center th,
+.table.table-center td {
+  text-align: center;
+}
 th {
   font-size: 12px;
+}
+.table-option {
+  margin-bottom: 20px;
+}
+.table-option .checkbox,
+.table-option .search-number {
+  margin-top: 5px;
+}
+@media (max-width: 767px) {
+  .table-option {
+    margin: 0 -3px 10px;
+  }
+  .table-option > div {
+    padding: 0 3px;
+  }
+  .table-option .checkbox {
+    margin-left: 5px;
+  }
+}
+.table-no-result {
+  padding: 100px 0 !important;
 }
 /*******************************
     Bootstrap Rewrite
@@ -53,53 +78,32 @@ th {
 .bootstrap-timepicker-widget table td input {
   display: inline-block;
 }
+.tablesaw-bar .tablesaw-toolbar .btn-select:after {
+  padding-top: .4em;
+}
 /*******************************
     Contents
 *******************************/
-.fixed-page-title-define {
-  position: fixed;
-  top: 90px;
-  right: 0;
-  z-index: 100;
-  height: 60px;
-}
-.fixed-page-title > .content {
+.content-page > .content {
   margin-top: 130px;
 }
-.fixed-page-title .page-title-box {
+.page-title-box {
   position: fixed;
   top: 90px;
   right: 0;
+  left: 20px;
   z-index: 100;
   height: 60px;
-  left: 90px;
 }
 .page-title-box .pull-right .btn {
   margin-top: -9px;
 }
-@media (max-width: 1023px) {
-  .smallscreen .content-page > .content {
-    margin-top: 130px;
-  }
-}
-@media (max-width: 767px) {
-  .smallscreen .page-title-box {
-    position: fixed;
-    top: 90px;
-    right: 0;
-    z-index: 100;
-    height: 60px;
-    left: 20px;
-  }
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .smallscreen.fixed-left .page-title-box {
-    position: fixed;
-    top: 90px;
-    right: 0;
-    z-index: 100;
-    height: 60px;
+@media (min-width: 768px) {
+  .fixed-left .page-title-box {
     left: 260px;
+  }
+  .fixed-left-void .page-title-box {
+    left: 90px;
   }
 }
 /*******************************
