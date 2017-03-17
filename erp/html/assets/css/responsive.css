@@ -21,6 +21,9 @@ File: Responsive
   }
 }
 @media (max-width: 767px) {
+  .side-menu {
+    z-index: 101 !important;
+  }
   body {
     overflow-x: hidden;
   }
@@ -65,9 +68,6 @@ File: Responsive
   }
 }
 @media (max-width: 480px) {
-  .side-menu {
-    z-index: 10 !important;
-  }
   .button-menu-mobile {
     display: block;
   }
@@ -117,3 +117,4 @@ File: Responsive
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) !important;
   }
 }
+/*# sourceMappingURL=responsive.css.map */
