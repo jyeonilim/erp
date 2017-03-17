@@ -50,6 +50,9 @@ th {
 /*******************************
     Bootstrap Rewrite
 *******************************/
+.bootstrap-timepicker-widget table td input {
+  display: inline-block;
+}
 /*******************************
     Contents
 *******************************/
