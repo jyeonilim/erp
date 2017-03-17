@@ -222,7 +222,7 @@ input.app-search-input {
   bottom: 0;
   top: 0;
   width: 240px;
-  z-index: 2;
+  z-index: 4;
 }
 
 .side-menu.left {
@@ -537,6 +537,9 @@ body.fixed-left {
     }
     #sidebar-menu > ul > li > a > i {
       margin: 0px;
+    }
+    @media (max-width: 768px) {
+      width: 0;
     }
   }
   .left.side-menu #sidebar-menu > ul > li > a {
