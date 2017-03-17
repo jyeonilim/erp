@@ -19,7 +19,9 @@
  =============*/
 .btn {
   border-radius: 2px;
-  padding: 6px 14px;
+  padding: 3px 14px;
+  font-size: 13px;
+  line-height: 1.23076923;
 }
 .btn-group-lg > .btn,
 .btn-lg {
@@ -28,7 +30,7 @@
 }
 .btn-group-sm > .btn,
 .btn-sm {
-  padding: 5px 10px !important;
+  padding: 4px 8px !important;
 }
 .btn-group-xs > .btn,
 .btn-xs {
@@ -882,14 +884,6 @@ tbody {
 th {
   color: #666666;
   font-size: 15px;
-}
-.table > tbody > tr > td,
-.table > tbody > tr > th,
-.table > tfoot > tr > td,
-.table > tfoot > tr > th,
-.table > thead > tr > td,
-.table > thead > tr > th {
-  border-top: 1px solid #f3f3f3;
 }
 .table > thead > tr > th {
   border-bottom: 2px solid #f3f3f3;

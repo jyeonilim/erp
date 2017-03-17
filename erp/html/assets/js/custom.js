@@ -4,14 +4,14 @@ $(document).ready(function() {
     var h = $(window).height();
 
     $('.customer-list').slimScroll({
-        height: h-330,
+        height: h-264,
         position: 'right',
         size: "5px",
         color: '#dcdcdc',
         wheelStep: 5
     });
     $('.reservation-receipt').slimScroll({
-        height: h-420,
+        height: h-318,
         position: 'right',
         size: "5px",
         color: '#dcdcdc',
@@ -20,10 +20,10 @@ $(document).ready(function() {
     $(window).resize(function(){
         var rh = $(window).height();
         // console.log(rh);
-        $('.customer-list').height(rh-330);
-        $('.customer-list').parent('.slimScrollDiv').height(rh-330);
-        $('.reservation-receipt').height(rh-420);
-        $('.reservation-receipt').parent('.slimScrollDiv').height(rh-420);
+        $('.customer-list').height(rh-264);
+        $('.customer-list').parent('.slimScrollDiv').height(rh-264);
+        $('.reservation-receipt').height(rh-318);
+        $('.reservation-receipt').parent('.slimScrollDiv').height(rh-318);
     });
 
 
