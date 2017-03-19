@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700);
 /*******************************
   Button
 *******************************/
@@ -160,6 +162,15 @@ label {
     left: 90px;
   }
 }
+.card-title-box {
+  margin: -10px -10px 10px;
+  padding: 10px 5px 10px;
+  background-color: #eeeeee;
+}
+.card-title-box .header-title {
+  margin: 0;
+  line-height: 24px;
+}
 /*******************************
   대여업무 > 얘약관리
 *******************************/
@@ -168,8 +179,8 @@ label {
   padding: 0;
 }
 @media (max-width: 991px) {
-  .customer-card .slimScrollDiv,
-  .customer-card .left-card {
+  .left-card-box .slimScrollDiv,
+  .left-card-box .left-card {
     height: 193px !important;
   }
 }
@@ -220,8 +231,8 @@ label {
   width: 0;
 }
 @media (max-width: 991px) {
-  .reservation-manage .slimScrollDiv,
-  .reservation-manage .right-card {
+  .right-card-box .slimScrollDiv,
+  .right-card-box .right-card {
     height: auto !important;
   }
 }

@@ -441,7 +441,7 @@
 
                     <div class="row">
                         <div class="col-md-3">
-                            <div class="card-box customer-card">
+                            <div class="card-box left-card-box customer-card">
                                 <div class="left-card">
                                     <ul>
                                         <li>
@@ -485,8 +485,8 @@
                         </div>
 
                         <div class="col-md-9">
-                            <div class="card-box reservation-manage">
-                                <form class="row m-b-10" role="form">
+                            <div class="card-box right-card-box reservation-manage">
+                                <form class="row card-title-box" role="form">
                                     <div class="col-sm-9 form-inline">
                                         <div class="form-group">
                                             <label for="booking-number">예약번호</label>
@@ -583,7 +583,7 @@
                                                         <label for="registration-number" class="control-label col-sm-2">등록번호</label>
                                                         <div class="col-sm-5">
                                                             <div class="input-group">
-                                                                <input type="text" name="example-input2-group2" id="registration-number" class="form-control input-sm" placeholder="현황조회 후 입력">
+                                                                <input type="text" name="" id="registration-number" class="form-control input-sm" placeholder="현황조회 후 입력">
                                                                 <span class="input-group-btn">
                                                                         <button type="button" class="btn waves-effect waves-light btn-default">현황조회</button>
                                                                     </span>
@@ -592,9 +592,9 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="car-model" class="control-label col-sm-2"><i class="text-danger">*</i> 차종</label>
-                                                        <div class="col-sm-10">
+                                                        <div class="col-sm-5">
                                                             <div class="input-group">
-                                                                <input type="text" name="example-input2-group2" id="car-model" class="form-control input-sm" placeholder="차량명 혹은 코드입력">
+                                                                <input type="text" name="" id="car-model" class="form-control input-sm" placeholder="차량명 혹은 코드입력">
                                                                 <span class="input-group-btn">
                                                                     <button type="button" class="btn waves-effect waves-light btn-primary">검색</button>
                                                                     <button type="button" class="btn waves-effect waves-light btn-default">현황조회</button>
@@ -781,9 +781,9 @@
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="discount" class="col-xs-3 col-sm-4 control-label">할인조건</label>
+                                                                <label for="discount-condition" class="col-xs-3 col-sm-4 control-label">할인조건</label>
                                                                 <div class="col-xs-9 col-sm-8">
-                                                                    <select class="form-control select2" id="discount">
+                                                                    <select class="form-control select2" id="discount-condition">
                                                                         <option>선택하세요</option>
                                                                     </select>
                                                                 </div>
@@ -932,12 +932,6 @@
                                                         <col class="col-xs-4 col-sm-5">
                                                         <col class="col-xs-8 col-sm-7">
                                                     </colgroup>
-                                                    <thead class="hidden">
-                                                    <tr>
-                                                        <th>#</th>
-                                                        <th>Column heading</th>
-                                                    </tr>
-                                                    </thead>
                                                     <tbody>
                                                     <tr>
                                                         <th scope="row" class="active">접수일자</th>
@@ -997,21 +991,21 @@
                                             <div class="card-box">
                                                 <form class="form-horizontal" role="form">
                                                     <div class="form-group">
-                                                        <label class="col-sm-2 control-label" for="flight-number">비고</label>
+                                                        <label class="col-sm-2 control-label" for="note">비고</label>
                                                         <div class="col-sm-10">
-                                                            <input type="text" class="form-control input-sm" value="">
+                                                            <input type="text" id="note" class="form-control input-sm" value="">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label class="col-sm-2 control-label" for="flight-number">내부전달</label>
+                                                        <label class="col-sm-2 control-label" for="inside-forward">내부전달</label>
                                                         <div class="col-sm-10">
-                                                            <input type="text" class="form-control input-sm" value="">
+                                                            <input type="text" id="inside-forward" class="form-control input-sm" value="">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label class="col-sm-2 control-label" for="flight-number">셔틀전달</label>
+                                                        <label class="col-sm-2 control-label" for="shuttle-forward">셔틀전달</label>
                                                         <div class="col-sm-10">
-                                                            <input type="text" class="form-control input-sm" value="">
+                                                            <input type="text" id="shuttle-forward" class="form-control input-sm" value="">
                                                         </div>
                                                     </div>
                                                 </form>
