@@ -442,7 +442,7 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="card-box customer-card">
-                                <div class="customer-list slimscroll">
+                                <div class="left-card">
                                     <ul>
                                         <li>
                                             <strong>제주패스</strong>
@@ -508,7 +508,7 @@
                                         </div>
                                     </div>
                                 </form>
-                                <div class="reservation-receipt">
+                                <div class="right-card">
                                     <div class="row">
                                         <h4 class="col-xs-7 col-sm-9 m-t-0 header-title">출고/예약상태 : 예약당일 출고</h4>
                                         <span class="col-xs-5 col-sm-3 text-right">(<i class="text-danger">*</i> 필수 입력사항)</span>
@@ -1098,7 +1098,6 @@
 			$(document).ready(function() {
 				$('form').parsley();
 
-
                 //Bootstrap-TouchSpin
                 $(".vertical-spin").TouchSpin({
                     verticalbuttons: true,
@@ -1121,12 +1120,12 @@
                 jQuery('#timepicker-confirm-reservation').timepicker();
 
                 // Date Picker
-                jQuery('#datepicker-receipt').datepicker();
-                jQuery('#datepicker-reservation-start').datepicker();
-                jQuery('#datepicker-reservation-end').datepicker();
-                jQuery('#datepicker-car-dispatching').datepicker();
-                jQuery('#datepicker-deposit').datepicker();
-                jQuery('#datepicker-confirm-reservation').datepicker();
+                jQuery('#datepicker-receipt').datepicker({toggleActive: true});
+                jQuery('#datepicker-reservation-start').datepicker({toggleActive: true});
+                jQuery('#datepicker-reservation-end').datepicker({toggleActive: true});
+                jQuery('#datepicker-car-dispatching').datepicker({toggleActive: true});
+                jQuery('#datepicker-deposit').datepicker({toggleActive: true});
+                jQuery('#datepicker-confirm-reservation').datepicker({toggleActive: true});
 			});
 		</script>
 

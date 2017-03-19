@@ -3,14 +3,14 @@ $(document).ready(function() {
     var w = $(window).width();
     var h = $(window).height();
 
-    $('.customer-list').slimScroll({
+    $('.left-card').slimScroll({
         height: h-264,
         position: 'right',
         size: "5px",
         color: '#dcdcdc',
         wheelStep: 5
     });
-    $('.reservation-receipt').slimScroll({
+    $('.right-card').slimScroll({
         height: h-318,
         position: 'right',
         size: "5px",
@@ -20,10 +20,10 @@ $(document).ready(function() {
     $(window).resize(function(){
         var rh = $(window).height();
         // console.log(rh);
-        $('.customer-list').height(rh-264);
-        $('.customer-list').parent('.slimScrollDiv').height(rh-264);
-        $('.reservation-receipt').height(rh-318);
-        $('.reservation-receipt').parent('.slimScrollDiv').height(rh-318);
+        $('.left-card').height(rh-264);
+        $('.left-card').parent('.slimScrollDiv').height(rh-264);
+        $('.right-card').height(rh-318);
+        $('.right-card').parent('.slimScrollDiv').height(rh-318);
     });
 
 

@@ -20,9 +20,6 @@
         <link href="../../../plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet">
         <link href="../../../plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
-        <!-- Tablesaw css -->
-        <!--<link href="../../../plugins/tablesaw/dist/tablesaw.css" rel="stylesheet" type="text/css" />-->
-
 
         <link href="../../../plugins/switchery/switchery.min.css" rel="stylesheet" />
         <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -373,48 +370,12 @@
                     <!-- Page-Title -->
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="page-title-box">
+                            <div class="page-title-box not-fixed">
                                 <div class="breadcrumb pull-right">
-                                    <button type="button" class="btn btn-default btn-rounded w-md waves-effect">즐겨찾기</button>
+                                    <button type="button" class="btn-link btn-sm"><i class="fa fa-angle-left"></i> 목록으로 돌아가기</button>
                                 </div>
-                                <h4 class="page-title">고장/사고접보</h4>
+                                <h4 class="page-title">유실물 $등록$ <span>(<i class="text-danger">*</i> 필수 입력사항)</span></h4>
                             </div>
-                        </div>
-                    </div>
-
-
-                    <div class="row m-b-20">
-                        <div class="col-sm-12">
-                            <form class="form-inline" role="form">
-                                <div class="form-group">
-                                    <label for="datepicker-search-date">검색기간</label>
-                                    <div class="input-daterange input-group" id="datepicker-search-date">
-                                        <input type="text" class="form-control" name="start">
-                                        <span class="input-group-addon bg-muted b-0">-</span>
-                                        <input type="text" class="form-control" name="end">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="list-search" class="sr-only">목록검색</label>
-                                    <select class="form-control" id="list-search">
-                                        <option>차번</option>
-                                        <option>임차인</option>
-                                        <option>처리사원</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <input type="text" id="example-input2-group2" name="example-input2-group2" class="form-control" placeholder="검색어 입력">
-                                        <span class="input-group-btn">
-                                                <button type="button" class="btn waves-effect waves-light btn-inverse">검색</button>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <button type="button" class="btn btn-inverse waves-effect waves-light">엑셀저장</button>
-                                    <button type="button" class="btn btn-primary waves-effect waves-light">신규등록</button>
-                                </div>
-                            </form>
                         </div>
                     </div>
 
@@ -422,54 +383,97 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="card-box">
-                                <div class="row table-option">
-                                    <div class="col-xs-4 col-sm-2">
-                                        <label for="sort-table" class="sr-only">정렬 목록</label>
-                                        <select class="form-control input-sm" id="sort-table">
-                                            <option>최근등록</option>
-                                            <option>예약자 명순</option>
-                                            <option>거래처명순</option>
-                                            <option>차량명순</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xs-8 col-sm-7">
-                                        <div class="checkbox checkbox-inline checkbox-primary">
-                                            <input id="all-date" type="checkbox">
-                                            <label for="all-date">전체기간</label>
-                                        </div>
-                                        <div class="checkbox checkbox-inline checkbox-primary">
-                                            <input id="only-processing" type="checkbox">
-                                            <label for="only-processing">처리 중 항목만 보기</label>
+                                <form class="form-horizontal" role="form">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">차량번호</label>
+                                        <div class="col-sm-3">
+                                            <div class="input-group">
+                                                <input type="text" id="car-number" name="car-number" class="form-control">
+                                                <span class="input-group-btn">
+                                                <button type="button" class="btn waves-effect waves-light btn-inverse">검색</button>
+                                        </span>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-12 col-sm-3 text-right search-number">총 <b class="text-primary">$5$</b>건</div>
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="table table-center m-b-0">
-                                        <thead>
-                                        <tr>
-                                            <th scope="col" class="bg-muted">차번</th>
-                                            <th scope="col" class="bg-muted">접수일시</th>
-                                            <th scope="col" class="bg-muted">접보내용</th>
-                                            <th scope="col" class="bg-muted">처리상태</th>
-                                            <th scope="col" class="bg-muted">처리일시</th>
-                                            <th scope="col" class="bg-muted">처리내역</th>
-                                            <th scope="col" class="bg-muted">처리사원</th>
-                                            <th scope="col" class="bg-muted">비고</th>
-                                            <th scope="col" class="bg-muted">임차인</th>
-                                            <th scope="col" class="bg-muted">전화번호</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td colspan="10" class="table-no-result">검색 혹은 등록된 목록이 없습니다.</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">차종</label>
+                                        <div class="col-sm-10">
+                                            <p class="form-control-static">$차량번호 검색결과에 따른 차량명 표시$</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="datepicker-pickup-date" class="col-sm-2 control-label"><i class="text-danger">*</i> 수거일자</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control w-md" placeholder="mm/dd/yyyy" id="datepicker-pickup-date">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="item-name" class="col-sm-2 control-label"><i class="text-danger">*</i> 물품명</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="item-name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="loser" class="col-sm-2 control-label"><i class="text-danger">*</i> 분실자</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control" id="loser">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="loser" class="col-sm-2 control-label"><i class="text-danger">*</i> 분실자</label>
+                                        <div class="col-sm-5">
+                                            <div class="input-group">
+                                                <input type="text" id="loser" name="number" class="form-control" placeholder="이용실적 조회 후 입력">
+                                                <span class="input-group-btn">
+                                                        <button type="button" class="btn waves-effect waves-light btn-inverse">이용실적 조회</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone" class="col-sm-2 control-label"><i class="text-danger">*</i> 전화번호</label>
+                                        <div class="col-sm-3">
+                                            <input class="form-control input-sm" type="number" id="phone" name="" value="010-1111-2222">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="shipping-address" class="col-sm-2 control-label" id="zipcode">발송주소</label>
+                                        <div class="col-sm-3">
+                                            <div class="input-group">
+                                                <input class="form-control input-sm" type="zipcode" id="shipping-address" name="" placeholder="우편번호 검색 후 입력">
+                                                <span class="input-group-btn">
+                                                        <button type="button" class="btn waves-effect waves-light btn-inverse">우편번호 검색</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-10 col-sm-offset-2">
+                                            <input class="form-control input-sm" type="number" name="" placeholder="상세주소">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone" class="col-sm-2 control-label"><i class="text-danger">*</i> 처리상태</label>
+                                        <span class="col-sm-2 form-control-static text-primary">조치완료</span>
+                                        <div>
+                                            <label for="datepicker-ship-date" class="col-sm-2 control-label">발송일자</label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control w-md" placeholder="mm/dd/yyyy" id="datepicker-ship-date">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="note" class="col-sm-2 control-label"><i class="text-danger">*</i> 비고</label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control input-sm" type="number" id="note" name="">
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
+
 
                 </div>
                 <!-- end container -->
@@ -529,10 +533,6 @@
         <script src="../../../plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
         <script src="../../../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-        <!-- Tablesaw js -->
-        <!--<script src="../../../plugins/tablesaw/dist/tablesaw.js"></script>-->
-        <!--<script src="../../../plugins/tablesaw/dist/tablesaw-init.js"></script>-->
-
 
         <script src="../../assets/js/jquery.core.js"></script>
         <script src="../../assets/js/jquery.app.js"></script>
@@ -543,10 +543,8 @@
 				$('form').parsley();
 
                 // Date Picker
-                jQuery('#datepicker-search-date').datepicker({
-                    toggleActive: true
-                });
-
+                jQuery('#datepicker-pickup-date').datepicker({toggleActive: true});
+                jQuery('#datepicker-ship-date').datepicker({toggleActive: true});
             });
 		</script>
 
