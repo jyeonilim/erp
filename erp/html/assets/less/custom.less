@@ -1,6 +1,18 @@
 @import "variables.less";
 @import "elements.less";
 
+.clearfix {
+    &:before {
+        display: table;
+        content: '';
+    }
+    &:after {
+        clear: both;
+        display: table;
+        content: '';
+    }
+}
+
 /*******************************
   Button
 *******************************/
@@ -127,6 +139,12 @@ label {
 /*******************************
     Contents
 *******************************/
+@media (max-width: 767px) {
+    .xs-form-align {
+        .clearfix;
+        margin-bottom: 3px;
+    }
+}
 .content-page {
     > .content {
         margin: 110px 0 49px;
@@ -172,6 +190,7 @@ label {
     }
 }
 .card-title-box {
+    height: 44px;
     margin: -10px -10px 10px;
     padding: 10px 5px 10px;
     background-color: @light;

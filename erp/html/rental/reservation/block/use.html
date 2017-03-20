@@ -772,34 +772,14 @@
 			$(document).ready(function() {
 				$('form').parsley();
 
-                //Bootstrap-TouchSpin
-                $(".vertical-spin").TouchSpin({
-                    verticalbuttons: true,
-                    buttondown_class: "btn btn-primary",
-                    buttonup_class: "btn btn-primary",
-                    verticalupclass: 'ion-plus-round',
-                    verticaldownclass: 'ion-minus-round'
-                });
-                var vspinTrue = $(".vertical-spin").TouchSpin({
-                    verticalbuttons: true
-                });
-                if (vspinTrue) {
-                    $('.vertical-spin').prev('.bootstrap-touchspin-prefix').remove();
-                }
-
                 // Time Picker
                 jQuery('#timepicker-reservation-start').timepicker();
                 jQuery('#timepicker-reservation-end').timepicker();
-                jQuery('#timepicker-car-dispatching').timepicker();
-                jQuery('#timepicker-confirm-reservation').timepicker();
 
                 // Date Picker
                 jQuery('#datepicker-receipt').datepicker({toggleActive: true});
                 jQuery('#datepicker-reservation-start').datepicker({toggleActive: true});
                 jQuery('#datepicker-reservation-end').datepicker({toggleActive: true});
-                jQuery('#datepicker-car-dispatching').datepicker({toggleActive: true});
-                jQuery('#datepicker-deposit').datepicker({toggleActive: true});
-                jQuery('#datepicker-confirm-reservation').datepicker({toggleActive: true});
 			});
 		</script>
 
