@@ -485,8 +485,7 @@ pre {
 }
 .nav.nav-tabs + .tab-content {
   background: #ffffff;
-  margin-bottom: 20px;
-  padding: 20px;
+  margin-bottom: 5px;
 }
 .card-box .nav-pills li a {
   color: #4c5667 !important;
@@ -537,10 +536,8 @@ pre {
   border: none;
   color: #333333 !important;
   cursor: pointer;
-  line-height: 50px;
+  line-height: 28px;
   font-weight: 500;
-  padding-left: 20px;
-  padding-right: 20px;
   font-family: 'Roboto', sans-serif;
 }
 .nav.nav-tabs > li > a:hover {
@@ -560,7 +557,6 @@ pre {
   color: #3bafda !important;
 }
 .tab-content {
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   color: #777777;
 }
 .nav.nav-tabs > li:last-of-type a {
@@ -943,10 +939,6 @@ pre {
 }
 .wrapper-md {
   padding: 20px;
-}
-.pull-in {
-  margin-left: -20px;
-  margin-right: -20px;
 }
 .b-0 {
   border: none !important;

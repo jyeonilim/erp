@@ -155,8 +155,11 @@ label {
 }
 .content-page {
     > .content {
-        margin: 110px 0 49px;
+        margin: 110px 0 72px;
         padding-bottom: 10px;
+        @media (min-width: 480px) {
+            margin-bottom: 52px;
+        }
     }
 }
 .page-title-box {
@@ -207,6 +210,12 @@ label {
         margin: 0;
         line-height: 24px;
     }
+    .control-label {
+        margin-bottom: 0;
+    }
+    .checkbox{
+        margin: -5px 0 -3px;
+    }
 }
 
 /*******************************
@@ -220,12 +229,14 @@ label {
 .left-card-box {
     @media (max-width: 991px) {
         .slimScrollDiv,
-        .left-card {
+        .left-card,
+        .tab-left-card {
             height: 193px !important;
         }
     }
 }
-.left-card {
+.left-card,
+.tab-left-card {
     overflow: auto;
     padding: 0;
     ul {

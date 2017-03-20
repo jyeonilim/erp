@@ -17,6 +17,13 @@ $(document).ready(function() {
         color: '#dcdcdc',
         wheelStep: 5
     });
+    $('.tab-left-card').slimScroll({
+        height: h-330,
+        position: 'right',
+        size: "5px",
+        color: '#dcdcdc',
+        wheelStep: 5
+    });
     $(window).resize(function(){
         var rh = $(window).height();
         // console.log(rh);
@@ -24,6 +31,8 @@ $(document).ready(function() {
         $('.left-card').parent('.slimScrollDiv').height(rh-264);
         $('.right-card').height(rh-313);
         $('.right-card').parent('.slimScrollDiv').height(rh-313);
+        $('.tab-left-card').height(rh-330);
+        $('.tab-left-card').parent('.slimScrollDiv').height(rh-330);
     });
 
 

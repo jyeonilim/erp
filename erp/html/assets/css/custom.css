@@ -156,8 +156,13 @@ label {
   }
 }
 .content-page > .content {
-  margin: 110px 0 49px;
+  margin: 110px 0 72px;
   padding-bottom: 10px;
+}
+@media (min-width: 480px) {
+  .content-page > .content {
+    margin-bottom: 52px;
+  }
 }
 .page-title-box {
   position: fixed;
@@ -202,6 +207,12 @@ label {
   margin: 0;
   line-height: 24px;
 }
+.card-title-box .control-label {
+  margin-bottom: 0;
+}
+.card-title-box .checkbox {
+  margin: -5px 0 -3px;
+}
 /*******************************
   대여업무 > 얘약관리
 *******************************/
@@ -211,36 +222,46 @@ label {
 }
 @media (max-width: 991px) {
   .left-card-box .slimScrollDiv,
-  .left-card-box .left-card {
+  .left-card-box .left-card,
+  .left-card-box .tab-left-card {
     height: 193px !important;
   }
 }
-.left-card {
+.left-card,
+.tab-left-card {
   overflow: auto;
   padding: 0;
 }
-.left-card ul {
+.left-card ul,
+.tab-left-card ul {
   margin-bottom: 0;
   padding-left: 0;
 }
-.left-card ul li {
+.left-card ul li,
+.tab-left-card ul li {
   display: block;
   padding: 5px 10px;
 }
-.left-card ul li p {
+.left-card ul li p,
+.tab-left-card ul li p {
   margin-bottom: 0;
 }
-.left-card ul li:first-child {
+.left-card ul li:first-child,
+.tab-left-card ul li:first-child {
   padding-top: 10px;
 }
-.left-card ul li:last-child {
+.left-card ul li:last-child,
+.tab-left-card ul li:last-child {
   padding-bottom: 10px;
 }
 .left-card ul li:hover,
-.left-card ul li.active {
+.tab-left-card ul li:hover,
+.left-card ul li.active,
+.tab-left-card ul li.active {
   background-color: #dae6ec;
 }
-.left-card ul li .label {
+.left-card ul li .label,
+.tab-left-card ul li .label {
   padding: 0.05em .6em 0;
   font-weight: 400;
 }
