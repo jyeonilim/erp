@@ -31,6 +31,9 @@ label {
 .form-group {
   margin-bottom: 3px;
 }
+.form-group:last-child {
+  margin-bottom: 0;
+}
 .input-group-btn.btn-blank {
   padding-left: 5px;
 }
@@ -56,6 +59,9 @@ label {
 }
 .input-inline {
   display: inline-block;
+}
+.birth-form .input-inline {
+  width: 70%;
 }
 .checkbox,
 .radio {
@@ -186,9 +192,10 @@ label {
   }
 }
 .card-title-box {
-  height: 44px;
-  margin: -10px -10px 10px;
-  padding: 10px 5px 10px;
+  margin: -5px -10px 10px;
+  padding: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   background-color: #eeeeee;
 }
 .card-title-box .header-title {
@@ -267,11 +274,6 @@ label {
   margin-left: 0;
   margin-right: 0;
 }
-.right-card .form-horizontal .close-time {
-  display: inline-block;
-  width: 50px;
-  margin-right: 10px;
-}
 .right-card .form-horizontal .alert {
   padding: 3px 10px;
 }
@@ -282,6 +284,18 @@ label {
   .right-card .form-group.m-r-10 {
     margin-right: 0;
   }
+}
+.calculate-time {
+  position: relative;
+}
+.calculate-time .close-time {
+  position: absolute;
+  top: 76%;
+}
+.calculate-time .close-time .form-control {
+  display: inline-block;
+  width: 50px;
+  margin-right: 10px;
 }
 .convenience-equipment-list h4 {
   margin-top: 0;

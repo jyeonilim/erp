@@ -35,7 +35,7 @@ h5,
 h6 {
   color: #505458;
   font-family: 'Roboto', sans-serif;
-  margin: 10px 0;
+  margin: 10px 0 5px;
 }
 h1 {
   line-height: 43px;
@@ -121,13 +121,13 @@ a:focus {
   padding-top: 2px;
 }
 .card-box {
-  padding: 10px;
+  padding: 5px 10px;
   border: 1px solid rgba(54, 64, 74, 0.08);
   -webkit-border-radius: 5px;
   border-radius: 5px;
   -moz-border-radius: 5px;
   background-clip: padding-box;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   background-color: #fff;
 }
 .header-title {

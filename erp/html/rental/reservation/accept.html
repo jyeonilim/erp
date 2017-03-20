@@ -545,32 +545,31 @@
                                                 <form class="form-horizontal" role="form">
                                                     <div class="form-group">
                                                         <div class="col-xs-12 m-b-10"><i class="text-danger">*</i> 예약일시</div>
-                                                        <div class="form-group">
+                                                        <div class="form-group calculate-time">
                                                             <label for="datepicker-reservation-start" class="control-label col-xs-2">시작</label>
-                                                            <div class="col-xs-5">
+                                                            <div class="col-xs-3">
                                                                 <input type="text" class="form-control" placeholder="mm/dd/yyyy" id="datepicker-reservation-start">
                                                             </div>
-                                                            <div class="col-xs-5">
+                                                            <div class="col-xs-3">
                                                                 <div class="bootstrap-timepicker">
                                                                     <input id="timepicker-reservation-start" type="text" class="form-control">
                                                                 </div>
                                                             </div>
+                                                            <div class="col-xs-4 col-xs-offset-8 close-time">
+                                                                <i class="fa fa-plus-circle"></i>
+                                                                <input type="text" class="form-control" id="close-time">
+                                                                <label for="close-time" class="control-label">시간 후 종료</label>
+                                                            </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="datepicker-reservation-end" class="control-label col-xs-2">종료</label>
-                                                            <div class="col-xs-5">
+                                                            <div class="col-xs-3">
                                                                 <input type="text" class="form-control" placeholder="mm/dd/yyyy" id="datepicker-reservation-end">
                                                             </div>
-                                                            <div class="col-xs-5">
+                                                            <div class="col-xs-3">
                                                                 <div class="bootstrap-timepicker">
                                                                     <input id="timepicker-reservation-end" type="text" class="form-control">
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <div class="col-xs-10 col-xs-offset-2">
-                                                                <input type="text" class="form-control close-time">
-                                                                <span>시간 후 종료</span>
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-10 col-xs-offset-2">
@@ -1045,7 +1044,7 @@
 
             <!-- FOOTER -->
             <footer class="footer text-right">
-                2016 © Minton.
+                Copyright © JEJUBNF Corp. All Rights Reserved.
             </footer>
             <!-- End FOOTER -->
 

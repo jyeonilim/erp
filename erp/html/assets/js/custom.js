@@ -11,7 +11,7 @@ $(document).ready(function() {
         wheelStep: 5
     });
     $('.right-card').slimScroll({
-        height: h-328,
+        height: h-313,
         position: 'right',
         size: "5px",
         color: '#dcdcdc',
@@ -22,8 +22,8 @@ $(document).ready(function() {
         // console.log(rh);
         $('.left-card').height(rh-264);
         $('.left-card').parent('.slimScrollDiv').height(rh-264);
-        $('.right-card').height(rh-328);
-        $('.right-card').parent('.slimScrollDiv').height(rh-328);
+        $('.right-card').height(rh-313);
+        $('.right-card').parent('.slimScrollDiv').height(rh-313);
     });
 
 
