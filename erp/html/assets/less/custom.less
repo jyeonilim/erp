@@ -135,6 +135,7 @@ label {
 }
 .alert {
     margin-bottom: 5px;
+    padding: 3px 10px;
 }
 .bootstrap-timepicker-widget table td input {
     display: inline-block;
@@ -210,6 +211,23 @@ label {
         margin: 0;
         line-height: 24px;
     }
+    .btn-link {
+        position: relative;
+        padding: 0 0 0 6px !important;
+        text-decoration: underline;
+        &:before {
+            position: absolute;
+            left: 0;
+            top: 3px;
+            width: 1px;
+            height: 12px;
+            background-color: #888;
+            content: '';
+        }
+        &:first-child:before {
+            width: 0;
+        }
+    }
     .control-label {
         margin-bottom: 0;
     }
@@ -264,25 +282,6 @@ label {
         }
     }
 }
-.reservation-manage {
-    .btn-link {
-        position: relative;
-        padding: 0 0 0 6px !important;
-        text-decoration: underline;
-        &:before {
-            position: absolute;
-            left: 0;
-            top: 3px;
-            width: 1px;
-            height: 12px;
-            background-color: #888;
-            content: '';
-        }
-        &:first-child:before {
-            width: 0;
-        }
-    }
-}
 .right-card-box {
     @media (max-width: 991px) {
         .slimScrollDiv,
@@ -303,9 +302,6 @@ label {
                 margin-left: 0;
                 margin-right: 0;
             }
-        }
-        .alert {
-            padding: 3px 10px;
         }
         .control-label {
             text-align: left;
@@ -366,6 +362,10 @@ label {
         display: inline-block;
         width: 70px;
         font-size: 11px;
+    }
+    input[id^="datepicker-"],
+    input[id^="timepicker-"] {
+        width: 100%;
     }
     .form-inline {
         .checkbox {
