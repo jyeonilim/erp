@@ -1,0 +1,41 @@
+/*******************************
+    Icon
+*******************************/
+
+
+[class^="icon-"] {
+    @include sp-icon(0,0);
+}
+
+.icon-left {
+    @include sp-size(17px,10px);
+    background-position: -477px -43px;
+}
+.icon-right {
+    @include sp-size(17px,10px);
+    background-position: -520px -43px;
+}
+.icon-big-up {
+    @include sp-size(73px,73px);
+    background-position: -173px 0;
+}
+.icon-big-down {
+    @include sp-size(73px,73px);
+    background-position: 0 0;
+}
+.icon-target {
+    @include sp-size(25px,25px);
+    background-position: -130px -87px;
+}
+.icon-map {
+    @include sp-size(16px,22px);
+    background-position: -87px -87px;
+}
+.icon-phone {
+    @include sp-size(18px,18px);
+    background-position: -433px -87px;
+}
+.icon-clock {
+    @include sp-size(18px,18px);
+    background-position: -347px -87px;
+}

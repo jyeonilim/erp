@@ -1,0 +1,53 @@
+/*******************************
+    Button
+*******************************/
+
+.btn {
+    display: inline-block;
+    border: 1px solid #8b8c8d;
+    background-color: $brand-default;
+    font-family: 'NanumSquare', sans-serif;
+    color: $white;
+    cursor: pointer;
+}
+
+.btn-md {
+    padding: 0 39px;
+    font-size: 18px;
+    line-height: (45-2)/18;
+}
+.btn-lg {
+    padding: 0 76px;
+    font-size: 28px;
+    line-height: (66-2)/28;
+}
+
+.btn-primary {
+    border-color: $brand-primary;
+    background-color: $brand-primary;
+}
+
+.btn-icon {
+    font-size: 0;
+}
+
+.has-arrow {
+    position: relative;
+    &:after {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        z-index: 10;
+        margin-top: -8px;
+        @include sp-icon(-607px,-87px);
+        @include sp-size(16px,17px);
+        content: '';
+    }
+}
+
+//.btn-align {
+//    margin-top: 25px;
+//}
+.btn-align-center {
+    text-align: center;
+}
