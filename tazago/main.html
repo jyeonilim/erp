@@ -20,10 +20,7 @@
         <div class="header">
             <div class="site-home">
                 <h1 class="brand-logo"><a href="#"><span class="sr-only">타자고</span></a></h1>
-                <div class="megaMenu">
-                    <a href="#" class="btn-menu">Menu</a>
-                    <div class="menu-wrap"></div>
-                </div>
+                <a href="#" class="btn-menu">Menu</a>
             </div>
             <ul class="site-quick-access">
                <li><a href="#">로그인</a></li>
@@ -49,14 +46,16 @@
     <div class="content">
         <div id="fullpage">
             <div class="section reservation" id="section0">
+                <!-- 예약하기 -->
                 <h2 class="section-title">예약하기</h2>
                 <ul class="reservation-step">
                     <!-- STEP 01 장소선택 -->
-                    <!-- [D] 선택완료시 complete 클랙스 추가 -->
+                    <!-- [D] 선택완료시 complete 클래스 추가 -->
                     <li class="complete">
                         <h3 class="step-title"><span>STEP 01</span> 장소선택</h3>
                         <div class="select-place input-group">
-                            <input type="text" class="form-control input-lg" placeholder="대여 장소를 선택해 주세요.">
+                            <label for="rental-place" class="sr-only">대여 장소를 선택해 주세요.</label>
+                            <input type="text" class="form-control input-lg" id="rental-place" value="대여 장소를 선택해 주세요.">
                             <span class="input-group-btn">
                                 <button type="button" class="btn btn-icon btn-primary"><i class="icon-target"></i></button>
                             </span>
@@ -501,8 +500,10 @@
                 <div class="page-guide page-down">
                     <a href="#serviceInfo">서비스소개<i class="icon-big-down"></i></a>
                 </div>
+                <!-- 예약하기 //end -->
             </div>
             <div class="section " id="section1">
+                <!-- 서비스소개 -->
                 <div class="page-guide page-up">
                     <a href="#reservation"><i class="icon-big-up"></i>예약하기</a>
                 </div>
@@ -510,24 +511,24 @@
                     <li>
                         <h3 class="main-text">전국렌터카를 한곳에!<br>국내 최대 렌터카</h3>
                         <ul class="partner-info">
-                            <li class="affiliate">50개<br>제휴사</li>
-                            <li class="car">15,000대<br>차량</li>
+                            <li class="service1">50개<br>제휴사</li>
+                            <li class="service2">15,000대<br>차량</li>
                         </ul>
                         <p class="sub-text">여기저기 돌아보지 말고<br>한번에 TAZAGO!</p>
                     </li>
                     <li>
                         <h3 class="main-text">매일매일 초특가<br>최대 97% 할인!</h3>
                         <ul class="discount-info">
-                            <li class="coupon">회원가입<br>할인쿠폰 제공</li>
-                            <li class="discount">이용후기 작성하면<br>더블할인</li>
+                            <li class="service3">회원가입<br>할인쿠폰 제공</li>
+                            <li class="service4">이용후기 작성하면<br>더블할인</li>
                         </ul>
                         <p class="sub-text">이제껏 본 적 없는<br>착한 가격 TAZAGO!</p>
                     </li>
                     <li>
                         <h3 class="main-text">언제 어디서나<br>빠른 예약과 인수</h3>
                         <ul class="reservation-info">
-                            <li class="quick-reservation">3분이면<br>예약확정OK!</li>
-                            <li class="quick-delivery">2시간 후<br>차량인수</li>
+                            <li class="service5">3분이면<br>예약확정OK!</li>
+                            <li class="service6">2시간 후<br>차량인수</li>
                         </ul>
                         <p class="sub-text">바로 우리집 앞에서<br>렌터카 TAZAGO!</p>
                     </li>
@@ -535,16 +536,71 @@
                 <div class="page-guide page-down">
                     <a href="#customerService">고객센터<i class="icon-big-down"></i></a>
                 </div>
+                <!-- 서비스소개 //end -->
             </div>
             <div class="section" id="section2">
-                <div class="intro">
-                    <h1>Example</h1>
-                    <p>HTML markup example to define 4 sections.</p>
-                    <img src="imgs/example2.png" alt="example" />
+                <!-- 고객센터 -->
+                <div class="page-guide page-up">
+                    <a href="#serviceInfo"><i class="icon-big-up"></i>서비스소개</a>
                 </div>
+                <div class="customer-service">
+                    <h2 class="section-title">고객센터</h2>
+                    <ul class="cs-info">
+                        <li class="number">
+                            <i class="icon-big-phone"></i>
+                            <strong>1544-1544</strong>
+                        </li>
+                        <li class="mail">
+                            <i class="icon-message"></i>
+                            <a href="mailto:cs@tazago.com">cs@tazago.com</a>
+                        </li>
+                        <li>월~토  09:00~18:00 / 일요일 휴무 </li>
+                    </ul>
+                    <div class="quick-customer">
+                        <div class="quick-notice">
+                            <ul>
+                                <li><a href="#">타자고 사이트가 오픈하였습니다!!</a></li>
+                                <li><a href="#">타자고 오픈기념 이벤트를 시작합니다.</a></li>
+                                <li><a href="#">타자고 사이트가 오픈하였습니다!!</a></li>
+                            </ul>
+                            <a href="#" class="btn-more">+</a>
+                        </div>
+                        <div class="quick-link">
+                            <a href="#" class="link-guide">대여가이드</a>
+                            <a href="#" class="link-faq">자주묻는 질문</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 고객센터 //end -->
             </div>
         </div>
     </div>
+    <!-- 전체메뉴 -->
+    <div class="megamenu">
+        <div class="menu-wrap">
+            <span>세상쉬운 렌터카 예약</span>
+            <strong>타자고</strong>
+            <ul class="menu">
+                <li class="item-login"><a href="#" class="">로그인</a></li>
+                <li class="item-join"><a href="#">회원가입</a></li>
+                <li class="item-reservation-confirm"><a href="#">예약확인</a></li>
+                <li class="item-rental-info"><a href="#">대여안내</a></li>
+                <li class="item-notice"><a href="#">공지사항</a></li>
+                <li class="item-faq"><a href="#">자주하는 질문</a></li>
+            </ul>
+            <p class="customer-number">
+                <span>고객센터 (평일 9시~6시)</span>
+                <strong>1544-1544</strong>
+            </p>
+        </div>
+        <button type="button" class="btn-menu-close"><span class="sr-only">닫기</span></button>
+    </div>
+    <!-- 전체메뉴 //end -->
+    <!-- FEEDBACK -->
+    <div class="feedback">
+        <a href="#"><span class="sr-only">feedback</span></a>
+    </div>
+    <!-- FEEDBACK //end -->
     <div class="footer">
         <ul class="terms-menu">
             <li><a href="#">이용약관</a></li>

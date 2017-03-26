@@ -39,3 +39,11 @@
     @include sp-size(18px,18px);
     background-position: -347px -87px;
 }
+.icon-big-phone {
+    @include sp-size(31px,31px);
+    background-position: -390px -87px;
+}
+.icon-message {
+    @include sp-size(18px,14px);
+    background-position: -477px -87px;
+}

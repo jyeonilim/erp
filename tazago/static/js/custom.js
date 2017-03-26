@@ -6,6 +6,29 @@ $(document).ready(function() {
         scrollingSpeed: 500
     });
 
+    $('.btn-menu').on('click',function () {
+        var menuDisplay = $('.megamenu').css('display');
+        if(menuDisplay == 'none') {
+            $('.megamenu').css('display','table');
+        } else {
+            $('.megamenu').css('display','none');
+        }
+    });
+    $('.btn-menu-close').on('click',function () {
+        $('.megamenu').hide();
+    });
+
+
+    // Placeholder
+    $(".placeholder input").focusin(function() {
+        $(this).siblings("label").hide();
+    });
+    $(".placeholder input").blur(function() {
+        if($(this).val() == ''){
+            $(this).siblings("label").show();
+        }
+    });
+
 
     // 예약하기 : 장소선택 - 레이어
     $('.select-place').on('click',function () {
