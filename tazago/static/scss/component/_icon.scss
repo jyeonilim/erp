@@ -31,6 +31,10 @@
     @include sp-size(16px,22px);
     background-position: -87px -87px;
 }
+.icon-map-white {
+    @include sp-size(17px,25px);
+    background-position: -303px -130px;
+}
 .icon-phone {
     @include sp-size(18px,18px);
     background-position: -433px -87px;
@@ -46,4 +50,24 @@
 .icon-message {
     @include sp-size(18px,14px);
     background-position: -477px -87px;
+}
+.icon-point {
+    @include sp-size(28px,28px);
+    background-position: -607px 0;
+}
+.icon-calendar {
+    @include sp-size(18px,18px);
+    background-position: -260px -130px;
+}
+.icon-car {
+    @include sp-size(26px,18px);
+    background-position: -347px -130px;
+}
+.icon-won {
+    @include sp-size(23px,23px);
+    background-position: -390px -130px;
+}
+.icon-search {
+    @include sp-size(20px,20px);
+    background-position: -433px -130px;
 }

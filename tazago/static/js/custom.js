@@ -1,35 +1,42 @@
 $(document).ready(function() {
 
     $('#fullpage').fullpage({
-        anchors: ['reservation', 'serviceInfo', 'customerService'],
+        anchors: ['firstPage', 'secondPage', 'thirdPage'],
         menu: '#menu-page',
-        scrollingSpeed: 500
+        scrollingSpeed: 500,
+        scrollOverflow: true
     });
 
+    // 메인메뉴
     $('.btn-menu').on('click',function () {
-        var menuDisplay = $('.megamenu').css('display');
-        if(menuDisplay == 'none') {
+        var menuDis = $('.megamenu').css('display');
+        if(menuDis == 'none') {
             $('.megamenu').css('display','table');
+            $('body').addClass('scrollFixed');
         } else {
             $('.megamenu').css('display','none');
+            $('body').removeClass('scrollFixed');
         }
     });
     $('.btn-menu-close').on('click',function () {
         $('.megamenu').hide();
+        $('body').removeClass('scrollFixed');
     });
 
 
     // Placeholder
-    $(".placeholder input").focusin(function() {
-        $(this).siblings("label").hide();
+    var placeholder = $('.placeholder input');
+    $(placeholder).focusin(function () {
+        $(this).siblings('label').hide();
     });
-    $(".placeholder input").blur(function() {
-        if($(this).val() == ''){
-            $(this).siblings("label").show();
+    $(placeholder).blur(function () {
+        if($(this).val() == '') {
+            $(this).siblings('label').show();
         }
     });
 
 
+    // 메인
     // 예약하기 : 장소선택 - 레이어
     $('.select-place').on('click',function () {
         var hasActive = $(this).parent('li').hasClass('active');
@@ -50,7 +57,7 @@ $(document).ready(function() {
         var activeTab = $(this).attr('rel');
         $('#' + activeTab).fadeIn();
     });
-    //예약하기 : 장소선택 - 지점선택 탭
+    // 예약하기 : 장소선택 - 지점선택 탭
     $('.select-place-seoul li:first .content-place').show();
     $('.select-place-jeju li:first .content-place').show();
     $('.select-place-busan li:first .content-place').show();
@@ -67,8 +74,7 @@ $(document).ready(function() {
         $(".select-place-busan .content-place").hide();
         $("."+$(this).val()).show();
     });
-
-    //예약하기 : 일정선택 - 날짜선택 레이어
+    // 예약하기 : 일정선택 - 날짜선택 레이어
     $('.text-date').on('click', function() {
         var display = $(this).siblings('.datepicker').css('display');
         if(display == 'none') {
@@ -78,8 +84,7 @@ $(document).ready(function() {
             $(this).parent().removeClass('active').children('.datepicker').hide();
         }
     });
-    //예약하기 : 일정선택 - 시간선택 레이어
-    // });
+    // 예약하기 : 일정선택 - 시간선택 레이어
     $('.text-time').on('click', function() {
         var display = $(this).siblings('.timepicker').css('display');
         if(display == 'none') {
@@ -90,6 +95,25 @@ $(document).ready(function() {
         }
     });
 
+    // 예약하기 - 업그레이드 레이어
+    $('.btn-upgrade').on('click',function () {
+        $(this).addClass('on');
+        $('.modal.upgrade').show();
+    });
+    $('.modal.upgrade .btn-modal-close').on('click',function () {
+        $('.btn-upgrade').removeClass('on');
+        $(this).parent().hide();
+    })
+
+    $( "#coupon" ).selectmenu();
+    // $('.ui-selectmenu-button').click(function () {
+    //     var hasSelBtn = $(this).hasClass('ui-selectmenu-button-open');
+    //     console.log(hasSelBtn);
+    //     if(hasSelBtn == true) {
+    //         $(this).parent('.selectbox').css('border-color','#4aaf9d');
+    //     }
+    // });
+
 });
 
 // Select Box
@@ -97,4 +121,16 @@ function selectboxEvent(target) {
     var $this = $(target),
         str = $this.val();
     $this.parent().children('.selectbox-value').text(str);
+}
+
+// Modal
+function modalOpen(modal) {
+    var $this = $(modal);
+    $this.addClass('modal-backdrop').show();
+    $('body').addClass('scrollFixed');
+}
+function modalClose(modal) {
+    var $this = $(modal);
+    $this.removeClass('modal-backdrop').hide();
+    $('body').removeClass('scrollFixed');
 }

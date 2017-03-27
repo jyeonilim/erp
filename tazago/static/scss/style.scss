@@ -16,7 +16,12 @@ a:hover {
     color: $text-color;
     text-decoration: none;
 }
+img,
+.image img {
+    width: 100%;
+}
 button {
+    border: 0;
     cursor: pointer;
 }
 
@@ -24,23 +29,60 @@ button {
 /*******************************
     Layout
 *******************************/
+.scrollFixed {
+    .fp-scroller,
+    .iScrollIndicator {
+        height: 100%;
+        transform: translate(0px, 0px) translateZ(0px) !important;
+    }
+    .iScrollVerticalScrollbar {
+        display: none !important;
+    }
+}
 #wrap {
     @include clearfix;
     min-width: 1200px;
+}
+.content {
+    //width: 66%;
+    //min-width: 740px;
+}
+.main {
+    height: 100%;
+    .content {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 34%;
+        z-index: 10;
+        width: 66%;
+        min-width: 740px;
+        height: 100%;
+        background-color: $white;
+        @media (max-width: 1200px) {
+            left: 460px;
+        }
+    }
+}
+.reservation {
+    .content {
+        width: 66%;
+        min-width: 740px;
+        margin-left: 34%;
+        padding: 92px 136px 150px 126px;
+        @media (max-width: 1200px) {
+            margin-left: 460px;
+        }
+    }
 }
 
 /*******************************
     Side Bar
 *******************************/
 .sidebar {
-    //display: none;// 작업확인용 삭제할것
-    position: fixed;
+    position: absolute;
     top: 0;
-    bottom: 0;
     left: 0;
-    z-index: 10;
-    //width: 34%;
-    //min-width: 460px;
     height: 100%;
     background-color: $brand-primary;
     .image-area {
@@ -48,73 +90,182 @@ button {
             width: 100%;
         }
     }
-}
-.side-container {
-    position: absolute;
-    right: 0;
-    bottom: 50px;
-    left: 0;
-    z-index: 10;
-    text-align: center;
-    color: $white;
     .side-content {
-        position: absolute;
-        top: -110px;
-        left: 0;
-        width: 100%;
-        z-index: 11;
-        span {
+        position: relative;
+        text-align: center;
+    }
+}
+.indicator-box {
+    position: relative;
+    width: 293px;
+    margin: 70px auto 75px;
+    .indicator {
+        text-align: center;
+        li {
             display: inline-block;
-            padding: 10px 0;
-            font-size: 34px;
-            border-top: 1px solid #92cfc4;
-            border-bottom: 1px solid #92cfc4;
-        }
-        strong {
-            display: block;
-            margin-top: 3px;
-            font-weight: 700;
-            font-size: 110px;
-            text-align: center;
-        }
-        #menu-page {
-            li {
-                display: inline-block;
-                width: 90px;
-                margin: 0 3px;
-                vertical-align: bottom;
+            width: 90px;
+            margin: 0 3px;
+            vertical-align: bottom;
+            a {
+                font-size: 17px;
+                color: #acdad2;
+            }
+            &:after {
+                display: block;
+                height: 5px;
+                margin-top: 9px;
+                @include border-radius(2px);
+                background-color: #acdad2;
+                content: '';
+            }
+            &.current {
                 a {
-                    font-size: 17px;
-                    color: #acdad2;
+                    font-weight: 700;
+                    font-size: 18px;
+                    color: $white;
                 }
                 &:after {
-                    display: block;
-                    height: 5px;
-                    margin-top: 9px;
-                    @include border-radius(2px);
-                    background-color: #acdad2;
-                    content: '';
+                    background-color: $white;
                 }
-                &.active {
+            }
+        }
+    }
+    .btn-upgrade {
+        position: absolute;
+        top: 0;
+        right: -105px;
+        padding: 5px 10px;
+        border: 3px solid $white;
+        @include border-radius(20px);
+        background-color: transparent;
+        font-weight: 700;
+        font-size: 13px;
+        color: $white;
+        &:hover, &.on {
+            background-color: $white;
+            color: $brand-primary;
+        }
+    }
+    @media (max-width: 1500px) {
+        width: 248px;
+        .indicator {
+            li {
+                width: 75px;
+                a {
+                    font-size: 15px;
+                }
+                &.current {
                     a {
-                        font-weight: 700;
-                        font-size: 18px;
-                        color: $white;
-                    }
-                    &:after {
-                        background-color: $white;
+                        font-size: 16px;
                     }
                 }
             }
         }
-        @media (max-width: 1500px) {
+        .btn-upgrade {
+            right: -90px;
+        }
+    }
+}
+.car-sample {
+    padding: 0 80px;
+    img {
+        width: 100%;
+    }
+    &:after {
+        display: inline-block;
+        width:80%;
+        height: 1px;
+        background-color: #90cdc2;
+        content: '';
+    }
+    @media (max-width: 1500px) {
+        padding: 0 40px;
+    }
+}
+.main {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        width: 34%;
+        min-width: 460px;
+        height: 100%;
+    }
+    .side-container {
+        position: absolute;
+        right: 0;
+        bottom: 50px;
+        left: 0;
+        z-index: 10;
+        text-align: center;
+        color: $white;
+        .side-content {
+            position: absolute;
+            top: -110px;
+            left: 0;
+            width: 100%;
+            z-index: 11;
             span {
-                font-size: 27px;
+                display: inline-block;
+                padding: 10px 0;
+                font-size: 34px;
+                border-top: 1px solid #92cfc4;
+                border-bottom: 1px solid #92cfc4;
             }
             strong {
-                font-size: 87px;
+                display: block;
+                margin-top: 3px;
+                font-weight: 700;
+                font-size: 110px;
+                text-align: center;
+            }
+            #menu-page {
+                li {
+                    display: inline-block;
+                    width: 90px;
+                    margin: 0 3px;
+                    vertical-align: bottom;
+                    a {
+                        font-size: 17px;
+                        color: #acdad2;
+                    }
+                    &:after {
+                        display: block;
+                        height: 5px;
+                        margin-top: 9px;
+                        @include border-radius(2px);
+                        background-color: #acdad2;
+                        content: '';
+                    }
+                    &.active {
+                        a {
+                            font-weight: 700;
+                            font-size: 18px;
+                            color: $white;
+                        }
+                        &:after {
+                            background-color: $white;
+                        }
+                    }
+                }
+            }
+            @media (max-width: 1500px) {
+                span {
+                    font-size: 27px;
+                }
+                strong {
+                    font-size: 87px;
+                }
             }
         }
+    }
+}
+.reservation {
+    .sidebar {
+        width: 34%;
+        min-width: 460px;
     }
 }
 
@@ -331,7 +482,7 @@ button {
     Footer
 *******************************/
 .footer {
-    position: fixed;
+    position: absolute;
     left: 0;
     bottom: 20px;
     z-index: 10;
@@ -368,15 +519,31 @@ button {
         }
     }
 }
+.main {
+    .footer {
+        position: fixed;
+    }
+}
 
 /*******************************
     Common
 *******************************/
+.group {
+    padding: 45px 0 55px;
+    border-top: 1px solid #dcdcdc;
+}
 // Title
 .section-title {
+    padding-bottom: 30px;
+    border-bottom: 2px solid $brand-primary;
     font-weight: 700;
     font-size: 55px;
+    text-align: center;
     letter-spacing: -2px;
+}
+.secondary-title {
+    font-weight: 700;
+    font-size: 25px;
 }
 // Feedback
 .feedback {
@@ -397,42 +564,59 @@ button {
     label {
         position: absolute;
         top: 0;
-        right: 0;
-        bottom: 0;
         left: 0;
         margin: auto;
-        color: #181818;
+        padding: 0 20px;
+        font: 17px 'Noto Sans KR', sans-serif;
+        line-height: (60-2)/17;
+        color: #7f7f7f;
+    }
+}
+// Tooltip
+.tooltip {
+    display: none;
+    position: absolute;
+    padding: 15px 40px;
+    @include border-radius(4px);
+    background-color: $brand-primary;
+    font: 300 15px 'Noto Sans KR', sans-serif;
+    color: $white;
+    &:after {
+        @include sp-icon(-520px,0);
+        @include sp-size(17px,15px);
+        position: absolute;
+        left: 50%;
+        bottom: -15px;
+        margin-left: -8px;
+        content: '';
+    }
+    .point {
+        color: #ffe01c;
+    }
+}
+// 안내 리스트
+.notify-list {
+    li {
+        padding-left: 8px;
+        text-indent: -8px;
+        font: 200 15px 'Noto Sans KR', sans-serif;
+        color: #8d8d8d;
+        &:before {
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            margin-right: 5px;
+            @include border-radius(2px);
+            background-color: #c6c6c6;
+            vertical-align: middle;
+            content: '';
+        }
     }
 }
 
 /*******************************
     Main
 *******************************/
-.main {
-    height: 100%;
-    .sidebar {
-        //display: none;// 작업확인용 삭제할것
-        width: 34%;
-        min-width: 460px;
-        height: 100%;
-        background-color: $brand-primary;
-    }
-    .content {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 34%;
-        //left: 0;// 작업확인용 삭제할것
-        z-index: 10;
-        width: 66%;
-        min-width: 740px;
-        height: 100%;
-        background-color: #fff;
-        @media (max-width: 1200px) {
-            left: 460px;
-        }
-    }
-}
 // 메인 페이지 가이드 버튼
 .page-guide {
     position: absolute;
@@ -469,8 +653,12 @@ button {
     }
 }
 // 예약하기
-.reservation {
+.main-reservation {
     text-align: center;
+    .section-title {
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
     .reservation-step {
         display: inline-block;
         width: 100%;
@@ -576,8 +764,12 @@ button {
                             color: #74a39e;
                         }
                         .radio-display {
+                            width: 32px;
+                            height: 32px;
                             margin: 0 0 0 -52px;
                             background-color: #f6fafa;
+                            background-image: url("../images/form-rental-place.png");
+                            vertical-align: text-bottom;
                         }
                         input[type="radio"]:checked ~ .radio-label {
                             background-color: #eef6f5;
@@ -586,6 +778,7 @@ button {
                         }
                         input[type="radio"]:checked ~ .radio-display {
                             background-color: #eef6f5;
+                            background-image: url("../images/form-rental-place-checked.png");
                         }
                     }
                     .content-place {
@@ -858,6 +1051,10 @@ button {
 // 고객센터
 .customer-service {
     text-align: center;
+    .section-title {
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
     .cs-info {
         margin-top: 30px;
         font: 300 17px 'Montserrat', 'Noto Sans KR', sans-serif;
@@ -939,8 +1136,590 @@ button {
 }
 
 /*******************************
+    Reservation
+*******************************/
+.reservation {
+    .btn-align-center {
+        margin-top: 34px;
+        .btn {
+            padding: 0 177px;
+        }
+    }
+}
+.reservation-list {
+    display: inline-block;
+    margin: 13px 0 25px;
+    padding-left: 34px;
+    background: url("../images/line-dotted.png") no-repeat 0 100%;
+    text-align: left;
+    li {
+        padding-top: 10px;
+        color: $white;
+        &:first-child {
+            padding-top: 0;
+        }
+        .icon-calendar,
+        .icon-map-white {
+            margin: 0 4px;
+        }
+        > span {
+            margin-left: 10px;
+            font-size: 18px;
+        }
+        p {
+            display: inline-block;
+            margin-left: 80px;
+            font-weight: 700;
+            font-size: 18px;
+            b {
+                font: 500 22px 'Montserrat', sans-serif;
+                small {
+                    font-weight: 400;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+.reservation-payment {
+    margin: 0 115px;
+    font-family: 'Montserrat', 'NanumSquare', sans-serif;
+    dt {
+        @include clearfix;
+        padding: 17px 30px 20px;
+        background-color: #f9f9f9;
+        span {
+            float: left;
+            margin-top: 10px;
+            font-weight: 700;
+            font-size: 20px;
+        }
+        .total-price {
+            float: right;
+            font-weight: 500;
+            font-size: 34px;
+            color: $brand-primary;
+            em {
+                font-weight: 400;
+                font-size: 19px;
+            }
+        }
+    }
+    dd {
+        @include clearfix;
+        padding: 2px 30px;
+        background-color: #acdad2;
+        &:nth-of-type(1) {
+            padding-top: 15px;
+        }
+        &:last-child {
+            padding-bottom: 18px;
+        }
+        span {
+            float: left;
+            font-size: 16px;
+        }
+        .price {
+            float: right;
+            font-weight: 500;
+            font-size: 20px;
+            em {
+                font-weight: 400;
+                font-size: 18px;
+            }
+        }
+    }
+    @media (max-width: 1500px) {
+        margin: 0 45px;
+    }
+}
+.reservation-option {
+    @include clearfix;
+    padding: 75px 0 60px;
+    .secondary-title {
+        margin-bottom: 35px;
+        i {
+            margin-left: 5px;
+        }
+    }
+    .delivery {
+        float: left;
+        width: 45%;
+    }
+    .insurance {
+        float: left;
+        width: 55%;
+        .secondary-title {
+            position: relative;
+            .icon-point:hover {
+                & + .tooltip {
+                    display: block;
+                    top: -88px;
+                    left: -80px;
+                    width: 383px;
+                }
+            }
+        }
+    }
+}
+.input-reservation-info {
+    .secondary-title {
+        margin-bottom: 9px;
+    }
+    .checkbox {
+        text-align: right;
+    }
+    .license-type-box {
+        .radio {
+            float: left;
+            width: 50%;
+            .radio-label {
+                display: inline-block;
+                width: 100%;
+                border: 1px solid #dadada;
+                border-left: 0;
+                background-color: #f6f6f6;
+                font-size: 18px;
+                line-height: (60-2)/18;
+                text-align: center;
+            }
+            &:first-child .radio-label {
+                border-left: 1px solid #dadada;
+            }
+            input[type=radio]:checked + .radio-label {
+                background-color: $brand-primary;
+                color: $white;
+            }
+        }
+    }
+}
+.select-payment {
+    .secondary-title {
+        margin-bottom: 42px;
+    }
+    .form-inline {
+        .form-label {
+            vertical-align: top;
+        }
+    }
+    .payment-option-box,
+    .discount-coupon {
+        > div {
+            display: table;
+            border-collapse: collapse;
+            width: 100%;
+            &.bottom {
+                margin-top: -1px;
+            }
+        }
+        .radio {
+            display: table-cell;
+            width: 50%;
+            border: 1px solid #d5d5d5;
+            vertical-align: top;
+            .radio-label {
+                display: block;
+                padding: 16px 0;
+                background-color: #f6f6f6;
+                font: 200 17px 'Noto Sans KR', sans-serif;
+                color: #7f7f7f;
+                text-align: center;
+                vertical-align: middle;
+                &:before {
+                    @include sp-icon(0,0);
+                    @include sp-size(25px,25px);
+                    margin-right: 5px;
+                    vertical-align: middle;
+                    content: '';
+                }
+                @media (max-width: 1500px) {
+                    font-size: 13px;
+                }
+            }
+            input[type="radio"]:checked ~ .radio-label {
+                background-color: $brand-primary;
+                color: $white;
+            }
+        }
+        .creditCard {
+            .radio-label {
+                &:before {
+                    background-position: -477px -127px;
+                }
+            }
+            input[type="radio"]:checked ~ .radio-label {
+                &:before {
+                    background-position: -520px -127px;
+                }
+            }
+        }
+        .account-transfer {
+            .radio-label {
+                &:before {
+                    background-position: -563px -130px;
+                }
+            }
+            input[type="radio"]:checked ~ .radio-label {
+                &:before {
+                    background-position: -607px -130px;
+                }
+            }
+        }
+        .nPay {
+            .radio-label {
+                &:before {
+                    width: 80px;
+                    height: 32px;
+                    margin-right: 0;
+                    background: url("../images/npay.png") no-repeat 0 0;
+                }
+            }
+            input[type="radio"]:checked ~ .radio-label {
+                &:before {
+                    background-image: url("../images/npay-on.png");
+                }
+            }
+        }
+        .kakaoPay {
+            .radio-label {
+                &:before {
+                    width: 109px;
+                    height: 32px;
+                    margin-right: 0;
+                    background: url("../images/kakaopay.png") no-repeat 0 0;
+                }
+            }
+            input[type="radio"]:checked ~ .radio-label {
+                &:before {
+                    background-image: url("../images/kakaopay-on.png");
+                }
+            }
+        }
+        @media (max-width: 1500px) {
+            .radio {
+                .radio-label {
+                    font-size: 13px;
+                }
+            }
+            .nPay {
+                .radio-label {
+                    &:before {
+                        width: 65px;
+                        height: 26px;
+                        background-size: 65px 26px;
+                    }
+                }
+            }
+            .kakaoPay {
+                .radio-label {
+                    &:before {
+                        width: 89px;
+                        height: 26px;
+                        background-size: 89px 26px;
+                    }
+                }
+            }
+        }
+    }
+    .discount-coupon {
+        .coupon {
+            .radio-label {
+                font-size: 18px;
+                &:before {
+                    display: none;
+                }
+                @media (max-width: 1500px) {
+                    font-size: 16px;
+                }
+            }
+        }
+        .promotion-code {
+            .radio-label {
+                &:before {
+                    @include sp-size(28px,24px);
+                    background-position: -563px -173px;
+                }
+            }
+            input[type="radio"]:checked ~ .radio-label {
+                &:before {
+                    background-position: -607px -173px;
+                }
+            }
+        }
+    }
+    .select-coupon {
+        margin-top: -1px;
+        .selectbox {
+            border: 0;
+            vertical-align: top;
+        }
+        .input-group-btn {
+            width: 74px;
+            .btn {
+                width: 100%;
+                background-color: $brand-default;
+                font-size: 16px;
+                line-height: (56-2)/16;
+                &.btn-coupon-select {
+                    border-color: $brand-primary;
+                    background-color: $brand-primary;
+                }
+            }
+        }
+    }
+    .select-coupon-box {
+        .form-label {
+            vertical-align: middle;
+        }
+    }
+}
+.reservation-agreement {
+    text-align: center;
+    .checkbox-label {
+        font: 18px 'Noto Sans KR', sans-serif;
+    }
+    dt {
+        padding: 15px 0;
+        border: 1px solid $brand-primary;
+        background-color: $white;
+    }
+    dd {
+        padding: 20px 0;
+        border: 1px solid #d5d5d5;
+        background-color: #f7f7f7;
+    }
+    .each-agreement {
+        display: inline-block;
+        width: 378px;
+        text-align: left;
+        li {
+            @include clearfix;
+            padding: 3px 0;
+            .checkbox {
+                float: left;
+            }
+            .btn {
+                float: right;
+            }
+        }
+    }
+}
+
+/*******************************
+    Layer
+*******************************/
+.modal {
+    display: none;
+    &.modal-backdrop {
+        &:after {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 20;
+            margin: auto;
+            background-color: #000;
+            opacity: .8;
+            filter: alpha(opacity=80);
+            content: '';
+        }
+    }
+    .btn-modal-close {
+        position: absolute;
+        top: 18px;
+        right: 28px;
+        @include sp-icon(-477px,0);
+        @include sp-size(30px,30px);
+    }
+    .modal-content {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 21;
+    }
+    .modal-head {
+        padding: 20px 38px;
+        background-color: $brand-primary;
+        font-weight: 700;
+        font-size: 27px;
+        color: $white;
+    }
+    .modal-body {
+        padding: 0 10px 10px;
+        background-color: $white;
+        .modal-body-inner {
+            padding: 0 20px;
+        }
+        .text {
+            padding: 28px 0 21px;
+            font-size: 20px;
+            b {
+                font-weight: 700;
+                font-size: 30px;
+            }
+        }
+    }
+}
+// 예약하기 - 업그레이드
+.upgrade {
+    position: absolute;
+    top: 85px;
+    left: 50%;
+    width: 360px;
+    margin-left: -180px;
+    padding: 10px;
+    @include border-radius(4px);
+    background-color: $white;
+    .btn-modal-close {
+        top: 19px;
+        right: 22px;
+        background-position: -433px 0;
+    }
+    .text {
+        margin: 52px 0 20px;
+        font-size: 18px;
+    }
+    .image {
+        padding: 0 8%;
+    }
+}
+// 예약하기 - 딜리버리 선택
+.select-delivery {
+    .modal-content {
+        margin: -290px 0 0 -442px;
+    }
+    .modal-body {
+        @include clearfix;
+        padding: 0 38px 49px;
+    }
+    .delivery-list {
+        float: left;
+        width: 342px;
+        .search-delivery {
+            position: relative;
+            .icon-search {
+                position: absolute;
+                top: 50%;
+                left: 28px;
+                margin-top: -10px;
+            }
+            .form-control {
+                height: 70px;
+                padding-left: 62px;
+                border: 1px solid #d8d8d8;
+                background-color: #f8f8f8;
+                line-height: 70px;
+                font-size: 18px;
+            }
+        }
+        .delivery-place-list {
+            overflow-x: hidden;
+            overflow-y: auto;
+            height: 307px;
+            border: 1px solid #d8d8d8;
+            border-top: 0;
+            li {
+                @include clearfix;
+                padding: 15px 20px;
+                border-bottom: 1px solid #d8d8d8;
+                .place {
+                    float: left;
+                    padding-top: 5px;
+                    span {
+                        display: block;
+                        font-weight: 700;
+                        font-size: 20px;
+                    }
+                    .btn {
+                        margin-top: 12px;
+                        padding: 0 29px;
+                    }
+                }
+                &.select {
+                    border: 2px solid $brand-primary;
+                    background-color: #f3f9f7;
+                }
+            }
+            .badge-line-number {
+                float: right;
+                display: inline-block;
+                width: 70px;
+                height: 32px;
+                @include border-radius(16px);
+                background-color: $brand-default;
+                font-size: 16px;
+                line-height: (32)/16;
+                color: $white;
+                text-align: center;
+                vertical-align: top;
+            }
+        }
+    }
+    .map-area {
+        overflow: hidden;
+        float: left;
+        height: 377px;
+        border: 1px solid #d8d8d8;
+        border-left: 0;
+        * {
+            width: 100%;
+        }
+    }
+}
+// 예약하기 - 프로모션 코드
+.promotion-code-box {
+    .modal-content {
+        width: 490px;
+        margin-top: -175px;
+        margin-left: -245px;
+    }
+    .modal-body {
+        padding-top: 40px;
+        text-align: center;
+        .promotion-title {
+            display: block;
+            margin-bottom: 21px;
+            font-size: 18px;
+            color: $brand-primary;
+        }
+        .code-number {
+            padding: 15px 56px;
+            @include border-radius(33px);
+            background-color: #eff8f6;
+            font: 700 30px 'Lato', sans-serif;
+            color: $brand-primary;
+        }
+        .text {
+            font-size: 25px;
+        }
+        .btn-group {
+            margin-top: 30px;
+        }
+    }
+}
+// 예약하기 - 취소 수수료 안내
+.cancel-fee {
+    .modal-content {
+        width: 490px;
+        margin-top: -293px;
+        margin-left: -245px;
+    }
+    .text {
+        padding-top: 35px;
+        text-align: center;
+    }
+    .notify-list {
+        margin: 25px 0 20px;
+    }
+}
+
+/*******************************
     Helper Class
 *******************************/
+.clearfix {
+    @include clearfix;
+}
 .sr-only {
     position: absolute;
     width: 1px;

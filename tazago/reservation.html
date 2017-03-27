@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>예약하기</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" src="static/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="static/js/scrolloverflow.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.fullPage.min.js"></script>
+    <script type="text/javascript" src="static/js/custom.js"></script>
+    <!--[if lt IE 9]>
+    <script src="static/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="reservation">
+<div id="wrap">
+    <div id="fullpage">
+        <div class="section" id="section0">
+            <div class="sidebar">
+                <div class="header">
+                    <div class="site-home">
+                        <h1 class="brand-logo"><a href="#"><span class="sr-only">타자고</span></a></h1>
+                        <a href="#" class="btn-menu">Menu</a>
+                    </div>
+                    <ul class="site-quick-access">
+                       <li><a href="#">로그인</a></li>
+                       <li><a href="#">회원가입</a></li>
+                       <li><a href="#">예약확인</a></li>
+                    </ul>
+                </div>
+                <div class="side-container">
+                    <div class="side-content">
+                        <div class="indicator-box">
+                            <ul class="indicator">
+                                <li><a href="#">렌터카검색</a></li>
+                                <li><a href="#">차량검색</a></li>
+                                <li class="current"><a href="#">예약하기</a></li>
+                            </ul>
+                            <button type="button" class="btn-upgrade">업그레이드</button>
+                        </div>
+                        <div class="car-sample">
+                            <img src="static/images/temp/car.png" alt="">
+                        </div>
+                        <ul class="reservation-list">
+                            <li>
+                                <i class="icon-calendar"></i>
+                                <span>대여</span>
+                                <p><b>2017.03.15<small>(수)</small> 10:00</b></p>
+                            </li>
+                            <li>
+                                <i class="icon-calendar"></i>
+                                <span>반납</span>
+                                <p><b>2017.03.18<small>(토)</small> 10:00</b></p>
+                            </li>
+                            <li>
+                                <i class="icon-map-white"></i>
+                                <span>장소</span>
+                                <p>서울, 김포공항</p>
+                            </li>
+                            <li>
+                                <i class="icon-car"></i>
+                                <span>차량</span>
+                                <p>아이오닉(전기)</p>
+                            </li>
+                        </ul>
+                        <dl class="reservation-payment">
+                            <dt>
+                                <span><i class="icon-won"></i> 총 결제금액</span>
+                                <strong class="total-price">12,000<em>원</em></strong>
+                            </dt>
+                            <dd>
+                                <span>차량 대여료 / 24시간</span>
+                                <span class="price">7,000<em>원</em></span>
+                            </dd>
+                            <dd>
+                                <span>일반자차 보험료 / 2일</span>
+                                <span class="price">5,000<em>원</em></span>
+                            </dd>
+                        </dl>
+                        <!-- 업그레이드 팝업 -->
+                        <div class="modal upgrade">
+                            <p class="text">지금 \5,000만 추가하시면<br>BMW i3로 차량을 업그레이드 할 수 있어요!</p>
+                            <div class="image">
+                                <img src="static/images/temp/car.png" alt="">
+                            </div>
+                            <button type="button" class="btn btn-lg btn-primary btn-block">업그레이드 하기</button>
+                            <button type="button" class="btn-modal-close"><span class="sr-only">닫기</span></button>
+                        </div>
+                        <!-- 업그레이드 팝업 //end -->
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="section-title">예약하기</h2>
+                <!-- 예약옵션 -->
+                <div class="reservation-option">
+                    <div class="delivery">
+                        <h3 class="secondary-title">
+                            딜리버리 선택
+                            <i class="icon-point"></i>
+                        </h3>
+                        <div class="radio radio-block">
+                            <input type="radio" id="delivery-no" name="delivery-option" checked>
+                            <label for="delivery-no" class="radio-display"></label>
+                            <label for="delivery-no" class="radio-label">선택안함</label>
+                        </div>
+                        <div class="radio radio-block">
+                            <input type="radio" id="delivery-yes" name="delivery-option" onclick="modalOpen('.select-delivery');">
+                            <label for="delivery-yes" class="radio-display"></label>
+                            <label for="delivery-yes" class="radio-label">선택(+11,000원)</label>
+                        </div>
+                    </div>
+                    <div class="insurance">
+                        <h3 class="secondary-title">
+                            보험선택
+                            <i class="icon-point"></i>
+                            <ul class="tooltip">
+                                <li><em class="point">일반 자차</em> : 보상한도 내 수리비 일부와 휴차보상료 부담</li>
+                                <li><em class="point">완전 자차</em> : 보상한도 내 수리비와 휴차보상료 면제</li>
+                            </ul>
+                        </h3>
+                        <div class="radio radio-block">
+                            <input type="radio" id="insurance-general" name="insurance-option" checked>
+                            <label for="insurance-general" class="radio-display"></label>
+                            <label for="insurance-general" class="radio-label">
+                                일반 자차
+                                <span>12,000원 (차량 대여료 포함)</span>
+                            </label>
+                        </div>
+                        <div class="radio radio-block">
+                            <input type="radio" id="insurance-full" name="insurance-option">
+                            <label for="insurance-full" class="radio-display"></label>
+                            <label for="insurance-full" class="radio-label">
+                                완전 자차
+                                <span>18,000원 (차량 대여료 포함)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- 예약옵션 //end -->
+                <!-- 예약정보 입력 -->
+                <div class="input-reservation-info group clearfix">
+                    <h3 class="secondary-title">예약정보 입력</h3>
+                    <div class="form-left booker">
+                        <div class="checkbox checkbox-block">
+                            <input type="checkbox" id="same-membership-info">
+                            <label for="same-membership-info" class="checkbox-display"></label>
+                            <label for="same-membership-info" class="checkbox-label">회원 정보와 동일</label>
+                        </div>
+                        <ul>
+                            <li class="form-inline">
+                                <label for="booker" class="form-label">예약자</label>
+                                <div class="placeholder">
+                                    <label for="booker">이름을 입력해주세요</label>
+                                    <input type="text" class="form-control" id="booker">
+                                </div>
+                            </li>
+                            <li class="form-inline">
+                                <label for="phone" class="form-label">연락처</label>
+                                <div class="placeholder">
+                                    <label for="phone">숫자만 입력해주세요</label>
+                                    <input type="number" class="form-control" id="phone">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form-right driver">
+                        <div class="checkbox checkbox-block">
+                            <input type="checkbox" id="same-booker-info">
+                            <label for="same-booker-info" class="checkbox-display"></label>
+                            <label for="same-booker-info" class="checkbox-label">예약자와 운전자 동일</label>
+                        </div>
+                        <ul>
+                            <li class="form-inline">
+                                <label for="driver" class="form-label">운전자</label>
+                                <div class="placeholder">
+                                    <label for="driver">이름을 입력해주세요</label>
+                                    <input type="text" class="form-control" id="driver">
+                                </div>
+                            </li>
+                            <li class="form-inline">
+                                <label for="driver-phone" class="form-label">연락처</label>
+                                <div class="placeholder">
+                                    <label for="driver-phone">숫자만 입력해주세요</label>
+                                    <input type="number" class="form-control" id="driver-phone">
+                                </div>
+                            </li>
+                            <li class="form-inline">
+                                <label for="birth-date" class="form-label">생년월일</label>
+                                <div class="placeholder">
+                                    <label for="birth-date">예) 19901201</label>
+                                    <input type="number" class="form-control" id="birth-date">
+                                </div>
+                            </li>
+                            <li class="form-inline">
+                                <label for="class1" class="form-label">면허종류</label>
+                                <div class="form-group license-type-box">
+                                    <div class="radio">
+                                        <input type="radio" id="class1" name="license-type" checked>
+                                        <label for="class1" class="radio-label">1종보통</label>
+                                    </div>
+                                    <div class="radio">
+                                        <input type="radio" id="class2" name="license-type">
+                                        <label for="class2" class="radio-label">2종보통</label>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 예약정보 입력 //end -->
+                <!-- 결제방법 선택 -->
+                <div class="select-payment group clearfix">
+                    <h3 class="secondary-title">결제방법 선택</h3>
+                    <div class="form-left">
+                        <div class="form-inline">
+                            <label for="class1" class="form-label">결제방법</label>
+                            <div class="form-group payment-option-box">
+                                <div class="top">
+                                    <div class="radio creditCard">
+                                        <input type="radio" id="creditCard" name="payment-option" checked>
+                                        <label for="creditCard" class="radio-label">신용카드</label>
+                                    </div>
+                                    <div class="radio account-transfer">
+                                        <input type="radio" id="account-transfer" name="payment-option">
+                                        <label for="account-transfer" class="radio-label">실시간계좌이체</label>
+                                    </div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="radio nPay">
+                                        <input type="radio" id="nPay" name="payment-option">
+                                        <label for="nPay" class="radio-label"><span class="sr-only">NPay</span></label>
+                                    </div>
+                                    <div class="radio kakaoPay">
+                                        <input type="radio" id="kakaoPay" name="payment-option">
+                                        <label for="kakaoPay" class="radio-label"><span class="sr-only">KaKaoPay</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-right select-coupon-box">
+                        <div class="form-inline">
+                            <label for="discount-coupon" class="form-label">할인쿠폰</label>
+                            <div class="form-group discount-coupon">
+                                <div>
+                                    <div class="radio coupon">
+                                        <input type="radio" id="discount-coupon" name="discount" checked>
+                                        <label for="discount-coupon" class="radio-label">% 할인쿠폰</label>
+                                    </div>
+                                    <div class="radio promotion-code">
+                                        <input type="radio" id="promotion-code" name="discount" onclick="modalOpen('.promotion-code-box');">
+                                        <label for="promotion-code" class="radio-label">프로모션코드</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-inline select-coupon">
+                            <label for="coupon" class="form-label">쿠폰선택</label>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="selectbox">
+                                        <select name="coupon" id="coupon">
+                                            <option selected="selected">사용 가능한 쿠폰 (2)</option>
+                                            <option>회원가입 감사 2,000원 할인</option>
+                                            <option>리뷰 작성 1,000원 할인</option>
+                                        </select>
+                                    </div>
+                                    <!-- [D] 셀렉트 선택 완료되면 버튼에 btn-coupon-select 클래스 추가하고 '취소'로 명칭 변경 -->
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn">확인</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 결제방법 선택 //end -->
+                <!-- 전체동의 -->
+                <dl class="reservation-agreement">
+                    <dt>
+                        <div class="checkbox">
+                            <input type="checkbox" id="agree-all">
+                            <label for="agree-all" class="checkbox-display"></label>
+                            <label for="agree-all" class="checkbox-label">전체 동의합니다.</label>
+                        </div>
+                    </dt>
+                    <dd>
+                        <ul class="each-agreement">
+                            <li>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="agree-rental">
+                                    <label for="agree-rental" class="checkbox-display"></label>
+                                    <label for="agree-rental" class="checkbox-label">차량 대여 규정에 동의합니다.</label>
+                                </div>
+                                <button type="button" class="btn btn-sm">내용보기</button>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="agree-insurance">
+                                    <label for="agree-insurance" class="checkbox-display"></label>
+                                    <label for="agree-insurance" class="checkbox-label">자차보험 규정에 동의합니다.</label>
+                                </div>
+                                <button type="button" class="btn btn-sm">내용보기</button>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="agree-refund">
+                                    <label for="agree-refund" class="checkbox-display"></label>
+                                    <label for="agree-refund" class="checkbox-label">환불 규정에 동의합니다.</label>
+                                </div>
+                                <button type="button" class="btn btn-sm">내용보기</button>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+                <!-- 전체동의 //end -->
+                <div class="btn-align-center">
+                    <button type="button" class="btn btn-lg btn-primary" onclick="modalOpen('.cancel-fee');">결제하기</button>
+                </div>
+            </div>
+            <!-- 전체메뉴 -->
+            <div class="megamenu">
+                <div class="menu-wrap">
+                    <span>세상쉬운 렌터카 예약</span>
+                    <strong>타자고</strong>
+                    <ul class="menu">
+                        <li class="item-login"><a href="#" class="">로그인</a></li>
+                        <li class="item-join"><a href="#">회원가입</a></li>
+                        <li class="item-reservation-confirm"><a href="#">예약확인</a></li>
+                        <li class="item-rental-info"><a href="#">대여안내</a></li>
+                        <li class="item-notice"><a href="#">공지사항</a></li>
+                        <li class="item-faq"><a href="#">자주하는 질문</a></li>
+                    </ul>
+                    <p class="customer-number">
+                        <span>고객센터 (평일 9시~6시)</span>
+                        <strong>1544-1544</strong>
+                    </p>
+                </div>
+                <button type="button" class="btn-menu-close"><span class="sr-only">닫기</span></button>
+            </div>
+            <!-- 전체메뉴 //end -->
+            <!-- 딜리버리 레이어 -->
+            <div class="modal select-delivery">
+                <div class="modal-content">
+                    <h3 class="modal-head">딜리버리 선택</h3>
+                    <div class="modal-body">
+                        <p class="text"><b>서울-강남</b> 지역 내에서만 차량을 받으실 수 있습니다.</p>
+                        <div class="delivery-list">
+                            <div class="search-delivery">
+                                <i class="icon-search"></i>
+                                <input type="text" class="form-control" value="딜리버리 장소를 선택해 주세요">
+                            </div>
+                            <ul class="delivery-place-list">
+                                <li class="select">
+                                    <p class="place">
+                                        <span>
+                                            <i class="icon-map"></i>
+                                            서울/강남구청
+                                        </span>
+                                        <button type="button" class="btn btn-md btn-primary">선택</button>
+                                    </p>
+                                    <span class="badge-line-number">7호선</span>
+                                </li>
+                                <li>
+                                    <p class="place">
+                                        <span>
+                                            <i class="icon-map"></i>
+                                            서울/강남구청
+                                        </span>
+                                    </p>
+                                    <span class="badge-line-number">2호선</span>
+                                </li>
+                                <li>
+                                    <p class="place">
+                                        <span>
+                                            <i class="icon-map"></i>
+                                            서울/강남구청
+                                        </span>
+                                    </p>
+                                    <span class="badge-line-number">7호선</span>
+                                </li>
+                                <li>
+                                    <p class="place">
+                                        <span>
+                                            <i class="icon-map"></i>
+                                            서울/강남구청
+                                        </span>
+                                    </p>
+                                    <span class="badge-line-number">2호선</span>
+                                </li>
+                                <li>
+                                    <p class="place">
+                                        <span>
+                                            <i class="icon-map"></i>
+                                            서울/강남구청
+                                        </span>
+                                    </p>
+                                    <span class="badge-line-number">7호선</span>
+                                </li>
+                                <li>
+                                    <p class="place">
+                                        <span>
+                                            <i class="icon-map"></i>
+                                            서울/강남구청
+                                        </span>
+                                    </p>
+                                    <span class="badge-line-number">2호선</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="map-area">
+                            <img src="static/images/temp/map.jpg" alt="">
+                        </div>
+                    </div>
+                    <button class="btn-modal-close" onclick="modalClose('.select-delivery');"><span class="sr-only">닫기</span></button>
+                </div>
+            </div>
+            <!-- 딜리버리 레이어 //end -->
+            <!-- 프로모션 코드 -->
+            <div class="modal promotion-code-box">
+                <div class="modal-content">
+                    <h3 class="modal-head">프로모션 코드</h3>
+                    <div class="modal-body">
+                        <span class="promotion-title">4월 프로모션</span>
+                        <strong class="code-number">TAZAGO2017</strong>
+                        <p class="text">2,000원 할인이 적용됩니다.</p>
+                        <div class="btn-group">
+                            <span class="outer"><button type="button" class="btn btn-lg" onclick="modalClose('.promotion-code-box');">취소</button></span>
+                            <span class="outer"><button type="button" class="btn btn-lg btn-primary">확인</button></span>
+                        </div>
+                    </div>
+                    <button class="btn-modal-close" onclick="modalClose('.promotion-code-box');"><span class="sr-only">닫기</span></button>
+                </div>
+            </div>
+            <!-- 프로모션 코드 //end -->
+            <!-- 취소 수수료 안내 -->
+            <div class="modal cancel-fee">
+                <div class="modal-content">
+                    <h3 class="modal-head">취소 수수료 안내</h3>
+                    <div class="modal-body">
+                        <div class="modal-body-inner">
+                            <p class="text">예약취소에 따른 환불 규정을 반드시 확인하고<br>예약해주시기 바랍니다.</p>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>구분</th>
+                                    <th>기준</th>
+                                    <th>수수료</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th rowspan="2">예약취소</th>
+                                    <td>대여 48시간 이전</td>
+                                    <td>없음</td>
+                                </tr>
+                                <tr>
+                                    <td>대여 48시간 이내</td>
+                                    <td>결제금액의 20%</td>
+                                </tr>
+                                <tr>
+                                    <th>예약변경</th>
+                                    <td colspan="2">변경불가</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <ul class="notify-list">
+                                <li>천재지변에 따른 항공기 결항으로 예약취소 시 수수료없이 환불 가능합니다.<br>(결항확인서 증빙)</li>
+                                <li>차량 인수 후 개인 사정으로 인한 예약 중도 취소 및 조기 반납 시 환불<br>불가합니다.</li>
+                            </ul>
+                        </div>
+                        <div class="btn-group">
+                            <span class="outer"><button type="button" class="btn btn-lg" onclick="modalClose('.cancel-fee');">취소</button></span>
+                            <span class="outer"><button type="button" class="btn btn-lg btn-primary">확인</button></span>
+                        </div>
+                    </div>
+                    <button class="btn-modal-close" onclick="modalClose('.cancel-fee');"><span class="sr-only">닫기</span></button>
+                </div>
+            </div>
+            <!-- 취소 수수료 안내 //end -->
+            <!-- FEEDBACK -->
+            <div class="feedback">
+                <a href="#"><span class="sr-only">feedback</span></a>
+            </div>
+            <!-- FEEDBACK //end -->
+            <div class="footer">
+                <ul class="terms-menu">
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보취급방침</a></li>
+                </ul>
+                <ul class="company-info">
+                    <li>(주)제주비앤에프</li>
+                    <li>사업자등록번호 105-87-76000</li>
+                    <li>통신판매신고</li>
+                    <li>제2015-제주연동-43호</li>
+                </ul>
+                <p class="copyright">대표이사 윤형준  @ 2017 TAZAGO. All rights reserved</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

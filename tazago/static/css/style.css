@@ -74,7 +74,7 @@ table {
   background: url("../images/sprites-icon.png") repeat 0 0;
   line-height: 0;
   color: transparent;
-  vertical-align: middle; }
+  vertical-align: sub; }
 
 .icon-left {
   width: 17px;
@@ -106,6 +106,11 @@ table {
   height: 22px;
   background-position: -87px -87px; }
 
+.icon-map-white {
+  width: 17px;
+  height: 25px;
+  background-position: -303px -130px; }
+
 .icon-phone {
   width: 18px;
   height: 18px;
@@ -126,6 +131,31 @@ table {
   height: 14px;
   background-position: -477px -87px; }
 
+.icon-point {
+  width: 28px;
+  height: 28px;
+  background-position: -607px 0; }
+
+.icon-calendar {
+  width: 18px;
+  height: 18px;
+  background-position: -260px -130px; }
+
+.icon-car {
+  width: 26px;
+  height: 18px;
+  background-position: -347px -130px; }
+
+.icon-won {
+  width: 23px;
+  height: 23px;
+  background-position: -390px -130px; }
+
+.icon-search {
+  width: 20px;
+  height: 20px;
+  background-position: -433px -130px; }
+
 /*******************************
     Button
 *******************************/
@@ -135,7 +165,13 @@ table {
   background-color: #939598;
   font-family: 'NanumSquare', sans-serif;
   color: white;
+  vertical-align: middle;
   cursor: pointer; }
+
+.btn-sm {
+  padding: 0 14px;
+  font-size: 14px;
+  line-height: 2; }
 
 .btn-md {
   padding: 0 39px;
@@ -143,6 +179,10 @@ table {
   line-height: 2.389; }
 
 .btn-lg {
+  font-size: 22px;
+  line-height: 2.682; }
+
+.btn-xlg {
   padding: 0 76px;
   font-size: 28px;
   line-height: 2.286; }
@@ -166,10 +206,27 @@ table {
     background: url("../images/sprites-icon.png") repeat -607px -87px;
     line-height: 0;
     color: transparent;
-    vertical-align: middle;
+    vertical-align: sub;
     width: 16px;
     height: 17px;
     content: ''; }
+
+.btn-block {
+  display: block;
+  width: 100%; }
+
+.btn-group {
+  display: table;
+  width: 100%; }
+  .btn-group .outer {
+    display: table-cell;
+    padding: 0 5px; }
+    .btn-group .outer:first-child {
+      padding-left: 0; }
+    .btn-group .outer:last-child {
+      padding-right: 0; }
+    .btn-group .outer .btn {
+      width: 100%; }
 
 .btn-align-center {
   text-align: center; }
@@ -177,19 +234,50 @@ table {
 /*******************************
     Form
 *******************************/
+.form-label {
+  font-size: 20px; }
+
 .form-control {
   width: 100%;
-  border: 1px solid #e1e1e1; }
+  height: 60px;
+  padding: 0 20px;
+  border: 1px solid #e1e1e1;
+  font: 17px 'Noto Sans KR', sans-serif;
+  line-height: 3.412; }
 
 .input-lg {
   height: 84px;
   font-size: 26px; }
+
+.form-left {
+  float: left;
+  width: 50%;
+  padding-right: 30px; }
+
+.form-right {
+  float: left;
+  width: 50%;
+  padding-left: 30px; }
+
+.form-inline {
+  display: table;
+  width: 100%; }
+  .form-inline .form-group,
+  .form-inline .form-label,
+  .form-inline .form-control,
+  .form-inline .placeholder {
+    display: table-cell;
+    margin-bottom: 10px; }
+  .form-inline .form-label {
+    width: 80px;
+    vertical-align: middle; }
 
 .input-group {
   position: relative;
   display: table;
   width: 100%; }
   .input-group .form-control,
+  .input-group .selectbox,
   .input-group .input-group-btn {
     display: table-cell;
     vertical-align: middle; }
@@ -224,36 +312,46 @@ table {
   .radio .radio-display {
     position: relative;
     display: inline-block;
-    width: 32px;
-    height: 32px;
-    margin: 3px 6px 5px 0;
-    vertical-align: middle; }
-  .checkbox input[type="checkbox"]:checked + .checkbox-display,
-  .checkbox input[type="checkbox"]:checked + .checkbox-label,
-  .checkbox input[type="radio"]:checked + .radio-display,
-  .checkbox input[type="radio"]:checked + .radio-label,
-  .radio input[type="checkbox"]:checked + .checkbox-display,
-  .radio input[type="checkbox"]:checked + .checkbox-label,
-  .radio input[type="radio"]:checked + .radio-display,
-  .radio input[type="radio"]:checked + .radio-label {
+    margin-right: 12px;
+    vertical-align: top; }
+  .checkbox .checkbox-label,
+  .checkbox .radio-label,
+  .radio .checkbox-label,
+  .radio .radio-label {
+    font: 20px 'Noto Sans KR', sans-serif;
+    color: #898989; }
+  .checkbox input[type="checkbox"]:checked ~ .checkbox-display,
+  .checkbox input[type="checkbox"]:checked ~ .checkbox-label,
+  .checkbox input[type="radio"]:checked ~ .radio-display,
+  .checkbox input[type="radio"]:checked ~ .radio-label,
+  .radio input[type="checkbox"]:checked ~ .checkbox-display,
+  .radio input[type="checkbox"]:checked ~ .checkbox-label,
+  .radio input[type="radio"]:checked ~ .radio-display,
+  .radio input[type="radio"]:checked ~ .radio-label {
+    color: #000;
     transition: all 0.3s ease; }
   .checkbox .checkbox-display,
   .radio .checkbox-display {
-    background-image: url(../images/form-checkbox.png); }
-  .checkbox input[type="checkbox"]:checked + .checkbox-display,
-  .radio input[type="checkbox"]:checked + .checkbox-display {
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/form-checkbox.png);
+    vertical-align: text-bottom; }
+  .checkbox input[type="checkbox"]:checked ~ .checkbox-display,
+  .radio input[type="checkbox"]:checked ~ .checkbox-display {
     background-image: url(../images/form-checkbox-checked.png); }
   .checkbox .radio-display,
   .radio .radio-display {
+    width: 31px;
+    height: 31px;
     background-image: url(../images/form-radio.png); }
   .checkbox input[type="radio"]:checked ~ .radio-display,
   .radio input[type="radio"]:checked ~ .radio-display {
     background-image: url(../images/form-radio-checked.png); }
 
-.checkbox-block {
+.checkbox-block,
+.radio-block {
   display: block;
-  margin-top: 10px;
-  font-size: 10px; }
+  margin-bottom: 18px; }
 
 .radio-group .radio {
   margin-right: 25px; }
@@ -278,9 +376,102 @@ table {
     background-color: #fff;
     color: #000; }
 
+.ui-front {
+  z-index: 100; }
+
+.ui-button {
+  display: block;
+  position: relative;
+  line-height: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Support: IE <= 11 */
+  overflow: visible; }
+
+.ui-menu {
+  display: block;
+  border: 1px solid #4aaf9d;
+  background-color: #deecea; }
+
+.ui-selectmenu-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0; }
+  .ui-selectmenu-menu .ui-menu {
+    overflow: auto;
+    overflow-x: hidden;
+    padding: 12px 30px; }
+    .ui-selectmenu-menu .ui-menu .ui-menu-item {
+      padding: 3px 0;
+      font: 17px 'Noto Sans KR', sans-serif; }
+
+.ui-selectmenu-open {
+  display: block; }
+
+.ui-selectmenu-text {
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  height: 61px;
+  padding: 0 40px 0 20px;
+  font: 17px 'Noto Sans KR', sans-serif;
+  line-height: 61px;
+  color: #4aaf9d;
+  text-overflow: ellipsis; }
+
+.ui-selectmenu-button.ui-button {
+  height: 61px;
+  border: 1px solid #d5d5d5;
+  text-align: left; }
+
+.ui-selectmenu-button.ui-selectmenu-button-open {
+  border-color: #4aaf9d;
+  border-bottom: 0; }
+
+.ui-selectmenu-icon.ui-icon {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  bottom: 0;
+  margin: auto;
+  display: inline-block;
+  background: url("../images/sprites-icon.png") repeat -563px -87px;
+  line-height: 0;
+  color: transparent;
+  vertical-align: sub;
+  width: 12px;
+  height: 7px; }
+
 /*******************************
     Table
 *******************************/
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e1e1e1;
+  border-top: 2px solid #4aaf9d; }
+  .table th {
+    padding: 14px 0;
+    border: 1px solid #e1e1e1;
+    font-size: 16px;
+    vertical-align: middle; }
+  .table td {
+    padding: 14px 0;
+    border: 1px solid #e1e1e1;
+    font: 17px 'Noto Sans KR', sans-serif;
+    text-align: center;
+    vertical-align: middle; }
+  .table thead th {
+    background-color: #edf7f5; }
+
 .calendar {
   padding: 18px 45px 50px;
   border: 2px solid #4aaf9d;
@@ -353,7 +544,7 @@ table {
       background: url("../images/sprites-icon.png") repeat -512px -81px;
       line-height: 0;
       color: transparent;
-      vertical-align: middle;
+      vertical-align: sub;
       width: 12px;
       height: 7px;
       padding: 7px 9px;
@@ -589,12 +780,25 @@ a:hover {
   color: #000;
   text-decoration: none; }
 
+img,
+.image img {
+  width: 100%; }
+
 button {
+  border: 0;
   cursor: pointer; }
 
 /*******************************
     Layout
 *******************************/
+.scrollFixed .fp-scroller,
+.scrollFixed .iScrollIndicator {
+  height: 100%;
+  transform: translate(0px, 0px) translateZ(0px) !important; }
+
+.scrollFixed .iScrollVerticalScrollbar {
+  display: none !important; }
+
 #wrap {
   min-width: 1200px; }
   #wrap:before, #wrap:after {
@@ -603,55 +807,61 @@ button {
   #wrap:after {
     clear: both; }
 
+.main {
+  height: 100%; }
+  .main .content {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 34%;
+    z-index: 10;
+    width: 66%;
+    min-width: 740px;
+    height: 100%;
+    background-color: white; }
+    @media (max-width: 1200px) {
+      .main .content {
+        left: 460px; } }
+
+.reservation .content {
+  width: 66%;
+  min-width: 740px;
+  margin-left: 34%;
+  padding: 92px 136px 150px 126px; }
+  @media (max-width: 1200px) {
+    .reservation .content {
+      margin-left: 460px; } }
+
 /*******************************
     Side Bar
 *******************************/
 .sidebar {
-  position: fixed;
+  position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
-  z-index: 10;
   height: 100%;
   background-color: #4aaf9d; }
   .sidebar .image-area img {
     width: 100%; }
+  .sidebar .side-content {
+    position: relative;
+    text-align: center; }
 
-.side-container {
-  position: absolute;
-  right: 0;
-  bottom: 50px;
-  left: 0;
-  z-index: 10;
-  text-align: center;
-  color: white; }
-  .side-container .side-content {
-    position: absolute;
-    top: -110px;
-    left: 0;
-    width: 100%;
-    z-index: 11; }
-    .side-container .side-content span {
-      display: inline-block;
-      padding: 10px 0;
-      font-size: 34px;
-      border-top: 1px solid #92cfc4;
-      border-bottom: 1px solid #92cfc4; }
-    .side-container .side-content strong {
-      display: block;
-      margin-top: 3px;
-      font-weight: 700;
-      font-size: 110px;
-      text-align: center; }
-    .side-container .side-content #menu-page li {
+.indicator-box {
+  position: relative;
+  width: 293px;
+  margin: 70px auto 75px; }
+  .indicator-box .indicator {
+    text-align: center; }
+    .indicator-box .indicator li {
       display: inline-block;
       width: 90px;
       margin: 0 3px;
       vertical-align: bottom; }
-      .side-container .side-content #menu-page li a {
+      .indicator-box .indicator li a {
         font-size: 17px;
         color: #acdad2; }
-      .side-container .side-content #menu-page li:after {
+      .indicator-box .indicator li:after {
         display: block;
         height: 5px;
         margin-top: 9px;
@@ -661,17 +871,124 @@ button {
         border-radius: 2px;
         background-color: #acdad2;
         content: ''; }
-      .side-container .side-content #menu-page li.active a {
+      .indicator-box .indicator li.current a {
         font-weight: 700;
         font-size: 18px;
         color: white; }
-      .side-container .side-content #menu-page li.active:after {
+      .indicator-box .indicator li.current:after {
+        background-color: white; }
+  .indicator-box .btn-upgrade {
+    position: absolute;
+    top: 0;
+    right: -105px;
+    padding: 5px 10px;
+    border: 3px solid white;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    border-radius: 20px;
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 13px;
+    color: white; }
+    .indicator-box .btn-upgrade:hover, .indicator-box .btn-upgrade.on {
+      background-color: white;
+      color: #4aaf9d; }
+  @media (max-width: 1500px) {
+    .indicator-box {
+      width: 248px; }
+      .indicator-box .indicator li {
+        width: 75px; }
+        .indicator-box .indicator li a {
+          font-size: 15px; }
+        .indicator-box .indicator li.current a {
+          font-size: 16px; }
+      .indicator-box .btn-upgrade {
+        right: -90px; } }
+
+.car-sample {
+  padding: 0 80px; }
+  .car-sample img {
+    width: 100%; }
+  .car-sample:after {
+    display: inline-block;
+    width: 80%;
+    height: 1px;
+    background-color: #90cdc2;
+    content: ''; }
+  @media (max-width: 1500px) {
+    .car-sample {
+      padding: 0 40px; } }
+
+.main .sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  width: 34%;
+  min-width: 460px;
+  height: 100%; }
+
+.main .side-container {
+  position: absolute;
+  right: 0;
+  bottom: 50px;
+  left: 0;
+  z-index: 10;
+  text-align: center;
+  color: white; }
+  .main .side-container .side-content {
+    position: absolute;
+    top: -110px;
+    left: 0;
+    width: 100%;
+    z-index: 11; }
+    .main .side-container .side-content span {
+      display: inline-block;
+      padding: 10px 0;
+      font-size: 34px;
+      border-top: 1px solid #92cfc4;
+      border-bottom: 1px solid #92cfc4; }
+    .main .side-container .side-content strong {
+      display: block;
+      margin-top: 3px;
+      font-weight: 700;
+      font-size: 110px;
+      text-align: center; }
+    .main .side-container .side-content #menu-page li {
+      display: inline-block;
+      width: 90px;
+      margin: 0 3px;
+      vertical-align: bottom; }
+      .main .side-container .side-content #menu-page li a {
+        font-size: 17px;
+        color: #acdad2; }
+      .main .side-container .side-content #menu-page li:after {
+        display: block;
+        height: 5px;
+        margin-top: 9px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -ms-border-radius: 2px;
+        border-radius: 2px;
+        background-color: #acdad2;
+        content: ''; }
+      .main .side-container .side-content #menu-page li.active a {
+        font-weight: 700;
+        font-size: 18px;
+        color: white; }
+      .main .side-container .side-content #menu-page li.active:after {
         background-color: white; }
     @media (max-width: 1500px) {
-      .side-container .side-content span {
+      .main .side-container .side-content span {
         font-size: 27px; }
-      .side-container .side-content strong {
+      .main .side-container .side-content strong {
         font-size: 87px; } }
+
+.reservation .sidebar {
+  width: 34%;
+  min-width: 460px; }
 
 /*******************************
     Header
@@ -762,7 +1079,7 @@ button {
           background: url("../images/sprites-icon.png") repeat 0 0;
           line-height: 0;
           color: transparent;
-          vertical-align: middle;
+          vertical-align: sub;
           width: 64px;
           height: 64px;
           display: block;
@@ -816,7 +1133,7 @@ button {
     background: url("../images/sprites-icon.png") repeat -347px 0;
     line-height: 0;
     color: transparent;
-    vertical-align: middle;
+    vertical-align: sub;
     width: 41px;
     height: 41px;
     border: 0; }
@@ -843,7 +1160,7 @@ button {
     Footer
 *******************************/
 .footer {
-  position: fixed;
+  position: absolute;
   left: 0;
   bottom: 20px;
   z-index: 10;
@@ -872,13 +1189,27 @@ button {
     display: inline-block;
     margin: 0 5px; }
 
+.main .footer {
+  position: fixed; }
+
 /*******************************
     Common
 *******************************/
+.group {
+  padding: 45px 0 55px;
+  border-top: 1px solid #dcdcdc; }
+
 .section-title {
+  padding-bottom: 30px;
+  border-bottom: 2px solid #4aaf9d;
   font-weight: 700;
   font-size: 55px;
+  text-align: center;
   letter-spacing: -2px; }
+
+.secondary-title {
+  font-weight: 700;
+  font-size: 25px; }
 
 .feedback {
   position: fixed;
@@ -896,36 +1227,61 @@ button {
   .placeholder label {
     position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
     margin: auto;
-    color: #181818; }
+    padding: 0 20px;
+    font: 17px 'Noto Sans KR', sans-serif;
+    line-height: 3.412;
+    color: #7f7f7f; }
+
+.tooltip {
+  display: none;
+  position: absolute;
+  padding: 15px 40px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #4aaf9d;
+  font: 300 15px 'Noto Sans KR', sans-serif;
+  color: white; }
+  .tooltip:after {
+    display: inline-block;
+    background: url("../images/sprites-icon.png") repeat -520px 0;
+    line-height: 0;
+    color: transparent;
+    vertical-align: sub;
+    width: 17px;
+    height: 15px;
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    margin-left: -8px;
+    content: ''; }
+  .tooltip .point {
+    color: #ffe01c; }
+
+.notify-list li {
+  padding-left: 8px;
+  text-indent: -8px;
+  font: 200 15px 'Noto Sans KR', sans-serif;
+  color: #8d8d8d; }
+  .notify-list li:before {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    margin-right: 5px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #c6c6c6;
+    vertical-align: middle;
+    content: ''; }
 
 /*******************************
     Main
 *******************************/
-.main {
-  height: 100%; }
-  .main .sidebar {
-    width: 34%;
-    min-width: 460px;
-    height: 100%;
-    background-color: #4aaf9d; }
-  .main .content {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 34%;
-    z-index: 10;
-    width: 66%;
-    min-width: 740px;
-    height: 100%;
-    background-color: #fff; }
-    @media (max-width: 1200px) {
-      .main .content {
-        left: 460px; } }
-
 .page-guide {
   position: absolute;
   left: 50%;
@@ -951,29 +1307,32 @@ button {
       .page-guide a:hover .icon-big-down {
         background-position: -87px 0; }
 
-.reservation {
+.main-reservation {
   text-align: center; }
-  .reservation .reservation-step {
+  .main-reservation .section-title {
+    padding-bottom: 0;
+    border-bottom: 0; }
+  .main-reservation .reservation-step {
     display: inline-block;
     width: 100%;
     padding: 0 116px 0 149px;
     text-align: left; }
     @media (max-width: 1600px) {
-      .reservation .reservation-step {
+      .main-reservation .reservation-step {
         padding: 0 24px 0 40px; } }
-    .reservation .reservation-step .step-title {
+    .main-reservation .reservation-step .step-title {
       margin: 25px 0 10px;
       font-size: 24px; }
-      .reservation .reservation-step .step-title span {
+      .main-reservation .reservation-step .step-title span {
         color: #4aaf9d; }
-    .reservation .reservation-step .select-place {
+    .main-reservation .reservation-step .select-place {
       position: relative; }
-      .reservation .reservation-step .select-place:before {
+      .main-reservation .reservation-step .select-place:before {
         display: inline-block;
         background: url("../images/sprites-icon.png") repeat 0 -87px;
         line-height: 0;
         color: transparent;
-        vertical-align: middle;
+        vertical-align: sub;
         width: 21px;
         height: 30px;
         position: absolute;
@@ -981,23 +1340,23 @@ button {
         left: 40px;
         margin-top: -15px;
         content: ''; }
-      .reservation .reservation-step .select-place .form-control {
+      .main-reservation .reservation-step .select-place .form-control {
         padding-left: 80px;
         line-height: 84px; }
-      .reservation .reservation-step .select-place .btn {
+      .main-reservation .reservation-step .select-place .btn {
         height: 84px;
         padding: 0 20px;
         line-height: 3.154; }
-    .reservation .reservation-step > .active {
+    .main-reservation .reservation-step > .active {
       position: relative; }
-      .reservation .reservation-step > .active .select-place:before {
+      .main-reservation .reservation-step > .active .select-place:before {
         background-position: -43px -87px; }
-      .reservation .reservation-step > .active .select-place .form-control {
+      .main-reservation .reservation-step > .active .select-place .form-control {
         padding-left: 79px;
         border: 2px solid #4aaf9d;
         font-weight: 700;
         color: #000; }
-    .reservation .reservation-step .select-place-picker {
+    .main-reservation .reservation-step .select-place-picker {
       display: none;
       position: absolute;
       top: 100%;
@@ -1007,10 +1366,10 @@ button {
       border: 2px solid #4aaf9d;
       border-top: 0;
       background-color: #eef6f5; }
-      .reservation .reservation-step .select-place-picker .tabs {
+      .main-reservation .reservation-step .select-place-picker .tabs {
         padding: 16px 0;
         text-align: center; }
-        .reservation .reservation-step .select-place-picker .tabs li {
+        .main-reservation .reservation-step .select-place-picker .tabs li {
           display: inline-block;
           width: 145px;
           height: 42px;
@@ -1020,20 +1379,20 @@ button {
           line-height: 2;
           color: #4aaf9d;
           cursor: pointer; }
-          .reservation .reservation-step .select-place-picker .tabs li.active {
+          .main-reservation .reservation-step .select-place-picker .tabs li.active {
             border-color: #4aaf9d;
             background-color: #4aaf9d;
             color: #fff; }
-      .reservation .reservation-step .select-place-picker .tab-content {
+      .main-reservation .reservation-step .select-place-picker .tab-content {
         border-top: 1px solid #d7e6e4; }
-        .reservation .reservation-step .select-place-picker .tab-content .tab-pane {
+        .main-reservation .reservation-step .select-place-picker .tab-content .tab-pane {
           display: none; }
-      .reservation .reservation-step .select-place-picker .content-select-place {
+      .main-reservation .reservation-step .select-place-picker .content-select-place {
         position: relative;
         min-height: 223px; }
-        .reservation .reservation-step .select-place-picker .content-select-place > li {
+        .main-reservation .reservation-step .select-place-picker .content-select-place > li {
           margin-top: -1px; }
-          .reservation .reservation-step .select-place-picker .content-select-place > li .radio .radio-label {
+          .main-reservation .reservation-step .select-place-picker .content-select-place > li .radio .radio-label {
             display: inline-block;
             width: 306px;
             height: 65px;
@@ -1044,69 +1403,74 @@ button {
             line-height: 2.955;
             text-align: center;
             color: #74a39e; }
-          .reservation .reservation-step .select-place-picker .content-select-place > li .radio .radio-display {
+          .main-reservation .reservation-step .select-place-picker .content-select-place > li .radio .radio-display {
+            width: 32px;
+            height: 32px;
             margin: 0 0 0 -52px;
-            background-color: #f6fafa; }
-          .reservation .reservation-step .select-place-picker .content-select-place > li .radio input[type="radio"]:checked ~ .radio-label {
+            background-color: #f6fafa;
+            background-image: url("../images/form-rental-place.png");
+            vertical-align: text-bottom; }
+          .main-reservation .reservation-step .select-place-picker .content-select-place > li .radio input[type="radio"]:checked ~ .radio-label {
             background-color: #eef6f5;
             font-weight: 700;
             color: #4aaf9d; }
-          .reservation .reservation-step .select-place-picker .content-select-place > li .radio input[type="radio"]:checked ~ .radio-display {
-            background-color: #eef6f5; }
-          .reservation .reservation-step .select-place-picker .content-select-place > li .content-place {
+          .main-reservation .reservation-step .select-place-picker .content-select-place > li .radio input[type="radio"]:checked ~ .radio-display {
+            background-color: #eef6f5;
+            background-image: url("../images/form-rental-place-checked.png"); }
+          .main-reservation .reservation-step .select-place-picker .content-select-place > li .content-place {
             display: none;
             position: absolute;
             top: 0;
             left: 306px;
             padding: 40px 0 40px 65px; }
-            .reservation .reservation-step .select-place-picker .content-select-place > li .content-place .place-name {
+            .main-reservation .reservation-step .select-place-picker .content-select-place > li .content-place .place-name {
               margin-bottom: 20px;
               font-weight: 700;
               font-size: 25px; }
-            .reservation .reservation-step .select-place-picker .content-select-place > li .content-place .place-info {
+            .main-reservation .reservation-step .select-place-picker .content-select-place > li .content-place .place-info {
               font-family: 'Montserrat', 'Noto Sans KR', sans-serif; }
-              .reservation .reservation-step .select-place-picker .content-select-place > li .content-place .place-info > li {
+              .main-reservation .reservation-step .select-place-picker .content-select-place > li .content-place .place-info > li {
                 padding: 2px 0; }
-                .reservation .reservation-step .select-place-picker .content-select-place > li .content-place .place-info > li.place-address {
+                .main-reservation .reservation-step .select-place-picker .content-select-place > li .content-place .place-info > li.place-address {
                   padding: 2px 0 2px 54px;
                   text-indent: -54px; }
-                .reservation .reservation-step .select-place-picker .content-select-place > li .content-place .place-info > li i {
+                .main-reservation .reservation-step .select-place-picker .content-select-place > li .content-place .place-info > li i {
                   margin-right: 5px; }
-    .reservation .reservation-step .select-datetime {
+    .main-reservation .reservation-step .select-datetime {
       display: table;
       width: 100%;
       border: 1px solid #e1e1e1; }
-      .reservation .reservation-step .select-datetime .add-on {
+      .main-reservation .reservation-step .select-datetime .add-on {
         display: table-cell;
         width: 5%;
         text-align: center;
         vertical-align: middle; }
-        .reservation .reservation-step .select-datetime .add-on:before {
+        .main-reservation .reservation-step .select-datetime .add-on:before {
           display: inline-block;
           background: url("../images/sprites-icon.png") repeat -563px 0;
           line-height: 0;
           color: transparent;
-          vertical-align: middle;
+          vertical-align: sub;
           width: 24px;
           height: 24px;
           content: ''; }
-      .reservation .reservation-step .select-datetime .select-date,
-      .reservation .reservation-step .select-datetime .select-time {
+      .main-reservation .reservation-step .select-datetime .select-date,
+      .main-reservation .reservation-step .select-datetime .select-time {
         display: table-cell;
         height: 84px;
         padding: 0 30px;
         text-align: center;
         vertical-align: middle; }
-        .reservation .reservation-step .select-datetime .select-date .text-date,
-        .reservation .reservation-step .select-datetime .select-date .text-time,
-        .reservation .reservation-step .select-datetime .select-time .text-date,
-        .reservation .reservation-step .select-datetime .select-time .text-time {
+        .main-reservation .reservation-step .select-datetime .select-date .text-date,
+        .main-reservation .reservation-step .select-datetime .select-date .text-time,
+        .main-reservation .reservation-step .select-datetime .select-time .text-date,
+        .main-reservation .reservation-step .select-datetime .select-time .text-time {
           cursor: pointer; }
-        .reservation .reservation-step .select-datetime .select-date.active,
-        .reservation .reservation-step .select-datetime .select-time.active {
+        .main-reservation .reservation-step .select-datetime .select-date.active,
+        .main-reservation .reservation-step .select-datetime .select-time.active {
           position: relative; }
-          .reservation .reservation-step .select-datetime .select-date.active:after,
-          .reservation .reservation-step .select-datetime .select-time.active:after {
+          .main-reservation .reservation-step .select-datetime .select-date.active:after,
+          .main-reservation .reservation-step .select-datetime .select-time.active:after {
             position: absolute;
             top: -1px;
             z-index: -1;
@@ -1114,102 +1478,102 @@ button {
             height: 84px;
             border: 2px solid #4aaf9d;
             content: ''; }
-      .reservation .reservation-step .select-datetime .select-date .text-date:before, .reservation .reservation-step .select-datetime .select-date .text-date:after {
+      .main-reservation .reservation-step .select-datetime .select-date .text-date:before, .main-reservation .reservation-step .select-datetime .select-date .text-date:after {
         content: " ";
         display: table; }
-      .reservation .reservation-step .select-datetime .select-date .text-date:after {
+      .main-reservation .reservation-step .select-datetime .select-date .text-date:after {
         clear: both; }
-      .reservation .reservation-step .select-datetime .select-date .text-date:before {
+      .main-reservation .reservation-step .select-datetime .select-date .text-date:before {
         float: left;
         display: inline-block;
         background: url("../images/sprites-icon.png") repeat -173px -87px;
         line-height: 0;
         color: transparent;
-        vertical-align: middle;
+        vertical-align: sub;
         width: 25px;
         height: 25px;
         margin: 8px 9px 0 0;
         content: ''; }
-      .reservation .reservation-step .select-datetime .select-date .text-date strong {
+      .main-reservation .reservation-step .select-datetime .select-date .text-date strong {
         float: left;
         font: 500 35px 'Montserrat', sans-serif; }
-      .reservation .reservation-step .select-datetime .select-date .text-date small {
+      .main-reservation .reservation-step .select-datetime .select-date .text-date small {
         float: left;
         margin: 6px 0 0 9px;
         padding-left: 9px;
         border-left: 1px solid #d6d6d6;
         font-size: 15px;
         color: #545454; }
-        .reservation .reservation-step .select-datetime .select-date .text-date small span {
+        .main-reservation .reservation-step .select-datetime .select-date .text-date small span {
           display: block;
           margin-top: -3px;
           font: 14px 'Montserrat', sans-serif;
           color: #434343;
           letter-spacing: 1.5px; }
-      .reservation .reservation-step .select-datetime .select-date.active:before {
+      .main-reservation .reservation-step .select-datetime .select-date.active:before {
         background-position: -217px -87px; }
-      .reservation .reservation-step .select-datetime .select-date.active:after {
+      .main-reservation .reservation-step .select-datetime .select-date.active:after {
         left: -1px; }
-      .reservation .reservation-step .select-datetime .select-time {
+      .main-reservation .reservation-step .select-datetime .select-time {
         border-left: 1px solid #e1e1e1; }
-        .reservation .reservation-step .select-datetime .select-time:before {
+        .main-reservation .reservation-step .select-datetime .select-time:before {
           float: left;
           display: inline-block;
           background: url("../images/sprites-icon.png") repeat -260px -87px;
           line-height: 0;
           color: transparent;
-          vertical-align: middle;
+          vertical-align: sub;
           width: 23px;
           height: 23px;
           margin: 10px 9px 0 0;
           content: ''; }
-        .reservation .reservation-step .select-datetime .select-time strong {
+        .main-reservation .reservation-step .select-datetime .select-time strong {
           font: 500 35px 'Montserrat', sans-serif; }
-        .reservation .reservation-step .select-datetime .select-time.active:before {
+        .main-reservation .reservation-step .select-datetime .select-time.active:before {
           background-position: -303px -87px; }
-        .reservation .reservation-step .select-datetime .select-time.active:after {
+        .main-reservation .reservation-step .select-datetime .select-time.active:after {
           right: -1px; }
       @media (max-width: 1200px) {
-        .reservation .reservation-step .select-datetime .select-date,
-        .reservation .reservation-step .select-datetime .select-time {
+        .main-reservation .reservation-step .select-datetime .select-date,
+        .main-reservation .reservation-step .select-datetime .select-time {
           padding: 0 11px; }
-          .reservation .reservation-step .select-datetime .select-date:before,
-          .reservation .reservation-step .select-datetime .select-time:before {
+          .main-reservation .reservation-step .select-datetime .select-date:before,
+          .main-reservation .reservation-step .select-datetime .select-time:before {
             margin-top: 3px; }
-          .reservation .reservation-step .select-datetime .select-date strong,
-          .reservation .reservation-step .select-datetime .select-time strong {
+          .main-reservation .reservation-step .select-datetime .select-date strong,
+          .main-reservation .reservation-step .select-datetime .select-time strong {
             font-size: 26px; }
-          .reservation .reservation-step .select-datetime .select-date small,
-          .reservation .reservation-step .select-datetime .select-time small {
+          .main-reservation .reservation-step .select-datetime .select-date small,
+          .main-reservation .reservation-step .select-datetime .select-time small {
             margin-top: 4px;
             font-size: 12px; }
-            .reservation .reservation-step .select-datetime .select-date small span,
-            .reservation .reservation-step .select-datetime .select-time small span {
+            .main-reservation .reservation-step .select-datetime .select-date small span,
+            .main-reservation .reservation-step .select-datetime .select-time small span {
               margin-top: -1px;
               font-size: 11px; } }
-      .reservation .reservation-step .select-datetime .datepicker,
-      .reservation .reservation-step .select-datetime .timepicker {
+      .main-reservation .reservation-step .select-datetime .datepicker,
+      .main-reservation .reservation-step .select-datetime .timepicker {
         display: none;
         position: absolute;
         top: 84px;
         z-index: 11;
         cursor: default; }
-      .reservation .reservation-step .select-datetime .datepicker {
+      .main-reservation .reservation-step .select-datetime .datepicker {
         left: -1px;
         width: 370px; }
-      .reservation .reservation-step .select-datetime .timepicker {
+      .main-reservation .reservation-step .select-datetime .timepicker {
         right: -1px;
         width: 352px; }
-        .reservation .reservation-step .select-datetime .timepicker .btn-align-center {
+        .main-reservation .reservation-step .select-datetime .timepicker .btn-align-center {
           margin-top: 18px; }
-    .reservation .reservation-step .select-car:before, .reservation .reservation-step .select-car:after {
+    .main-reservation .reservation-step .select-car:before, .main-reservation .reservation-step .select-car:after {
       content: " ";
       display: table; }
-    .reservation .reservation-step .select-car:after {
+    .main-reservation .reservation-step .select-car:after {
       clear: both; }
-    .reservation .reservation-step .select-car .checkbox {
+    .main-reservation .reservation-step .select-car .checkbox {
       float: left; }
-      .reservation .reservation-step .select-car .checkbox .checkbox-label {
+      .main-reservation .reservation-step .select-car .checkbox .checkbox-label {
         display: inline-block;
         width: 135px;
         margin-right: -1px;
@@ -1218,20 +1582,20 @@ button {
         font-size: 20px;
         line-height: 4.1;
         text-align: center; }
-      .reservation .reservation-step .select-car .checkbox input[type=checkbox]:checked + .checkbox-label {
+      .main-reservation .reservation-step .select-car .checkbox input[type=checkbox]:checked + .checkbox-label {
         background-color: #4aaf9d;
         color: white; }
-    .reservation .reservation-step .complete .select-place:before {
+    .main-reservation .reservation-step .complete .select-place:before {
       display: inline-block;
       background: url("../images/sprites-icon.png") repeat -43px -87px;
       line-height: 0;
       color: transparent;
-      vertical-align: middle; }
-    .reservation .reservation-step .complete.select-date:before {
+      vertical-align: sub; }
+    .main-reservation .reservation-step .complete.select-date:before {
       background-position: -217px -87px; }
-    .reservation .reservation-step .complete.select-time:before {
+    .main-reservation .reservation-step .complete.select-time:before {
       background-position: -303px -87px; }
-    .reservation .reservation-step + .btn-align-center {
+    .main-reservation .reservation-step + .btn-align-center {
       margin-top: 25px; }
 
 .service-info:before, .service-info:after {
@@ -1267,7 +1631,7 @@ button {
       background: url("../images/sprites-icon.png") repeat 0 -217px;
       line-height: 0;
       color: transparent;
-      vertical-align: middle;
+      vertical-align: sub;
       width: 108px;
       height: 108px;
       display: block;
@@ -1296,6 +1660,9 @@ button {
 
 .customer-service {
   text-align: center; }
+  .customer-service .section-title {
+    padding-bottom: 0;
+    border-bottom: 0; }
   .customer-service .cs-info {
     margin-top: 30px;
     font: 300 17px 'Montserrat', 'Noto Sans KR', sans-serif; }
@@ -1354,7 +1721,7 @@ button {
           background: url("../images/sprites-icon.png") repeat 0 0;
           line-height: 0;
           color: transparent;
-          vertical-align: middle;
+          vertical-align: sub;
           width: 95px;
           height: 57px;
           display: block;
@@ -1370,8 +1737,509 @@ button {
           background-position: 0 -130px; }
 
 /*******************************
+    Reservation
+*******************************/
+.reservation .btn-align-center {
+  margin-top: 34px; }
+  .reservation .btn-align-center .btn {
+    padding: 0 177px; }
+
+.reservation-list {
+  display: inline-block;
+  margin: 13px 0 25px;
+  padding-left: 34px;
+  background: url("../images/line-dotted.png") no-repeat 0 100%;
+  text-align: left; }
+  .reservation-list li {
+    padding-top: 10px;
+    color: white; }
+    .reservation-list li:first-child {
+      padding-top: 0; }
+    .reservation-list li .icon-calendar,
+    .reservation-list li .icon-map-white {
+      margin: 0 4px; }
+    .reservation-list li > span {
+      margin-left: 10px;
+      font-size: 18px; }
+    .reservation-list li p {
+      display: inline-block;
+      margin-left: 80px;
+      font-weight: 700;
+      font-size: 18px; }
+      .reservation-list li p b {
+        font: 500 22px 'Montserrat', sans-serif; }
+        .reservation-list li p b small {
+          font-weight: 400;
+          font-size: 14px; }
+
+.reservation-payment {
+  margin: 0 115px;
+  font-family: 'Montserrat', 'NanumSquare', sans-serif; }
+  .reservation-payment dt {
+    padding: 17px 30px 20px;
+    background-color: #f9f9f9; }
+    .reservation-payment dt:before, .reservation-payment dt:after {
+      content: " ";
+      display: table; }
+    .reservation-payment dt:after {
+      clear: both; }
+    .reservation-payment dt span {
+      float: left;
+      margin-top: 10px;
+      font-weight: 700;
+      font-size: 20px; }
+    .reservation-payment dt .total-price {
+      float: right;
+      font-weight: 500;
+      font-size: 34px;
+      color: #4aaf9d; }
+      .reservation-payment dt .total-price em {
+        font-weight: 400;
+        font-size: 19px; }
+  .reservation-payment dd {
+    padding: 2px 30px;
+    background-color: #acdad2; }
+    .reservation-payment dd:before, .reservation-payment dd:after {
+      content: " ";
+      display: table; }
+    .reservation-payment dd:after {
+      clear: both; }
+    .reservation-payment dd:nth-of-type(1) {
+      padding-top: 15px; }
+    .reservation-payment dd:last-child {
+      padding-bottom: 18px; }
+    .reservation-payment dd span {
+      float: left;
+      font-size: 16px; }
+    .reservation-payment dd .price {
+      float: right;
+      font-weight: 500;
+      font-size: 20px; }
+      .reservation-payment dd .price em {
+        font-weight: 400;
+        font-size: 18px; }
+  @media (max-width: 1500px) {
+    .reservation-payment {
+      margin: 0 45px; } }
+
+.reservation-option {
+  padding: 75px 0 60px; }
+  .reservation-option:before, .reservation-option:after {
+    content: " ";
+    display: table; }
+  .reservation-option:after {
+    clear: both; }
+  .reservation-option .secondary-title {
+    margin-bottom: 35px; }
+    .reservation-option .secondary-title i {
+      margin-left: 5px; }
+  .reservation-option .delivery {
+    float: left;
+    width: 45%; }
+  .reservation-option .insurance {
+    float: left;
+    width: 55%; }
+    .reservation-option .insurance .secondary-title {
+      position: relative; }
+      .reservation-option .insurance .secondary-title .icon-point:hover + .tooltip {
+        display: block;
+        top: -88px;
+        left: -80px;
+        width: 383px; }
+
+.input-reservation-info .secondary-title {
+  margin-bottom: 9px; }
+
+.input-reservation-info .checkbox {
+  text-align: right; }
+
+.input-reservation-info .license-type-box .radio {
+  float: left;
+  width: 50%; }
+  .input-reservation-info .license-type-box .radio .radio-label {
+    display: inline-block;
+    width: 100%;
+    border: 1px solid #dadada;
+    border-left: 0;
+    background-color: #f6f6f6;
+    font-size: 18px;
+    line-height: 3.222;
+    text-align: center; }
+  .input-reservation-info .license-type-box .radio:first-child .radio-label {
+    border-left: 1px solid #dadada; }
+  .input-reservation-info .license-type-box .radio input[type=radio]:checked + .radio-label {
+    background-color: #4aaf9d;
+    color: white; }
+
+.select-payment .secondary-title {
+  margin-bottom: 42px; }
+
+.select-payment .form-inline .form-label {
+  vertical-align: top; }
+
+.select-payment .payment-option-box > div,
+.select-payment .discount-coupon > div {
+  display: table;
+  border-collapse: collapse;
+  width: 100%; }
+  .select-payment .payment-option-box > div.bottom,
+  .select-payment .discount-coupon > div.bottom {
+    margin-top: -1px; }
+
+.select-payment .payment-option-box .radio,
+.select-payment .discount-coupon .radio {
+  display: table-cell;
+  width: 50%;
+  border: 1px solid #d5d5d5;
+  vertical-align: top; }
+  .select-payment .payment-option-box .radio .radio-label,
+  .select-payment .discount-coupon .radio .radio-label {
+    display: block;
+    padding: 16px 0;
+    background-color: #f6f6f6;
+    font: 200 17px 'Noto Sans KR', sans-serif;
+    color: #7f7f7f;
+    text-align: center;
+    vertical-align: middle; }
+    .select-payment .payment-option-box .radio .radio-label:before,
+    .select-payment .discount-coupon .radio .radio-label:before {
+      display: inline-block;
+      background: url("../images/sprites-icon.png") repeat 0 0;
+      line-height: 0;
+      color: transparent;
+      vertical-align: sub;
+      width: 25px;
+      height: 25px;
+      margin-right: 5px;
+      vertical-align: middle;
+      content: ''; }
+    @media (max-width: 1500px) {
+      .select-payment .payment-option-box .radio .radio-label,
+      .select-payment .discount-coupon .radio .radio-label {
+        font-size: 13px; } }
+  .select-payment .payment-option-box .radio input[type="radio"]:checked ~ .radio-label,
+  .select-payment .discount-coupon .radio input[type="radio"]:checked ~ .radio-label {
+    background-color: #4aaf9d;
+    color: white; }
+
+.select-payment .payment-option-box .creditCard .radio-label:before,
+.select-payment .discount-coupon .creditCard .radio-label:before {
+  background-position: -477px -127px; }
+
+.select-payment .payment-option-box .creditCard input[type="radio"]:checked ~ .radio-label:before,
+.select-payment .discount-coupon .creditCard input[type="radio"]:checked ~ .radio-label:before {
+  background-position: -520px -127px; }
+
+.select-payment .payment-option-box .account-transfer .radio-label:before,
+.select-payment .discount-coupon .account-transfer .radio-label:before {
+  background-position: -563px -130px; }
+
+.select-payment .payment-option-box .account-transfer input[type="radio"]:checked ~ .radio-label:before,
+.select-payment .discount-coupon .account-transfer input[type="radio"]:checked ~ .radio-label:before {
+  background-position: -607px -130px; }
+
+.select-payment .payment-option-box .nPay .radio-label:before,
+.select-payment .discount-coupon .nPay .radio-label:before {
+  width: 80px;
+  height: 32px;
+  margin-right: 0;
+  background: url("../images/npay.png") no-repeat 0 0; }
+
+.select-payment .payment-option-box .nPay input[type="radio"]:checked ~ .radio-label:before,
+.select-payment .discount-coupon .nPay input[type="radio"]:checked ~ .radio-label:before {
+  background-image: url("../images/npay-on.png"); }
+
+.select-payment .payment-option-box .kakaoPay .radio-label:before,
+.select-payment .discount-coupon .kakaoPay .radio-label:before {
+  width: 109px;
+  height: 32px;
+  margin-right: 0;
+  background: url("../images/kakaopay.png") no-repeat 0 0; }
+
+.select-payment .payment-option-box .kakaoPay input[type="radio"]:checked ~ .radio-label:before,
+.select-payment .discount-coupon .kakaoPay input[type="radio"]:checked ~ .radio-label:before {
+  background-image: url("../images/kakaopay-on.png"); }
+
+@media (max-width: 1500px) {
+  .select-payment .payment-option-box .radio .radio-label,
+  .select-payment .discount-coupon .radio .radio-label {
+    font-size: 13px; }
+  .select-payment .payment-option-box .nPay .radio-label:before,
+  .select-payment .discount-coupon .nPay .radio-label:before {
+    width: 65px;
+    height: 26px;
+    background-size: 65px 26px; }
+  .select-payment .payment-option-box .kakaoPay .radio-label:before,
+  .select-payment .discount-coupon .kakaoPay .radio-label:before {
+    width: 89px;
+    height: 26px;
+    background-size: 89px 26px; } }
+
+.select-payment .discount-coupon .coupon .radio-label {
+  font-size: 18px; }
+  .select-payment .discount-coupon .coupon .radio-label:before {
+    display: none; }
+  @media (max-width: 1500px) {
+    .select-payment .discount-coupon .coupon .radio-label {
+      font-size: 16px; } }
+
+.select-payment .discount-coupon .promotion-code .radio-label:before {
+  width: 28px;
+  height: 24px;
+  background-position: -563px -173px; }
+
+.select-payment .discount-coupon .promotion-code input[type="radio"]:checked ~ .radio-label:before {
+  background-position: -607px -173px; }
+
+.select-payment .select-coupon {
+  margin-top: -1px; }
+  .select-payment .select-coupon .selectbox {
+    border: 0;
+    vertical-align: top; }
+  .select-payment .select-coupon .input-group-btn {
+    width: 74px; }
+    .select-payment .select-coupon .input-group-btn .btn {
+      width: 100%;
+      background-color: #939598;
+      font-size: 16px;
+      line-height: 3.375; }
+      .select-payment .select-coupon .input-group-btn .btn.btn-coupon-select {
+        border-color: #4aaf9d;
+        background-color: #4aaf9d; }
+
+.select-payment .select-coupon-box .form-label {
+  vertical-align: middle; }
+
+.reservation-agreement {
+  text-align: center; }
+  .reservation-agreement .checkbox-label {
+    font: 18px 'Noto Sans KR', sans-serif; }
+  .reservation-agreement dt {
+    padding: 15px 0;
+    border: 1px solid #4aaf9d;
+    background-color: white; }
+  .reservation-agreement dd {
+    padding: 20px 0;
+    border: 1px solid #d5d5d5;
+    background-color: #f7f7f7; }
+  .reservation-agreement .each-agreement {
+    display: inline-block;
+    width: 378px;
+    text-align: left; }
+    .reservation-agreement .each-agreement li {
+      padding: 3px 0; }
+      .reservation-agreement .each-agreement li:before, .reservation-agreement .each-agreement li:after {
+        content: " ";
+        display: table; }
+      .reservation-agreement .each-agreement li:after {
+        clear: both; }
+      .reservation-agreement .each-agreement li .checkbox {
+        float: left; }
+      .reservation-agreement .each-agreement li .btn {
+        float: right; }
+
+/*******************************
+    Layer
+*******************************/
+.modal {
+  display: none; }
+  .modal.modal-backdrop:after {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    margin: auto;
+    background-color: #000;
+    opacity: .8;
+    filter: alpha(opacity=80);
+    content: ''; }
+  .modal .btn-modal-close {
+    position: absolute;
+    top: 18px;
+    right: 28px;
+    display: inline-block;
+    background: url("../images/sprites-icon.png") repeat -477px 0;
+    line-height: 0;
+    color: transparent;
+    vertical-align: sub;
+    width: 30px;
+    height: 30px; }
+  .modal .modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 21; }
+  .modal .modal-head {
+    padding: 20px 38px;
+    background-color: #4aaf9d;
+    font-weight: 700;
+    font-size: 27px;
+    color: white; }
+  .modal .modal-body {
+    padding: 0 10px 10px;
+    background-color: white; }
+    .modal .modal-body .modal-body-inner {
+      padding: 0 20px; }
+    .modal .modal-body .text {
+      padding: 28px 0 21px;
+      font-size: 20px; }
+      .modal .modal-body .text b {
+        font-weight: 700;
+        font-size: 30px; }
+
+.upgrade {
+  position: absolute;
+  top: 85px;
+  left: 50%;
+  width: 360px;
+  margin-left: -180px;
+  padding: 10px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  background-color: white; }
+  .upgrade .btn-modal-close {
+    top: 19px;
+    right: 22px;
+    background-position: -433px 0; }
+  .upgrade .text {
+    margin: 52px 0 20px;
+    font-size: 18px; }
+  .upgrade .image {
+    padding: 0 8%; }
+
+.select-delivery .modal-content {
+  margin: -290px 0 0 -442px; }
+
+.select-delivery .modal-body {
+  padding: 0 38px 49px; }
+  .select-delivery .modal-body:before, .select-delivery .modal-body:after {
+    content: " ";
+    display: table; }
+  .select-delivery .modal-body:after {
+    clear: both; }
+
+.select-delivery .delivery-list {
+  float: left;
+  width: 342px; }
+  .select-delivery .delivery-list .search-delivery {
+    position: relative; }
+    .select-delivery .delivery-list .search-delivery .icon-search {
+      position: absolute;
+      top: 50%;
+      left: 28px;
+      margin-top: -10px; }
+    .select-delivery .delivery-list .search-delivery .form-control {
+      height: 70px;
+      padding-left: 62px;
+      border: 1px solid #d8d8d8;
+      background-color: #f8f8f8;
+      line-height: 70px;
+      font-size: 18px; }
+  .select-delivery .delivery-list .delivery-place-list {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 307px;
+    border: 1px solid #d8d8d8;
+    border-top: 0; }
+    .select-delivery .delivery-list .delivery-place-list li {
+      padding: 15px 20px;
+      border-bottom: 1px solid #d8d8d8; }
+      .select-delivery .delivery-list .delivery-place-list li:before, .select-delivery .delivery-list .delivery-place-list li:after {
+        content: " ";
+        display: table; }
+      .select-delivery .delivery-list .delivery-place-list li:after {
+        clear: both; }
+      .select-delivery .delivery-list .delivery-place-list li .place {
+        float: left;
+        padding-top: 5px; }
+        .select-delivery .delivery-list .delivery-place-list li .place span {
+          display: block;
+          font-weight: 700;
+          font-size: 20px; }
+        .select-delivery .delivery-list .delivery-place-list li .place .btn {
+          margin-top: 12px;
+          padding: 0 29px; }
+      .select-delivery .delivery-list .delivery-place-list li.select {
+        border: 2px solid #4aaf9d;
+        background-color: #f3f9f7; }
+    .select-delivery .delivery-list .delivery-place-list .badge-line-number {
+      float: right;
+      display: inline-block;
+      width: 70px;
+      height: 32px;
+      -webkit-border-radius: 16px;
+      -moz-border-radius: 16px;
+      -ms-border-radius: 16px;
+      border-radius: 16px;
+      background-color: #939598;
+      font-size: 16px;
+      line-height: 2;
+      color: white;
+      text-align: center;
+      vertical-align: top; }
+
+.select-delivery .map-area {
+  overflow: hidden;
+  float: left;
+  height: 377px;
+  border: 1px solid #d8d8d8;
+  border-left: 0; }
+  .select-delivery .map-area * {
+    width: 100%; }
+
+.promotion-code-box .modal-content {
+  width: 490px;
+  margin-top: -175px;
+  margin-left: -245px; }
+
+.promotion-code-box .modal-body {
+  padding-top: 40px;
+  text-align: center; }
+  .promotion-code-box .modal-body .promotion-title {
+    display: block;
+    margin-bottom: 21px;
+    font-size: 18px;
+    color: #4aaf9d; }
+  .promotion-code-box .modal-body .code-number {
+    padding: 15px 56px;
+    -webkit-border-radius: 33px;
+    -moz-border-radius: 33px;
+    -ms-border-radius: 33px;
+    border-radius: 33px;
+    background-color: #eff8f6;
+    font: 700 30px 'Lato', sans-serif;
+    color: #4aaf9d; }
+  .promotion-code-box .modal-body .text {
+    font-size: 25px; }
+  .promotion-code-box .modal-body .btn-group {
+    margin-top: 30px; }
+
+.cancel-fee .modal-content {
+  width: 490px;
+  margin-top: -293px;
+  margin-left: -245px; }
+
+.cancel-fee .text {
+  padding-top: 35px;
+  text-align: center; }
+
+.cancel-fee .notify-list {
+  margin: 25px 0 20px; }
+
+/*******************************
     Helper Class
 *******************************/
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
 .sr-only {
   position: absolute;
   width: 1px;
