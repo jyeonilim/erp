@@ -6,6 +6,7 @@
 .form-label {
     font-size: 20px;
 }
+
 // Input Form
 .form-control {
     width: 100%;
@@ -15,6 +16,13 @@
     font: 17px 'NotoSans', sans-serif;
     line-height: (60-2)/17;
 }
+// Input Form Textarea
+textarea.form-control {
+    height: auto;
+    line-height: 20px;
+    @include box-sizing(border-box);
+}
+
 .input-lg {
     height: 84px;
     font-size: 26px;
@@ -157,7 +165,7 @@
             top: 0;
             right: 0;
             border-left: 1px solid #d5d5d5;
-            @include sp-icon(-550px,-70px);
+            @include sp-icon(-546px,-68px);
             @include sp-size(40px,42px);
             content: '';
         }
@@ -238,7 +246,6 @@
     right: 20px;
     bottom: 0;
     margin: auto;
-    @include sp-icon(-563px,-87px);
+    @include sp-icon(-559px,-86px);
     @include sp-size(12px,7px);
 }
-//////

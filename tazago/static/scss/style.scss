@@ -278,6 +278,53 @@ button {
         min-width: 460px;
     }
 }
+.sub {
+    .side-container {
+        position: absolute;
+        top: 405px;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        text-align: center;
+        color: $white;
+        .side-content {
+            position: absolute;
+            top: -150px;
+            left: 0;
+            width: 100%;
+            z-index: 11;
+            span {
+                display: inline-block;
+                padding: 10px 0;
+                font-size: 23px;
+                border-top: 1px solid #92cfc4;
+                border-bottom: 1px solid #92cfc4;
+            }
+            strong {
+                display: block;
+                margin-top: 3px;
+                font-weight: 700;
+                font-size: 74px;
+                text-align: center;
+            }
+        }
+        @media (max-width: 1500px) {
+            top: 365px;
+            .side-content {
+                top: -110px;
+                span {
+                    font-size: 20px;
+                }
+                strong {
+                    font-size: 70px;
+                }
+            }
+            .image-area {
+                padding: 0 30px;
+            }
+        }
+    }
+}
 
 /*******************************
     Header
@@ -382,30 +429,30 @@ button {
         .item-login {
             a {
                 &:before {
-                    background-position: 0 -477px;
+                    background-position: 0 -473px;
                 }
                 &:hover:before, &.current:before {
-                    background-position: 0 -563px;
+                    background-position: 0 -559px;
                 }
             }
         }
         .item-join {
             a {
                 &:before {
-                    background-position: -87px -477px;
+                    background-position: -87px -473px;
                 }
                 &:hover:before, &.current:before {
-                    background-position: -87px -563px;
+                    background-position: -87px -559px;
                 }
             }
         }
         .item-reservation-confirm {
             a {
                 &:before {
-                    background-position: -173px -477px;
+                    background-position: -172px -473px;
                 }
                 &:hover:before, &.current:before {
-                    background-position: -173px -563px;
+                    background-position: -172px -559px;
                 }
             }
         }
@@ -413,30 +460,30 @@ button {
             a {
                 &:before {
                     width: 85px;
-                    background-position: -260px -477px;
+                    background-position: -258px -473px;
                 }
                 &:hover:before, &.current:before {
-                    background-position: -260px -563px;
+                    background-position: -258px -559px;
                 }
             }
         }
         .item-notice {
             a {
                 &:before {
-                    background-position: -390px -477px;
+                    background-position: -387px -473px;
                 }
                 &:hover:before, &.current:before {
-                    background-position: -390px -563px;
+                    background-position: -387px -559px;
                 }
             }
         }
         .item-faq {
             a {
                 &:before {
-                    background-position: -477px -477px;
+                    background-position: -473px -473px;
                 }
                 &:hover:before, &.current:before {
-                    background-position: -477px -563px;
+                    background-position: -473px -559px;
                 }
             }
         }
@@ -460,7 +507,7 @@ button {
         position: absolute;
         top: 31px;
         left: 42px;
-        @include sp-icon(-347px,0);
+        @include sp-icon(-344px,0);
         @include sp-size(41px,41px);
         border: 0;
     }
@@ -590,6 +637,9 @@ button {
     font-size: 55px;
     text-align: center;
     letter-spacing: -2px;
+    &.lineless {
+        border-bottom: 0;
+    }
 }
 .secondary-title {
     font-weight: 700;
@@ -636,7 +686,7 @@ button {
     font: 300 15px 'NotoSans', sans-serif;
     color: $white;
     &:after {
-        @include sp-icon(-520px,0);
+        @include sp-icon(-516px,0);
         @include sp-size(17px,15px);
         position: absolute;
         left: 50%;
@@ -698,10 +748,10 @@ button {
         &:hover {
             color: $brand-primary;
             .icon-big-up {
-                background-position: -260px 0;
+                background-position: -258px 0;
             }
             .icon-big-down {
-                background-position: -87px 0;
+                background-position: -86px 0;
             }
         }
     }
@@ -732,7 +782,7 @@ button {
     .select-place {
         position: relative;
         &:before {
-            @include sp-icon(0,-87px);
+            @include sp-icon(0,-86px);
             @include sp-size(21px,30px);
             position: absolute;
             top: 50%;
@@ -754,7 +804,7 @@ button {
         position: relative;
         .select-place {
             &:before {
-                background-position: -43px -87px;
+                background-position: -43px -86px;
             }
             .form-control {
                 padding-left: 79px;
@@ -874,7 +924,7 @@ button {
             text-align: center;
             vertical-align: middle;
             &:before {
-                @include sp-icon(-563px,0);
+                @include sp-icon(-559px,0);
                 @include sp-size(24px,24px);
                 content: '';
             }
@@ -908,7 +958,7 @@ button {
                 @include clearfix;
                 &:before {
                     float: left;
-                    @include sp-icon(-173px,-87px);
+                    @include sp-icon(-172px,-86px);
                     @include sp-size(25px,25px);
                     margin: 8px 9px 0 0;
                     content: '';
@@ -936,7 +986,7 @@ button {
             &.active{
                 .text-date {
                     &:before {
-                        background-position: -217px -87px;
+                        background-position: -215px -86px;
                     }
                 }
                 &:after {
@@ -947,7 +997,7 @@ button {
         .select-time {
             &:before {
                 float: left;
-                @include sp-icon(-260px,-87px);
+                @include sp-icon(-258px,-86px);
                 @include sp-size(23px,23px);
                 margin: 10px 9px 0 0;
                 content: '';
@@ -958,7 +1008,7 @@ button {
             }
             &.active {
                 &:before {
-                    background-position: -303px -87px;
+                    background-position: -301px -86px;
                 }
                 &:after {
                     right: -1px;
@@ -1028,17 +1078,17 @@ button {
     .complete {
         .select-place {
             &:before {
-                @include sp-icon(-43px,-87px);
+                @include sp-icon(-43px,-86px);
             }
         }
         &.select-date {
             &:before {
-                background-position: -217px -87px;
+                background-position: -215px -86px;
             }
         }
         &.select-time {
             &:before {
-                background-position: -303px -87px;
+                background-position: -301px -86px;
             }
         }
     }
@@ -1069,7 +1119,7 @@ button {
             display: inline-block;
             padding: 0 14px;
             &:before {
-                @include sp-icon(0,-217px);
+                @include sp-icon(0,-215px);
                 @include sp-size(108px,108px);
                 display: block;
                 margin-bottom: 8px;
@@ -1080,27 +1130,27 @@ button {
     .partner-info {
         color: #939598;
         .service1:before {
-            background-position: 0 -217px;
+            background-position: 0 -215px;
         }
         .service2:before {
-            background-position: -130px -217px;
+            background-position: -129px -215px;
         }
     }
     .discount-info {
         color: $brand-primary;
         .service3:before {
-            background-position: -260px -217px;
+            background-position: -258px -215px;
         }
         .service4:before {
-            background-position: -390px -217px;
+            background-position: -387px -215px;
         }
     }
     .reservation-info {
         .service5:before {
-            background-position: 0 -347px;
+            background-position: 0 -344px;
         }
         .service6:before {
-            background-position: -130px -347px;
+            background-position: -129px -344px;
         }
     }
 }
@@ -1123,7 +1173,7 @@ button {
                 height: 56px;
                 @include border-radius(50%);
                 background-color: $brand-primary;
-                background-position: -378px -75px;
+                background-position: -374px -74px;
             }
         }
         .mail a {
@@ -1178,13 +1228,13 @@ button {
             .link-guide {
                 background-color: $brand-primary;
                 &:before {
-                    background-position: -130px -130px;
+                    background-position: -129px -129px;
                 }
             }
             .link-faq {
                 background-color: $brand-default;
                 &:before {
-                    background-position: 0 -130px;
+                    background-position: 0 -129px;
                 }
             }
         }
@@ -1285,7 +1335,7 @@ button {
         border: 1px solid #99d0c6;
         background-color: $white;
         &:before {
-            @include sp-icon(-433px,-43px);
+            @include sp-icon(-430px,-43px);
             @include sp-size(27px,27px);
             content: '';
         }
@@ -1413,7 +1463,7 @@ button {
                     position: absolute;
                     top: 22px;
                     right: 22px;
-                    @include sp-icon(-520px,-217px);
+                    @include sp-icon(-516px,-215px);
                     @include sp-size(43px,43px);
                     content: '';
                 }
@@ -1466,7 +1516,7 @@ button {
                 }
                 .icon-sm-clock {
                     width: 18px;
-                    background-position: -258px -173px;
+                    background-position: -256px -172px;
                 }
             }
         }
@@ -1509,7 +1559,7 @@ button {
         margin-left: -896px;
         background-color: $white;
         .btn-modal-close {
-            background-position: -433px 0;
+            background-position: -430px 0;
         }
         @media (max-width: 1600px) {
             width: 1200px;
@@ -1693,27 +1743,27 @@ button {
                 }
                 &.level1 {
                     &:before {
-                        background-position: -433px -390px;
+                        background-position: -430px -387px;
                     }
                 }
                 &.level2 {
                     &:before {
-                        background-position: -390px -390px;
+                        background-position: -387px -387px;
                     }
                 }
                 &.level3 {
                     &:before {
-                        background-position: -347px -390px;
+                        background-position: -344px -387px;
                     }
                 }
                 &.level4 {
                     &:before {
-                        background-position: -303px -390px;
+                        background-position: -301px -387px;
                     }
                 }
                 &.level5 {
                     &:before {
-                        background-position: -260px -390px;
+                        background-position: -258px -387px;
                     }
                 }
             }
@@ -2020,24 +2070,24 @@ button {
         .creditCard {
             .radio-label {
                 &:before {
-                    background-position: -477px -127px;
+                    background-position: -473px -127px;
                 }
             }
             input[type="radio"]:checked ~ .radio-label {
                 &:before {
-                    background-position: -520px -127px;
+                    background-position: -516px -127px;
                 }
             }
         }
         .account-transfer {
             .radio-label {
                 &:before {
-                    background-position: -563px -130px;
+                    background-position: -559px -129px;
                 }
             }
             input[type="radio"]:checked ~ .radio-label {
                 &:before {
-                    background-position: -607px -130px;
+                    background-position: -602px -129px;
                 }
             }
         }
@@ -2113,12 +2163,12 @@ button {
             .radio-label {
                 &:before {
                     @include sp-size(28px,24px);
-                    background-position: -563px -173px;
+                    background-position: -559px -172px;
                 }
             }
             input[type="radio"]:checked ~ .radio-label {
                 &:before {
-                    background-position: -607px -173px;
+                    background-position: -602px -172px;
                 }
             }
         }
@@ -2180,6 +2230,200 @@ button {
         }
     }
 }
+// 예약완료
+.reservation-completed {
+    width: 564px;
+    margin: 0 auto;
+    .complete-info {
+        margin-top: -13px;
+        padding-bottom: 40px;
+        border-bottom: 2px solid $brand-primary;
+        font-weight: 700;
+        font-size: 26px;
+        color: $brand-primary;
+        text-align: center;
+    }
+    .btn-group {
+        margin-top: 26px;
+        .outer {
+            width: 50%;
+        }
+    }
+}
+// 예약내용
+.reservation-info-box {
+    font-family: 'Montserrat', 'NotoSans', sans-serif;
+    .reservation-info-list {
+        padding: 35px 0 35px 90px;
+        li {
+            padding: 2px 0;
+            font-size: 17px;
+            &:before {
+                display: inline-block;
+                width: 3px;
+                height: 3px;
+                margin-right: 5px;
+                @include border-radius(1px);
+                background-color: #a8a8a8;
+                vertical-align: middle;
+                content: '';
+            }
+            span {
+                display: inline-block;
+                width: 110px;
+                color: #5e5e5e;
+            }
+            p {
+                display: inline-block;
+                .icon-point {
+                    margin-left: 6px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .payment-info {
+        padding: 25px 35px;
+        border: 1px solid #dfe3e2;
+        background-color: #e9f1f0;
+        li {
+            @include clearfix;
+            padding: 8px 0;
+            span {
+                float: left;
+                font-size: 16px;
+                i {
+                    width: 23px;
+                    margin-right: 5px;
+                }
+            }
+            strong {
+                float: right;
+                font-weight: 500;
+                font-size: 20px;
+                em {
+                    font-weight: 400;
+                    font-size: 18px;
+                }
+            }
+            &.discount {
+                strong {
+                    font-size: 18px;
+                    color: $brand-primary;
+                }
+            }
+            &.total {
+                span {
+                    font-weight: 700;
+                    font-size: 20px;
+                }
+                strong {
+                    font-size: 33px;
+                    color: $brand-primary;
+                    em {
+                        font-size: 19px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*******************************
+    My Page
+*******************************/
+.dashboard {
+    @include clearfix;
+    max-width: 910px;
+    min-width: 832px;
+    margin: 0 auto;
+    background-color: $brand-primary;
+    font-family: 'Montserrat', 'NanumSquare', sans-serif;
+    li {
+        float: left;
+        width: 33.33%;
+        padding: 5px 0 28px;
+        font-weight: 700;
+        font-size: 22px;
+        color: $white;
+        text-align: center;
+        span {
+            display: block;
+            font-weight: 400;
+            font-size: 22px;
+            b {
+                font-weight: 500;
+                font-size: 90px;
+            }
+        }
+        &:before {
+            float: left;
+            width: 1px;
+            height: 108px;
+            margin-top: 31px;
+            background-color: #69bcae;
+            content: '';
+        }
+    }
+}
+.dashboard-content {
+    @include clearfix;
+    position: relative;
+    max-width: 910px;
+    min-width: 832px;
+    margin: 10px auto 0;
+    border: 1px solid $brand-primary;
+    .reservation-state {
+        float: left;
+        width: 40%;
+        padding: 45px 62px 39px;
+        border-right: 1px solid #dfe3e2;
+        font-family: 'Montserrat', 'NanumSquare', sans-serif;
+        text-align: center;
+        span {
+            font-size: 20px;
+        }
+        strong {
+            display: block;
+            font-weight: 500;
+            font-size: 33px;
+            color: $brand-primary;
+        }
+        .marker {
+            margin: 50px 0 45px;
+            font-size: 16px;
+            color: $brand-primary;
+            &:before {
+                @include sp-icon(0,0);
+                @include sp-size(98px,98px);
+                display: block;
+                margin: 0 auto 10px;
+                content: '';
+            }
+            &.reserve:before {
+                background-position: 0 -645px;
+            }
+            &.finish:before {
+                background-position: -129px -645px;
+            }
+        }
+    }
+    .reservation-info-box {
+        float: left;
+        width: 60%;
+        .reservation-info-list {
+            padding: 40px 0 40px 70px;
+        }
+        .payment-info {
+            position: absolute;
+            bottom: 0;
+            left: 40%;
+            right: 0;
+            padding: 28px 40px;
+            border-width: 1px 0 0;
+        }
+    }
+}
 
 /*******************************
     Layer
@@ -2205,7 +2449,7 @@ button {
         position: absolute;
         top: 18px;
         right: 28px;
-        @include sp-icon(-477px,0);
+        @include sp-icon(-473px,0);
         @include sp-size(30px,30px);
     }
     .modal-content {
@@ -2227,13 +2471,13 @@ button {
         .modal-body-inner {
             padding: 0 20px;
         }
-        .text {
-            padding: 28px 0 21px;
-            font-size: 20px;
-            b {
-                font-weight: 700;
-                font-size: 30px;
-            }
+    }
+    .text {
+        padding: 28px 0 21px;
+        font-size: 20px;
+        b {
+            font-weight: 700;
+            font-size: 30px;
         }
     }
 }
@@ -2250,7 +2494,7 @@ button {
     .btn-modal-close {
         top: 19px;
         right: 22px;
-        background-position: -433px 0;
+        background-position: -430px 0;
     }
     .text {
         margin: 52px 0 20px;
@@ -2387,6 +2631,259 @@ button {
     }
     .notify-list {
         margin: 25px 0 20px;
+    }
+}
+// 예약하기 - 인수/반납 안내
+.take-return-info {
+    .modal-content {
+        width: 490px;
+        height: 573px;
+        margin-top: -286px;
+        margin-left: -245px;
+    }
+    .modal-body {
+        padding: 0;
+    }
+    .badge {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 23px;
+        @include border-radius(18px);
+        background-color: $brand-primary;
+        line-height: (36)/20;
+        font-weight: 700;
+        font-size: 20px;
+        font-family: 'NanumSquare', sans-serif;
+        color: $white;
+    }
+    .info-text {
+        position: relative;
+        padding-left: 97px;
+        font-size: 17px;
+        font-family: 'NotoSans', sans-serif;
+    }
+    .address {
+        margin-top: 21px;
+        padding-top: 45px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        span {
+            color: $brand-primary;
+        }
+    }
+    .take-info {
+        padding: 30px 34px 40px;
+        .address {
+            background: url("../images/take-info.png") no-repeat 50% 0;
+        }
+    }
+    .return-info {
+        padding: 30px 34px 40px;
+        background-color: #e7f1ef;
+        .address {
+            background: url("../images/return-info.png") no-repeat 50% 0;
+        }
+    }
+}
+// 마이페이지 - 예약확인 - 이용후기 등록
+.consumer-reviews {
+    .modal-content {
+        width: 886px;
+        height: 628px;
+        margin-top: -314px;
+        margin-left: -443px;
+    }
+    .modal-body {
+        padding: 0 60px 67px;
+        .text {
+            padding: 55px 0 35px;
+            font-weight: 700;
+            font-size: 30px;
+            text-align: center;
+        }
+    }
+    .satisfaction-level {
+        @include clearfix;
+        margin-bottom: 22px;
+        li {
+            float: left;
+            width: 20%;
+            &:before {
+                @include sp-icon(0,0);
+                @include sp-size(80px,80px);
+                display: block;
+                margin: 0 auto;
+                content: '';
+            }
+            .radio {
+                display: block;
+                text-align: center;
+                .radio-label {
+                    display: block;
+                    margin: 10px 0 9px;
+                    font-size: 16px;
+                    color: #222;
+                }
+                .radio-display {
+                    @include sp-size(26px,26px);
+                    margin-right: 0;
+                    background-image: url(../images/form-satisfaction.png);
+                }
+                input[type="radio"]:checked ~ .radio-display {
+                    background-image: url(../images/form-satisfaction-checked.png);
+                }
+            }
+        }
+        .level1 {
+            &:before {
+                background-position: -516px -774px;
+            }
+        }
+        .level2 {
+            &:before {
+                background-position: -387px -774px;
+            }
+        }
+        .level3 {
+            &:before {
+                background-position: -258px -774px;
+            }
+        }
+        .level4 {
+            &:before {
+                background-position: -129px -774px;
+            }
+        }
+        .level5 {
+            &:before {
+                background-position: 0 -774px;
+            }
+        }
+    }
+    .review-write {
+        label {
+            width: 100%;
+            border: 1px solid #d8d8d8;
+            background-color: #f6f6f6;
+            line-height: 106px;
+            color: #9a9a9a;
+            text-align: center;
+        }
+        .form-control {
+            height: 108px;
+            padding: 20px;
+            border: 1px solid $brand-primary;
+        }
+    }
+    .btn-group {
+        margin-top: 21px;
+        padding: 0 147px;
+    }
+}
+// 마이페이지 - 예약확인 - 구매영수증
+.receipt {
+    .modal-content {
+        width: 534px;
+        height: 780px;
+        margin-top: -390px;
+        margin-left: -267px;
+    }
+    .modal-body {
+        padding: 25px 29px 29px;
+        background-color: #f9f9f9;
+    }
+    .receipt-content {
+        li {
+            display: table;
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: -1px;
+            border: 1px solid #dedede;
+            background-color: $white;
+            dl {
+                display: table-cell;
+                width: 50%;
+                padding: 27px 40px 24px;
+                &:last-child {
+                    position: relative;
+                    &:before {
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        width: 1px;
+                        height: 62px;
+                        margin-top: -31px;
+                        background-color: #e2e2e2;
+                        content: '';
+                    }
+                }
+                dt {
+                    margin-bottom: 3px;
+                    font-size: 16px;
+                    font-family: 'NanumSquare', sans-serif;
+                }
+                dd {
+                    font: 300 17px 'Montserrat', 'NotoSans', sans-serif;
+                    color: #464646;
+                    &.number {
+                        font-weight: 400;
+                        font-size: 25px;
+                        color: $brand-primary;
+                    }
+                    &.date,
+                    &.car {
+                        font-weight: 400;
+                        font-size: 25px;
+                    }
+                    &.rentDate {
+                        font-weight: 400;
+                        font-size: 18px;
+                    }
+                    &.total {
+                        font-weight: 400;
+                        font-size: 25px;
+                        em {
+                            font-weight: 300;
+                            font-size: 17px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .text {
+        padding: 12px 0 15px;
+        font-size: 14px;
+        color: #6e6e6e;
+    }
+    .company-info {
+        @include clearfix;
+        padding: 25px 30px;
+        border: 1px solid #dedede;
+        background-color: $white;
+        dt {
+            float: left;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        dd {
+            float: left;
+            margin-top: -3px;
+            margin-left: 25px;
+            font-size: 14px;
+            line-height: 21px;
+            font-family: 'Lato', 'NotoSans', sans-serif;
+            color: #717171;
+        }
+    }
+    .btn-align-center {
+        margin-top: 19px;
+        .btn {
+            padding: 0 90px;
+        }
     }
 }
 

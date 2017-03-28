@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>예약확인</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" src="static/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="static/js/scrolloverflow.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.fullPage.min.js"></script>
+    <script type="text/javascript" src="static/js/custom.js"></script>
+    <!--[if lt IE 9]>
+    <script src="static/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="sub">
+<div id="wrap">
+    <div id="fullpage">
+        <div class="section" id="section0">
+            <div class="sidebar">
+                <div class="header">
+                    <div class="site-home">
+                        <h1 class="brand-logo"><a href="#"><span class="sr-only">타자고</span></a></h1>
+                        <a href="#" class="btn-menu">Menu</a>
+                    </div>
+                    <ul class="site-quick-access-icon">
+                       <li><a href="#"><i class="icon-lock"></i>로그인</a></li>
+                       <li><a href="#"><i class="icon-person-plus"></i>회원가입</a></li>
+                       <li><a href="#"><i class="icon-check"></i>예약확인</a></li>
+                    </ul>
+                </div>
+                <div class="side-container">
+                    <div class="side-content">
+                        <span>세상쉬운 렌터카 예약</span>
+                        <strong>타자고</strong>
+                    </div>
+                    <div class="image-area">
+                        <img src="static/images/sub_animation.gif" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="section-title lineless">예약완료</h2>
+                <div class="reservation-completed">
+                    <p class="complete-info">결제가 정상적으로 처리되었습니다.</p>
+                    <div class="reservation-info-box">
+                        <ul class="reservation-info-list">
+                            <li>
+                                <span>대여</span>
+                                <p>2017.02.14(화) 오전 09 : 00</p>
+                            </li>
+                            <li>
+                                <span>반납</span>
+                                <p>2017.02.14(화) 오전 09 : 00</p>
+                            </li>
+                            <li>
+                                <span>장소</span>
+                                <p>서울,김포공항</p>
+                            </li>
+                            <li>
+                                <span>차량</span>
+                                <p>아이오닉(전기)</p>
+                            </li>
+                            <li>
+                                <span>보험</span>
+                                <p>일반자차 보험</p>
+                            </li>
+                            <li>
+                                <span>인수/반납</span>
+                                <p>KD렌터카 <i class="icon-point" onclick="modalOpen('.take-return-info');"></i></p>
+                            </li>
+                        </ul>
+                        <ul class="payment-info">
+                            <li>
+                                <span><i class="icon-sm-clock-primary"></i>차량 대여료 / 24시간</span>
+                                <strong>8,000<em>원</em></strong>
+                            </li>
+                            <li>
+                                <span><i class="icon-sm-car-primary"></i>일반자차 보험료 / 2일</span>
+                                <strong>10,000<em>원</em></strong>
+                            </li>
+                            <li class="discount">
+                                <span><i class="icon-percent"></i>할인금액</span>
+                                <strong>2,000<em>원</em></strong>
+                            </li>
+                            <li class="total">
+                                <span><i class="icon-won"></i>총 결제금액</span>
+                                <strong>16,000<em>원</em></strong>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn-group">
+                        <span class="outer"><button type="button" class="btn btn-lg btn-primary inverse">홈으로</button></span>
+                        <span class="outer"><button type="button" class="btn btn-lg btn-primary">예약화인</button></span>
+                    </div>
+                </div>
+            </div>
+            <!-- 전체메뉴 -->
+            <div class="megamenu">
+                <div class="menu-wrap">
+                    <span>세상쉬운 렌터카 예약</span>
+                    <strong>타자고</strong>
+                    <ul class="menu">
+                        <li class="item-login"><a href="#" class="">로그인</a></li>
+                        <li class="item-join"><a href="#">회원가입</a></li>
+                        <li class="item-reservation-confirm"><a href="#">예약확인</a></li>
+                        <li class="item-rental-info"><a href="#">대여안내</a></li>
+                        <li class="item-notice"><a href="#">공지사항</a></li>
+                        <li class="item-faq"><a href="#">자주하는 질문</a></li>
+                    </ul>
+                    <p class="customer-number">
+                        <span>고객센터 (평일 9시~6시)</span>
+                        <strong>1544-1544</strong>
+                    </p>
+                </div>
+                <button type="button" class="btn-menu-close"><span class="sr-only">닫기</span></button>
+            </div>
+            <!-- 전체메뉴 //end -->
+            <!-- 인수/반납 안내 -->
+            <div class="modal take-return-info">
+                <div class="modal-content">
+                    <h3 class="modal-head">인수/반납 안내</h3>
+                    <div class="modal-body">
+                        <div class="take-info">
+                            <p class="info-text">
+                                <span class="badge">인수</span>
+                                제주공항에서 셔틀버스 탑승 후 렌터카 본사로 이동해 차량을 인수합니다.
+                            </p>
+                            <p class="address">제주공항 렌터카종합안내센터<br>
+                                탑승장 <span>1구역 3번</span></p>
+                        </div>
+                        <div class="return-info">
+                            <p class="info-text">
+                                <span class="badge">반납</span>
+                                렌터카 본사에서 차량 반납 후 셔틀버스 탑승해 제주공항으로 이동합니다.
+                            </p>
+                            <p class="address">
+                                <span>KD렌터카</span><br>
+                                주소 : 제주시 용담2동 881-12,<br>
+                                연락처 : 0507-000-0000
+                            </p>
+                        </div>
+                    </div>
+                    <button class="btn-modal-close" onclick="modalClose('.take-return-info');"><span class="sr-only">닫기</span></button>
+                </div>
+            </div>
+            <!-- 인수/반납 안내 //end -->
+            <!-- FEEDBACK -->
+            <div class="feedback">
+                <a href="#"><span class="sr-only">feedback</span></a>
+            </div>
+            <!-- FEEDBACK //end -->
+            <div class="footer">
+                <ul class="terms-menu">
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보취급방침</a></li>
+                </ul>
+                <ul class="company-info">
+                    <li>(주)제주비앤에프</li>
+                    <li>사업자등록번호 105-87-76000</li>
+                    <li>통신판매신고</li>
+                    <li>제2015-제주연동-43호</li>
+                </ul>
+                <p class="copyright">대표이사 윤형준  @ 2017 TAZAGO. All rights reserved</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

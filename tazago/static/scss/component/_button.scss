@@ -36,6 +36,11 @@
 .btn-primary {
     border-color: $brand-primary;
     background-color: $brand-primary;
+    &.inverse {
+        background-color: $white;
+        border-color: $brand-primary;
+        color: $brand-primary;
+    }
 }
 .btn-white {
     border-color: #dcdcdc;
@@ -54,7 +59,7 @@
         right: 20px;
         z-index: 10;
         margin-top: -8px;
-        @include sp-icon(-607px,-87px);
+        @include sp-icon(-602px,-86px);
         @include sp-size(16px,17px);
         content: '';
     }
@@ -63,6 +68,15 @@
 .btn-block {
     display: block;
     width: 100%;
+}
+
+.btn-block-group {
+    .btn {
+        margin-bottom: 5px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
 }
 
 .btn-group {

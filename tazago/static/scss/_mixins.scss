@@ -16,7 +16,7 @@
     background: url("../images/sprites-icon.png") repeat $left $top;
     line-height: 0;
     color: transparent;
-    vertical-align: sub;
+    vertical-align: middle;
 }
 @mixin sp-size($width,$height) {
     width: $width;

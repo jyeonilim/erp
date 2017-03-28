@@ -25,7 +25,7 @@ $(document).ready(function() {
 
 
     // Placeholder
-    var placeholder = $('.placeholder input');
+    var placeholder = $('.placeholder .form-control');
     $(placeholder).focusin(function () {
         $(this).siblings('label').hide();
     });

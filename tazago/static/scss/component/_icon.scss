@@ -9,23 +9,23 @@
 
 .icon-left {
     @include sp-size(17px,10px);
-    background-position: -477px -43px;
+    background-position: -473px -43px;
 }
 .icon-right {
     @include sp-size(17px,10px);
-    background-position: -520px -43px;
+    background-position: -516px -43px;
 }
 .icon-left-open {
     @include sp-size(7px,13px);
-    background-position: -563px -43px;
+    background-position: -559px -43px;
 }
 .icon-right-open {
     @include sp-size(7px,13px);
-    background-position: -607px -43px;
+    background-position: -602px -43px;
 }
 .icon-big-up {
     @include sp-size(73px,73px);
-    background-position: -173px 0;
+    background-position: -172px 0;
 }
 .icon-big-down {
     @include sp-size(73px,73px);
@@ -33,127 +33,159 @@
 }
 .icon-big-close {
     @include sp-size(73px,73px);
-    background-position: -563px -477px;
+    background-position: -559px -473px;
 }
 .icon-target {
     @include sp-size(25px,25px);
-    background-position: -130px -87px;
+    background-position: -129px -86px;
 }
 .icon-map {
     @include sp-size(16px,22px);
-    background-position: -87px -87px;
+    background-position: -86px -86px;
 }
 .icon-map-white {
     @include sp-size(17px,25px);
-    background-position: -303px -130px;
+    background-position: -301px -129px;
 }
 .icon-phone {
     @include sp-size(18px,18px);
-    background-position: -433px -87px;
+    background-position: -430px -86px;
 }
 .icon-clock {
     @include sp-size(18px,18px);
-    background-position: -347px -87px;
+    background-position: -344px -86px;
 }
 .icon-sm-clock {
     @include sp-size(15px,15px);
-    background-position: -260px -173px;
+    background-position: -258px -172px;
+}
+.icon-sm-clock-primary {
+    @include sp-size(15px,15px);
+    background-position: -602px -387px;
 }
 .icon-clock-white {
     @include sp-size(21px,21px);
-    background-position: -607px -347px;
+    background-position: -602px -344px;
 }
 .icon-big-phone {
     @include sp-size(31px,31px);
-    background-position: -390px -87px;
+    background-position: -387px -86px;
 }
 .icon-message {
     @include sp-size(18px,14px);
-    background-position: -477px -87px;
+    background-position: -473px -86px;
 }
 .icon-point {
     @include sp-size(28px,28px);
-    background-position: -607px 0;
+    background-position: -602px 0;
 }
 .icon-point-gray {
     @include sp-size(19px,19px);
-    background-position: -520px -173px;
+    background-position: -516px -172px;
 }
 .icon-calendar {
     @include sp-size(18px,18px);
-    background-position: -260px -130px;
+    background-position: -258px -129px;
 }
 .icon-car {
     @include sp-size(26px,18px);
-    background-position: -347px -130px;
+    background-position: -344px -129px;
 }
 .icon-sm-car {
     @include sp-size(18px,13px);
-    background-position: -303px -173px;
+    background-position: -301px -172px;
+}
+.icon-sm-car-primary {
+    @include sp-size(18px,13px);
+    background-position: -559px -430px;
 }
 .icon-vehicle {
     @include sp-size(27px,18px);
-    background-position: -260px -347px;
+    background-position: -258px -344px;
 }
 .icon-won {
     @include sp-size(23px,23px);
-    background-position: -390px -130px;
+    background-position: -387px -129px;
 }
 .icon-search {
     @include sp-size(20px,20px);
-    background-position: -433px -130px;
+    background-position: -430px -129px;
 }
 .icon-watch {
     @include sp-size(24px,24px);
-    background-position: -347px -173px;
+    background-position: -344px -172px;
 }
 .icon-lock {
     @include sp-size(18px,29px);
-    background-position: -390px -173px;
+    background-position: -387px -172px;
 }
 .icon-person-plus {
     @include sp-size(31px,25px);
-    background-position: -433px -173px;
+    background-position: -430px -172px;
 }
 .icon-person {
     @include sp-size(16px,19px);
-    background-position: -303px -347px;
+    background-position: -301px -344px;
 }
 .icon-check {
     @include sp-size(25px,25px);
-    background-position: -477px -173px;
+    background-position: -473px -172px;
+}
+.icon-big-check {
+    @include sp-size(32px,32px);
+    background-position: -473px -387px;
 }
 .icon-electric-cord {
     @include sp-size(15px,21px);
-    background-position: -347px -347px;
+    background-position: -344px -344px;
 }
 .icon-big-21 {
     @include sp-size(44px,44px);
-    background-position: -581px -217px;
+    background-position: -589px -215px;
 }
 .icon-big-license {
     @include sp-size(42px,37px);
-    background-position: -520px -280px;
+    background-position: -516px -280px;
 }
 .icon-navigation {
     @include sp-size(33px,33px);
-    background-position: -433px -347px;
+    background-position: -430px -344px;
 }
 .icon-nosmoking {
     @include sp-size(33px,32px);
-    background-position: -520px -347px;
+    background-position: -516px -344px;
 }
 .icon-cable {
     @include sp-size(28px,32px);
-    background-position: -390px -347px;
+    background-position: -387px -344px;
 }
 .icon-bluetooth {
     @include sp-size(21px,32px);
-    background-position: -477px -347px;
+    background-position: -473px -344px;
 }
 .icon-camera {
     @include sp-size(32px,28px);
-    background-position: -563px -347px;
+    background-position: -559px -344px;
+}
+.icon-big-cancel {
+    @include sp-size(32px,32px);
+    background-position: -516px -387px;
+}
+.icon-big-car {
+    @include sp-size(32px,22px);
+    background-position: -559px -387px;
+}
+.icon-print {
+    @include sp-size(28px,32px);
+    background-position: -258px -430px;
+}
+.icon-percent {
+    @include sp-size(15px,13px);
+    background-position: -602px -430px;
+}
+.icon-comment {
+    @include sp-size(32px,32px);
+    background-position: -301px -430px;
 }
 
 // Badge
