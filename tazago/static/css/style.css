@@ -494,7 +494,8 @@ textarea.form-control {
     margin-bottom: 10px; }
   .form-inline .form-label {
     width: 80px;
-    vertical-align: middle; }
+    vertical-align: top;
+    padding-top: 19px; }
 
 .input-group {
   position: relative;
@@ -1083,6 +1084,12 @@ button {
   @media (max-width: 1200px) {
     .reservation .content {
       margin-left: 460px; } }
+
+.membership .content {
+  padding: 92px 300px 150px; }
+  @media (max-width: 1500px) {
+    .membership .content {
+      padding: 92px 136px 150px 126px; } }
 
 /*******************************
     Side Bar
@@ -2963,6 +2970,93 @@ button {
         .reservation-info-box .payment-info li.total strong em {
           font-size: 19px; }
 
+/*******************************
+    간편 회원가입
+*******************************/
+.simple-signup .group {
+  padding: 70px 0 0;
+  border-top: 0; }
+
+.simple-signup .secondary-title {
+  margin-bottom: 17px; }
+  .simple-signup .secondary-title p {
+    display: inline-block;
+    font-weight: 200;
+    font-size: 17px;
+    font-family: 'NotoSans', sans-serif;
+    color: #7f7f7f; }
+
+.simple-signup .checkbox .checkbox-label {
+  font-size: 18px; }
+
+.simple-signup .agreement-all {
+  margin-bottom: 0;
+  padding: 16px 28px;
+  border: 1px solid #4aaf9d; }
+
+.simple-signup .scroll-box {
+  overflow-y: scroll;
+  height: 320px;
+  padding: 23px 0 23px 28px;
+  background-color: #f7f7f7; }
+
+.simple-signup .terms-use-box,
+.simple-signup .privacy-policy-box {
+  float: left;
+  width: 50%;
+  border-right: 1px solid #d5d5d5;
+  border-bottom: 1px solid #d5d5d5; }
+  .simple-signup .terms-use-box .checkbox,
+  .simple-signup .privacy-policy-box .checkbox {
+    margin-bottom: 0;
+    padding: 16px 27px;
+    border-top: 1px solid #d5d5d5;
+    background-color: white; }
+  .simple-signup .terms-use-box .agreement,
+  .simple-signup .privacy-policy-box .agreement {
+    font-size: 15px;
+    font-family: 'NotoSans', sans-serif; }
+    .simple-signup .terms-use-box .agreement h4,
+    .simple-signup .privacy-policy-box .agreement h4 {
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 18px;
+      font-family: 'NanumSquare', sans-serif; }
+
+.simple-signup .terms-use-box {
+  border-left: 1px solid #d5d5d5; }
+
+.simple-signup .btn-align {
+  padding: 28px 230px 0 250px; }
+
+.input-signup-info {
+  padding: 0 230px 33px 0; }
+  .input-signup-info .form-inline {
+    position: relative; }
+    .input-signup-info .form-inline .form-label {
+      width: 250px;
+      padding-right: 30px;
+      text-align: right; }
+    .input-signup-info .form-inline .input-group-btn {
+      position: absolute;
+      top: 0;
+      right: -107px; }
+      .input-signup-info .form-inline .input-group-btn .btn {
+        width: 107px;
+        font-weight: 700;
+        font-size: 16px; }
+  .input-signup-info .help-text {
+    font-size: 15px;
+    font-family: 'NotoSans', sans-serif;
+    color: #8d8d8d; }
+  .input-signup-info + .checkbox {
+    padding-left: 250px; }
+    .input-signup-info + .checkbox .checkbox-label {
+      font-size: 16px; }
+
+/*******************************
+    로그인
+*******************************/
 /*******************************
     My Page
 *******************************/

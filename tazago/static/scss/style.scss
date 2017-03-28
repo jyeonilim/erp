@@ -83,6 +83,14 @@ button {
         }
     }
 }
+.membership {
+    .content {
+        padding: 92px 300px 150px;
+        @media (max-width: 1500px) {
+            padding: 92px 136px 150px 126px;
+        }
+    }
+}
 
 /*******************************
     Side Bar
@@ -2328,6 +2336,109 @@ button {
         }
     }
 }
+
+/*******************************
+    간편 회원가입
+*******************************/
+.simple-signup {
+    .group {
+        padding: 70px 0 0;
+        border-top: 0;
+    }
+    .secondary-title {
+        margin-bottom: 17px;
+        p {
+            display: inline-block;
+            font-weight: 200;
+            font-size: 17px;
+            font-family: 'NotoSans', sans-serif;
+            color: #7f7f7f;
+        }
+    }
+    .checkbox {
+        .checkbox-label {
+            font-size: 18px;
+        }
+    }
+    .agreement-all {
+        margin-bottom: 0;
+        padding: 16px 28px;
+        border: 1px solid $brand-primary;
+    }
+    .scroll-box {
+        overflow-y: scroll;
+        height: 320px;
+        padding: 23px 0 23px 28px;
+        background-color: #f7f7f7;
+    }
+    .terms-use-box,
+    .privacy-policy-box {
+        float: left;
+        width: 50%;
+        border-right: 1px solid #d5d5d5;
+        border-bottom: 1px solid #d5d5d5;
+        .checkbox {
+            margin-bottom: 0;
+            padding: 16px 27px;
+            border-top: 1px solid #d5d5d5;
+            background-color: $white;
+        }
+        //**//
+        .agreement {
+            font-size: 15px;
+            font-family: 'NotoSans', sans-serif;
+            h4 {
+                margin-bottom: 20px;
+                font-weight: 700;
+                font-size: 18px;
+                font-family: 'NanumSquare', sans-serif;
+            }
+        }
+        //*****//
+    }
+    .terms-use-box {
+        border-left: 1px solid #d5d5d5;
+    }
+    .btn-align {
+        padding: 28px 230px 0 250px;
+    }
+}
+.input-signup-info {
+    padding: 0 230px 33px 0;
+    .form-inline {
+        position: relative;
+        .form-label {
+            width: 250px;
+            padding-right: 30px;
+            text-align: right;
+        }
+        .input-group-btn {
+            position: absolute;
+            top: 0;
+            right: -107px;
+            .btn {
+                width: 107px;
+                font-weight: 700;
+                font-size: 16px;
+            }
+        }
+    }
+    .help-text {
+        font-size: 15px;
+        font-family: 'NotoSans', sans-serif;
+        color: #8d8d8d;
+    }
+    & + .checkbox {
+        padding-left: 250px;
+        .checkbox-label {
+            font-size: 16px;
+        }
+    }
+}
+
+/*******************************
+    로그인
+*******************************/
 
 /*******************************
     My Page
