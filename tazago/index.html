@@ -4,50 +4,79 @@
     <meta charset="UTF-8">
     <title>타자고</title>
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
-    <link rel="stylesheet" href="static/css/fontello.css">
     <link rel="stylesheet" href="static/css/style.css">
     <style type="text/css">
-        .markup-list {font-family:'notoSans',sans-serif;}
-        header {padding:20px 0;border-bottom:1px solid #666;text-align:center;}
-        .site-brand {width:100%;margin:0;font-size:25px;color:#000;text-align:center;text-transform:capitalize;}
-        .site-brand span {font-size:16px;}
-        .copyright {margin:0;padding:0;border:0;}
-        .markup-list h2 {margin:40px 0 10px 10px;font-size:15px;}
-        .markup-list ul {}
-        .markup-list ul li {padding:2px 0 2px 27px;font-size:14px;}
-        .markup-list a:hover {font-weight:700;color:#004689;text-decoration:underline;}
+        .markup-list {font-family:'NanumSquare',sans-serif;letter-spacing:0;}
+        .markup-list .secondary-title {margin:20px 0 10px;text-align:center;}
+        .markup-list .content {margin-left:0;}
+        .markup-list a:hover {color:#004689;text-decoration:underline;}
+        .table td.left {padding-left:15px;text-align:left;}
+        .copyright {position:fixed;left:0;right:0;bottom:10px;padding-top:10px;border-top: 1px solid #e1e1e1;color:#e1e1e1;text-align:center;}
     </style>
 </head>
 <body>
 <div id="wrap" class="markup-list">
-    <header>
-        <h1 class="site-brand">타자고 퍼블리싱 리스트</h1>
-    </header>
+    <h1 class="secondary-title">타자고 퍼블리싱 리스트</h1>
     <div class="content">
-        <h2></h2>
-        <ul>
-            <!--<li><a href="intro.html">인트로</a></li>-->
-            <li><a href="main.html">메인</a></li>
-            <li><a href="reservation.html">예약하기</a></li>
-        </ul>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>화면</th>
+                <th>파일경로</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><a href="main.html">메인</a></td>
+                <td><a href="main.html">main.html</a></td>
+                <td class="left">
+                    <ul class="notify-list">
+                        <li>전체메뉴 (.megamenu)</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><a href="car-list.html">차량검색</a></td>
+                <td><a href="car-list.html">car-list.html</a></td>
+                <td class="left">
+                    <ul class="notify-list">
+                        <li>일정변경 팝업 (.change-schedule)</li>
+                        <li><a href="car-list-popup.html">차량선택 팝업 (.detail-view)</a></li>
+                        <li><a href="car-list-popup-jeju.html">차량선택-제주 팝업 (.jeju-detail-view)</a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><a href="loading.html">차량선택 로딩화면</a></td>
+                <td><a href="loading.html">loading.html</a></td>
+                <td class="left"></td>
+            </tr>
+            <tr>
+                <td><a href="reservation.html">예약하기</a></td>
+                <td><a href="reservation.html">reservation.html</a></td>
+                <td class="left">
+                    <ul class="notify-list">
+                        <li>업그레이드 팝업 (.upgrade)</li>
+                        <li>딜리버리 팝업 (.select-delivery)</li>
+                        <li>프로모션 코드 팝업 (.promotion-code-box)</li>
+                        <li>취소 수수료 안내 팝업 (.cancel-fee)</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><a href="confirm.html">예약확인</a></td>
+                <td><a href="confirm.html">confirm.html</a></td>
+                <td class="left"></td>
+            </tr>
+            </tbody>
+        </table>
         <h2></h2>
         <ul>
             <!--<li><a href="typography.html">Typography</a></li>-->
         </ul>
     </div>
-    <div class="footer">
-        <ul class="terms-menu">
-            <li><a href="#">이용약관</a></li>
-            <li><a href="#">개인정보취급방침</a></li>
-        </ul>
-        <ul class="company-info">
-            <li>(주)제주비앤에프</li>
-            <li>사업자등록번호 105-87-76000</li>
-            <li>통신판매신고</li>
-            <li>제2015-제주연동-43호</li>
-        </ul>
-        <p class="copyright">대표이사 윤형준  @ 2017 TAZAGO. All rights reserved</p>
-    </div>
+    <p class="copyright">대표이사 윤형준  @ 2017 TAZAGO. All rights reserved</p>
 </div>
 </body>
 </html>

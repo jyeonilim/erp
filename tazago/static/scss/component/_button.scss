@@ -23,8 +23,9 @@
     line-height: (45-2)/18;
 }
 .btn-lg {
+    height: 60px;
     font-size: 22px;
-    line-height: (61-2)/22;
+    line-height: (60-2)/22;
 }
 .btn-xlg {
     padding: 0 76px;
@@ -35,6 +36,10 @@
 .btn-primary {
     border-color: $brand-primary;
     background-color: $brand-primary;
+}
+.btn-white {
+    border-color: #dcdcdc;
+    background-color: $white;
 }
 
 .btn-icon {

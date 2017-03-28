@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>차량선택</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" src="static/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="static/js/scrolloverflow.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.fullPage.min.js"></script>
+    <script type="text/javascript" src="static/js/custom.js"></script>
+    <!--[if lt IE 9]>
+    <script src="static/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="list">
+<div id="wrap">
+    <div id="fullpage">
+        <div class="section" id="section0">
+            <div class="sidebar">
+                <div class="header">
+                    <div class="site-home">
+                        <h1 class="brand-logo"><a href="#"><span class="sr-only">타자고</span></a></h1>
+                        <a href="#" class="btn-menu">Menu</a>
+                    </div>
+                    <ul class="site-quick-access-icon">
+                       <li><a href="#"><i class="icon-lock"></i>로그인</a></li>
+                       <li><a href="#"><i class="icon-person-plus"></i>회원가입</a></li>
+                       <li><a href="#"><i class="icon-check"></i>예약확인</a></li>
+                    </ul>
+                </div>
+                <div class="side-container">
+                    <div class="side-content">
+                        <div class="indicator-box">
+                            <ul class="indicator">
+                                <li><a href="#">렌터카검색</a></li>
+                                <li class="current"><a href="#">차량검색</a></li>
+                                <li><a href="#">예약하기</a></li>
+                            </ul>
+                        </div>
+                        <div class="search-condition">
+                            <p class="place"><i class="icon-map-white"></i>서울-김포공항</p>
+                            <ul class="condition-list">
+                                <li>
+                                    <span><i class="icon-calendar"></i> 대여일시</span>
+                                    <p><b>2017.03.15<small>(수)</small> 10:00</b></p>
+                                </li>
+                                <li>
+                                    <span><i class="icon-calendar"></i> 반납일시</span>
+                                    <p><b>2017.03.18<small>(토)</small> 10:00</b></p>
+                                </li>
+                                <li>
+                                    <span><i class="icon-clock-white"></i> 24시간 (일반자차 포함)</span>
+                                </li>
+                                <li>
+                                    <p>중/대형, SUV/승합</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn-change-schedule" >일정변경</button>
+                    </div>
+                </div>
+            </div>
+            <div class="top-event">
+                <strong class="main-text">내가 원하는 곳에서 바로 TAZAGO!</strong>
+                <p class="sub-text">
+                    서울/부산 전지역 어디서든, 이젠 집 앞에서 렌트하자!<br>
+                    <span class="caution"><i class="icon-point-gray"></i> 차량 예약 시 딜리버리 서비스를 신청할 수 있어요!</span>
+                </p>
+                <button type="button" class="btn-event-close" onclick="modalClose('.top-event')"><span class="sr-only">닫기</span></button>
+            </div>
+            <div class="content">
+                <div class="clearfix">
+                    <h2 class="third-title">차량선택</h2>
+                    <!-- 결과 내 검색 -->
+                    <div class="search-box">
+                        <label class="form-label">결과 내 검색</label>
+                        <div class="selectbox">
+                            <strong class="selectbox-value">제조사</strong>
+                            <select onchange="selectboxEvent(this);">
+                                <option value="제조사">제조사</option>
+                                <option value="현대">현대</option>
+                                <option value="기아">기아</option>
+                                <option value="쉐보레">쉐보레</option>
+                                <option value="르노삼성">르노삼성</option>
+                                <option value="쌍용">쌍용</option>
+                                <option value="수입">수입</option>
+                            </select>
+                        </div>
+                        <div class="selectbox">
+                            <strong class="selectbox-value">연료</strong>
+                            <select onchange="selectboxEvent(this);">
+                                <option value="연료">연료</option>
+                                <option value="LPG">LPG</option>
+                                <option value="휘발유">휘발유</option>
+                                <option value="경유">경유</option>
+                                <option value="전기">전기</option>
+                            </select>
+                        </div>
+                        <div class="input-search placeholder">
+                            <label for="search-car">차량명을 입력해 주세요</label>
+                            <input type="text" id="search-car" class="form-control">
+                            <button type="button" class="btn-search"><i class="icon-search"></i></button>
+                        </div>
+                    </div>
+                    <!-- 결과 내 검색 //end -->
+                </div>
+                <ul class="car-list">
+                    <!-- [D] 추천 차량은 recommend 클래스 추가 -->
+                    <li class="item" onclick="modalOpen('.detail-view');">
+                        <div class="item-inner">
+                            <a href="#">
+                                <div class="product-thumbnail">
+                                    <img src="static/images/temp/car2.png" alt="">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="car-name">익스플로러<span class="car-type">포드/SUV</span></h3>
+                                    <div class="clearfix">
+                                        <ul class="product-option">
+                                            <li><i class="icon-sm-clock"></i>24시간</li>
+                                            <li><i class="icon-sm-car"></i>일반자차포함</li>
+                                        </ul>
+                                        <div class="product-price">
+                                            <em class="discount">13,000원</em>
+                                            <span class="badge badge-discount">90%</span>
+                                            <strong class="price">12,000<em>원</em></strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <button type="button" class="btn btn-lg btn-primary btn-block"><i class="icon-watch"></i> 실시간 예약</button>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item-inner">
+                            <a href="#">
+                                <div class="product-thumbnail">
+                                    <img src="static/images/temp/car2.png" alt="">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="car-name">익스플로러<span class="car-type">포드/SUV</span></h3>
+                                    <div class="clearfix">
+                                        <ul class="product-option">
+                                            <li><i class="icon-sm-clock"></i>24시간</li>
+                                            <li><i class="icon-sm-car"></i>일반자차포함</li>
+                                        </ul>
+                                        <div class="product-price">
+                                            <em class="discount">13,000원</em>
+                                            <span class="badge badge-coupon">쿠폰</span>
+                                            <strong class="price">12,000<em>원</em></strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <button type="button" class="btn btn-lg btn-primary btn-block"><i class="icon-watch"></i> 실시간 예약</button>
+                        </div>
+                    </li>
+                    <li class="item recommend">
+                        <div class="item-inner">
+                            <a href="#">
+                                <div class="product-thumbnail">
+                                    <img src="static/images/temp/car3.png" alt="">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="car-name">익스플로러<span class="car-type">포드/SUV</span></h3>
+                                    <div class="clearfix">
+                                        <ul class="product-option">
+                                            <li><i class="icon-sm-clock"></i>24시간</li>
+                                            <li><i class="icon-sm-car"></i>일반자차포함</li>
+                                        </ul>
+                                        <div class="product-price">
+                                            <em class="discount">13,000원</em>
+                                            <span class="badge badge-discount">90%</span>
+                                            <strong class="price">12,000<em>원</em></strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <button type="button" class="btn btn-lg btn-primary btn-block"><i class="icon-watch"></i> 실시간 예약</button>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item-inner">
+                            <a href="#">
+                                <div class="product-thumbnail">
+                                    <img src="static/images/temp/car2.png" alt="">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="car-name">익스플로러<span class="car-type">포드/SUV</span></h3>
+                                    <div class="clearfix">
+                                        <ul class="product-option">
+                                            <li><i class="icon-sm-clock"></i>24시간</li>
+                                            <li><i class="icon-sm-car"></i>일반자차포함</li>
+                                        </ul>
+                                        <div class="product-price">
+                                            <em class="discount">13,000원</em>
+                                            <span class="badge badge-discount">90%</span>
+                                            <strong class="price">12,000<em>원</em></strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <button type="button" class="btn btn-lg btn-primary btn-block"><i class="icon-watch"></i> 실시간 예약</button>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item-inner">
+                            <a href="#">
+                                <div class="product-thumbnail">
+                                    <img src="static/images/temp/car2.png" alt="">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="car-name">익스플로러<span class="car-type">포드/SUV</span></h3>
+                                    <div class="clearfix">
+                                        <ul class="product-option">
+                                            <li><i class="icon-sm-clock"></i>24시간</li>
+                                            <li><i class="icon-sm-car"></i>일반자차포함</li>
+                                        </ul>
+                                        <div class="product-price">
+                                            <em class="discount">13,000원</em>
+                                            <span class="badge badge-coupon">쿠폰</span>
+                                            <strong class="price">12,000<em>원</em></strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <button type="button" class="btn btn-lg btn-primary btn-block"><i class="icon-watch"></i> 실시간 예약</button>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item-inner">
+                            <a href="#">
+                                <div class="product-thumbnail">
+                                    <img src="static/images/temp/car2.png" alt="">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="car-name">익스플로러<span class="car-type">포드/SUV</span></h3>
+                                    <div class="clearfix">
+                                        <ul class="product-option">
+                                            <li><i class="icon-sm-clock"></i>24시간</li>
+                                            <li><i class="icon-sm-car"></i>일반자차포함</li>
+                                        </ul>
+                                        <div class="product-price">
+                                            <em class="discount">13,000원</em>
+                                            <span class="badge badge-discount">90%</span>
+                                            <strong class="price">12,000<em>원</em></strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <button type="button" class="btn btn-lg btn-primary btn-block"><i class="icon-watch"></i> 실시간 예약</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- 전체메뉴 -->
+            <div class="megamenu">
+                <div class="menu-wrap">
+                    <span>세상쉬운 렌터카 예약</span>
+                    <strong>타자고</strong>
+                    <ul class="menu">
+                        <li class="item-login"><a href="#" class="">로그인</a></li>
+                        <li class="item-join"><a href="#">회원가입</a></li>
+                        <li class="item-reservation-confirm"><a href="#">예약확인</a></li>
+                        <li class="item-rental-info"><a href="#">대여안내</a></li>
+                        <li class="item-notice"><a href="#">공지사항</a></li>
+                        <li class="item-faq"><a href="#">자주하는 질문</a></li>
+                    </ul>
+                    <p class="customer-number">
+                        <span>고객센터 (평일 9시~6시)</span>
+                        <strong>1544-1544</strong>
+                    </p>
+                </div>
+                <button type="button" class="btn-menu-close"><span class="sr-only">닫기</span></button>
+            </div>
+            <!-- 전체메뉴 //end -->
+            <!-- 일정변경 -->
+            <div class="change-schedule">
+                <h2 class="section-title">일정변경</h2>
+                <ul class="reservation-step">
+                    <!-- STEP 01 장소선택 -->
+                    <!-- [D] 선택완료시 complete 클래스 추가 -->
+                    <li class="complete">
+                        <h3 class="step-title"><span>STEP 01</span> 장소선택</h3>
+                        <div class="select-place input-group">
+                            <label for="rental-place" class="sr-only">대여 장소를 선택해 주세요.</label>
+                            <input type="text" class="form-control input-lg" id="rental-place" value="대여 장소를 선택해 주세요.">
+                            <span class="input-group-btn">
+                                    <button type="button" class="btn btn-icon btn-primary"><i class="icon-target"></i></button>
+                                </span>
+                        </div>
+                        <!-- 장소선택 레이어 -->
+                        <div class="select-place-picker">
+                            <ul class="tabs">
+                                <li class="tab active" rel="seoul">서울</li>
+                                <li class="tab" rel="jeju">제주</li>
+                                <li class="tab" rel="busan">부산</li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane" id="seoul">
+                                    <!-- 장소선택(서울) -->
+                                    <ul class="content-select-place select-place-seoul">
+                                        <li>
+                                            <div class="radio">
+                                                <input type="radio" id="place-seoul1" name="place-seoul" value="place-seoul1" checked>
+                                                <label for="place-seoul1" class="radio-label">김포공항</label>
+                                                <label for="place-seoul1" class="radio-display"></label>
+                                            </div>
+                                            <div class="content-place place-seoul1">
+                                                <h5 class="place-name">김포공항지점</h5>
+                                                <ul class="place-info">
+                                                    <li class="place-address">
+                                                        <i class="icon-map"></i>
+                                                        주소 : 서울시 강서구 공항동 150 김포국제공항<br>국내선청사 1층 (7~8번 게이트)
+                                                    </li>
+                                                    <li>
+                                                        <i class="icon-phone"></i>
+                                                        TEL : 02)2664-1466
+                                                    </li>
+                                                    <li>
+                                                        <i class="icon-clock"></i>
+                                                        운영시간 : 08:00-20:00
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="radio">
+                                                <input type="radio" id="place-seoul2" name="place-seoul" value="place-seoul2">
+                                                <label for="place-seoul2" class="radio-label">마포구</label>
+                                                <label for="place-seoul2" class="radio-display"></label>
+                                            </div>
+                                            <div class="content-place place-seoul2">
+                                                <h5 class="place-name">마포구 지점</h5>
+                                                <ul class="place-info">
+                                                    <li class="place-address">
+                                                        <i class="icon-map"></i>
+                                                        주소 : 서울시 강서구 공항동 150 김포국제공항<br>국내선청사 1층 (7~8번 게이트)
+                                                    </li>
+                                                    <li>
+                                                        <i class="icon-phone"></i>
+                                                        TEL : 02)2664-1466
+                                                    </li>
+                                                    <li>
+                                                        <i class="icon-clock"></i>
+                                                        운영시간 : 08:00-20:00
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="radio">
+                                                <input type="radio" id="place-seoul3" name="place-seoul" value="place-seoul3">
+                                                <label for="place-seoul3" class="radio-label">강남구</label>
+                                                <label for="place-seoul3" class="radio-display"></label>
+                                            </div>
+                                            <div class="content-place place-seoul3">
+                                                <h5 class="place-name">강남구 지점</h5>
+                                                <ul class="place-info">
+                                                    <li class="place-address">
+                                                        <i class="icon-map"></i>
+                                                        주소 : 서울시 강서구 공항동 150 김포국제공항<br>국내선청사 1층 (7~8번 게이트)
+                                                    </li>
+                                                    <li>
+                                                        <i class="icon-phone"></i>
+                                                        TEL : 02)2664-1466
+                                                    </li>
+                                                    <li>
+                                                        <i class="icon-clock"></i>
+                                                        운영시간 : 08:00-20:00
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="radio">
+                                                <input type="radio" id="place-seoul4" name="place-seoul" value="place-seoul4">
+                                                <label for="place-seoul4" class="radio-label">강서구</label>
+                                                <label for="place-seoul4" class="radio-display"></label>
+                                            </div>
+                                            <div class="content-place place-seoul4">
+                                                <h5 class="place-name">강서구 지점</h5>
+                                                <ul class="place-info">
+                                                    <li class="place-address">
+                                                        <i class="icon-map"></i>
+                                                        주소 : 서울시 강서구 공항동 150 김포국제공항<br>국내선청사 1층 (7~8번 게이트)
+                                                    </li>
+                                                    <li>
+                                                        <i class="icon-phone"></i>
+                                                        TEL : 02)2664-1466
+                                                    </li>
+                                                    <li>
+                                                        <i class="icon-clock"></i>
+                                                        운영시간 : 08:00-20:00
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <!-- 장소선택(서울) //end -->
+                                </div>
+                                <div class="tab-pane" id="jeju">
+                                    <!-- 장소선택(제주) -->
+                                    <ul class="content-select-place select-place-jeju">
+                                        <li>
+                                            <div class="radio">
+                                                <input type="radio" id="place-jeju1" name="place-jeju" value="place-jeju1" checked>
+                                                <label for="place-jeju1" class="radio-label">제주공항</label>
+                                                <label for="place-jeju1" class="radio-display"></label>
+                                            </div>
+                                            <div class="content-place place-jeju1">
+                                                <h5 class="place-name">제주공항지점</h5>
+                                                <ul class="place-info">
+                                                    <li class="place-address">
+                                                        <i class="icon-map"></i>
+                                                        주소 : 서울시 강서구 공항동 150 김포국제공항<br>국내선청사 1층 (7~8번 게이트)
+                                                    </li>
+                                                    <li>
+                                                        <i class="icon-phone"></i>
+                                                        TEL : 02)2664-1466
+                                                    </li>
+                                                    <li>
+                                                        <i class="icon-clock"></i>
+                                                        운영시간 : 08:00-20:00
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <!-- 장소선택(제주) //end -->
+                                </div>
+                                <div class="tab-pane" id="busan">
+                                    <!-- 장소선택(부산) -->
+                                    <ul class="content-select-place select-place-busan">
+                                        <li>
+                                            <div class="radio">
+                                                <input type="radio" id="place-busan1" name="place-busan" value="place-busan1" checked>
+                                                <label for="place-busan1" class="radio-label">부산공항</label>
+                                                <label for="place-busan1" class="radio-display"></label>
+                                            </div>
+                                            <div class="content-place place-busan1">
+                                                <h5 class="place-name">부산공항지점</h5>
+                                                <ul class="place-info">
+                                                    <li class="place-address">
+                                                        <i class="icon-map"></i>
+                                                        주소 : 서울시 강서구 공항동 150 김포국제공항<br>국내선청사 1층 (7~8번 게이트)
+                                                    </li>
+                                                    <li>
+                                                        <i class="icon-phone"></i>
+                                                        TEL : 02)2664-1466
+                                                    </li>
+                                                    <li>
+                                                        <i class="icon-clock"></i>
+                                                        운영시간 : 08:00-20:00
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="radio">
+                                                <input type="radio" id="place-busan2" name="place-busan" value="place-busan2">
+                                                <label for="place-busan2" class="radio-label">부산역</label>
+                                                <label for="place-busan2" class="radio-display"></label>
+                                            </div>
+                                            <div class="content-place place-busan2">
+                                                <h5 class="place-name">부산역지점</h5>
+                                                <ul class="place-info">
+                                                    <li class="place-address">
+                                                        <i class="icon-map"></i>
+                                                        주소 : 서울시 강서구 공항동 150 김포국제공항<br>국내선청사 1층 (7~8번 게이트)
+                                                    </li>
+                                                    <li>
+                                                        <i class="icon-phone"></i>
+                                                        TEL : 02)2664-1466
+                                                    </li>
+                                                    <li>
+                                                        <i class="icon-clock"></i>
+                                                        운영시간 : 08:00-20:00
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <!-- 장소선택(부산) //end -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 장소선택 레이어 //end-->
+                    </li>
+                    <!-- STEP 01 장소선택 //end -->
+                    <!-- STEP 02 일정선택 -->
+                    <li>
+                        <h3 class="step-title"><span>STEP 02</span> 일정선택</h3>
+                        <input type="text" data-role="date" data-inline="true">
+                        <div class="select-datetime">
+                            <!-- [D] 선택완료시 각각 complete 클랙스 추가 -->
+                            <div class="select-date complete">
+                                <div class="text-date">
+                                    <strong>03.15</strong>
+                                    <small>수요일<span>2017</span></small>
+                                </div>
+                                <!-- 날짜선택 레이어 -->
+                                <div class="datepicker calendar">
+                                    <div class="calendar-head">
+                                        <button type="button" class="btn-calendar left"><i class="icon-left"></i></button>
+                                        <h4 class="calendar-month">2017년 3월</h4>
+                                        <button type="button" class="btn-calendar right"><i class="icon-right"></i></button>
+                                    </div>
+                                    <table class="calendar-body">
+                                        <thead>
+                                        <tr>
+                                            <th>일</th>
+                                            <th>월</th>
+                                            <th>화</th>
+                                            <th>수</th>
+                                            <th>목</th>
+                                            <th>금</th>
+                                            <th>토</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="disable">1</td>
+                                            <td class="disable">2</td>
+                                            <td class="disable">3</td>
+                                            <td class="disable">4</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="disable">5</td>
+                                            <td class="disable">6</td>
+                                            <td class="disable">7</td>
+                                            <td class="disable">8</td>
+                                            <td class="disable">9</td>
+                                            <td class="disable">10</td>
+                                            <td class="disable">11</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="disable">12</td>
+                                            <td class="disable">13</td>
+                                            <td class="disable">14</td>
+                                            <td class="enable active">15</td>
+                                            <td class="enable">16</td>
+                                            <td class="enable">17</td>
+                                            <td class="enable">18</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="enable">19</td>
+                                            <td class="enable">20</td>
+                                            <td class="enable">21</td>
+                                            <td class="enable">22</td>
+                                            <td class="enable">23</td>
+                                            <td class="enable">24</td>
+                                            <td class="enable">25</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="enable">26</td>
+                                            <td class="enable">27</td>
+                                            <td class="enable">28</td>
+                                            <td class="enable">29</td>
+                                            <td class="enable">30</td>
+                                            <td class="enable">31</td>
+                                            <td></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- 날짜선택 레이어 //end -->
+                            </div>
+                            <div class="select-time">
+                                <strong class="text-time">10:00</strong>
+                                <!-- 시간선택 레이어 -->
+                                <div class="timepicker">
+                                    <div class="selectbox hour">
+                                        <strong class="selectbox-value">10</strong>
+                                        <select onchange="selectboxEvent(this);">
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                    </div>
+                                    <div class="add-time-colon">:</div>
+                                    <div class="selectbox minute">
+                                        <strong class="selectbox-value">00</strong>
+                                        <select onchange="selectboxEvent(this);">
+                                            <option value="00">00</option>
+                                            <option value="15">15</option>
+                                            <option value="30">30</option>
+                                            <option value="45">45</option>
+                                        </select>
+                                    </div>
+                                    <div class="btn-align-center">
+                                        <button type="button" class="btn btn-md btn-primary">시간선택</button>
+                                    </div>
+                                </div>
+                                <!-- 시간선택 레이어 //end -->
+                            </div>
+                            <div class="add-on"></div>
+                            <div class="select-date">
+                                <div class="text-date">
+                                    <strong>03.15</strong>
+                                    <small>수요일<span>2017</span></small>
+                                </div>
+                                <!-- 날짜선택 레이어 -->
+                                <div class="datepicker calendar">
+                                    <div class="calendar-head">
+                                        <button type="button" class="btn-calendar left"><i class="icon-left"></i></button>
+                                        <h4 class="calendar-month">2017년 3월</h4>
+                                        <button type="button" class="btn-calendar right"><i class="icon-right"></i></button>
+                                    </div>
+                                    <table class="calendar-body">
+                                        <thead>
+                                        <tr>
+                                            <th>일</th>
+                                            <th>월</th>
+                                            <th>화</th>
+                                            <th>수</th>
+                                            <th>목</th>
+                                            <th>금</th>
+                                            <th>토</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="disable">1</td>
+                                            <td class="disable">2</td>
+                                            <td class="disable">3</td>
+                                            <td class="disable">4</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="disable">5</td>
+                                            <td class="disable">6</td>
+                                            <td class="disable">7</td>
+                                            <td class="disable">8</td>
+                                            <td class="disable">9</td>
+                                            <td class="disable">10</td>
+                                            <td class="disable">11</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="disable">12</td>
+                                            <td class="disable">13</td>
+                                            <td class="disable">14</td>
+                                            <td class="enable active">15</td>
+                                            <td class="enable">16</td>
+                                            <td class="enable">17</td>
+                                            <td class="enable">18</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="enable">19</td>
+                                            <td class="enable">20</td>
+                                            <td class="enable">21</td>
+                                            <td class="enable">22</td>
+                                            <td class="enable">23</td>
+                                            <td class="enable">24</td>
+                                            <td class="enable">25</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="enable">26</td>
+                                            <td class="enable">27</td>
+                                            <td class="enable">28</td>
+                                            <td class="enable">29</td>
+                                            <td class="enable">30</td>
+                                            <td class="enable">31</td>
+                                            <td></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- 날짜선택 레이어 //end -->
+                            </div>
+                            <div class="select-time">
+                                <strong class="text-time">10:00</strong>
+                                <!-- 시간선택 레이어 -->
+                                <div class="timepicker">
+                                    <div class="selectbox hour">
+                                        <strong class="selectbox-value">10</strong>
+                                        <select onchange="selectboxEvent(this);">
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                    </div>
+                                    <div class="add-time-colon">:</div>
+                                    <div class="selectbox minute">
+                                        <strong class="selectbox-value">00</strong>
+                                        <select onchange="selectboxEvent(this);">
+                                            <option value="00">00</option>
+                                            <option value="15">15</option>
+                                            <option value="30">30</option>
+                                            <option value="45">45</option>
+                                        </select>
+                                    </div>
+                                    <div class="btn-align-center">
+                                        <button type="button" class="btn btn-md btn-primary">시간선택</button>
+                                    </div>
+                                </div>
+                                <!-- 시간선택 레이어 //end -->
+                            </div>
+                        </div>
+                    </li>
+                    <!-- STEP 02 일정선택 //end -->
+                    <!-- STEP 03 차량선택 -->
+                    <li>
+                        <h3 class="step-title"><span>STEP 03</span> 차량선택</h3>
+                        <div class="select-car">
+                            <div class="checkbox">
+                                <input type="checkbox" id="small-light" name="car-pick">
+                                <label for="small-light" class="checkbox-label">경/소형</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="medium-large" name="car-pick">
+                                <label for="medium-large" class="checkbox-label">중/대형</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="suv-van" name="car-pick">
+                                <label for="suv-van" class="checkbox-label">SUV/승합</label>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- STEP 03 차량선택 //end -->
+                </ul>
+                <div class="btn-align-center">
+                    <button type="button" class="btn btn-xlg has-arrow"><b>렌터카 조회</b></button>
+                </div>
+                <button type="button" class="btn-close">닫기<i class="icon-big-close"></i></button>
+            </div>
+            <!-- 일정변경 //end -->
+            <!-- 차량정보 -->
+            <div class="modal detail-view">
+                <div class="modal-content">
+                    <div class="car-info">
+                        <span class="brand-name">벤츠</span>
+                        <h3 class="car-name">2014 벤츠 E클래스</h3>
+                        <ul class="overview">
+                            <li><i class="icon-vehicle"></i> 중형차</li>
+                            <li><i class="icon-person"></i> 5인승</li>
+                            <li><i class="icon-electric-cord"></i> 전기차</li>
+                        </ul>
+                        <div class="image-area">
+                            <img src="static/images/temp/car.png" alt="">
+                        </div>
+                    </div>
+                    <div class="detail-info">
+                        <div class="company-info">
+                            <div class="clearfix">
+                                <span class="company-name">퍼시픽렌터카</span>
+                                <strong class="price">
+                                    12,000<em>원</em>
+                                    <span>24시간 / 일반자차포함</span>
+                                </strong>
+                            </div>
+                            <div class="btn-box">
+                                <button type="button" class="btn btn-lg btn-primary btn-block"><i class="icon-check"></i> 예약하기</button>
+                            </div>
+                        </div>
+                        <div class="view-info-group rent-regulation">
+                            <h4 class="group-title">대여규정</h4>
+                            <ul>
+                                <li><i class="icon-big-21"></i>만21세 이상</li>
+                                <li><i class="icon-big-license"></i>운전면허 취득 1년이상/<br>2종보통 면허 이상</li>
+                            </ul>
+                        </div>
+                        <div class="view-info-group car-option">
+                            <h4 class="group-title">차량옵션</h4>
+                            <ul>
+                                <li><i class="text-year">16</i>2016년식</li>
+                                <li><i class="icon-navigation"></i>네비게이션</li>
+                                <li><i class="icon-nosmoking"></i>금연차량</li>
+                                <li><i class="icon-cable"></i>AUX선제공</li>
+                                <li><i class="icon-bluetooth"></i>블루투스</li>
+                                <li><i class="icon-camera"></i>후방카메라</li>
+                            </ul>
+                        </div>
+                        <div class="view-info-group reviews">
+                            <div class="clearfix">
+                                <h4 class="group-title">이용후기<small>(15)</small></h4>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-white"><i class="icon-left-open"></i></button>
+                                    <button type="button" class="btn btn-white"><i class="icon-right-open"></i></button>
+                                </div>
+                            </div>
+                            <div class="review">
+                                <span class="reviewer">홍길동</span>
+                                <!-- [D] 불만족 level1 - 매우만족 level5 -->
+                                <span class="satisfaction level5">매우만족</span>
+                                <p class="review-content">만족합니다 만족합니다 만족합니다 만족합니다 만족합니다 만족합니다 만족합니다 만족합니다 만족합니다</p>
+                                <p class="rent-info">아이오닉/일반자차/2016-09-06~2016-09-07</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-modal-close" onclick="modalClose('.detail-view');"><span class="sr-only">닫기</span></button>
+                </div>
+            </div>
+            <!-- 차량정보 //end -->
+            <!-- 차량정보 - 제주 -->
+            <!-- [D] style 확인용 -->
+            <div class="modal detail-view jeju-detail-view modal-backdrop" style="display:block;">
+                <div class="modal-content">
+                    <div class="car-info">
+                        <span class="brand-name">벤츠/전기차</span>
+                        <h3 class="car-name">2014 벤츠 E클래스</h3>
+                        <ul class="overview">
+                            <li><i class="icon-vehicle"></i> 중형차</li>
+                            <li><i class="icon-person"></i> 5인승</li>
+                            <li><i class="icon-electric-cord"></i> 전기차</li>
+                        </ul>
+                        <div class="image-area">
+                            <img src="static/images/temp/car.png" alt="">
+                        </div>
+                    </div>
+                    <div class="detail-info">
+                        <div class="company-info">
+                            <div class="clearfix">
+                                <span class="company-name">블루렌터카</span>
+                                <strong class="price">
+                                    12,000<em>원</em>
+                                    <span>24시간 / 일반자차포함</span>
+                                </strong>
+                            </div>
+                            <div class="rent-regulation">
+                                <ul>
+                                    <li><i class="icon-big-21"></i>만21세 이상</li>
+                                    <li><i class="icon-big-license"></i>운전면허 취득 1년이상/<br>2종보통 면허 이상</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="view-info-group car-option">
+                            <h4 class="group-title">차량옵션</h4>
+                            <ul>
+                                <li><i class="text-year">16</i>2016년식</li>
+                                <li><i class="icon-navigation"></i>네비게이션</li>
+                                <li><i class="icon-nosmoking"></i>금연차량</li>
+                                <li><i class="icon-cable"></i>AUX선제공</li>
+                                <li><i class="icon-bluetooth"></i>블루투스</li>
+                                <li><i class="icon-camera"></i>후방카메라</li>
+                            </ul>
+                        </div>
+                        <div class="view-info-group reviews">
+                            <div class="clearfix">
+                                <h4 class="group-title">평점 4.8 <small>(후기 15개)</small></h4>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-white"><i class="icon-left-open"></i></button>
+                                    <button type="button" class="btn btn-white"><i class="icon-right-open"></i></button>
+                                </div>
+                            </div>
+                            <div class="review">
+                                <span class="reviewer">홍길동</span>
+                                <!-- [D] 불만족 level1 - 매우만족 level5 -->
+                                <span class="satisfaction level5">매우만족</span>
+                                <p class="review-content">만족합니다 만족합니다 만족합니다 만족합니다 만족합니다 만족합니다 만족합니다 만족합니다 만족합니다</p>
+                                <p class="rent-info">아이오닉/일반자차/2016-09-06~2016-09-07</p>
+                            </div>
+                            <div class="btn-box">
+                                <button type="button" class="btn btn-lg btn-primary btn-block"><i class="icon-check"></i> 예약하기</button>
+                            </div>
+                        </div>
+                        <div class="lowest-price">
+                            <h4 class="group-title">대여업체 최저가 TOP10</h4>
+                            <p class="text">* 일반자차 보험 포함 금액</p>
+                            <ul>
+                                <li>
+                                    <div class="radio">
+                                        <input type="radio" id="lowest-price1" name="lowest-price">
+                                        <label for="lowest-price1" class="radio-display"></label>
+                                        <label for="lowest-price1" class="radio-label">
+                                            <span class="company-name">KD렌터카</span>
+                                            <span class="price">12,000원</span>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="radio">
+                                        <input type="radio" id="lowest-price2" name="lowest-price">
+                                        <label for="lowest-price2" class="radio-display"></label>
+                                        <label for="lowest-price2" class="radio-label">
+                                            <span class="company-name">탐라렌터카</span>
+                                            <span class="price">12,000원</span>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="radio">
+                                        <input type="radio" id="lowest-price3" name="lowest-price">
+                                        <label for="lowest-price3" class="radio-display"></label>
+                                        <label for="lowest-price3" class="radio-label">
+                                            <span class="company-name">오케이렌터카</span>
+                                            <span class="price">12,000원</span>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="radio">
+                                        <input type="radio" id="lowest-price4" name="lowest-price">
+                                        <label for="lowest-price4" class="radio-display"></label>
+                                        <label for="lowest-price4" class="radio-label">
+                                            <span class="company-name">제주E렌터카</span>
+                                            <span class="price">12,000원</span>
+                                        </label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="btn-modal-close" onclick="modalClose('.detail-view');"><span class="sr-only">닫기</span></button>
+                </div>
+            </div>
+            <!-- 차량정보 - 제주 //end -->
+            <!-- FEEDBACK -->
+            <div class="feedback">
+                <a href="#"><span class="sr-only">feedback</span></a>
+            </div>
+            <!-- FEEDBACK //end -->
+            <div class="footer">
+                <ul class="terms-menu">
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보취급방침</a></li>
+                </ul>
+                <ul class="company-info">
+                    <li>(주)제주비앤에프</li>
+                    <li>사업자등록번호 105-87-76000</li>
+                    <li>통신판매신고</li>
+                    <li>제2015-제주연동-43호</li>
+                </ul>
+                <p class="copyright">대표이사 윤형준  @ 2017 TAZAGO. All rights reserved</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

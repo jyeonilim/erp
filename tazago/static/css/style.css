@@ -1,9 +1,9 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-@import url("https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:100,300,400,500,700");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -56,15 +56,50 @@ table {
 *******************************/
 @font-face {
   font-family: 'NanumSquare';
+  font-style: normal;
   font-weight: 400;
   src: url("../font/NanumSquareR.eot");
   src: url("../font/NanumSquareR.eot?#iefix") format("embedded-opentype"), url("../font/NanumSquareR.woff") format("woff"), url("../font/NanumSquareR.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'NanumSquare';
+  font-style: normal;
   font-weight: 700;
   src: url("../font/NanumSquareB.eot");
   src: url("../font/NanumSquareB.eot?#iefix") format("embedded-opentype"), url("../font/NanumSquareB.woff") format("woff"), url("../font/NanumSquareB.ttf") format("truetype"); }
+
+/*
+* Noto Sans KR (korean) http://www.google.com/fonts/earlyaccess
+ */
+@font-face {
+  font-family: 'NotoSans';
+  font-style: normal;
+  font-weight: 100;
+  src: url("../font/NotoSansKR-Thin.woff2") format("woff2"), url("../font/NotoSansKR-Thin.woff") format("woff"), url("../font/NotoSansKR-Thin.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'NotoSans';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../font/NotoSansKR-Light.woff2") format("woff2"), url("../font/NotoSansKR-Light.woff") format("woff"), url("../font/NotoSansKR-Light.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'NotoSans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../font/NotoSansKR-Regular.woff2") format("woff2"), url("../font/NotoSansKR-Regular.woff") format("woff"), url("../font/NotoSansKR-Regular.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'NotoSans';
+  font-style: normal;
+  font-weight: 500;
+  src: url("../font/NotoSansKR-Medium.woff2") format("woff2"), url("../font/NotoSansKR-Medium.woff") format("woff"), url("../font/NotoSansKR-Medium.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'NotoSans';
+  font-style: normal;
+  font-weight: 700;
+  src: url("../font/NotoSansKR-Bold.woff2") format("woff2"), url("../font/NotoSansKR-Bold.woff") format("woff"), url("../font/NotoSansKR-Bold.otf") format("opentype"); }
 
 /*******************************
     Icon
@@ -86,6 +121,16 @@ table {
   height: 10px;
   background-position: -520px -43px; }
 
+.icon-left-open {
+  width: 7px;
+  height: 13px;
+  background-position: -563px -43px; }
+
+.icon-right-open {
+  width: 7px;
+  height: 13px;
+  background-position: -607px -43px; }
+
 .icon-big-up {
   width: 73px;
   height: 73px;
@@ -95,6 +140,11 @@ table {
   width: 73px;
   height: 73px;
   background-position: 0 0; }
+
+.icon-big-close {
+  width: 73px;
+  height: 73px;
+  background-position: -563px -477px; }
 
 .icon-target {
   width: 25px;
@@ -121,6 +171,16 @@ table {
   height: 18px;
   background-position: -347px -87px; }
 
+.icon-sm-clock {
+  width: 15px;
+  height: 15px;
+  background-position: -260px -173px; }
+
+.icon-clock-white {
+  width: 21px;
+  height: 21px;
+  background-position: -607px -347px; }
+
 .icon-big-phone {
   width: 31px;
   height: 31px;
@@ -136,6 +196,11 @@ table {
   height: 28px;
   background-position: -607px 0; }
 
+.icon-point-gray {
+  width: 19px;
+  height: 19px;
+  background-position: -520px -173px; }
+
 .icon-calendar {
   width: 18px;
   height: 18px;
@@ -146,6 +211,16 @@ table {
   height: 18px;
   background-position: -347px -130px; }
 
+.icon-sm-car {
+  width: 18px;
+  height: 13px;
+  background-position: -303px -173px; }
+
+.icon-vehicle {
+  width: 27px;
+  height: 18px;
+  background-position: -260px -347px; }
+
 .icon-won {
   width: 23px;
   height: 23px;
@@ -155,6 +230,94 @@ table {
   width: 20px;
   height: 20px;
   background-position: -433px -130px; }
+
+.icon-watch {
+  width: 24px;
+  height: 24px;
+  background-position: -347px -173px; }
+
+.icon-lock {
+  width: 18px;
+  height: 29px;
+  background-position: -390px -173px; }
+
+.icon-person-plus {
+  width: 31px;
+  height: 25px;
+  background-position: -433px -173px; }
+
+.icon-person {
+  width: 16px;
+  height: 19px;
+  background-position: -303px -347px; }
+
+.icon-check {
+  width: 25px;
+  height: 25px;
+  background-position: -477px -173px; }
+
+.icon-electric-cord {
+  width: 15px;
+  height: 21px;
+  background-position: -347px -347px; }
+
+.icon-big-21 {
+  width: 44px;
+  height: 44px;
+  background-position: -581px -217px; }
+
+.icon-big-license {
+  width: 42px;
+  height: 37px;
+  background-position: -520px -280px; }
+
+.icon-navigation {
+  width: 33px;
+  height: 33px;
+  background-position: -433px -347px; }
+
+.icon-nosmoking {
+  width: 33px;
+  height: 32px;
+  background-position: -520px -347px; }
+
+.icon-cable {
+  width: 28px;
+  height: 32px;
+  background-position: -390px -347px; }
+
+.icon-bluetooth {
+  width: 21px;
+  height: 32px;
+  background-position: -477px -347px; }
+
+.icon-camera {
+  width: 32px;
+  height: 28px;
+  background-position: -563px -347px; }
+
+.badge {
+  display: inline-block;
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11px;
+  -ms-border-radius: 11px;
+  border-radius: 11px;
+  font: 500 13px 'Montserrat', 'Noto Sans KR', sans-serif;
+  line-height: 1.615;
+  vertical-align: baseline; }
+
+.badge-discount {
+  padding: 0 9px;
+  border: 1px solid #4aaf9d;
+  background-color: white;
+  color: #4aaf9d;
+  letter-spacing: 0; }
+
+.badge-coupon {
+  padding: 0 9px;
+  border: 1px solid #275475;
+  background-color: #275475;
+  color: white; }
 
 /*******************************
     Button
@@ -179,8 +342,9 @@ table {
   line-height: 2.389; }
 
 .btn-lg {
+  height: 60px;
   font-size: 22px;
-  line-height: 2.682; }
+  line-height: 2.636; }
 
 .btn-xlg {
   padding: 0 76px;
@@ -190,6 +354,10 @@ table {
 .btn-primary {
   border-color: #4aaf9d;
   background-color: #4aaf9d; }
+
+.btn-white {
+  border-color: #dcdcdc;
+  background-color: white; }
 
 .btn-icon {
   font-size: 0; }
@@ -242,7 +410,7 @@ table {
   height: 60px;
   padding: 0 20px;
   border: 1px solid #e1e1e1;
-  font: 17px 'Noto Sans KR', sans-serif;
+  font: 17px 'NotoSans', sans-serif;
   line-height: 3.412; }
 
 .input-lg {
@@ -318,7 +486,7 @@ table {
   .checkbox .radio-label,
   .radio .checkbox-label,
   .radio .radio-label {
-    font: 20px 'Noto Sans KR', sans-serif;
+    font: 20px 'NotoSans', sans-serif;
     color: #898989; }
   .checkbox input[type="checkbox"]:checked ~ .checkbox-display,
   .checkbox input[type="checkbox"]:checked ~ .checkbox-label,
@@ -359,9 +527,9 @@ table {
 .selectbox {
   position: relative;
   display: inline-block;
-  border: 1px solid #b0b0b0;
+  border: 1px solid #d5d5d5;
   text-align: left;
-  background-color: #fff; }
+  background-color: #f9f9f9; }
   .selectbox select {
     position: absolute;
     top: 0;
@@ -372,9 +540,25 @@ table {
     opacity: 0;
     cursor: pointer; }
   .selectbox .selectbox-value {
-    padding-left: 10px;
+    display: block;
+    padding: 0 70px 0 20px;
     background-color: #fff;
-    color: #000; }
+    font-size: 16px;
+    line-height: 2.625;
+    color: #898989; }
+    .selectbox .selectbox-value:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-left: 1px solid #d5d5d5;
+      display: inline-block;
+      background: url("../images/sprites-icon.png") repeat -550px -70px;
+      line-height: 0;
+      color: transparent;
+      vertical-align: sub;
+      width: 40px;
+      height: 42px;
+      content: ''; }
 
 .ui-front {
   z-index: 100; }
@@ -411,7 +595,7 @@ table {
     padding: 12px 30px; }
     .ui-selectmenu-menu .ui-menu .ui-menu-item {
       padding: 3px 0;
-      font: 17px 'Noto Sans KR', sans-serif; }
+      font: 17px 'NotoSans', sans-serif; }
 
 .ui-selectmenu-open {
   display: block; }
@@ -422,7 +606,7 @@ table {
   width: 100%;
   height: 61px;
   padding: 0 40px 0 20px;
-  font: 17px 'Noto Sans KR', sans-serif;
+  font: 17px 'NotoSans', sans-serif;
   line-height: 61px;
   color: #4aaf9d;
   text-overflow: ellipsis; }
@@ -466,7 +650,7 @@ table {
   .table td {
     padding: 14px 0;
     border: 1px solid #e1e1e1;
-    font: 17px 'Noto Sans KR', sans-serif;
+    font: 17px 'NotoSans', sans-serif;
     text-align: center;
     vertical-align: middle; }
   .table thead th {
@@ -479,7 +663,7 @@ table {
   .calendar .calendar-head {
     margin-bottom: 5px; }
     .calendar .calendar-head .calendar-month {
-      font: 500 20px 'Montserrat', 'Noto Sans KR', sans-serif;
+      font: 500 20px 'Montserrat', 'NotoSans', sans-serif;
       color: #575757;
       text-align: center;
       vertical-align: middle;
@@ -509,7 +693,7 @@ table {
       text-align: center;
       vertical-align: middle; }
     .calendar .calendar-body th {
-      font: 500 16px 'Noto Sans KR', sans-serif;
+      font: 500 16px 'NotoSans', sans-serif;
       color: #8e8e8e; }
     .calendar .calendar-body td {
       font-family: 'Lato', sans-serif; }
@@ -533,9 +717,10 @@ table {
   .timepicker .selectbox-value {
     display: inline-block;
     width: 136px;
-    padding-right: 30px;
-    line-height: 1.657;
+    padding: 0 30px 0 0;
     font: 500 35px 'Montserrat', sans-serif;
+    line-height: 1.657;
+    color: #000;
     text-align: center; }
     .timepicker .selectbox-value:before, .timepicker .selectbox-value:after {
       position: absolute;
@@ -554,6 +739,7 @@ table {
     .timepicker .selectbox-value:before {
       top: 0; }
     .timepicker .selectbox-value:after {
+      top: inherit;
       bottom: 0;
       border-top: 1px solid #b0b0b0;
       background-position: -555px -81px; }
@@ -786,6 +972,7 @@ img,
 
 button {
   border: 0;
+  background-color: transparent;
   cursor: pointer; }
 
 /*******************************
@@ -807,6 +994,10 @@ button {
   #wrap:after {
     clear: both; }
 
+.content {
+  margin-left: 346px;
+  padding: 92px 136px 150px 126px; }
+
 .main {
   height: 100%; }
   .main .content {
@@ -818,10 +1009,15 @@ button {
     width: 66%;
     min-width: 740px;
     height: 100%;
+    margin-left: 0;
+    padding: 0;
     background-color: white; }
     @media (max-width: 1200px) {
       .main .content {
         left: 460px; } }
+
+.list .content {
+  padding: 30px 87px 100px; }
 
 .reservation .content {
   width: 66%;
@@ -839,6 +1035,8 @@ button {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 2;
+  width: 346px;
   height: 100%;
   background-color: #4aaf9d; }
   .sidebar .image-area img {
@@ -1144,7 +1342,7 @@ button {
   .site-quick-access li {
     float: left; }
     .site-quick-access li a {
-      font: 300 14px 'Noto Sans KR', sans-serif;
+      font: 300 14px 'NotoSans', sans-serif;
       color: white; }
     .site-quick-access li:before {
       display: inline-block;
@@ -1156,6 +1354,31 @@ button {
     .site-quick-access li:first-child:before {
       display: none; }
 
+.site-quick-access-icon {
+  clear: both;
+  width: 100%;
+  padding-top: 30px;
+  text-align: center; }
+  .site-quick-access-icon li {
+    display: inline-block; }
+    .site-quick-access-icon li a {
+      display: inline-block;
+      font: 300 14px 'NotoSans', sans-serif;
+      color: white; }
+      .site-quick-access-icon li a i {
+        display: block;
+        height: 29px;
+        margin: 0 auto; }
+    .site-quick-access-icon li:before {
+      display: inline-block;
+      width: 1px;
+      height: 45px;
+      margin: 0 15px;
+      background-color: #7cc5b8;
+      content: ''; }
+    .site-quick-access-icon li:first-child:before {
+      display: none; }
+
 /*******************************
     Footer
 *******************************/
@@ -1164,10 +1387,10 @@ button {
   left: 0;
   bottom: 20px;
   z-index: 10;
-  width: 34%;
-  min-width: 460px;
+  width: 346px;
+  padding: 0 25px;
   text-align: center;
-  font: 12px/17px 'Lato', 'Noto Sans KR', sans-serif;
+  font: 12px/17px 'Lato', 'NotoSans', sans-serif;
   color: #bce2db; }
   .footer .terms-menu {
     margin-bottom: 6px; }
@@ -1190,7 +1413,15 @@ button {
     margin: 0 5px; }
 
 .main .footer {
-  position: fixed; }
+  position: fixed;
+  width: 34%;
+  min-width: 460px;
+  padding: 0; }
+
+.reservation .footer {
+  width: 34%;
+  min-width: 460px;
+  padding: 0; }
 
 /*******************************
     Common
@@ -1211,6 +1442,10 @@ button {
   font-weight: 700;
   font-size: 25px; }
 
+.third-title {
+  font-weight: 700;
+  font-size: 36px; }
+
 .feedback {
   position: fixed;
   top: 36px;
@@ -1230,7 +1465,7 @@ button {
     left: 0;
     margin: auto;
     padding: 0 20px;
-    font: 17px 'Noto Sans KR', sans-serif;
+    font: 17px 'NotoSans', sans-serif;
     line-height: 3.412;
     color: #7f7f7f; }
 
@@ -1243,7 +1478,7 @@ button {
   -ms-border-radius: 4px;
   border-radius: 4px;
   background-color: #4aaf9d;
-  font: 300 15px 'Noto Sans KR', sans-serif;
+  font: 300 15px 'NotoSans', sans-serif;
   color: white; }
   .tooltip:after {
     display: inline-block;
@@ -1264,7 +1499,7 @@ button {
 .notify-list li {
   padding-left: 8px;
   text-indent: -8px;
-  font: 200 15px 'Noto Sans KR', sans-serif;
+  font: 200 15px 'NotoSans', sans-serif;
   color: #8d8d8d; }
   .notify-list li:before {
     display: inline-block;
@@ -1312,291 +1547,292 @@ button {
   .main-reservation .section-title {
     padding-bottom: 0;
     border-bottom: 0; }
-  .main-reservation .reservation-step {
-    display: inline-block;
-    width: 100%;
-    padding: 0 116px 0 149px;
-    text-align: left; }
-    @media (max-width: 1600px) {
-      .main-reservation .reservation-step {
-        padding: 0 24px 0 40px; } }
-    .main-reservation .reservation-step .step-title {
-      margin: 25px 0 10px;
-      font-size: 24px; }
-      .main-reservation .reservation-step .step-title span {
-        color: #4aaf9d; }
-    .main-reservation .reservation-step .select-place {
-      position: relative; }
-      .main-reservation .reservation-step .select-place:before {
-        display: inline-block;
-        background: url("../images/sprites-icon.png") repeat 0 -87px;
-        line-height: 0;
-        color: transparent;
-        vertical-align: sub;
-        width: 21px;
-        height: 30px;
-        position: absolute;
-        top: 50%;
-        left: 40px;
-        margin-top: -15px;
-        content: ''; }
-      .main-reservation .reservation-step .select-place .form-control {
-        padding-left: 80px;
-        line-height: 84px; }
-      .main-reservation .reservation-step .select-place .btn {
-        height: 84px;
-        padding: 0 20px;
-        line-height: 3.154; }
-    .main-reservation .reservation-step > .active {
-      position: relative; }
-      .main-reservation .reservation-step > .active .select-place:before {
-        background-position: -43px -87px; }
-      .main-reservation .reservation-step > .active .select-place .form-control {
-        padding-left: 79px;
-        border: 2px solid #4aaf9d;
-        font-weight: 700;
-        color: #000; }
-    .main-reservation .reservation-step .select-place-picker {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      z-index: 11;
-      width: 100%;
-      border: 2px solid #4aaf9d;
-      border-top: 0;
-      background-color: #eef6f5; }
-      .main-reservation .reservation-step .select-place-picker .tabs {
-        padding: 16px 0;
-        text-align: center; }
-        .main-reservation .reservation-step .select-place-picker .tabs li {
-          display: inline-block;
-          width: 145px;
-          height: 42px;
-          border: 1px solid #b2dcd5;
-          font-weight: 700;
-          font-size: 20px;
-          line-height: 2;
-          color: #4aaf9d;
-          cursor: pointer; }
-          .main-reservation .reservation-step .select-place-picker .tabs li.active {
-            border-color: #4aaf9d;
-            background-color: #4aaf9d;
-            color: #fff; }
-      .main-reservation .reservation-step .select-place-picker .tab-content {
-        border-top: 1px solid #d7e6e4; }
-        .main-reservation .reservation-step .select-place-picker .tab-content .tab-pane {
-          display: none; }
-      .main-reservation .reservation-step .select-place-picker .content-select-place {
-        position: relative;
-        min-height: 223px; }
-        .main-reservation .reservation-step .select-place-picker .content-select-place > li {
-          margin-top: -1px; }
-          .main-reservation .reservation-step .select-place-picker .content-select-place > li .radio .radio-label {
-            display: inline-block;
-            width: 306px;
-            height: 65px;
-            padding-right: 20px;
-            border: 1px solid #d7e6e4;
-            background-color: #f6fafa;
-            font-size: 22px;
-            line-height: 2.955;
-            text-align: center;
-            color: #74a39e; }
-          .main-reservation .reservation-step .select-place-picker .content-select-place > li .radio .radio-display {
-            width: 32px;
-            height: 32px;
-            margin: 0 0 0 -52px;
-            background-color: #f6fafa;
-            background-image: url("../images/form-rental-place.png");
-            vertical-align: text-bottom; }
-          .main-reservation .reservation-step .select-place-picker .content-select-place > li .radio input[type="radio"]:checked ~ .radio-label {
-            background-color: #eef6f5;
-            font-weight: 700;
-            color: #4aaf9d; }
-          .main-reservation .reservation-step .select-place-picker .content-select-place > li .radio input[type="radio"]:checked ~ .radio-display {
-            background-color: #eef6f5;
-            background-image: url("../images/form-rental-place-checked.png"); }
-          .main-reservation .reservation-step .select-place-picker .content-select-place > li .content-place {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 306px;
-            padding: 40px 0 40px 65px; }
-            .main-reservation .reservation-step .select-place-picker .content-select-place > li .content-place .place-name {
-              margin-bottom: 20px;
-              font-weight: 700;
-              font-size: 25px; }
-            .main-reservation .reservation-step .select-place-picker .content-select-place > li .content-place .place-info {
-              font-family: 'Montserrat', 'Noto Sans KR', sans-serif; }
-              .main-reservation .reservation-step .select-place-picker .content-select-place > li .content-place .place-info > li {
-                padding: 2px 0; }
-                .main-reservation .reservation-step .select-place-picker .content-select-place > li .content-place .place-info > li.place-address {
-                  padding: 2px 0 2px 54px;
-                  text-indent: -54px; }
-                .main-reservation .reservation-step .select-place-picker .content-select-place > li .content-place .place-info > li i {
-                  margin-right: 5px; }
-    .main-reservation .reservation-step .select-datetime {
-      display: table;
-      width: 100%;
-      border: 1px solid #e1e1e1; }
-      .main-reservation .reservation-step .select-datetime .add-on {
-        display: table-cell;
-        width: 5%;
-        text-align: center;
-        vertical-align: middle; }
-        .main-reservation .reservation-step .select-datetime .add-on:before {
-          display: inline-block;
-          background: url("../images/sprites-icon.png") repeat -563px 0;
-          line-height: 0;
-          color: transparent;
-          vertical-align: sub;
-          width: 24px;
-          height: 24px;
-          content: ''; }
-      .main-reservation .reservation-step .select-datetime .select-date,
-      .main-reservation .reservation-step .select-datetime .select-time {
-        display: table-cell;
-        height: 84px;
-        padding: 0 30px;
-        text-align: center;
-        vertical-align: middle; }
-        .main-reservation .reservation-step .select-datetime .select-date .text-date,
-        .main-reservation .reservation-step .select-datetime .select-date .text-time,
-        .main-reservation .reservation-step .select-datetime .select-time .text-date,
-        .main-reservation .reservation-step .select-datetime .select-time .text-time {
-          cursor: pointer; }
-        .main-reservation .reservation-step .select-datetime .select-date.active,
-        .main-reservation .reservation-step .select-datetime .select-time.active {
-          position: relative; }
-          .main-reservation .reservation-step .select-datetime .select-date.active:after,
-          .main-reservation .reservation-step .select-datetime .select-time.active:after {
-            position: absolute;
-            top: -1px;
-            z-index: -1;
-            width: 100%;
-            height: 84px;
-            border: 2px solid #4aaf9d;
-            content: ''; }
-      .main-reservation .reservation-step .select-datetime .select-date .text-date:before, .main-reservation .reservation-step .select-datetime .select-date .text-date:after {
-        content: " ";
-        display: table; }
-      .main-reservation .reservation-step .select-datetime .select-date .text-date:after {
-        clear: both; }
-      .main-reservation .reservation-step .select-datetime .select-date .text-date:before {
-        float: left;
-        display: inline-block;
-        background: url("../images/sprites-icon.png") repeat -173px -87px;
-        line-height: 0;
-        color: transparent;
-        vertical-align: sub;
-        width: 25px;
-        height: 25px;
-        margin: 8px 9px 0 0;
-        content: ''; }
-      .main-reservation .reservation-step .select-datetime .select-date .text-date strong {
-        float: left;
-        font: 500 35px 'Montserrat', sans-serif; }
-      .main-reservation .reservation-step .select-datetime .select-date .text-date small {
-        float: left;
-        margin: 6px 0 0 9px;
-        padding-left: 9px;
-        border-left: 1px solid #d6d6d6;
-        font-size: 15px;
-        color: #545454; }
-        .main-reservation .reservation-step .select-datetime .select-date .text-date small span {
-          display: block;
-          margin-top: -3px;
-          font: 14px 'Montserrat', sans-serif;
-          color: #434343;
-          letter-spacing: 1.5px; }
-      .main-reservation .reservation-step .select-datetime .select-date.active:before {
-        background-position: -217px -87px; }
-      .main-reservation .reservation-step .select-datetime .select-date.active:after {
-        left: -1px; }
-      .main-reservation .reservation-step .select-datetime .select-time {
-        border-left: 1px solid #e1e1e1; }
-        .main-reservation .reservation-step .select-datetime .select-time:before {
-          float: left;
-          display: inline-block;
-          background: url("../images/sprites-icon.png") repeat -260px -87px;
-          line-height: 0;
-          color: transparent;
-          vertical-align: sub;
-          width: 23px;
-          height: 23px;
-          margin: 10px 9px 0 0;
-          content: ''; }
-        .main-reservation .reservation-step .select-datetime .select-time strong {
-          font: 500 35px 'Montserrat', sans-serif; }
-        .main-reservation .reservation-step .select-datetime .select-time.active:before {
-          background-position: -303px -87px; }
-        .main-reservation .reservation-step .select-datetime .select-time.active:after {
-          right: -1px; }
-      @media (max-width: 1200px) {
-        .main-reservation .reservation-step .select-datetime .select-date,
-        .main-reservation .reservation-step .select-datetime .select-time {
-          padding: 0 11px; }
-          .main-reservation .reservation-step .select-datetime .select-date:before,
-          .main-reservation .reservation-step .select-datetime .select-time:before {
-            margin-top: 3px; }
-          .main-reservation .reservation-step .select-datetime .select-date strong,
-          .main-reservation .reservation-step .select-datetime .select-time strong {
-            font-size: 26px; }
-          .main-reservation .reservation-step .select-datetime .select-date small,
-          .main-reservation .reservation-step .select-datetime .select-time small {
-            margin-top: 4px;
-            font-size: 12px; }
-            .main-reservation .reservation-step .select-datetime .select-date small span,
-            .main-reservation .reservation-step .select-datetime .select-time small span {
-              margin-top: -1px;
-              font-size: 11px; } }
-      .main-reservation .reservation-step .select-datetime .datepicker,
-      .main-reservation .reservation-step .select-datetime .timepicker {
-        display: none;
-        position: absolute;
-        top: 84px;
-        z-index: 11;
-        cursor: default; }
-      .main-reservation .reservation-step .select-datetime .datepicker {
-        left: -1px;
-        width: 370px; }
-      .main-reservation .reservation-step .select-datetime .timepicker {
-        right: -1px;
-        width: 352px; }
-        .main-reservation .reservation-step .select-datetime .timepicker .btn-align-center {
-          margin-top: 18px; }
-    .main-reservation .reservation-step .select-car:before, .main-reservation .reservation-step .select-car:after {
-      content: " ";
-      display: table; }
-    .main-reservation .reservation-step .select-car:after {
-      clear: both; }
-    .main-reservation .reservation-step .select-car .checkbox {
-      float: left; }
-      .main-reservation .reservation-step .select-car .checkbox .checkbox-label {
-        display: inline-block;
-        width: 135px;
-        margin-right: -1px;
-        border: 1px solid #dadada;
-        background-color: white;
-        font-size: 20px;
-        line-height: 4.1;
-        text-align: center; }
-      .main-reservation .reservation-step .select-car .checkbox input[type=checkbox]:checked + .checkbox-label {
-        background-color: #4aaf9d;
-        color: white; }
-    .main-reservation .reservation-step .complete .select-place:before {
+
+.reservation-step {
+  display: inline-block;
+  width: 100%;
+  padding: 0 116px 0 149px;
+  text-align: left; }
+  @media (max-width: 1600px) {
+    .reservation-step {
+      padding: 0 24px 0 40px; } }
+  .reservation-step .step-title {
+    margin: 25px 0 10px;
+    font-size: 24px; }
+    .reservation-step .step-title span {
+      color: #4aaf9d; }
+  .reservation-step .select-place {
+    position: relative; }
+    .reservation-step .select-place:before {
       display: inline-block;
-      background: url("../images/sprites-icon.png") repeat -43px -87px;
+      background: url("../images/sprites-icon.png") repeat 0 -87px;
       line-height: 0;
       color: transparent;
-      vertical-align: sub; }
-    .main-reservation .reservation-step .complete.select-date:before {
+      vertical-align: sub;
+      width: 21px;
+      height: 30px;
+      position: absolute;
+      top: 50%;
+      left: 40px;
+      margin-top: -15px;
+      content: ''; }
+    .reservation-step .select-place .form-control {
+      padding-left: 80px;
+      line-height: 84px; }
+    .reservation-step .select-place .btn {
+      height: 84px;
+      padding: 0 20px;
+      line-height: 3.154; }
+  .reservation-step > .active {
+    position: relative; }
+    .reservation-step > .active .select-place:before {
+      background-position: -43px -87px; }
+    .reservation-step > .active .select-place .form-control {
+      padding-left: 79px;
+      border: 2px solid #4aaf9d;
+      font-weight: 700;
+      color: #000; }
+  .reservation-step .select-place-picker {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 11;
+    width: 100%;
+    border: 2px solid #4aaf9d;
+    border-top: 0;
+    background-color: #eef6f5; }
+    .reservation-step .select-place-picker .tabs {
+      padding: 16px 0;
+      text-align: center; }
+      .reservation-step .select-place-picker .tabs li {
+        display: inline-block;
+        width: 145px;
+        height: 42px;
+        border: 1px solid #b2dcd5;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 2;
+        color: #4aaf9d;
+        cursor: pointer; }
+        .reservation-step .select-place-picker .tabs li.active {
+          border-color: #4aaf9d;
+          background-color: #4aaf9d;
+          color: #fff; }
+    .reservation-step .select-place-picker .tab-content {
+      border-top: 1px solid #d7e6e4; }
+      .reservation-step .select-place-picker .tab-content .tab-pane {
+        display: none; }
+    .reservation-step .select-place-picker .content-select-place {
+      position: relative;
+      min-height: 223px; }
+      .reservation-step .select-place-picker .content-select-place > li {
+        margin-top: -1px; }
+        .reservation-step .select-place-picker .content-select-place > li .radio .radio-label {
+          display: inline-block;
+          width: 306px;
+          height: 65px;
+          padding-right: 20px;
+          border: 1px solid #d7e6e4;
+          background-color: #f6fafa;
+          font-size: 22px;
+          line-height: 2.955;
+          text-align: center;
+          color: #74a39e; }
+        .reservation-step .select-place-picker .content-select-place > li .radio .radio-display {
+          width: 32px;
+          height: 32px;
+          margin: 0 0 0 -52px;
+          background-color: #f6fafa;
+          background-image: url("../images/form-rental-place.png");
+          vertical-align: text-bottom; }
+        .reservation-step .select-place-picker .content-select-place > li .radio input[type="radio"]:checked ~ .radio-label {
+          background-color: #eef6f5;
+          font-weight: 700;
+          color: #4aaf9d; }
+        .reservation-step .select-place-picker .content-select-place > li .radio input[type="radio"]:checked ~ .radio-display {
+          background-color: #eef6f5;
+          background-image: url("../images/form-rental-place-checked.png"); }
+        .reservation-step .select-place-picker .content-select-place > li .content-place {
+          display: none;
+          position: absolute;
+          top: 0;
+          left: 306px;
+          padding: 40px 0 40px 65px; }
+          .reservation-step .select-place-picker .content-select-place > li .content-place .place-name {
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-size: 25px; }
+          .reservation-step .select-place-picker .content-select-place > li .content-place .place-info {
+            font-family: 'Montserrat', 'NotoSans', sans-serif; }
+            .reservation-step .select-place-picker .content-select-place > li .content-place .place-info > li {
+              padding: 2px 0; }
+              .reservation-step .select-place-picker .content-select-place > li .content-place .place-info > li.place-address {
+                padding: 2px 0 2px 54px;
+                text-indent: -54px; }
+              .reservation-step .select-place-picker .content-select-place > li .content-place .place-info > li i {
+                margin-right: 5px; }
+  .reservation-step .select-datetime {
+    display: table;
+    width: 100%;
+    border: 1px solid #e1e1e1; }
+    .reservation-step .select-datetime .add-on {
+      display: table-cell;
+      width: 5%;
+      text-align: center;
+      vertical-align: middle; }
+      .reservation-step .select-datetime .add-on:before {
+        display: inline-block;
+        background: url("../images/sprites-icon.png") repeat -563px 0;
+        line-height: 0;
+        color: transparent;
+        vertical-align: sub;
+        width: 24px;
+        height: 24px;
+        content: ''; }
+    .reservation-step .select-datetime .select-date,
+    .reservation-step .select-datetime .select-time {
+      display: table-cell;
+      height: 84px;
+      padding: 0 30px;
+      text-align: center;
+      vertical-align: middle; }
+      .reservation-step .select-datetime .select-date .text-date,
+      .reservation-step .select-datetime .select-date .text-time,
+      .reservation-step .select-datetime .select-time .text-date,
+      .reservation-step .select-datetime .select-time .text-time {
+        cursor: pointer; }
+      .reservation-step .select-datetime .select-date.active,
+      .reservation-step .select-datetime .select-time.active {
+        position: relative; }
+        .reservation-step .select-datetime .select-date.active:after,
+        .reservation-step .select-datetime .select-time.active:after {
+          position: absolute;
+          top: -1px;
+          z-index: -1;
+          width: 100%;
+          height: 84px;
+          border: 2px solid #4aaf9d;
+          content: ''; }
+    .reservation-step .select-datetime .select-date .text-date:before, .reservation-step .select-datetime .select-date .text-date:after {
+      content: " ";
+      display: table; }
+    .reservation-step .select-datetime .select-date .text-date:after {
+      clear: both; }
+    .reservation-step .select-datetime .select-date .text-date:before {
+      float: left;
+      display: inline-block;
+      background: url("../images/sprites-icon.png") repeat -173px -87px;
+      line-height: 0;
+      color: transparent;
+      vertical-align: sub;
+      width: 25px;
+      height: 25px;
+      margin: 8px 9px 0 0;
+      content: ''; }
+    .reservation-step .select-datetime .select-date .text-date strong {
+      float: left;
+      font: 500 35px 'Montserrat', sans-serif; }
+    .reservation-step .select-datetime .select-date .text-date small {
+      float: left;
+      margin: 6px 0 0 9px;
+      padding-left: 9px;
+      border-left: 1px solid #d6d6d6;
+      font-size: 15px;
+      color: #545454; }
+      .reservation-step .select-datetime .select-date .text-date small span {
+        display: block;
+        margin-top: -3px;
+        font: 14px 'Montserrat', sans-serif;
+        color: #434343;
+        letter-spacing: 1.5px; }
+    .reservation-step .select-datetime .select-date.active .text-date:before {
       background-position: -217px -87px; }
-    .main-reservation .reservation-step .complete.select-time:before {
-      background-position: -303px -87px; }
-    .main-reservation .reservation-step + .btn-align-center {
-      margin-top: 25px; }
+    .reservation-step .select-datetime .select-date.active:after {
+      left: -1px; }
+    .reservation-step .select-datetime .select-time {
+      border-left: 1px solid #e1e1e1; }
+      .reservation-step .select-datetime .select-time:before {
+        float: left;
+        display: inline-block;
+        background: url("../images/sprites-icon.png") repeat -260px -87px;
+        line-height: 0;
+        color: transparent;
+        vertical-align: sub;
+        width: 23px;
+        height: 23px;
+        margin: 10px 9px 0 0;
+        content: ''; }
+      .reservation-step .select-datetime .select-time strong {
+        font: 500 35px 'Montserrat', sans-serif; }
+      .reservation-step .select-datetime .select-time.active:before {
+        background-position: -303px -87px; }
+      .reservation-step .select-datetime .select-time.active:after {
+        right: -1px; }
+    @media (max-width: 1200px) {
+      .reservation-step .select-datetime .select-date,
+      .reservation-step .select-datetime .select-time {
+        padding: 0 11px; }
+        .reservation-step .select-datetime .select-date:before,
+        .reservation-step .select-datetime .select-time:before {
+          margin-top: 3px; }
+        .reservation-step .select-datetime .select-date strong,
+        .reservation-step .select-datetime .select-time strong {
+          font-size: 26px; }
+        .reservation-step .select-datetime .select-date small,
+        .reservation-step .select-datetime .select-time small {
+          margin-top: 4px;
+          font-size: 12px; }
+          .reservation-step .select-datetime .select-date small span,
+          .reservation-step .select-datetime .select-time small span {
+            margin-top: -1px;
+            font-size: 11px; } }
+    .reservation-step .select-datetime .datepicker,
+    .reservation-step .select-datetime .timepicker {
+      display: none;
+      position: absolute;
+      top: 84px;
+      z-index: 11;
+      cursor: default; }
+    .reservation-step .select-datetime .datepicker {
+      left: -1px;
+      width: 370px; }
+    .reservation-step .select-datetime .timepicker {
+      right: -1px;
+      width: 352px; }
+      .reservation-step .select-datetime .timepicker .btn-align-center {
+        margin-top: 18px; }
+  .reservation-step .select-car:before, .reservation-step .select-car:after {
+    content: " ";
+    display: table; }
+  .reservation-step .select-car:after {
+    clear: both; }
+  .reservation-step .select-car .checkbox {
+    float: left; }
+    .reservation-step .select-car .checkbox .checkbox-label {
+      display: inline-block;
+      width: 135px;
+      margin-right: -1px;
+      border: 1px solid #dadada;
+      background-color: white;
+      font-size: 20px;
+      line-height: 4.1;
+      text-align: center; }
+    .reservation-step .select-car .checkbox input[type=checkbox]:checked + .checkbox-label {
+      background-color: #4aaf9d;
+      color: white; }
+  .reservation-step .complete .select-place:before {
+    display: inline-block;
+    background: url("../images/sprites-icon.png") repeat -43px -87px;
+    line-height: 0;
+    color: transparent;
+    vertical-align: sub; }
+  .reservation-step .complete.select-date:before {
+    background-position: -217px -87px; }
+  .reservation-step .complete.select-time:before {
+    background-position: -303px -87px; }
+  .reservation-step + .btn-align-center {
+    margin-top: 25px; }
 
 .service-info:before, .service-info:after {
   content: " ";
@@ -1665,7 +1901,7 @@ button {
     border-bottom: 0; }
   .customer-service .cs-info {
     margin-top: 30px;
-    font: 300 17px 'Montserrat', 'Noto Sans KR', sans-serif; }
+    font: 300 17px 'Montserrat', 'NotoSans', sans-serif; }
     .customer-service .cs-info .number {
       font-weight: 400;
       font-size: 55px;
@@ -1692,7 +1928,7 @@ button {
       .customer-service .quick-customer .quick-notice li {
         padding: 12px 0 14px;
         border-bottom: 1px solid #e5e5e6;
-        font: 200 20px 'Noto Sans KR', sans-serif;
+        font: 200 20px 'NotoSans', sans-serif;
         color: #303030;
         text-align: left; }
       .customer-service .quick-customer .quick-notice .btn-more {
@@ -1702,7 +1938,7 @@ button {
         width: 34px;
         height: 34px;
         background-color: #c2c3c7;
-        font: 100 30px 'Noto Sans KR', sans-serif;
+        font: 100 30px 'NotoSans', sans-serif;
         line-height: 1.133;
         color: white; }
     .customer-service .quick-customer .quick-link {
@@ -1737,7 +1973,520 @@ button {
           background-position: 0 -130px; }
 
 /*******************************
-    Reservation
+    차량검색
+*******************************/
+.search-condition {
+  display: inline-block;
+  margin: 13px 0 25px;
+  text-align: left; }
+  .search-condition .place {
+    font-weight: 700;
+    font-size: 20px;
+    color: white; }
+    .search-condition .place i {
+      margin-right: 10px; }
+  .search-condition .condition-list {
+    padding-left: 34px;
+    background: url("../images/line-dotted.png") no-repeat 0 114%; }
+    .search-condition .condition-list li {
+      padding-top: 30px;
+      color: white; }
+      .search-condition .condition-list li:last-child {
+        padding-top: 30px; }
+      .search-condition .condition-list li .icon-calendar,
+      .search-condition .condition-list li .icon-clock-white {
+        margin-right: 10px; }
+      .search-condition .condition-list li > span {
+        font-size: 16px; }
+      .search-condition .condition-list li p {
+        margin-top: 7px;
+        font-weight: 700;
+        font-size: 18px; }
+        .search-condition .condition-list li p b {
+          font: 500 22px 'Montserrat', sans-serif;
+          letter-spacing: 1px; }
+          .search-condition .condition-list li p b small {
+            font-weight: 400;
+            font-size: 14px; }
+
+.btn-change-schedule {
+  display: block;
+  margin-left: 50px;
+  padding: 0 13px;
+  border: 1px solid #d0eae6;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  border-radius: 15px;
+  font-size: 15px;
+  line-height: 1.867;
+  color: #d0eae6; }
+  .btn-change-schedule:hover, .btn-change-schedule.on {
+    background-color: white;
+    color: #4aaf9d; }
+
+.top-event {
+  position: relative;
+  margin-left: 346px;
+  padding: 28px 0 26px;
+  border-bottom: 1px solid #4aaf9d;
+  text-align: center; }
+  .top-event .main-text {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 35px;
+    color: #4aaf9d;
+    vertical-align: text-bottom; }
+  .top-event .sub-text {
+    display: inline-block;
+    margin-left: 23px;
+    font-size: 15px;
+    line-height: 25px;
+    font-family: 'NotoSans', sans-serif;
+    color: #5a5a5a; }
+    .top-event .sub-text .caution {
+      color: #000; }
+  .top-event .btn-event-close {
+    position: absolute;
+    top: 26px;
+    right: 100px;
+    padding: 13px;
+    border: 1px solid #99d0c6;
+    background-color: white; }
+    .top-event .btn-event-close:before {
+      display: inline-block;
+      background: url("../images/sprites-icon.png") repeat -433px -43px;
+      line-height: 0;
+      color: transparent;
+      vertical-align: sub;
+      width: 27px;
+      height: 27px;
+      content: ''; }
+    @media (max-width: 1500px) {
+      .top-event .btn-event-close {
+        right: 50px; } }
+
+.list .third-title {
+  float: left; }
+
+.list .search-box {
+  float: right;
+  margin-bottom: 13px; }
+  .list .search-box .form-label {
+    margin-right: 20px; }
+  .list .search-box .selectbox {
+    width: 160px;
+    margin-right: 4px; }
+  .list .search-box .input-search {
+    position: relative;
+    display: inline-block;
+    vertical-align: top; }
+    .list .search-box .input-search label {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 2.625;
+      color: #898989; }
+    .list .search-box .input-search .form-control {
+      width: 235px;
+      height: 44px;
+      margin-bottom: 0;
+      padding-right: 45px;
+      line-height: 44px; }
+    .list .search-box .input-search .btn-search {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 12px 13px; }
+
+.list .feedback {
+  top: 104px; }
+
+.loading-page {
+  background-color: #f9f9f9;
+  text-align: center; }
+  .loading-page .loading {
+    display: inline-block;
+    width: 300px; }
+  .loading-page .text {
+    font-size: 27px; }
+    .loading-page .text b {
+      font-weight: 700;
+      color: #4aaf9d; }
+  .loading-page .partner {
+    margin-top: 42px;
+    padding: 20px 10px 25px;
+    border-top: 1px solid #dededd;
+    border-bottom: 1px solid #dededd; }
+
+.change-schedule {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding-top: 160px;
+  padding-left: 346px;
+  background-color: white; }
+  .change-schedule .section-title {
+    border-bottom: 0; }
+  @media (max-width: 1500px) {
+    .change-schedule {
+      padding-top: 40px; } }
+  .change-schedule .btn-close {
+    position: fixed;
+    left: 50%;
+    bottom: 28px;
+    margin-left: 116px;
+    font-weight: 700;
+    font-size: 22px;
+    color: #4aaf9d; }
+    .change-schedule .btn-close i {
+      display: block;
+      margin: 13px auto 0; }
+
+.car-list {
+  margin: 0 -13px; }
+  .car-list:before, .car-list:after {
+    content: " ";
+    display: table; }
+  .car-list:after {
+    clear: both; }
+  .car-list .item {
+    float: left;
+    width: 33.33%;
+    padding: 13px; }
+    .car-list .item .item-inner {
+      padding: 12px;
+      border: 1px solid #e9e9e9; }
+    .car-list .item.recommend .item-inner {
+      position: relative;
+      margin: -1px;
+      border: 2px solid #4aaf9d;
+      -webkit-box-shadow: 7px 7px 57px 0 rgba(0, 0, 0, 0.5);
+      box-shadow: 7px 7px 57px 0 rgba(0, 0, 0, 0.5); }
+      .car-list .item.recommend .item-inner:after {
+        position: absolute;
+        top: 22px;
+        right: 22px;
+        display: inline-block;
+        background: url("../images/sprites-icon.png") repeat -520px -217px;
+        line-height: 0;
+        color: transparent;
+        vertical-align: sub;
+        width: 43px;
+        height: 43px;
+        content: ''; }
+      .car-list .item.recommend .item-inner .product-thumbnail {
+        background-color: #4aaf9d; }
+  .car-list .product-thumbnail {
+    position: relative;
+    height: 252px;
+    margin: -12px -12px 0;
+    background-color: #f1f1f1; }
+    .car-list .product-thumbnail img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 70%; }
+    @media (max-width: 1500px) {
+      .car-list .product-thumbnail {
+        height: 200px; } }
+  .car-list .product-info {
+    padding: 21px 20px 25px;
+    font-family: 'NotoSans', sans-serif; }
+    .car-list .product-info .car-name {
+      margin-bottom: 5px;
+      font-size: 25px; }
+      .car-list .product-info .car-name .car-type {
+        margin-left: 10px;
+        font-weight: 100;
+        font-size: 15px;
+        color: #696969; }
+    .car-list .product-info .product-option {
+      float: left;
+      margin-top: 10px; }
+      .car-list .product-info .product-option li {
+        font-weight: 200;
+        font-size: 17px; }
+        .car-list .product-info .product-option li i {
+          margin-right: 8px;
+          vertical-align: middle; }
+        .car-list .product-info .product-option li .icon-sm-clock {
+          width: 18px;
+          background-position: -258px -173px; }
+    .car-list .product-info .product-price {
+      float: right;
+      font-weight: 500;
+      font-family: 'Montserrat', 'NanumSquare', sans-serif;
+      text-align: right; }
+      .car-list .product-info .product-price .discount {
+        font-size: 16px;
+        color: #939598;
+        text-decoration: line-through; }
+        .car-list .product-info .product-price .discount + .badge {
+          margin-left: 5px; }
+      .car-list .product-info .product-price .price {
+        display: block;
+        font-size: 33px;
+        color: #4aaf9d; }
+        .car-list .product-info .product-price .price em {
+          font-size: 19px; }
+    @media (max-width: 1500px) {
+      .car-list .product-info {
+        padding: 11px 10px 15px; } }
+
+.detail-view .modal-content {
+  position: absolute !important;
+  top: 0 !important;
+  width: 1792px;
+  height: 100%;
+  margin-left: -896px;
+  background-color: white; }
+  .detail-view .modal-content:before, .detail-view .modal-content:after {
+    content: " ";
+    display: table; }
+  .detail-view .modal-content:after {
+    clear: both; }
+  .detail-view .modal-content .btn-modal-close {
+    background-position: -433px 0; }
+  @media (max-width: 1600px) {
+    .detail-view .modal-content {
+      width: 1200px;
+      margin-left: -600px; } }
+
+.detail-view .car-info {
+  float: left;
+  width: 50%;
+  height: 100%;
+  background: #4aaf9d url("../images/modal-view-bg.png") repeat-x 0 0;
+  padding: 60px 70px; }
+  .detail-view .car-info .brand-name {
+    font-size: 24px;
+    color: #4d4d4d; }
+  .detail-view .car-info .car-name {
+    margin: 10px 0 20px;
+    font-weight: 700;
+    font-size: 35px; }
+  .detail-view .car-info .overview li {
+    display: inline-block;
+    font-size: 16px;
+    color: #6c6c6c; }
+    .detail-view .car-info .overview li:before {
+      display: inline-block;
+      width: 1px;
+      height: 15px;
+      margin: 0 15px;
+      background-color: #c5c5c5;
+      vertical-align: middle;
+      content: ''; }
+    .detail-view .car-info .overview li:first-child:before {
+      display: none; }
+  .detail-view .car-info .image-area {
+    position: relative;
+    height: 100%; }
+    .detail-view .car-info .image-area img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      margin: auto; }
+
+.detail-view .detail-info {
+  float: left;
+  width: 50%;
+  border-left: 1px solid #d1ddda; }
+  .detail-view .detail-info .view-info-group {
+    border-top: 1px solid #d1ddda;
+    padding: 30px 49px 25px; }
+    .detail-view .detail-info .view-info-group .group-title {
+      margin-bottom: 14px;
+      font-weight: 700;
+      font-size: 18px; }
+  .detail-view .detail-info .company-info {
+    padding: 66px 49px 36px;
+    background-color: #e3f0ed; }
+    .detail-view .detail-info .company-info .company-name {
+      float: left;
+      font-size: 28px; }
+    .detail-view .detail-info .company-info .price {
+      float: right;
+      font-family: 'Montserrat', 'NanumSquare', sans-serif;
+      font-size: 33px;
+      color: #4aaf9d; }
+      .detail-view .detail-info .company-info .price em {
+        font-size: 19px; }
+      .detail-view .detail-info .company-info .price span {
+        display: block;
+        font: 200 17px 'NotoSans', sans-serif;
+        color: #5d6362; }
+    .detail-view .detail-info .company-info .btn-box {
+      padding-top: 30px; }
+    .detail-view .detail-info .company-info .rent-regulation {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #c6d6d3; }
+  .detail-view .detail-info .rent-regulation ul {
+    display: table;
+    width: 100%; }
+    .detail-view .detail-info .rent-regulation ul li {
+      position: relative;
+      display: table-cell;
+      width: 50%;
+      padding-left: 55px;
+      font: 200 16px 'NotoSans', sans-serif;
+      vertical-align: middle; }
+      .detail-view .detail-info .rent-regulation ul li i {
+        position: absolute;
+        top: 4px;
+        left: 0;
+        height: 44px; }
+  .detail-view .detail-info .car-option {
+    padding-bottom: 10px; }
+    .detail-view .detail-info .car-option ul:before, .detail-view .detail-info .car-option ul:after {
+      content: " ";
+      display: table; }
+    .detail-view .detail-info .car-option ul:after {
+      clear: both; }
+    .detail-view .detail-info .car-option ul li {
+      float: left;
+      width: 33.33%;
+      margin-bottom: 25px;
+      text-align: center; }
+      .detail-view .detail-info .car-option ul li i {
+        display: block;
+        height: 33px;
+        margin: 0 auto 12px; }
+      .detail-view .detail-info .car-option ul li .text-year {
+        font: 700 26px 'Montserrat', sans-serif;
+        color: #555; }
+  .detail-view .detail-info .reviews {
+    padding-bottom: 35px; }
+    .detail-view .detail-info .reviews .group-title {
+      float: left;
+      margin-top: 10px;
+      margin-bottom: 0; }
+      .detail-view .detail-info .reviews .group-title small {
+        font-size: 14px;
+        color: #4aaf9d; }
+    .detail-view .detail-info .reviews .btn-group {
+      float: right;
+      display: block;
+      width: auto;
+      margin-bottom: 11px; }
+      .detail-view .detail-info .reviews .btn-group .btn {
+        width: 36px;
+        height: 36px;
+        margin-left: -3px; }
+    .detail-view .detail-info .reviews .review {
+      padding: 16px 30px;
+      border: 1px solid #e9e9e9;
+      font-family: 'NotoSans', sans-serif; }
+    .detail-view .detail-info .reviews .reviewer {
+      font-weight: 500;
+      font-size: 18px; }
+    .detail-view .detail-info .reviews .satisfaction {
+      margin-left: 13px;
+      font-weight: 500;
+      font-size: 18px;
+      color: #4aaf9d; }
+      .detail-view .detail-info .reviews .satisfaction:before {
+        display: inline-block;
+        background: url("../images/sprites-icon.png") repeat 0 0;
+        line-height: 0;
+        color: transparent;
+        vertical-align: sub;
+        width: 33px;
+        height: 32px;
+        margin-right: 10px;
+        vertical-align: middle;
+        content: ''; }
+      .detail-view .detail-info .reviews .satisfaction.level1:before {
+        background-position: -433px -390px; }
+      .detail-view .detail-info .reviews .satisfaction.level2:before {
+        background-position: -390px -390px; }
+      .detail-view .detail-info .reviews .satisfaction.level3:before {
+        background-position: -347px -390px; }
+      .detail-view .detail-info .reviews .satisfaction.level4:before {
+        background-position: -303px -390px; }
+      .detail-view .detail-info .reviews .satisfaction.level5:before {
+        background-position: -260px -390px; }
+    .detail-view .detail-info .reviews .review-content {
+      font-weight: 200;
+      font-size: 17px;
+      color: #696969; }
+    .detail-view .detail-info .reviews .rent-info {
+      margin: 16px -30px -16px;
+      padding: 10px 22px;
+      background-color: #f5f5f5;
+      font-family: 'Lato', 'NotoSans', sans-serif;
+      font-size: 16px;
+      letter-spacing: 0; }
+    .detail-view .detail-info .reviews .btn-box {
+      margin-top: 15px; }
+  .detail-view .detail-info .lowest-price {
+    border-top: 1px solid #ebebeb; }
+    .detail-view .detail-info .lowest-price .group-title {
+      padding-top: 25px;
+      padding-left: 50px;
+      font-weight: 700;
+      font-size: 18px; }
+    .detail-view .detail-info .lowest-price .text {
+      margin-top: -24px;
+      padding-right: 50px;
+      padding-bottom: 10px;
+      font: 200 17px 'NotoSans', sans-serif;
+      text-align: right; }
+    .detail-view .detail-info .lowest-price li .radio {
+      display: block; }
+    .detail-view .detail-info .lowest-price li .radio-display {
+      margin-top: 2px;
+      margin-left: 50px;
+      background-image: none; }
+    .detail-view .detail-info .lowest-price li .radio-label {
+      display: block;
+      margin-top: -36px;
+      padding: 7px 50px 12px 90px;
+      border-top: 1px solid #e9e9e9;
+      font: 500 17px 'Montserrat', 'NotoSans', sans-serif; }
+      .detail-view .detail-info .lowest-price li .radio-label:before, .detail-view .detail-info .lowest-price li .radio-label:after {
+        content: " ";
+        display: table; }
+      .detail-view .detail-info .lowest-price li .radio-label:after {
+        clear: both; }
+      .detail-view .detail-info .lowest-price li .radio-label .company-name {
+        float: left; }
+      .detail-view .detail-info .lowest-price li .radio-label .price {
+        float: right; }
+    .detail-view .detail-info .lowest-price li input[type="radio"]:checked ~ .radio-label {
+      background-color: #e3f0ed; }
+    .detail-view .detail-info .lowest-price li input[type="radio"]:checked ~ .radio-display {
+      background-image: url(../images/form-radio-checked.png); }
+  @media (max-width: 1600px) {
+    .detail-view .detail-info .view-info-group {
+      padding: 20px 49px; }
+      .detail-view .detail-info .view-info-group .group-title {
+        margin-bottom: 10px; }
+    .detail-view .detail-info .company-info {
+      padding: 40px 49px 20px; }
+      .detail-view .detail-info .company-info .btn-box {
+        padding-top: 15px; }
+        .detail-view .detail-info .company-info .btn-box .btn {
+          line-height: 2.32; }
+    .detail-view .detail-info .car-option {
+      padding-bottom: 10px; }
+      .detail-view .detail-info .car-option ul li {
+        margin-bottom: 10px; }
+        .detail-view .detail-info .car-option ul li i {
+          margin: 0 auto 10px; } }
+
+/*******************************
+    예약하기
 *******************************/
 .reservation .btn-align-center {
   margin-top: 34px; }
@@ -1897,7 +2646,7 @@ button {
     display: block;
     padding: 16px 0;
     background-color: #f6f6f6;
-    font: 200 17px 'Noto Sans KR', sans-serif;
+    font: 200 17px 'NotoSans', sans-serif;
     color: #7f7f7f;
     text-align: center;
     vertical-align: middle; }
@@ -2013,7 +2762,7 @@ button {
 .reservation-agreement {
   text-align: center; }
   .reservation-agreement .checkbox-label {
-    font: 18px 'Noto Sans KR', sans-serif; }
+    font: 18px 'NotoSans', sans-serif; }
   .reservation-agreement dt {
     padding: 15px 0;
     border: 1px solid #4aaf9d;

@@ -16,7 +16,7 @@
     td {
         padding: 14px 0;
         border: 1px solid #e1e1e1;
-        font: 17px 'Noto Sans KR', sans-serif;
+        font: 17px 'NotoSans', sans-serif;
         text-align: center;
         vertical-align: middle;
     }
@@ -35,7 +35,7 @@
     .calendar-head {
         margin-bottom: 5px;
         .calendar-month {
-            font: 500 20px 'Montserrat', 'Noto Sans KR', sans-serif;
+            font: 500 20px 'Montserrat', 'NotoSans', sans-serif;
             color: #575757;
             text-align: center;
             vertical-align: middle;
@@ -68,7 +68,7 @@
             vertical-align: middle;
         }
         th {
-            font: 500 16px 'Noto Sans KR', sans-serif;
+            font: 500 16px 'NotoSans', sans-serif;
             color: #8e8e8e;
         }
         td {
@@ -92,7 +92,7 @@
         }
     }
 }
-// timepicker
+// Timepicker
 .timepicker {
     padding: 38px 28px 27px;
     border: 2px solid $brand-primary;
@@ -100,9 +100,10 @@
     .selectbox-value {
         display: inline-block;
         width: 136px;
-        padding-right: 30px;
-        line-height: (60-2)/35;
+        padding: 0 30px 0 0;
         font: 500 35px 'Montserrat', sans-serif;
+        line-height: (60-2)/35;
+        color: $text-color;
         text-align: center;
         &:before,
         &:after {
@@ -119,6 +120,7 @@
             top: 0;
         }
         &:after {
+            top: inherit;
             bottom: 0;
             border-top: 1px solid #b0b0b0;
             background-position: -555px -81px;

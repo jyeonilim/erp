@@ -103,7 +103,7 @@ $(document).ready(function() {
     $('.modal.upgrade .btn-modal-close').on('click',function () {
         $('.btn-upgrade').removeClass('on');
         $(this).parent().hide();
-    })
+    });
 
     $( "#coupon" ).selectmenu();
     // $('.ui-selectmenu-button').click(function () {
@@ -113,6 +113,21 @@ $(document).ready(function() {
     //         $(this).parent('.selectbox').css('border-color','#4aaf9d');
     //     }
     // });
+
+    var h = $(window).height();
+    $('.detail-view .image-area').height(h);
+
+    // 차량검색 - 일정변경 레이어
+    $('.btn-change-schedule').on('click',function () {
+        $(this).addClass('on');
+        $('.change-schedule').show();
+        $('body').addClass('scrollFixed');
+    });
+    $('.change-schedule .btn-close').on('click',function () {
+        $('.btn-change-schedule').removeClass('on');
+        $(this).parent().hide();
+        $('body').removeClass('scrollFixed');
+    });
 
 });
 

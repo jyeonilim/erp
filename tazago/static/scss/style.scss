@@ -22,6 +22,7 @@ img,
 }
 button {
     border: 0;
+    background-color: transparent;
     cursor: pointer;
 }
 
@@ -44,8 +45,8 @@ button {
     min-width: 1200px;
 }
 .content {
-    //width: 66%;
-    //min-width: 740px;
+    margin-left: 346px;
+    padding: 92px 136px 150px 126px;
 }
 .main {
     height: 100%;
@@ -58,10 +59,17 @@ button {
         width: 66%;
         min-width: 740px;
         height: 100%;
+        margin-left: 0;
+        padding: 0;
         background-color: $white;
         @media (max-width: 1200px) {
             left: 460px;
         }
+    }
+}
+.list {
+    .content {
+        padding: 30px 87px 100px;
     }
 }
 .reservation {
@@ -83,6 +91,8 @@ button {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 2;
+    width: 346px;
     height: 100%;
     background-color: $brand-primary;
     .image-area {
@@ -461,7 +471,7 @@ button {
     li {
         float: left;
         a {
-            font: 300 14px 'Noto Sans KR', sans-serif;
+            font: 300 14px 'NotoSans', sans-serif;
             color: $white;
         }
         &:before {
@@ -469,6 +479,36 @@ button {
             width: 1px;
             height: 12px;
             margin: 0 6px;
+            background-color: #7cc5b8;
+            content: '';
+        }
+        &:first-child:before {
+            display: none;
+        }
+    }
+}
+.site-quick-access-icon {
+    clear: both;
+    width: 100%;
+    padding-top: 30px;
+    text-align: center;
+    li {
+        display: inline-block;
+        a {
+            display: inline-block;
+            font: 300 14px 'NotoSans', sans-serif;
+            color: $white;
+            i {
+                display: block;
+                height: 29px;
+                margin: 0 auto;
+            }
+        }
+        &:before {
+            display: inline-block;
+            width: 1px;
+            height: 45px;
+            margin: 0 15px;
             background-color: #7cc5b8;
             content: '';
         }
@@ -486,10 +526,10 @@ button {
     left: 0;
     bottom: 20px;
     z-index: 10;
-    width: 34%;
-    min-width: 460px;
+    width: 346px;
+    padding: 0 25px;
     text-align: center;
-    font: 12px/17px 'Lato', 'Noto Sans KR', sans-serif;
+    font: 12px/17px 'Lato', 'NotoSans', sans-serif;
     color: #bce2db;
     .terms-menu {
         margin-bottom: 6px;
@@ -522,6 +562,16 @@ button {
 .main {
     .footer {
         position: fixed;
+        width: 34%;
+        min-width: 460px;
+        padding: 0;
+    }
+}
+.reservation {
+    .footer {
+        width: 34%;
+        min-width: 460px;
+        padding: 0;
     }
 }
 
@@ -545,6 +595,10 @@ button {
     font-weight: 700;
     font-size: 25px;
 }
+.third-title {
+    font-weight: 700;
+    font-size: 36px;
+}
 // Feedback
 .feedback {
     position: fixed;
@@ -567,7 +621,7 @@ button {
         left: 0;
         margin: auto;
         padding: 0 20px;
-        font: 17px 'Noto Sans KR', sans-serif;
+        font: 17px 'NotoSans', sans-serif;
         line-height: (60-2)/17;
         color: #7f7f7f;
     }
@@ -579,7 +633,7 @@ button {
     padding: 15px 40px;
     @include border-radius(4px);
     background-color: $brand-primary;
-    font: 300 15px 'Noto Sans KR', sans-serif;
+    font: 300 15px 'NotoSans', sans-serif;
     color: $white;
     &:after {
         @include sp-icon(-520px,0);
@@ -599,7 +653,7 @@ button {
     li {
         padding-left: 8px;
         text-indent: -8px;
-        font: 200 15px 'Noto Sans KR', sans-serif;
+        font: 200 15px 'NotoSans', sans-serif;
         color: #8d8d8d;
         &:before {
             display: inline-block;
@@ -659,335 +713,337 @@ button {
         padding-bottom: 0;
         border-bottom: 0;
     }
-    .reservation-step {
-        display: inline-block;
-        width: 100%;
-        padding: 0 116px 0 149px;
-        text-align: left;
-        @media (max-width: 1600px){
-            padding: 0 24px 0 40px;
+}
+.reservation-step {
+    display: inline-block;
+    width: 100%;
+    padding: 0 116px 0 149px;
+    text-align: left;
+    @media (max-width: 1600px){
+        padding: 0 24px 0 40px;
+    }
+    .step-title {
+        margin: 25px 0 10px;
+        font-size: 24px;
+        span {
+            color: $brand-primary;
         }
-        .step-title {
-            margin: 25px 0 10px;
-            font-size: 24px;
-            span {
-                color: $brand-primary;
-            }
+    }
+    .select-place {
+        position: relative;
+        &:before {
+            @include sp-icon(0,-87px);
+            @include sp-size(21px,30px);
+            position: absolute;
+            top: 50%;
+            left: 40px;
+            margin-top: -15px;
+            content: '';
         }
+        .form-control {
+            padding-left: 80px;
+            line-height: 84px;
+        }
+        .btn {
+            height: 84px;
+            padding: 0 20px;
+            line-height: (84-2)/26;
+        }
+    }
+    > .active {
+        position: relative;
         .select-place {
-            position: relative;
             &:before {
-                @include sp-icon(0,-87px);
-                @include sp-size(21px,30px);
-                position: absolute;
-                top: 50%;
-                left: 40px;
-                margin-top: -15px;
-                content: '';
+                background-position: -43px -87px;
             }
             .form-control {
-                padding-left: 80px;
-                line-height: 84px;
-            }
-            .btn {
-                height: 84px;
-                padding: 0 20px;
-                line-height: (84-2)/26;
+                padding-left: 79px;
+                border: 2px solid $brand-primary;
+                font-weight: 700;
+                color: $text-color;
             }
         }
-        > .active {
+    }
+    .select-place-picker {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 11;
+        width: 100%;
+        border: 2px solid $brand-primary;
+        border-top: 0;
+        background-color: #eef6f5;
+        .tabs {
+            padding: 16px 0;
+            text-align: center;
+            li {
+                display: inline-block;
+                width: 145px;
+                height: 42px;
+                border: 1px solid #b2dcd5;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: (42-2)/20;
+                color: #4aaf9d;
+                cursor: pointer;
+                &.active {
+                    border-color: $brand-primary;
+                    background-color: $brand-primary;
+                    color: #fff;
+                }
+            }
+        }
+        .tab-content {
+            border-top: 1px solid #d7e6e4;
+            .tab-pane {
+                display: none;
+            }
+        }
+        .content-select-place {
             position: relative;
-            .select-place {
-                &:before {
-                    background-position: -43px -87px;
-                }
-                .form-control {
-                    padding-left: 79px;
-                    border: 2px solid $brand-primary;
-                    font-weight: 700;
-                    color: $text-color;
-                }
-            }
-        }
-        .select-place-picker {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            z-index: 11;
-            width: 100%;
-            border: 2px solid $brand-primary;
-            border-top: 0;
-            background-color: #eef6f5;
-            .tabs {
-                padding: 16px 0;
-                text-align: center;
-                li {
-                    display: inline-block;
-                    width: 145px;
-                    height: 42px;
-                    border: 1px solid #b2dcd5;
-                    font-weight: 700;
-                    font-size: 20px;
-                    line-height: (42-2)/20;
-                    color: #4aaf9d;
-                    cursor: pointer;
-                    &.active {
-                        border-color: $brand-primary;
-                        background-color: $brand-primary;
-                        color: #fff;
+            min-height: 223px;
+            > li {
+                margin-top: -1px;
+                .radio {
+                    .radio-label {
+                        display: inline-block;
+                        width: 306px;
+                        height: 65px;
+                        padding-right: 20px;
+                        border: 1px solid #d7e6e4;
+                        background-color: #f6fafa;
+                        font-size: 22px;
+                        line-height: (65)/22;
+                        text-align: center;
+                        color: #74a39e;
+                    }
+                    .radio-display {
+                        width: 32px;
+                        height: 32px;
+                        margin: 0 0 0 -52px;
+                        background-color: #f6fafa;
+                        background-image: url("../images/form-rental-place.png");
+                        vertical-align: text-bottom;
+                    }
+                    input[type="radio"]:checked ~ .radio-label {
+                        background-color: #eef6f5;
+                        font-weight: 700;
+                        color: $brand-primary;
+                    }
+                    input[type="radio"]:checked ~ .radio-display {
+                        background-color: #eef6f5;
+                        background-image: url("../images/form-rental-place-checked.png");
                     }
                 }
-            }
-            .tab-content {
-                border-top: 1px solid #d7e6e4;
-                .tab-pane {
+                .content-place {
                     display: none;
-                }
-            }
-            .content-select-place {
-                position: relative;
-                min-height: 223px;
-                > li {
-                    margin-top: -1px;
-                    .radio {
-                        .radio-label {
-                            display: inline-block;
-                            width: 306px;
-                            height: 65px;
-                            padding-right: 20px;
-                            border: 1px solid #d7e6e4;
-                            background-color: #f6fafa;
-                            font-size: 22px;
-                            line-height: (65)/22;
-                            text-align: center;
-                            color: #74a39e;
-                        }
-                        .radio-display {
-                            width: 32px;
-                            height: 32px;
-                            margin: 0 0 0 -52px;
-                            background-color: #f6fafa;
-                            background-image: url("../images/form-rental-place.png");
-                            vertical-align: text-bottom;
-                        }
-                        input[type="radio"]:checked ~ .radio-label {
-                            background-color: #eef6f5;
-                            font-weight: 700;
-                            color: $brand-primary;
-                        }
-                        input[type="radio"]:checked ~ .radio-display {
-                            background-color: #eef6f5;
-                            background-image: url("../images/form-rental-place-checked.png");
-                        }
+                    position: absolute;
+                    top: 0;
+                    left: 306px;
+                    padding: 40px 0 40px 65px;
+                    .place-name {
+                        margin-bottom: 20px;
+                        font-weight: 700;
+                        font-size: 25px;
                     }
-                    .content-place {
-                        display: none;
-                        position: absolute;
-                        top: 0;
-                        left: 306px;
-                        padding: 40px 0 40px 65px;
-                        .place-name {
-                            margin-bottom: 20px;
-                            font-weight: 700;
-                            font-size: 25px;
-                        }
-                        .place-info {
-                            font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
-                            > li {
-                                padding: 2px 0;
-                                &.place-address {
-                                    padding: 2px 0 2px 54px;
-                                    text-indent: -54px;
-                                }
-                                i {
-                                    margin-right: 5px;
-                                }
+                    .place-info {
+                        font-family: 'Montserrat', 'NotoSans', sans-serif;
+                        > li {
+                            padding: 2px 0;
+                            &.place-address {
+                                padding: 2px 0 2px 54px;
+                                text-indent: -54px;
+                            }
+                            i {
+                                margin-right: 5px;
                             }
                         }
                     }
                 }
             }
         }
-        .select-datetime {
-            display: table;
-            width: 100%;
-            border: 1px solid #e1e1e1;
-            .add-on {
-                display: table-cell;
-                width: 5%;
-                text-align: center;
-                vertical-align: middle;
-                &:before {
-                    @include sp-icon(-563px,0);
-                    @include sp-size(24px,24px);
+    }
+    .select-datetime {
+        display: table;
+        width: 100%;
+        border: 1px solid #e1e1e1;
+        .add-on {
+            display: table-cell;
+            width: 5%;
+            text-align: center;
+            vertical-align: middle;
+            &:before {
+                @include sp-icon(-563px,0);
+                @include sp-size(24px,24px);
+                content: '';
+            }
+        }
+        .select-date,
+        .select-time {
+            display: table-cell;
+            height: 84px;
+            padding: 0 30px;
+            text-align: center;
+            vertical-align: middle;
+            .text-date,
+            .text-time {
+                cursor: pointer;
+            }
+            &.active {
+                position: relative;
+                &:after {
+                    position: absolute;
+                    top: -1px;
+                    z-index: -1;
+                    width: 100%;
+                    height: 84px;
+                    border: 2px solid $brand-primary;
                     content: '';
                 }
             }
-            .select-date,
-            .select-time {
-                display: table-cell;
-                height: 84px;
-                padding: 0 30px;
-                text-align: center;
-                vertical-align: middle;
-                .text-date,
-                .text-time {
-                    cursor: pointer;
+        }
+        .select-date {
+            .text-date{
+                @include clearfix;
+                &:before {
+                    float: left;
+                    @include sp-icon(-173px,-87px);
+                    @include sp-size(25px,25px);
+                    margin: 8px 9px 0 0;
+                    content: '';
                 }
-                &.active {
-                    position: relative;
-                    &:after {
-                        position: absolute;
-                        top: -1px;
-                        z-index: -1;
-                        width: 100%;
-                        height: 84px;
-                        border: 2px solid $brand-primary;
-                        content: '';
+                strong {
+                    float: left;
+                    font: 500 35px 'Montserrat', sans-serif;
+                }
+                small {
+                    float: left;
+                    margin: 6px 0 0 9px;
+                    padding-left: 9px;
+                    border-left: 1px solid #d6d6d6;
+                    font-size: 15px;
+                    color: #545454;
+                    span {
+                        display: block;
+                        margin-top: -3px;
+                        font: 14px 'Montserrat', sans-serif;
+                        color: #434343;
+                        letter-spacing: 1.5px;
                     }
                 }
             }
-            .select-date {
-                .text-date{
-                    @include clearfix;
-                    &:before {
-                        float: left;
-                        @include sp-icon(-173px,-87px);
-                        @include sp-size(25px,25px);
-                        margin: 8px 9px 0 0;
-                        content: '';
-                    }
-                    strong {
-                        float: left;
-                        font: 500 35px 'Montserrat', sans-serif;
-                    }
-                    small {
-                        float: left;
-                        margin: 6px 0 0 9px;
-                        padding-left: 9px;
-                        border-left: 1px solid #d6d6d6;
-                        font-size: 15px;
-                        color: #545454;
-                        span {
-                            display: block;
-                            margin-top: -3px;
-                            font: 14px 'Montserrat', sans-serif;
-                            color: #434343;
-                            letter-spacing: 1.5px;
-                        }
-                    }
-                }
-                &.active{
+            &.active{
+                .text-date {
                     &:before {
                         background-position: -217px -87px;
                     }
-                    &:after {
-                        left: -1px;
-                    }
                 }
-            }
-            .select-time {
-                &:before {
-                    float: left;
-                    @include sp-icon(-260px,-87px);
-                    @include sp-size(23px,23px);
-                    margin: 10px 9px 0 0;
-                    content: '';
-                }
-                border-left: 1px solid #e1e1e1;
-                strong {
-                    font: 500 35px 'Montserrat', sans-serif;
-                }
-                &.active {
-                    &:before {
-                        background-position: -303px -87px;
-                    }
-                    &:after {
-                        right: -1px;
-                    }
-                }
-            }
-            @media (max-width: 1200px) {
-                .select-date,
-                .select-time {
-                    padding: 0 11px;
-                    &:before {
-                        margin-top: 3px;
-                    }
-                    strong {
-                        font-size: 26px;
-                    }
-                    small {
-                        margin-top: 4px;
-                        font-size: 12px;
-                        span {
-                            margin-top: -1px;
-                            font-size: 11px;
-                        }
-                    }
-                }
-            }
-            .datepicker,
-            .timepicker {
-                display: none;
-                position: absolute;
-                top: 84px;
-                z-index: 11;
-                cursor: default;
-            }
-            .datepicker {
-                left: -1px;
-                width: 370px;
-            }
-            .timepicker {
-                right: -1px;
-                width: 352px;
-                .btn-align-center {
-                    margin-top: 18px;
+                &:after {
+                    left: -1px;
                 }
             }
         }
-        .select-car {
-            @include clearfix;
-            .checkbox {
+        .select-time {
+            &:before {
                 float: left;
-                .checkbox-label {
-                    display: inline-block;
-                    width: 135px;
-                    margin-right: -1px;
-                    border: 1px solid #dadada;
-                    background-color: $white;
-                    font-size: 20px;
-                    line-height: (84-2)/20;
-                    text-align: center;
-                }
-                input[type=checkbox]:checked + .checkbox-label {
-                    background-color: $brand-primary;
-                    color: $white;
-                }
+                @include sp-icon(-260px,-87px);
+                @include sp-size(23px,23px);
+                margin: 10px 9px 0 0;
+                content: '';
             }
-        }
-        .complete {
-            .select-place {
-                &:before {
-                    @include sp-icon(-43px,-87px);
-                }
+            border-left: 1px solid #e1e1e1;
+            strong {
+                font: 500 35px 'Montserrat', sans-serif;
             }
-            &.select-date {
-                &:before {
-                    background-position: -217px -87px;
-                }
-            }
-            &.select-time {
+            &.active {
                 &:before {
                     background-position: -303px -87px;
                 }
+                &:after {
+                    right: -1px;
+                }
             }
         }
-        & + .btn-align-center {
-            margin-top: 25px;
+        @media (max-width: 1200px) {
+            .select-date,
+            .select-time {
+                padding: 0 11px;
+                &:before {
+                    margin-top: 3px;
+                }
+                strong {
+                    font-size: 26px;
+                }
+                small {
+                    margin-top: 4px;
+                    font-size: 12px;
+                    span {
+                        margin-top: -1px;
+                        font-size: 11px;
+                    }
+                }
+            }
         }
+        .datepicker,
+        .timepicker {
+            display: none;
+            position: absolute;
+            top: 84px;
+            z-index: 11;
+            cursor: default;
+        }
+        .datepicker {
+            left: -1px;
+            width: 370px;
+        }
+        .timepicker {
+            right: -1px;
+            width: 352px;
+            .btn-align-center {
+                margin-top: 18px;
+            }
+        }
+    }
+    .select-car {
+        @include clearfix;
+        .checkbox {
+            float: left;
+            .checkbox-label {
+                display: inline-block;
+                width: 135px;
+                margin-right: -1px;
+                border: 1px solid #dadada;
+                background-color: $white;
+                font-size: 20px;
+                line-height: (84-2)/20;
+                text-align: center;
+            }
+            input[type=checkbox]:checked + .checkbox-label {
+                background-color: $brand-primary;
+                color: $white;
+            }
+        }
+    }
+    .complete {
+        .select-place {
+            &:before {
+                @include sp-icon(-43px,-87px);
+            }
+        }
+        &.select-date {
+            &:before {
+                background-position: -217px -87px;
+            }
+        }
+        &.select-time {
+            &:before {
+                background-position: -303px -87px;
+            }
+        }
+    }
+    & + .btn-align-center {
+        margin-top: 25px;
     }
 }
 // 서비스 소개
@@ -1057,7 +1113,7 @@ button {
     }
     .cs-info {
         margin-top: 30px;
-        font: 300 17px 'Montserrat', 'Noto Sans KR', sans-serif;
+        font: 300 17px 'Montserrat', 'NotoSans', sans-serif;
         .number {
             font-weight: 400;
             font-size: 55px;
@@ -1085,7 +1141,7 @@ button {
             li {
                 padding: 12px 0 14px;
                 border-bottom: 1px solid #e5e5e6;
-                font: 200 20px 'Noto Sans KR', sans-serif;
+                font: 200 20px 'NotoSans', sans-serif;
                 color: #303030;
                 text-align: left;
             }
@@ -1096,7 +1152,7 @@ button {
                 width: 34px;
                 height: 34px;
                 background-color: #c2c3c7;
-                font: 100 30px 'Noto Sans KR', sans-serif;
+                font: 100 30px 'NotoSans', sans-serif;
                 line-height: (34)/30;
                 color: $white;
             }
@@ -1136,7 +1192,627 @@ button {
 }
 
 /*******************************
-    Reservation
+    차량검색
+*******************************/
+.search-condition {
+    display: inline-block;
+    margin: 13px 0 25px;
+    text-align: left;
+    .place {
+        font-weight: 700;
+        font-size: 20px;
+        color: $white;
+        i {
+            margin-right: 10px;
+        }
+    }
+    .condition-list {
+        padding-left: 34px;
+        background: url("../images/line-dotted.png") no-repeat 0 114%;
+        li {
+            padding-top: 30px;
+            color: $white;
+            &:last-child {
+                padding-top: 30px;
+            }
+            .icon-calendar,
+            .icon-clock-white {
+                margin-right: 10px;
+            }
+            > span {
+                font-size: 16px;
+            }
+            p {
+                margin-top: 7px;
+                font-weight: 700;
+                font-size: 18px;
+                b {
+                    font: 500 22px 'Montserrat', sans-serif;
+                    letter-spacing: 1px;
+                    small {
+                        font-weight: 400;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+.btn-change-schedule {
+    display: block;
+    margin-left: 50px;
+    padding: 0 13px;
+    border: 1px solid #d0eae6;
+    @include border-radius(15px);
+    font-size: 15px;
+    line-height: (30-2)/15;
+    color: #d0eae6;
+    &:hover, &.on {
+        background-color: $white;
+        color: $brand-primary;
+    }
+}
+// 상단 이벤트
+.top-event {
+    position: relative;
+    margin-left: 346px;
+    padding: 28px 0 26px;
+    border-bottom: 1px solid $brand-primary;
+    text-align: center;
+    .main-text {
+        display: inline-block;
+        font-weight: 700;
+        font-size: 35px;
+        color: $brand-primary;
+        vertical-align: text-bottom;
+    }
+    .sub-text {
+        display: inline-block;
+        margin-left: 23px;
+        font-size: 15px;
+        line-height: 25px;
+        font-family: 'NotoSans', sans-serif;
+        color: #5a5a5a;
+        .caution {
+            color: $text-color;
+        }
+    }
+    .btn-event-close {
+        position: absolute;
+        top: 26px;
+        right: 100px;
+        padding: 13px;
+        border: 1px solid #99d0c6;
+        background-color: $white;
+        &:before {
+            @include sp-icon(-433px,-43px);
+            @include sp-size(27px,27px);
+            content: '';
+        }
+        @media (max-width: 1500px) {
+            right: 50px;
+        }
+    }
+}
+.list {
+    .third-title {
+        float: left;
+    }
+    .search-box {
+        float: right;
+        margin-bottom: 13px;
+        .form-label {
+            margin-right: 20px;
+        }
+        .selectbox {
+            width: 160px;
+            margin-right: 4px;
+        }
+        .input-search {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            label {
+                font-weight: 300;
+                font-size: 16px;
+                line-height: (44-2)/16;
+                color: #898989;
+            }
+            .form-control {
+                width: 235px;
+                height: 44px;
+                margin-bottom: 0;
+                padding-right: 45px;
+                line-height: 44px;
+            }
+            .btn-search {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 12px 13px;
+            }
+        }
+    }
+    .feedback {
+        top: 104px;
+    }
+}
+// 로딩화면
+.loading-page {
+    background-color: #f9f9f9;
+    text-align: center;
+    .loading {
+        display: inline-block;
+        width: 300px;
+    }
+    .text {
+        font-size: 27px;
+        b {
+            font-weight: 700;
+            color: $brand-primary;
+        }
+    }
+    .partner {
+        margin-top: 42px;
+        padding: 20px 10px 25px;
+        border-top:1px solid #dededd;
+        border-bottom:1px solid #dededd;
+    }
+}
+// 일정변경
+.change-schedule {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    padding-top: 160px;
+    padding-left: 346px;
+    background-color: $white;
+    .section-title {
+        border-bottom: 0;
+    }
+    @media (max-width: 1500px) {
+        padding-top: 40px;
+    }
+    .btn-close {
+        position: fixed;
+        left: 50%;
+        bottom: 28px;
+        margin-left: 116px;
+        font-weight: 700;
+        font-size: 22px;
+        color: $brand-primary;
+        i {
+            display: block;
+            margin: 13px auto 0;
+        }
+    }
+}
+// 차량 검색 리스트
+.car-list {
+    @include clearfix;
+    margin: 0 -13px;
+    .item {
+        float: left;
+        width: 33.33%;
+        padding: 13px;
+        .item-inner {
+            padding: 12px;
+            border: 1px solid #e9e9e9;
+        }
+        &.recommend {
+            .item-inner {
+                position: relative;
+                margin: -1px;
+                border: 2px solid $brand-primary;
+                @include box-shadow(7px 7px 57px 0 rgba(0, 0, 0, 0.5));
+                &:after {
+                    position: absolute;
+                    top: 22px;
+                    right: 22px;
+                    @include sp-icon(-520px,-217px);
+                    @include sp-size(43px,43px);
+                    content: '';
+                }
+                .product-thumbnail {
+                    background-color: $brand-primary;
+                }
+            }
+        }
+    }
+    .product-thumbnail {
+        position: relative;
+        height: 252px;
+        margin: -12px -12px 0;
+        background-color: #f1f1f1;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 70%;
+        }
+        @media (max-width: 1500px) {
+            height: 200px;
+        }
+    }
+    .product-info {
+        padding: 21px 20px 25px;
+        font-family: 'NotoSans', sans-serif;
+        .car-name {
+            margin-bottom: 5px;
+            font-size: 25px;
+            .car-type {
+                margin-left: 10px;
+                font-weight: 100;
+                font-size: 15px;
+                color: #696969;
+            }
+        }
+        .product-option {
+            float: left;
+            margin-top: 10px;
+            li {
+                font-weight: 200;
+                font-size: 17px;
+                i {
+                    margin-right: 8px;
+                    vertical-align: middle;
+                }
+                .icon-sm-clock {
+                    width: 18px;
+                    background-position: -258px -173px;
+                }
+            }
+        }
+        .product-price {
+            float: right;
+            font-weight: 500;
+            font-family: 'Montserrat', 'NanumSquare', sans-serif;
+            text-align: right;
+            .discount {
+                font-size: 16px;
+                color: #939598;
+                text-decoration: line-through;
+                & + .badge {
+                    margin-left: 5px;
+                }
+            }
+            .price {
+                display: block;
+                font-size: 33px;
+                color: $brand-primary;
+                em {
+                    font-size: 19px;
+                }
+            }
+        }
+        @media (max-width: 1500px) {
+            padding: 11px 10px 15px;
+        }
+    }
+}
+// 차량상세 - 레이어 팝업
+.detail-view {
+    //display: block !important;
+    .modal-content {
+        position: absolute !important;
+        top: 0 !important;
+        @include clearfix;
+        width: 1792px;
+        height: 100%;
+        margin-left: -896px;
+        background-color: $white;
+        .btn-modal-close {
+            background-position: -433px 0;
+        }
+        @media (max-width: 1600px) {
+            width: 1200px;
+            margin-left: -600px;
+        }
+    }
+    .car-info {
+        float: left;
+        width: 50%;
+        height: 100%;
+        background: $brand-primary url("../images/modal-view-bg.png") repeat-x 0 0;
+        padding: 60px 70px;
+        .brand-name {
+            font-size: 24px;
+            color: #4d4d4d;
+        }
+        .car-name {
+            margin: 10px 0 20px;
+            font-weight: 700;
+            font-size: 35px;
+        }
+        .overview {
+            li {
+                display: inline-block;
+                font-size: 16px;
+                color: #6c6c6c;
+                &:before {
+                    display: inline-block;
+                    width: 1px;
+                    height: 15px;
+                    margin: 0 15px;
+                    background-color: #c5c5c5;
+                    vertical-align: middle;
+                    content: '';
+                }
+                &:first-child:before {
+                    display: none;
+                }
+            }
+        }
+        .image-area {
+            position: relative;
+            height: 100%;
+            img {
+                position: absolute;
+                top:0;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                margin: auto;
+
+            }
+        }
+    }
+    .detail-info {
+        float: left;
+        width: 50%;
+        border-left: 1px solid #d1ddda;
+        .view-info-group {
+            border-top: 1px solid #d1ddda;
+            padding: 30px 49px 25px;
+            .group-title {
+                margin-bottom: 14px;
+                font-weight: 700;
+                font-size: 18px;
+            }
+        }
+        .company-info {
+            padding: 66px 49px 36px;
+            background-color: #e3f0ed;
+            .company-name {
+                float: left;
+                font-size: 28px;
+            }
+            .price {
+                float: right;
+                font-family: 'Montserrat', 'NanumSquare', sans-serif;
+                font-size: 33px;
+                color: #4aaf9d;
+                em {
+                    font-size: 19px;
+                }
+                span {
+                    display: block;
+                    font: 200 17px 'NotoSans', sans-serif;
+                    color: #5d6362;
+                }
+            }
+            .btn-box {
+                padding-top: 30px;
+            }
+            .rent-regulation {
+                margin-top: 20px;
+                padding-top: 20px;
+                border-top: 1px solid #c6d6d3;
+            }
+        }
+        .rent-regulation {
+            ul {
+                display: table;
+                width: 100%;
+                li {
+                    position: relative;
+                    display: table-cell;
+                    width: 50%;
+                    padding-left: 55px;
+                    font: 200 16px 'NotoSans', sans-serif;
+                    vertical-align: middle;
+                    i {
+                        position: absolute;
+                        top: 4px;
+                        left: 0;
+                        height: 44px;
+                    }
+                }
+            }
+        }
+        .car-option {
+            padding-bottom: 10px;
+            ul {
+                @include clearfix;
+                li {
+                    float: left;
+                    width: 33.33%;
+                    margin-bottom: 25px;
+                    text-align: center;
+                    i {
+                        display: block;
+                        height: 33px;
+                        margin: 0 auto 12px;
+                    }
+                    .text-year {
+                        font: 700 26px 'Montserrat', sans-serif;
+                        color: #555;
+                    }
+                }
+            }
+        }
+        .reviews {
+            padding-bottom: 35px;
+            .group-title {
+                float: left;
+                margin-top: 10px;
+                margin-bottom: 0;
+                small {
+                    font-size: 14px;
+                    color: $brand-primary;
+                }
+            }
+            .btn-group {
+                float: right;
+                display: block;
+                width: auto;
+                margin-bottom: 11px;
+                .btn {
+                    width: 36px;
+                    height: 36px;
+                    margin-left: -3px;
+                }
+            }
+            .review {
+                padding: 16px 30px;
+                border: 1px solid #e9e9e9;
+                font-family: 'NotoSans', sans-serif;
+            }
+            .reviewer {
+                font-weight: 500;
+                font-size: 18px;
+            }
+            .satisfaction {
+                margin-left: 13px;
+                font-weight: 500;
+                font-size: 18px;
+                color: $brand-primary;
+                &:before {
+                    @include sp-icon(0,0);
+                    @include sp-size(33px,32px);
+                    margin-right: 10px;
+                    vertical-align: middle;
+                    content: '';
+                }
+                &.level1 {
+                    &:before {
+                        background-position: -433px -390px;
+                    }
+                }
+                &.level2 {
+                    &:before {
+                        background-position: -390px -390px;
+                    }
+                }
+                &.level3 {
+                    &:before {
+                        background-position: -347px -390px;
+                    }
+                }
+                &.level4 {
+                    &:before {
+                        background-position: -303px -390px;
+                    }
+                }
+                &.level5 {
+                    &:before {
+                        background-position: -260px -390px;
+                    }
+                }
+            }
+            .review-content {
+                font-weight: 200;
+                font-size: 17px;
+                color: #696969;
+            }
+            .rent-info {
+                margin: 16px -30px -16px;
+                padding: 10px 22px;
+                background-color: #f5f5f5;
+                font-family: 'Lato', 'NotoSans', sans-serif;
+                font-size: 16px;
+                letter-spacing: 0;
+            }
+            .btn-box {
+                margin-top: 15px;
+            }
+        }
+        .lowest-price {
+            border-top: 1px solid #ebebeb;
+            .group-title {
+                padding-top: 25px;
+                padding-left: 50px;
+                font-weight: 700;
+                font-size: 18px;
+            }
+            .text {
+                margin-top: -24px;
+                padding-right: 50px;
+                padding-bottom: 10px;
+                font: 200 17px 'NotoSans', sans-serif;
+                text-align: right;
+            }
+            li {
+                .radio {
+                    display: block;
+                }
+                .radio-display {
+                    margin-top: 2px;
+                    margin-left: 50px;
+                    background-image: none;
+                }
+                .radio-label {
+                    @include clearfix;
+                    display: block;
+                    margin-top: -36px;
+                    padding: 7px 50px 12px 90px;
+                    border-top: 1px solid #e9e9e9;
+                    font: 500 17px 'Montserrat', 'NotoSans', sans-serif;
+                    .company-name {
+                        float: left;
+                    }
+                    .price {
+                        float: right;
+                    }
+                }
+                input[type="radio"]:checked ~ .radio-label {
+                    background-color: #e3f0ed;
+                }
+                input[type="radio"]:checked ~ .radio-display {
+                    background-image: url(../images/form-radio-checked.png);
+                }
+            }
+        }
+        @media (max-width: 1600px) {
+            .view-info-group {
+                padding: 20px 49px;
+                .group-title {
+                    margin-bottom: 10px;
+                }
+            }
+            .company-info {
+                padding: 40px 49px 20px;
+                .btn-box {
+                    padding-top: 15px;
+                    .btn {
+                        line-height: (60-2)/25;
+                    }
+                }
+            }
+            .car-option {
+                padding-bottom: 10px;
+                ul {
+                    li {
+                        margin-bottom: 10px;
+                        i {
+                            margin: 0 auto 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*******************************
+    예약하기
 *******************************/
 .reservation {
     .btn-align-center {
@@ -1321,7 +1997,7 @@ button {
                 display: block;
                 padding: 16px 0;
                 background-color: #f6f6f6;
-                font: 200 17px 'Noto Sans KR', sans-serif;
+                font: 200 17px 'NotoSans', sans-serif;
                 color: #7f7f7f;
                 text-align: center;
                 vertical-align: middle;
@@ -1476,7 +2152,7 @@ button {
 .reservation-agreement {
     text-align: center;
     .checkbox-label {
-        font: 18px 'Noto Sans KR', sans-serif;
+        font: 18px 'NotoSans', sans-serif;
     }
     dt {
         padding: 15px 0;
