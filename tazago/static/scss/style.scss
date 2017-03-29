@@ -317,7 +317,7 @@ button {
             }
         }
         @media (max-width: 1500px) {
-            top: 365px;
+            top: 340px;
             .side-content {
                 top: -110px;
                 span {
@@ -683,6 +683,7 @@ button {
         font: 17px 'NotoSans', sans-serif;
         line-height: (60-2)/17;
         color: #7f7f7f;
+        text-align: left;
         cursor: text;
     }
 }
@@ -727,6 +728,11 @@ button {
         }
     }
 }
+
+/*******************************
+    Intro
+*******************************/
+
 
 /*******************************
     Main
@@ -2407,7 +2413,7 @@ button {
         padding: 28px 230px 0 250px;
     }
 }
-.input-signup-info {
+.input-member-info {
     padding: 0 230px 33px 0;
     .form-inline {
         position: relative;
@@ -2428,9 +2434,14 @@ button {
         }
     }
     .help-text {
+        padding-left: 9px;
         font-size: 15px;
         font-family: 'NotoSans', sans-serif;
         color: #8d8d8d;
+        text-indent: -9px;
+        @media (max-width: 1500px) {
+            font-size: 14px;
+        }
     }
     & + .checkbox {
         padding-left: 250px;
@@ -2554,6 +2565,104 @@ button {
 /*******************************
     My Page
 *******************************/
+.mypage {
+    min-width: 832px;
+    margin: 28px auto 0;
+}
+// 마이페이지 - 쿠폰
+// 쿠폰
+.couponbox {
+    display: table;
+    width: 100%;
+    border: 1px solid #dfdfdf;
+    @include border-radius(8px);
+    font-family: 'Montserrat', 'NanumSquare', sans-serif;
+    .coupon-info {
+        display: table-cell;
+        width: 65%;
+        padding: 40px 0;
+        @include border-side-radius(top,left,8px);
+        @include border-side-radius(bottom,left,8px);
+        background: $brand-primary url("../images/bg-coupon.jpg") repeat-y 101% 0;
+        text-align: center;
+        vertical-align: middle;
+        .name {
+            display: block;
+            font-weight: 500;
+            font-size: 35px;
+            color: $white;
+            text-transform: uppercase;
+        }
+        .price {
+            display: block;
+            margin: 4px 0 11px 0;
+            font-weight: 700;
+            font-size: 28px;
+            font-family: 'NanumSquare', sans-serif;
+            color: #fff000;
+        }
+        .date {
+            display: inline-block;
+            padding: 4px 0;
+            border-top: 1px solid #92cfc4;
+            border-bottom: 1px solid #92cfc4;
+            font-size: 16px;
+            color: $white;
+        }
+    }
+    .coupon-terms {
+        display: table-cell;
+        width: 35%;
+        padding: 0 20px;
+        @include border-side-radius(top,right,8px);
+        @include border-side-radius(bottom,right,8px);
+        background-color: $white;
+        text-align: center;
+        vertical-align: middle;
+        .type {
+            font-weight: 700;
+            font-size: 15px;
+            color: $brand-primary;
+        }
+        .terms {
+            display: block;
+            font-size: 20px;
+        }
+    }
+}
+.coupon-list {
+    @include clearfix;
+    min-height: 670px;
+    margin: 36px -9px 0;
+    li {
+        float: left;
+        width: 50%;
+        padding: 9px;
+    }
+}
+.no-coupon {
+    li {
+        float: none;
+        width: 100%;
+        font-size: 25px;
+        color: #505050;
+        text-align: center;
+        &:before {
+            @include sp-icon(-645px,-215px);
+            @include sp-size(140px,120px);
+            display: block;
+            margin: 128px auto 20px;
+            content: '';
+        }
+    }
+}
+// 마이페이지 - 내 정보 수정
+.member-edit {
+    margin-top: 34px;
+    .btn-group {
+        padding: 28px 230px 0 124px;
+    }
+}
 .dashboard {
     @include clearfix;
     max-width: 910px;
@@ -3149,7 +3258,7 @@ button {
                 top: 9px;
                 left: 17px;
                 z-index: 3;
-                @include sp-icon(-589px,-280px);
+                @include sp-icon(-592px,-291px);
                 @include sp-size(41px,41px);
                 content: '';
             }
@@ -3157,6 +3266,7 @@ button {
                 font-weight: 300;
                 font-size: 19px;
                 color: #303030;
+                text-align: center;
             }
             .email-signup {
                 display: block;
@@ -3188,6 +3298,28 @@ button {
                     width: 25%;
                 }
             }
+        }
+    }
+}
+// 회원탈퇴
+.quit {
+    .modal-content {
+        width: 490px;
+        height: 353px;
+        margin-top: -176px;
+        margin-left: -245px;
+    }
+    .modal-body {
+        padding-top: 80px;
+        text-align: center;
+        strong {
+            font-size: 25px;
+        }
+        .text {
+            padding: 7px 0 70px;
+            font-size: 18px;
+            font-family: 'NotoSans', sans-serif;
+            color: #868686;
         }
     }
 }

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>마이페이지</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" src="static/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="static/js/scrolloverflow.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.fullPage.min.js"></script>
+    <script type="text/javascript" src="static/js/custom.js"></script>
+    <!--[if lt IE 9]>
+    <script src="static/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="sub membership">
+<div id="wrap">
+    <div id="fullpage">
+        <div class="section" id="section0">
+            <div class="sidebar">
+                <div class="header">
+                    <div class="site-home">
+                        <h1 class="brand-logo"><a href="#"><span class="sr-only">타자고</span></a></h1>
+                        <a href="#" class="btn-menu">Menu</a>
+                    </div>
+                    <ul class="site-quick-access-icon">
+                       <li><a href="#"><i class="icon-lock"></i>로그인</a></li>
+                       <li><a href="#"><i class="icon-person-plus"></i>회원가입</a></li>
+                       <li><a href="#"><i class="icon-check"></i>예약확인</a></li>
+                    </ul>
+                </div>
+                <div class="side-container">
+                    <div class="side-content">
+                        <span>세상쉬운 렌터카 예약</span>
+                        <strong>타자고</strong>
+                    </div>
+                    <div class="image-area">
+                        <img src="static/images/sub_animation.gif" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="section-title">마이페이지</h2>
+                <div class="mypage">
+                    <ul class="tabs">
+                        <li class="tab active" rel="myCoupon">쿠폰함<span class="unit">(0)</span></li>
+                        <li class="tab" rel="memberEdit">내 정보 수정</li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane" id="myCoupon">
+                            <!-- 쿠폰이 없을 경우 -->
+                            <!--<ul class="coupon-list no-coupon">-->
+                                <!--<li>사용 가능한 쿠폰이 없습니다.</li>-->
+                            <!--</ul>-->
+                            <!-- 쿠폰이 없을 경우 //end -->
+                            <ul class="coupon-list">
+                                <li>
+                                    <div class="couponbox">
+                                        <div class="coupon-info">
+                                            <span class="name">coupon</span>
+                                            <strong class="price">2,000원 할인</strong>
+                                            <small class="date">2017.04.01-2017.06.30</small>
+                                        </div>
+                                        <div class="coupon-terms">
+                                            <span class="type">이용후기 할인쿠폰</span>
+                                            <strong class="terms">중형차 48시간 이상 대여 시</strong>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="couponbox">
+                                        <div class="coupon-info">
+                                            <span class="name">coupon</span>
+                                            <strong class="price">2,000원 할인</strong>
+                                            <small class="date">2017.04.01-2017.06.30</small>
+                                        </div>
+                                        <div class="coupon-terms">
+                                            <span class="type">이용후기 할인쿠폰</span>
+                                            <strong class="terms">중형차 48시간 이상 대여 시</strong>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="couponbox">
+                                        <div class="coupon-info">
+                                            <span class="name">coupon</span>
+                                            <strong class="price">2,000원 할인</strong>
+                                            <small class="date">2017.04.01-2017.06.30</small>
+                                        </div>
+                                        <div class="coupon-terms">
+                                            <span class="type">이용후기 할인쿠폰</span>
+                                            <strong class="terms">중형차 48시간 이상 대여 시</strong>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane" id="memberEdit">
+                            <div class="member-edit">
+                                <ul class="input-member-info">
+                                    <li class="form-inline">
+                                        <label for="email" class="form-label">아이디</label>
+                                        <input type="email" class="form-control form-disabled" id="email" value="test@mail.com" disabled>
+                                    </li>
+                                    <li class="form-inline">
+                                        <label for="password" class="form-label">비밀번호</label>
+                                        <div class="placeholder">
+                                            <label for="password">비밀번호를 입력해주세요</label>
+                                            <input type="password" class="form-control" id="password">
+                                        </div>
+                                    </li>
+                                    <li class="form-inline">
+                                        <label for="password-confirm" class="form-label">비밀번호 확인</label>
+                                        <div class="placeholder">
+                                            <label for="password-confirm">비밀번호를 입력해주세요</label>
+                                            <input type="password" class="form-control" id="password-confirm">
+                                            <p class="help-text">* 영문,숫자,특수문자 조합 8~16자로 특수문자 없이 입력 가능하며,<br>보안을 위해 개인정보 관련 숫자는 사용하지 마세요</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="input-member-info">
+                                    <li class="form-inline">
+                                        <label for="name" class="form-label">이름</label>
+                                        <div class="placeholder">
+                                            <label for="name">이름을 입력해주세요</label>
+                                            <input type="text" class="form-control" id="name">
+                                        </div>
+                                    </li>
+                                    <li class="form-inline">
+                                        <label for="phone" class="form-label">연락처</label>
+                                        <div class="placeholder">
+                                            <label for="phone">숫자만 입력해주세요</label>
+                                            <input type="number" class="form-control" id="phone">
+                                        </div>
+                                    </li>
+                                    <li class="form-inline">
+                                        <label for="birth-date" class="form-label">생년월일</label>
+                                        <div class="placeholder">
+                                            <label for="birth-date">예) 19901201</label>
+                                            <input type="number" class="form-control" id="birth-date">
+                                            <p class="help-text">* 만 21세 이상부터 차량 대여가 가능합니다.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="checkbox checkbox-block">
+                                    <input type="checkbox" id="agree-receive" checked>
+                                    <label for="agree-receive" class="checkbox-display"></label>
+                                    <label for="agree-receive" class="checkbox-label">할인쿠폰 및 이벤트 등 마케팅 이메일 수신을 허용합니다.</label>
+                                </div>
+                                <div class="btn-group">
+                                    <span class="outer"><button type="button" class="btn btn-lg btn-primary inverse btn-block" onclick="modalOpen('.quit');">회원탈퇴</button></span>
+                                    <span class="outer"><button type="button" class="btn btn-lg btn-primary btn-block">정보수정</button></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 전체메뉴 -->
+            <div class="megamenu">
+                <div class="menu-wrap">
+                    <span>세상쉬운 렌터카 예약</span>
+                    <strong>타자고</strong>
+                    <ul class="menu">
+                        <li class="item-login"><a href="#" class="">로그인</a></li>
+                        <li class="item-join"><a href="#">회원가입</a></li>
+                        <li class="item-reservation-confirm"><a href="#">예약확인</a></li>
+                        <li class="item-rental-info"><a href="#">대여안내</a></li>
+                        <li class="item-notice"><a href="#">공지사항</a></li>
+                        <li class="item-faq"><a href="#">자주하는 질문</a></li>
+                    </ul>
+                    <p class="customer-number">
+                        <span>고객센터 (평일 9시~6시)</span>
+                        <strong>1544-1544</strong>
+                    </p>
+                </div>
+                <button type="button" class="btn-menu-close"><span class="sr-only">닫기</span></button>
+            </div>
+            <!-- 전체메뉴 //end -->
+            <!-- 회원탈퇴 -->
+            <div class="modal quit">
+                <div class="modal-content">
+                    <h3 class="modal-head">회원탈퇴</h3>
+                    <div class="modal-body">
+                        <strong>회원탈퇴 하시겠습니까?</strong>
+                        <p class="text">회원 탈퇴 시 동일한 계정으로 재가입할 수 없습니다.</p>
+                        <div class="btn-group">
+                            <span class="outer"><button type="button" class="btn btn-lg btn-block" onclick="modalClose('.quit');">취소</button></span>
+                            <span class="outer"><button type="button" class="btn btn-lg btn-primary btn-block">확인</button></span>
+                        </div>
+                    </div>
+                    <button class="btn-modal-close" onclick="modalClose('.quit');"><span class="sr-only">닫기</span></button>
+                </div>
+            </div>
+            <!-- 회원탈퇴 //end -->
+            <!-- FEEDBACK -->
+            <div class="feedback">
+                <a href="#"><span class="sr-only">feedback</span></a>
+            </div>
+            <!-- FEEDBACK //end -->
+            <div class="footer">
+                <ul class="terms-menu">
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보취급방침</a></li>
+                </ul>
+                <ul class="company-info">
+                    <li>(주)제주비앤에프</li>
+                    <li>사업자등록번호 105-87-76000</li>
+                    <li>통신판매신고</li>
+                    <li>제2015-제주연동-43호</li>
+                </ul>
+                <p class="copyright">대표이사 윤형준  @ 2017 TAZAGO. All rights reserved</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

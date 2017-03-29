@@ -7,35 +7,84 @@
     <meta name="keywords" content="">
     <title>타자고</title>
     <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" src="static/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="static/js/scrolloverflow.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.fullPage.min.js"></script>
+    <script type="text/javascript" src="static/js/custom.js"></script>
+    <!--[if lt IE 9]>
+    <script src="static/js/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body class="intro">
 <div class="wrap">
-    <header>
-        <div>
-            <h1>타자고</h1>
-            <div class="nav"></div>
-        </div>
-        <ul>
-           <li><a href="#">로그인</a></li>
-           <li><a href="#">회원가입</a></li>
-           <li><a href="#">예약확인</a></li>
+    <div id="fullpage">
+        <div class="section" id="section0">
+            <div class="header">
+                <div class="site-home">
+                    <h1 class="brand-logo"><a href="#"><span class="sr-only">타자고</span></a></h1>
+                    <a href="#" class="btn-menu">Menu</a>
+                </div>
+                <ul class="site-quick-access">
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">예약확인</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <div>
+                    <span>세상쉬운 렌터카 예약</span>
+                    <h2>타자고</h2>
+                </div>
+                <div>
+                    <p>어느 도시에서 차량이 필요하신가요?</p>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="">
+                            </a>
+                        </li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 전체메뉴 -->
+            <div class="megamenu">
+                <div class="menu-wrap">
+                    <span>세상쉬운 렌터카 예약</span>
+                    <strong>타자고</strong>
+                    <ul class="menu">
+                        <li class="item-login"><a href="#" class="">로그인</a></li>
+                        <li class="item-join"><a href="#">회원가입</a></li>
+                        <li class="item-reservation-confirm"><a href="#">예약확인</a></li>
+                        <li class="item-rental-info"><a href="#">대여안내</a></li>
+                        <li class="item-notice"><a href="#">공지사항</a></li>
+                        <li class="item-faq"><a href="#">자주하는 질문</a></li>
+                    </ul>
+                    <p class="customer-number">
+                        <span>고객센터 (평일 9시~6시)</span>
+                        <strong>1544-1544</strong>
+                    </p>
+                </div>
+                <button type="button" class="btn-menu-close"><span class="sr-only">닫기</span></button>
+            </div>
+            <!-- 전체메뉴 //end -->
+            <div class="footer">
+        <ul class="terms-menu">
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보취급방침</a></li>
         </ul>
-    </header>
-    <div class="content">
-        <div>
-            <span>세상쉬운 렌터카 예약</span>
-            <h2>타자고</h2>
-        </div>
-        <div>
-            <p></p>
-            <ul>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-            </ul>
+        <ul class="company-info">
+            <li>(주)제주비앤에프</li>
+            <li>사업자등록번호 105-87-76000</li>
+            <li>통신판매신고</li>
+            <li>제2015-제주연동-43호</li>
+        </ul>
+        <p class="copyright">대표이사 윤형준  @ 2017 TAZAGO. All rights reserved</p>
+    </div>
         </div>
     </div>
-    <footer></footer>
 </div>
 </body>
 </html>

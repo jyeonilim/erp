@@ -22,6 +22,11 @@ textarea.form-control {
     line-height: 20px;
     @include box-sizing(border-box);
 }
+.form-disabled {
+    border: 1px solid #e0e0e0;
+    background-color: #f3f3f3;
+    color: #3c3c3c;
+}
 
 .input-lg {
     height: 84px;

@@ -279,12 +279,12 @@ table {
 .icon-big-21 {
   width: 44px;
   height: 44px;
-  background-position: -589px -215px; }
+  background-position: -592px -215px; }
 
 .icon-big-license {
   width: 42px;
   height: 37px;
-  background-position: -516px -280px; }
+  background-position: -516px -291px; }
 
 .icon-navigation {
   width: 33px;
@@ -359,7 +359,7 @@ table {
 .icon-mail {
   width: 41px;
   height: 41px;
-  background-position: -589px -280px; }
+  background-position: -592px -291px; }
 
 .badge {
   display: inline-block;
@@ -493,6 +493,11 @@ textarea.form-control {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
+
+.form-disabled {
+  border: 1px solid #e0e0e0;
+  background-color: #f3f3f3;
+  color: #3c3c3c; }
 
 .input-lg {
   height: 84px;
@@ -865,6 +870,8 @@ textarea.form-control {
         border: 2px solid #4aaf9d;
         border-bottom-color: white;
         content: ''; }
+    .tabs .tab .unit {
+      color: #4aaf9d; }
 
 .tab-pane {
   display: none; }
@@ -1342,7 +1349,7 @@ button {
       text-align: center; }
   @media (max-width: 1500px) {
     .sub .side-container {
-      top: 365px; }
+      top: 340px; }
       .sub .side-container .side-content {
         top: -110px; }
         .sub .side-container .side-content span {
@@ -1635,6 +1642,7 @@ button {
     font: 17px 'NotoSans', sans-serif;
     line-height: 3.412;
     color: #7f7f7f;
+    text-align: left;
     cursor: text; }
 
 .tooltip {
@@ -1682,6 +1690,9 @@ button {
     vertical-align: middle;
     content: ''; }
 
+/*******************************
+    Intro
+*******************************/
 /*******************************
     Main
 *******************************/
@@ -3096,29 +3107,34 @@ button {
 .simple-signup .btn-align {
   padding: 28px 230px 0 250px; }
 
-.input-signup-info {
+.input-member-info {
   padding: 0 230px 33px 0; }
-  .input-signup-info .form-inline {
+  .input-member-info .form-inline {
     position: relative; }
-    .input-signup-info .form-inline .form-label {
+    .input-member-info .form-inline .form-label {
       width: 250px;
       padding-right: 30px;
       text-align: right; }
-    .input-signup-info .form-inline .input-group-btn {
+    .input-member-info .form-inline .input-group-btn {
       position: absolute;
       top: 0;
       right: -107px; }
-      .input-signup-info .form-inline .input-group-btn .btn {
+      .input-member-info .form-inline .input-group-btn .btn {
         width: 107px;
         font-weight: 700;
         font-size: 16px; }
-  .input-signup-info .help-text {
+  .input-member-info .help-text {
+    padding-left: 9px;
     font-size: 15px;
     font-family: 'NotoSans', sans-serif;
-    color: #8d8d8d; }
-  .input-signup-info + .checkbox {
+    color: #8d8d8d;
+    text-indent: -9px; }
+    @media (max-width: 1500px) {
+      .input-member-info .help-text {
+        font-size: 14px; } }
+  .input-member-info + .checkbox {
     padding-left: 250px; }
-    .input-signup-info + .checkbox .checkbox-label {
+    .input-member-info + .checkbox .checkbox-label {
       font-size: 16px; }
 
 /*******************************
@@ -3218,6 +3234,109 @@ button {
 /*******************************
     My Page
 *******************************/
+.mypage {
+  min-width: 832px;
+  margin: 28px auto 0; }
+
+.couponbox {
+  display: table;
+  width: 100%;
+  border: 1px solid #dfdfdf;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  font-family: 'Montserrat', 'NanumSquare', sans-serif; }
+  .couponbox .coupon-info {
+    display: table-cell;
+    width: 65%;
+    padding: 40px 0;
+    border-top-left-radius: 8px;
+    -moz-border-radius-topleft: 8px;
+    -webkit-border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    -moz-border-radius-bottomleft: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+    background: #4aaf9d url("../images/bg-coupon.jpg") repeat-y 101% 0;
+    text-align: center;
+    vertical-align: middle; }
+    .couponbox .coupon-info .name {
+      display: block;
+      font-weight: 500;
+      font-size: 35px;
+      color: white;
+      text-transform: uppercase; }
+    .couponbox .coupon-info .price {
+      display: block;
+      margin: 4px 0 11px 0;
+      font-weight: 700;
+      font-size: 28px;
+      font-family: 'NanumSquare', sans-serif;
+      color: #fff000; }
+    .couponbox .coupon-info .date {
+      display: inline-block;
+      padding: 4px 0;
+      border-top: 1px solid #92cfc4;
+      border-bottom: 1px solid #92cfc4;
+      font-size: 16px;
+      color: white; }
+  .couponbox .coupon-terms {
+    display: table-cell;
+    width: 35%;
+    padding: 0 20px;
+    border-top-right-radius: 8px;
+    -moz-border-radius-topright: 8px;
+    -webkit-border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    -moz-border-radius-bottomright: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+    background-color: white;
+    text-align: center;
+    vertical-align: middle; }
+    .couponbox .coupon-terms .type {
+      font-weight: 700;
+      font-size: 15px;
+      color: #4aaf9d; }
+    .couponbox .coupon-terms .terms {
+      display: block;
+      font-size: 20px; }
+
+.coupon-list {
+  min-height: 670px;
+  margin: 36px -9px 0; }
+  .coupon-list:before, .coupon-list:after {
+    content: " ";
+    display: table; }
+  .coupon-list:after {
+    clear: both; }
+  .coupon-list li {
+    float: left;
+    width: 50%;
+    padding: 9px; }
+
+.no-coupon li {
+  float: none;
+  width: 100%;
+  font-size: 25px;
+  color: #505050;
+  text-align: center; }
+  .no-coupon li:before {
+    display: inline-block;
+    background: url("../images/sprites-icon.png") repeat -645px -215px;
+    line-height: 0;
+    color: transparent;
+    vertical-align: middle;
+    width: 140px;
+    height: 120px;
+    display: block;
+    margin: 128px auto 20px;
+    content: ''; }
+
+.member-edit {
+  margin-top: 34px; }
+  .member-edit .btn-group {
+    padding: 28px 230px 0 124px; }
+
 .dashboard {
   max-width: 910px;
   min-width: 832px;
@@ -3756,7 +3875,7 @@ button {
       left: 17px;
       z-index: 3;
       display: inline-block;
-      background: url("../images/sprites-icon.png") repeat -589px -280px;
+      background: url("../images/sprites-icon.png") repeat -592px -291px;
       line-height: 0;
       color: transparent;
       vertical-align: middle;
@@ -3766,7 +3885,8 @@ button {
     .modal-simple-signup .modal-body .email-signup-box label {
       font-weight: 300;
       font-size: 19px;
-      color: #303030; }
+      color: #303030;
+      text-align: center; }
     .modal-simple-signup .modal-body .email-signup-box .email-signup {
       display: block;
       width: 100%;
@@ -3795,6 +3915,23 @@ button {
     .modal-simple-signup .modal-body .sns-signup ul li {
       float: left;
       width: 25%; }
+
+.quit .modal-content {
+  width: 490px;
+  height: 353px;
+  margin-top: -176px;
+  margin-left: -245px; }
+
+.quit .modal-body {
+  padding-top: 80px;
+  text-align: center; }
+  .quit .modal-body strong {
+    font-size: 25px; }
+  .quit .modal-body .text {
+    padding: 7px 0 70px;
+    font-size: 18px;
+    font-family: 'NotoSans', sans-serif;
+    color: #868686; }
 
 /*******************************
     Helper Class
