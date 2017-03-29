@@ -187,6 +187,22 @@
     @include sp-size(32px,32px);
     background-position: -301px -430px;
 }
+.icon-facebook {
+    @include sp-size(69px,69px);
+    background-position: -258px -645px;
+}
+.icon-google {
+    @include sp-size(69px,69px);
+    background-position: -344px -645px;
+}
+.icon-naver {
+    @include sp-size(69px,69px);
+    background-position: -430px -645px;
+}
+.icon-kakaotalk {
+    @include sp-size(69px,69px);
+    background-position: -516px -645px;
+}
 
 // Badge
 .badge {

@@ -833,12 +833,14 @@ button {
         border-top: 0;
         background-color: #eef6f5;
         .tabs {
+            display: block;
             padding: 16px 0;
             text-align: center;
-            li {
+            .tab {
                 display: inline-block;
                 width: 145px;
                 height: 42px;
+                padding: 0;
                 border: 1px solid #b2dcd5;
                 font-weight: 700;
                 font-size: 20px;
@@ -850,13 +852,13 @@ button {
                     background-color: $brand-primary;
                     color: #fff;
                 }
+                &:after {
+                    display: none;
+                }
             }
         }
         .tab-content {
             border-top: 1px solid #d7e6e4;
-            .tab-pane {
-                display: none;
-            }
         }
         .content-select-place {
             position: relative;
@@ -2439,6 +2441,102 @@ button {
 /*******************************
     로그인
 *******************************/
+.login {
+    @include clearfix;
+    min-width: 832px;
+    .member-box {
+        float: left;
+        width: 50%;
+        margin-top: 73px;
+        padding: 0 50px 0 80px;
+        border-right: 1px solid #dcdcdc;
+        text-align: center;
+        .secondary-title {
+            margin-bottom: 25px;
+        }
+        .input-login {
+            margin-left: -80px;
+        }
+        .checkbox {
+            text-align: left;
+        }
+        .forgot-info {
+            margin-top: 20px;
+            li {
+                display: inline-block;
+                &:before {
+                    display: inline-block;
+                    width: 1px;
+                    height: 14px;
+                    margin: 0 19px;
+                    background-color: #bababa;
+                    content: '';
+                }
+                &:first-child:before {
+                    display: none;
+                }
+                button {
+                    padding: 0;
+                    font-size: 16px;
+                    font-family: 'NotoSans', sans-serif;
+                    color: #7f7f7f;
+
+                }
+            }
+        }
+        .sns-login {
+            margin-top: 65px;
+            ul {
+                margin-top: -10px;
+                @include clearfix;
+                li {
+                    float: left;
+                    width: 25%;
+                    text-align: center;
+                }
+                @media (max-width: 1500px) {
+                    margin: -10px -20px 0;
+                }
+            }
+        }
+    }
+    .guest-box {
+        float: right;
+        width: 50%;
+        margin-top: 115px;
+        padding-left: 50px;
+        .text {
+            margin-bottom: 28px;
+            font-size: 17px;
+            font-family: 'NotoSans', sans-serif;
+            color: #606060;
+            letter-spacing: -1px;
+            span {
+                color: $brand-primary;
+            }
+            @media (max-width: 1500px) {
+                letter-spacing: -2px;
+            }
+        }
+        .btn {
+            &:hover {
+                background-color: $brand-primary;
+                color: $white;
+            }
+        }
+        .signup {
+            margin-top: 65px;
+            padding-top: 55px;
+            border-top: 1px solid #dcdcdc;
+            small.text {
+                display: block;
+                margin-top: 15px;
+                font-size: 15px;
+                color: #989898;
+            }
+        }
+    }
+}
 
 /*******************************
     My Page
@@ -2537,7 +2635,7 @@ button {
 }
 
 /*******************************
-    Layer
+    Modal
 *******************************/
 .modal {
     display: none;
@@ -2995,6 +3093,29 @@ button {
         .btn {
             padding: 0 90px;
         }
+    }
+}
+// 아이디/비밀번호 찾기
+.forgot {
+    .modal-content {
+        width: 490px;
+        height: 508px;
+        margin-top: -254px;
+        margin-left: -245px;
+    }
+    .modal-body {
+        padding: 25px 45px 46px;
+    }
+    .text {
+        padding: 30px 0 28px;
+        font-size: 18px;
+        line-height: 23px;
+        color: #494949;
+        text-align: center;
+    }
+    .btn-align {
+        margin-top: 7px;
+        margin-left: 80px;
     }
 }
 

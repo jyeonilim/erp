@@ -23,6 +23,15 @@ $(document).ready(function() {
         $('body').removeClass('scrollFixed');
     });
 
+    // Tab
+    $('.tab-pane:first').show();
+    $('.tab').click(function () {
+        $('.tab').removeClass('active');
+        $(this).addClass('active');
+        $('.tab-pane').hide();
+        var activeTab = $(this).attr('rel');
+        $('#' + activeTab).fadeIn();
+    });
 
     // Placeholder
     var placeholder = $('.placeholder .form-control');
@@ -47,15 +56,6 @@ $(document).ready(function() {
             $(this).parent('li').addClass('active');
             $('.select-place-picker').show();
         }
-    });
-    // 예약하기 : 장소선택 - 지역선택 탭
-    $('.tab-pane:first').show();
-    $('.tab').click(function () {
-        $('.tab').removeClass('active');
-        $(this).addClass('active');
-        $('.tab-pane').hide();
-        var activeTab = $(this).attr('rel');
-        $('#' + activeTab).fadeIn();
     });
     // 예약하기 : 장소선택 - 지점선택 탭
     $('.select-place-seoul li:first .content-place').show();
@@ -127,6 +127,22 @@ $(document).ready(function() {
         $('.btn-change-schedule').removeClass('on');
         $(this).parent().hide();
         $('body').removeClass('scrollFixed');
+    });
+
+    // 로그인 - 아이디/패스워드 찾기
+    $('.find-id').on('click',function () {
+        modalOpen('.forgot');
+        $('.tab').removeClass('active');
+        $('.tab-pane').hide();
+        $('.tab:first').addClass('active');
+        $('.tab-pane:first').show();
+    });
+    $('.find-password').on('click',function () {
+        modalOpen('.forgot');
+        $('.tab').removeClass('active');
+        $('.tab-pane').hide();
+        $('.tab:last').addClass('active');
+        $('.tab-pane:last').show();
     });
 
 });

@@ -336,6 +336,26 @@ table {
   height: 32px;
   background-position: -301px -430px; }
 
+.icon-facebook {
+  width: 69px;
+  height: 69px;
+  background-position: -258px -645px; }
+
+.icon-google {
+  width: 69px;
+  height: 69px;
+  background-position: -344px -645px; }
+
+.icon-naver {
+  width: 69px;
+  height: 69px;
+  background-position: -430px -645px; }
+
+.icon-kakaotalk {
+  width: 69px;
+  height: 69px;
+  background-position: -516px -645px; }
+
 .badge {
   display: inline-block;
   -webkit-border-radius: 11px;
@@ -805,6 +825,44 @@ textarea.form-control {
     padding: 0 2px;
     font: 500 35px 'Montserrat', sans-serif;
     vertical-align: text-bottom; }
+
+/*******************************
+    Tab
+*******************************/
+.tabs {
+  display: table;
+  width: 100%;
+  border-collapse: collapse; }
+  .tabs .tab {
+    position: relative;
+    display: table-cell;
+    width: 50%;
+    padding: 15px 0 14px;
+    border: 1px solid #dedede;
+    border-bottom: 2px solid #4aaf9d;
+    background-color: #f3f3f3;
+    font-size: 20px;
+    color: #a2a2a2;
+    text-align: center;
+    cursor: pointer; }
+    .tabs .tab.active {
+      border-bottom-color: white;
+      background-color: white;
+      font-weight: 700;
+      color: #000; }
+      .tabs .tab.active:after {
+        position: absolute;
+        top: -1px;
+        left: -2px;
+        z-index: 2;
+        width: 100%;
+        height: 51px;
+        border: 2px solid #4aaf9d;
+        border-bottom-color: white;
+        content: ''; }
+
+.tab-pane {
+  display: none; }
 
 /*!
  * fullPage 2.9.4
@@ -1706,26 +1764,28 @@ button {
     border-top: 0;
     background-color: #eef6f5; }
     .reservation-step .select-place-picker .tabs {
+      display: block;
       padding: 16px 0;
       text-align: center; }
-      .reservation-step .select-place-picker .tabs li {
+      .reservation-step .select-place-picker .tabs .tab {
         display: inline-block;
         width: 145px;
         height: 42px;
+        padding: 0;
         border: 1px solid #b2dcd5;
         font-weight: 700;
         font-size: 20px;
         line-height: 2;
         color: #4aaf9d;
         cursor: pointer; }
-        .reservation-step .select-place-picker .tabs li.active {
+        .reservation-step .select-place-picker .tabs .tab.active {
           border-color: #4aaf9d;
           background-color: #4aaf9d;
           color: #fff; }
+        .reservation-step .select-place-picker .tabs .tab:after {
+          display: none; }
     .reservation-step .select-place-picker .tab-content {
       border-top: 1px solid #d7e6e4; }
-      .reservation-step .select-place-picker .tab-content .tab-pane {
-        display: none; }
     .reservation-step .select-place-picker .content-select-place {
       position: relative;
       min-height: 223px; }
@@ -3057,6 +3117,89 @@ button {
 /*******************************
     로그인
 *******************************/
+.login {
+  min-width: 832px; }
+  .login:before, .login:after {
+    content: " ";
+    display: table; }
+  .login:after {
+    clear: both; }
+  .login .member-box {
+    float: left;
+    width: 50%;
+    margin-top: 73px;
+    padding: 0 50px 0 80px;
+    border-right: 1px solid #dcdcdc;
+    text-align: center; }
+    .login .member-box .secondary-title {
+      margin-bottom: 25px; }
+    .login .member-box .input-login {
+      margin-left: -80px; }
+    .login .member-box .checkbox {
+      text-align: left; }
+    .login .member-box .forgot-info {
+      margin-top: 20px; }
+      .login .member-box .forgot-info li {
+        display: inline-block; }
+        .login .member-box .forgot-info li:before {
+          display: inline-block;
+          width: 1px;
+          height: 14px;
+          margin: 0 19px;
+          background-color: #bababa;
+          content: ''; }
+        .login .member-box .forgot-info li:first-child:before {
+          display: none; }
+        .login .member-box .forgot-info li button {
+          padding: 0;
+          font-size: 16px;
+          font-family: 'NotoSans', sans-serif;
+          color: #7f7f7f; }
+    .login .member-box .sns-login {
+      margin-top: 65px; }
+      .login .member-box .sns-login ul {
+        margin-top: -10px; }
+        .login .member-box .sns-login ul:before, .login .member-box .sns-login ul:after {
+          content: " ";
+          display: table; }
+        .login .member-box .sns-login ul:after {
+          clear: both; }
+        .login .member-box .sns-login ul li {
+          float: left;
+          width: 25%;
+          text-align: center; }
+        @media (max-width: 1500px) {
+          .login .member-box .sns-login ul {
+            margin: -10px -20px 0; } }
+  .login .guest-box {
+    float: right;
+    width: 50%;
+    margin-top: 115px;
+    padding-left: 50px; }
+    .login .guest-box .text {
+      margin-bottom: 28px;
+      font-size: 17px;
+      font-family: 'NotoSans', sans-serif;
+      color: #606060;
+      letter-spacing: -1px; }
+      .login .guest-box .text span {
+        color: #4aaf9d; }
+      @media (max-width: 1500px) {
+        .login .guest-box .text {
+          letter-spacing: -2px; } }
+    .login .guest-box .btn:hover {
+      background-color: #4aaf9d;
+      color: white; }
+    .login .guest-box .signup {
+      margin-top: 65px;
+      padding-top: 55px;
+      border-top: 1px solid #dcdcdc; }
+      .login .guest-box .signup small.text {
+        display: block;
+        margin-top: 15px;
+        font-size: 15px;
+        color: #989898; }
+
 /*******************************
     My Page
 *******************************/
@@ -3152,7 +3295,7 @@ button {
       border-width: 1px 0 0; }
 
 /*******************************
-    Layer
+    Modal
 *******************************/
 .modal {
   display: none; }
@@ -3560,6 +3703,26 @@ button {
   margin-top: 19px; }
   .receipt .btn-align-center .btn {
     padding: 0 90px; }
+
+.forgot .modal-content {
+  width: 490px;
+  height: 508px;
+  margin-top: -254px;
+  margin-left: -245px; }
+
+.forgot .modal-body {
+  padding: 25px 45px 46px; }
+
+.forgot .text {
+  padding: 30px 0 28px;
+  font-size: 18px;
+  line-height: 23px;
+  color: #494949;
+  text-align: center; }
+
+.forgot .btn-align {
+  margin-top: 7px;
+  margin-left: 80px; }
 
 /*******************************
     Helper Class
