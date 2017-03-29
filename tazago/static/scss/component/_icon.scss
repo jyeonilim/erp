@@ -203,6 +203,10 @@
     @include sp-size(69px,69px);
     background-position: -516px -645px;
 }
+.icon-mail {
+    @include sp-size(41px,41px);
+    background-position: -589px -280px;
+}
 
 // Badge
 .badge {

@@ -677,11 +677,13 @@ button {
         position: absolute;
         top: 0;
         left: 0;
+        right: 0;
         margin: auto;
         padding: 0 20px;
         font: 17px 'NotoSans', sans-serif;
         line-height: (60-2)/17;
         color: #7f7f7f;
+        cursor: text;
     }
 }
 // Tooltip
@@ -2444,6 +2446,15 @@ button {
 .login {
     @include clearfix;
     min-width: 832px;
+    .secondary-title {
+        margin-bottom: 25px;
+    }
+    .input-login {
+        margin-left: -80px;
+        .form-label {
+            text-align: left;
+        }
+    }
     .member-box {
         float: left;
         width: 50%;
@@ -2451,12 +2462,6 @@ button {
         padding: 0 50px 0 80px;
         border-right: 1px solid #dcdcdc;
         text-align: center;
-        .secondary-title {
-            margin-bottom: 25px;
-        }
-        .input-login {
-            margin-left: -80px;
-        }
         .checkbox {
             text-align: left;
         }
@@ -2487,8 +2492,8 @@ button {
         .sns-login {
             margin-top: 65px;
             ul {
-                margin-top: -10px;
                 @include clearfix;
+                margin-top: -10px;
                 li {
                     float: left;
                     width: 25%;
@@ -2534,6 +2539,14 @@ button {
                 font-size: 15px;
                 color: #989898;
             }
+        }
+    }
+    .guest-confirm {
+        margin-top: 73px;
+        padding-left: 130px;
+        text-align: center;
+        .input-login {
+            margin-bottom: 47px;
         }
     }
 }
@@ -3116,6 +3129,66 @@ button {
     .btn-align {
         margin-top: 7px;
         margin-left: 80px;
+    }
+}
+// 회원가입
+.modal-simple-signup {
+    .modal-content {
+        width: 490px;
+        height: 425px;
+        margin-top: -212px;
+        margin-left: -245px;
+    }
+    .modal-body {
+        padding: 48px 48px 67px;
+        .email-signup-box {
+            position: relative;
+            text-align: center;
+            &:before {
+                position: absolute;
+                top: 9px;
+                left: 17px;
+                z-index: 3;
+                @include sp-icon(-589px,-280px);
+                @include sp-size(41px,41px);
+                content: '';
+            }
+            label {
+                font-weight: 300;
+                font-size: 19px;
+                color: #303030;
+            }
+            .email-signup {
+                display: block;
+                width: 100%;
+                padding: 0 70px;
+                border: 1px solid #d5d5d5;
+                font-weight: 300;
+                font-size: 19px;
+                line-height: (60-2)/19;
+                font-family: 'NotoSans', sans-serif;
+                color: #303030;
+                text-align: center;
+                letter-spacing: -1px;
+            }
+        }
+        .sns-signup {
+            margin-top: 30px;
+            padding: 0 30px;
+            border-top: 1px solid #e6e6e6;
+            text-align: center;
+            .text {
+                padding: 39px 0 17px;
+                font-size: 20px;
+            }
+            ul {
+                @include clearfix;
+                li {
+                    float: left;
+                    width: 25%;
+                }
+            }
+        }
     }
 }
 

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>예약확인</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" src="static/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="static/js/scrolloverflow.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.fullPage.min.js"></script>
+    <script type="text/javascript" src="static/js/custom.js"></script>
+    <!--[if lt IE 9]>
+    <script src="static/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="sub membership scrollFixed">
+<div id="wrap">
+    <div id="fullpage">
+        <div class="section" id="section0">
+            <div class="sidebar">
+                <div class="header">
+                    <div class="site-home">
+                        <h1 class="brand-logo"><a href="#"><span class="sr-only">타자고</span></a></h1>
+                        <a href="#" class="btn-menu">Menu</a>
+                    </div>
+                    <ul class="site-quick-access-icon">
+                       <li><a href="#"><i class="icon-lock"></i>로그인</a></li>
+                       <li><a href="#"><i class="icon-person-plus"></i>회원가입</a></li>
+                       <li><a href="#"><i class="icon-check"></i>예약확인</a></li>
+                    </ul>
+                </div>
+                <div class="side-container">
+                    <div class="side-content">
+                        <span>세상쉬운 렌터카 예약</span>
+                        <strong>타자고</strong>
+                    </div>
+                    <div class="image-area">
+                        <img src="static/images/sub_animation.gif" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="section-title">예약확인</h2>
+                <div class="login">
+                    <div class="member-box">
+                        <div class="member-login">
+                            <h3 class="secondary-title">회원 로그인</h3>
+                            <ul class="input-login">
+                                <li class="form-inline">
+                                    <label for="email" class="form-label">아이디</label>
+                                    <div class="placeholder">
+                                        <label for="email">이메일을 입력해주세요</label>
+                                        <input type="email" class="form-control" id="email">
+                                    </div>
+                                </li>
+                                <li class="form-inline">
+                                    <label for="password" class="form-label">비밀번호</label>
+                                    <div class="placeholder">
+                                        <label for="password">비밀번호를 입력해주세요</label>
+                                        <input type="password" class="form-control" id="password">
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="checkbox checkbox-block">
+                                <input type="checkbox" id="save-email" checked>
+                                <label for="save-email" class="checkbox-display"></label>
+                                <label for="save-email" class="checkbox-label">아이디 저장</label>
+                            </div>
+                            <div class="btn-align">
+                                <button type="button" class="btn btn-lg btn-primary btn-block">로그인</button>
+                            </div>
+                            <ul class="forgot-info">
+                                <li><button type="button" class="find-id">아이디 찾기</button></li>
+                                <li><button type="button" class="find-password">비밀번호 찾기</button></li>
+                            </ul>
+                        </div>
+                        <div class="sns-login">
+                            <h3 class="secondary-title">SNS 계정 로그인</h3>
+                            <ul>
+                                <li><a href="#"><i class="icon-facebook"></i><span class="sr-only">페이스북 계정 로그인</span></a></li>
+                                <li><a href="#"><i class="icon-google"></i><span class="sr-only">구글 계정 로그인</span></a></li>
+                                <li><a href="#"><i class="icon-naver"></i><span class="sr-only">네이버 계정 로그인</span></a></li>
+                                <li><a href="#"><i class="icon-kakaotalk"></i><span class="sr-only">카카오톡 계정 로그인</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="guest-box guest-confirm">
+                        <h3 class="secondary-title">비회원 예약확인</h3>
+                        <ul class="input-login">
+                            <li class="form-inline">
+                                <label for="reservation-name" class="form-label">이름</label>
+                                <div class="placeholder">
+                                    <label for="reservation-name">예약자 이름을 입력해주세요</label>
+                                    <input type="text" class="form-control" id="reservation-name">
+                                </div>
+                            </li>
+                            <li class="form-inline">
+                                <label for="reservation-number" class="form-label">예약번호</label>
+                                <div class="placeholder">
+                                    <label for="reservation-number">예약번호를 입력해주세요</label>
+                                    <input type="number" class="form-control" id="reservation-number">
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="btn-align">
+                            <button type="button" class="btn btn-lg btn-primary btn-block">로그인</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 전체메뉴 -->
+            <div class="megamenu">
+                <div class="menu-wrap">
+                    <span>세상쉬운 렌터카 예약</span>
+                    <strong>타자고</strong>
+                    <ul class="menu">
+                        <li class="item-login"><a href="#" class="">로그인</a></li>
+                        <li class="item-join"><a href="#">회원가입</a></li>
+                        <li class="item-reservation-confirm"><a href="#">예약확인</a></li>
+                        <li class="item-rental-info"><a href="#">대여안내</a></li>
+                        <li class="item-notice"><a href="#">공지사항</a></li>
+                        <li class="item-faq"><a href="#">자주하는 질문</a></li>
+                    </ul>
+                    <p class="customer-number">
+                        <span>고객센터 (평일 9시~6시)</span>
+                        <strong>1544-1544</strong>
+                    </p>
+                </div>
+                <button type="button" class="btn-menu-close"><span class="sr-only">닫기</span></button>
+            </div>
+            <!-- 전체메뉴 //end -->
+            <!-- 아이디/비밀번호 찾기 -->
+            <div class="modal forgot">
+                <div class="modal-content">
+                    <h3 class="modal-head">아이디/비밀번호 찾기</h3>
+                    <div class="modal-body">
+                        <ul class="tabs">
+                            <li class="tab" rel="find-id">아이디 찾기</li>
+                            <li class="tab" rel="find-password">비밀번호 찾기</li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane" id="find-id">
+                                <p class="text">회원가입 시 등록된 회원정보로<br>아이디를 찾을 수 있습니다.</p>
+                                <ul>
+                                    <li class="form-inline">
+                                        <label for="find-id-name" class="form-label">이름</label>
+                                        <div class="placeholder">
+                                            <label for="find-id-name">이름을 입력해주세요</label>
+                                            <input type="text" class="form-control" id="find-id-name">
+                                        </div>
+                                    </li>
+                                    <li class="form-inline">
+                                        <label for="find-id-phone" class="form-label">연락처</label>
+                                        <div class="placeholder">
+                                            <label for="find-id-phone">숫자만 입력해주세요</label>
+                                            <input type="number" class="form-control" id="find-id-phone">
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane" id="find-password">
+                                <p class="text">회원가입 시 등록된 회원정보로<br>비밀번호를 찾을 수 있습니다.</p>
+                                <ul>
+                                    <li class="form-inline">
+                                        <label for="find-pw-email" class="form-label">아이디</label>
+                                        <div class="placeholder">
+                                            <label for="find-pw-email">이메일을 입력해주세요</label>
+                                            <input type="email" class="form-control" id="find-pw-email">
+                                        </div>
+                                    </li>
+                                    <li class="form-inline">
+                                        <label for="find-pw-phone" class="form-label">연락처</label>
+                                        <div class="placeholder">
+                                            <label for="find-pw-phone">숫자만 입력해주세요</label>
+                                            <input type="number" class="form-control" id="find-pw-phone">
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="btn-align">
+                            <button type="button" class="btn btn-lg btn-primary btn-block">확인</button>
+                        </div>
+                    </div>
+                    <button class="btn-modal-close" onclick="modalClose('.forgot');"><span class="sr-only">닫기</span></button>
+                </div>
+            </div>
+            <!-- 아이디/비밀번호 찾기 //end -->
+            <!-- 회원가입 -->
+            <!-- [D] style 확인용 -->
+            <div class="modal modal-simple-signup modal-backdrop" style="display:block;">
+                <div class="modal-content">
+                    <h3 class="modal-head">회원가입</h3>
+                    <div class="modal-body">
+                        <!-- [D] 어떤 기능인지 몰라 버튼, 인풋 두개 타입으로 작업함 골라쓰시면 됩니다 -->
+                        <!-- 버튼타입 -->
+                        <div class="email-signup-box">
+                            <button type="button" class="email-signup">이메일로 간편 회원가입</button>
+                        </div>
+                        <!-- 버튼타입 //end -->
+                        <!-- 인풋타입 -->
+                        <div class="email-signup-box">
+                            <div class="placeholder">
+                                <label for="email-signup">이메일로 간편 회원가입</label>
+                                <input type="email" class="form-control email-signup" id="email-signup">
+                            </div>
+                        </div>
+                        <!-- 인풋타입 //end -->
+                        <!-- [D] 어떤 기능인지 몰라 버튼, 인풋 두개 타입으로 작업 //end -->
+                        <div class="sns-signup">
+                            <p class="text">자주 사용하는 SNS 계정으로 가입하기</p>
+                            <ul>
+                                <li><a href="#"><i class="icon-facebook"></i><span class="sr-only">페이스북 계정 로그인</span></a></li>
+                                <li><a href="#"><i class="icon-google"></i><span class="sr-only">구글 계정 로그인</span></a></li>
+                                <li><a href="#"><i class="icon-naver"></i><span class="sr-only">네이버 계정 로그인</span></a></li>
+                                <li><a href="#"><i class="icon-kakaotalk"></i><span class="sr-only">카카오톡 계정 로그인</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="btn-modal-close" onclick="modalClose('.modal-simple-signup');"><span class="sr-only">닫기</span></button>
+                </div>
+            </div>
+            <!-- 회원가입 //end -->
+            <!-- FEEDBACK -->
+            <div class="feedback">
+                <a href="#"><span class="sr-only">feedback</span></a>
+            </div>
+            <!-- FEEDBACK //end -->
+            <div class="footer">
+                <ul class="terms-menu">
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보취급방침</a></li>
+                </ul>
+                <ul class="company-info">
+                    <li>(주)제주비앤에프</li>
+                    <li>사업자등록번호 105-87-76000</li>
+                    <li>통신판매신고</li>
+                    <li>제2015-제주연동-43호</li>
+                </ul>
+                <p class="copyright">대표이사 윤형준  @ 2017 TAZAGO. All rights reserved</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

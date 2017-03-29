@@ -356,6 +356,11 @@ table {
   height: 69px;
   background-position: -516px -645px; }
 
+.icon-mail {
+  width: 41px;
+  height: 41px;
+  background-position: -589px -280px; }
+
 .badge {
   display: inline-block;
   -webkit-border-radius: 11px;
@@ -1624,11 +1629,13 @@ button {
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
     margin: auto;
     padding: 0 20px;
     font: 17px 'NotoSans', sans-serif;
     line-height: 3.412;
-    color: #7f7f7f; }
+    color: #7f7f7f;
+    cursor: text; }
 
 .tooltip {
   display: none;
@@ -3124,6 +3131,12 @@ button {
     display: table; }
   .login:after {
     clear: both; }
+  .login .secondary-title {
+    margin-bottom: 25px; }
+  .login .input-login {
+    margin-left: -80px; }
+    .login .input-login .form-label {
+      text-align: left; }
   .login .member-box {
     float: left;
     width: 50%;
@@ -3131,10 +3144,6 @@ button {
     padding: 0 50px 0 80px;
     border-right: 1px solid #dcdcdc;
     text-align: center; }
-    .login .member-box .secondary-title {
-      margin-bottom: 25px; }
-    .login .member-box .input-login {
-      margin-left: -80px; }
     .login .member-box .checkbox {
       text-align: left; }
     .login .member-box .forgot-info {
@@ -3199,6 +3208,12 @@ button {
         margin-top: 15px;
         font-size: 15px;
         color: #989898; }
+  .login .guest-confirm {
+    margin-top: 73px;
+    padding-left: 130px;
+    text-align: center; }
+    .login .guest-confirm .input-login {
+      margin-bottom: 47px; }
 
 /*******************************
     My Page
@@ -3723,6 +3738,63 @@ button {
 .forgot .btn-align {
   margin-top: 7px;
   margin-left: 80px; }
+
+.modal-simple-signup .modal-content {
+  width: 490px;
+  height: 425px;
+  margin-top: -212px;
+  margin-left: -245px; }
+
+.modal-simple-signup .modal-body {
+  padding: 48px 48px 67px; }
+  .modal-simple-signup .modal-body .email-signup-box {
+    position: relative;
+    text-align: center; }
+    .modal-simple-signup .modal-body .email-signup-box:before {
+      position: absolute;
+      top: 9px;
+      left: 17px;
+      z-index: 3;
+      display: inline-block;
+      background: url("../images/sprites-icon.png") repeat -589px -280px;
+      line-height: 0;
+      color: transparent;
+      vertical-align: middle;
+      width: 41px;
+      height: 41px;
+      content: ''; }
+    .modal-simple-signup .modal-body .email-signup-box label {
+      font-weight: 300;
+      font-size: 19px;
+      color: #303030; }
+    .modal-simple-signup .modal-body .email-signup-box .email-signup {
+      display: block;
+      width: 100%;
+      padding: 0 70px;
+      border: 1px solid #d5d5d5;
+      font-weight: 300;
+      font-size: 19px;
+      line-height: 3.053;
+      font-family: 'NotoSans', sans-serif;
+      color: #303030;
+      text-align: center;
+      letter-spacing: -1px; }
+  .modal-simple-signup .modal-body .sns-signup {
+    margin-top: 30px;
+    padding: 0 30px;
+    border-top: 1px solid #e6e6e6;
+    text-align: center; }
+    .modal-simple-signup .modal-body .sns-signup .text {
+      padding: 39px 0 17px;
+      font-size: 20px; }
+    .modal-simple-signup .modal-body .sns-signup ul:before, .modal-simple-signup .modal-body .sns-signup ul:after {
+      content: " ";
+      display: table; }
+    .modal-simple-signup .modal-body .sns-signup ul:after {
+      clear: both; }
+    .modal-simple-signup .modal-body .sns-signup ul li {
+      float: left;
+      width: 25%; }
 
 /*******************************
     Helper Class
