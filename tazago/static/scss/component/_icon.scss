@@ -87,6 +87,10 @@
     @include sp-size(18px,18px);
     background-position: -258px -129px;
 }
+.icon-sm-calendar {
+    @include sp-size(14px,14px);
+    background-position: -516px -430px;
+}
 .icon-car {
     @include sp-size(26px,18px);
     background-position: -344px -129px;
@@ -206,6 +210,14 @@
 .icon-mail {
     @include sp-size(41px,41px);
     background-position: -592px -291px;
+}
+.icon-question {
+    @include sp-size(36px,36px);
+    background-position: -645px -43px;
+}
+.icon-answer {
+    @include sp-size(53px,53px);
+    background-position: -559px -559px;
 }
 
 // Badge

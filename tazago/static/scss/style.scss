@@ -2755,6 +2755,115 @@ button {
         }
     }
 }
+// 자주하는 질문
+.qna {
+    margin-top: 32px;
+    .input-search {
+        display: inline-block;
+        float: right;
+        margin: 18px 0 14px;
+        label,
+        .form-control {
+            height: 44px;
+            padding: 0 54px 0 20px;
+            line-height: 44px;
+        }
+        .btn-search {
+            position: absolute;
+            top: 0;
+            right: 13px;
+            bottom: 0;
+            margin: auto;
+        }
+    }
+}
+.qna-list {
+    border-bottom: 1px solid #c6c6c6;
+    li {
+    }
+    .question {
+        position: relative;
+        display: table;
+        width: 100%;
+        padding: 25px 0;
+        border-top: 1px solid #c6c6c6;
+        font-family: 'Montserrat', 'NanumSquare', sans-serif;
+        > * {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .number {
+            position: relative;
+            width: 86px;
+            font-weight: 300;
+            font-size: 33px;
+            &:after {
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                width: 1px;
+                height: 34px;
+                background-color: #d9d9d9;
+                content: '';
+            }
+        }
+        .outer {
+            width: 70px;
+        }
+        .title {
+            font-size: 22px;
+            text-align: left;
+            .date {
+                display: block;
+                margin-top: 6px;
+                font-size: 14px;
+                color: #8c8c8c;
+                letter-spacing: 0;
+                i {
+                    margin-right: 5px;
+                }
+            }
+        }
+        &:after {
+            @include sp-icon(-645px,0);
+            @include sp-size(24px,14px);
+            position: absolute;
+            top: 0;
+            right: 17px;
+            bottom: 0;
+            margin: auto;
+            content: '';
+        }
+        &.open {
+            .icon-question {
+                background-position: -688px -43px;
+            }
+            &:after {
+                background-position: -688px 0;
+            }
+        }
+    }
+    .answer {
+        display: none;
+        position: relative;
+        padding: 40px 70px 40px 110px;
+        border-top: 1px solid $brand-primary;
+        background-color: $white;
+        font-weight: 300;
+        line-height: 24px;
+        font-family: 'NotoSans', sans-serif;
+        color: #777;
+        .icon-answer {
+            position: absolute;
+            top: 35px;
+            left: 35px;
+        }
+    }
+}
 
 /*******************************
     Modal
