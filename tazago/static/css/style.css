@@ -1146,6 +1146,10 @@ button {
   margin-left: 346px;
   padding: 92px 136px 150px 126px; }
 
+.intro .content {
+  margin-left: 0;
+  padding: 0; }
+
 .main {
   height: 100%; }
   .main .content {
@@ -1436,6 +1440,7 @@ button {
   width: 100%;
   min-width: 1200px;
   height: 100%;
+  margin: auto;
   background-color: white;
   text-align: center; }
   .megamenu .menu-wrap {
@@ -1574,6 +1579,12 @@ button {
     .site-quick-access-icon li:first-child:before {
       display: none; }
 
+.intro .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0; }
+
 /*******************************
     Footer
 *******************************/
@@ -1606,6 +1617,9 @@ button {
   .footer .company-info li {
     display: inline-block;
     margin: 0 5px; }
+
+.intro .footer {
+  width: 100%; }
 
 .main .footer {
   position: fixed;
@@ -1744,6 +1758,111 @@ button {
 /*******************************
     Intro
 *******************************/
+.intro {
+  background-color: #4aaf9d; }
+  .intro .wrap {
+    height: 100%; }
+
+.intro-title {
+  color: white;
+  text-align: center; }
+  .intro-title span {
+    padding: 12px 0 10px;
+    border-top: 1px solid #92cfc4;
+    border-bottom: 1px solid #92cfc4;
+    font-size: 34px; }
+  .intro-title .title {
+    margin-top: 11px;
+    font-weight: 700;
+    font-size: 110px; }
+
+.intro-content {
+  text-align: center; }
+  .intro-content .text {
+    margin: 30px 0 70px;
+    font-size: 35px;
+    color: white; }
+    .intro-content .text:before {
+      display: inline-block;
+      background: url("../images/sprites-icon.png") repeat -645px -86px;
+      line-height: 0;
+      color: transparent;
+      vertical-align: middle;
+      width: 27px;
+      height: 39px;
+      margin-right: 20px;
+      vertical-align: top;
+      content: ''; }
+
+.city-list {
+  min-width: 1300px;
+  margin-left: 73px; }
+  .city-list li {
+    display: inline-block;
+    margin-left: -30px; }
+    .city-list li a {
+      position: relative;
+      display: block; }
+      .city-list li a:before {
+        display: block;
+        width: 380px;
+        height: 380px;
+        background-repeat: no-repeat;
+        content: ''; }
+      .city-list li a.seoul:before {
+        background-image: url("../images/intro-seoul.png"); }
+      .city-list li a.jeju:before {
+        background-image: url("../images/intro-jeju.png"); }
+      .city-list li a.busan:before {
+        background-image: url("../images/intro-busan.png"); }
+      .city-list li a .title {
+        position: absolute;
+        top: 325px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        padding-right: 44px;
+        font-size: 30px;
+        font-family: 'Montserrat', 'NanumSquare', sans-serif;
+        color: white;
+        letter-spacing: 1px;
+        text-transform: uppercase; }
+        .city-list li a .title span {
+          display: block;
+          font-size: 25px; }
+      .city-list li a:hover.seoul:before {
+        background-image: url("../images/intro-seoul-on.gif"); }
+      .city-list li a:hover.jeju:before {
+        background-image: url("../images/intro-jeju-on.gif"); }
+      .city-list li a:hover.busan:before {
+        background-image: url("../images/intro-busan-on.gif"); }
+      .city-list li a:hover .title {
+        font-size: 50px;
+        letter-spacing: -0.5px; }
+
+@media (max-width: 1600px) {
+  .intro-title span {
+    padding: 7px 0 5px;
+    font-size: 20px; }
+  .intro-title .title {
+    font-size: 60px; }
+  .intro-content .text {
+    margin: 20px 0 30px;
+    font-size: 20px; }
+    .intro-content .text:before {
+      width: 18px;
+      height: 25px;
+      margin-right: 10px;
+      background-position: -301px -129px; }
+  .intro-content .city-list li a .title {
+    font-size: 25px;
+    letter-spacing: 0; }
+    .intro-content .city-list li a .title span {
+      font-size: 20px; }
+  .intro-content .city-list li a:hover .title {
+    font-size: 35px;
+    letter-spacing: -1px; } }
+
 /*******************************
     Main
 *******************************/

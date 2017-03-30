@@ -49,6 +49,15 @@ button {
     margin-left: 346px;
     padding: 92px 136px 150px 126px;
 }
+.intro {
+    .content {
+        margin-left: 0;
+        padding: 0;
+        //@media (max-width: 1500px) {
+        //    padding: 0 142px;
+        //}
+    }
+}
 .main {
     height: 100%;
     .content {
@@ -91,9 +100,6 @@ button {
             padding: 92px 136px 150px 126px;
         }
     }
-}
-.default {
-    //height: 100% !important;
 }
 
 /*******************************
@@ -394,6 +400,7 @@ button {
     width: 100%;
     min-width: 1200px;
     height: 100%;
+    margin: auto;
     background-color: $white;
     text-align: center;
     .menu-wrap {
@@ -581,6 +588,14 @@ button {
         }
     }
 }
+.intro {
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+}
 
 /*******************************
     Footer
@@ -623,6 +638,11 @@ button {
         }
     }
 }
+.intro {
+    .footer {
+        width: 100%;
+    }
+}
 .main {
     .footer {
         position: fixed;
@@ -638,9 +658,11 @@ button {
         padding: 0;
     }
 }
-.sub.default {
-    .footer {
-        position: fixed;
+.sub {
+    &.default {
+        .footer {
+            position: fixed;
+        }
     }
 }
 
@@ -780,7 +802,155 @@ button {
 /*******************************
     Intro
 *******************************/
-
+.intro {
+    background-color: $brand-primary;
+    .wrap {
+        height: 100%;
+    }
+}
+.intro-title {
+    color: $white;
+    text-align: center;
+    span {
+        padding: 12px 0 10px;
+        border-top: 1px solid #92cfc4;
+        border-bottom: 1px solid #92cfc4;
+        font-size: 34px;
+    }
+    .title {
+        margin-top: 11px;
+        font-weight: 700;
+        font-size: 110px;
+    }
+}
+.intro-content {
+    text-align: center;
+    .text {
+        margin: 30px 0 70px;
+        font-size: 35px;
+        color: $white;
+        &:before {
+            @include sp-icon(-645px,-86px);
+            @include sp-size(27px,39px);
+            margin-right: 20px;
+            vertical-align: top;
+            content: '';
+        }
+    }
+}
+.city-list {
+    min-width: 1300px;
+    margin-left: 73px;
+    li {
+        display: inline-block;
+        margin-left: -30px;
+        a {
+            position: relative;
+            display: block;
+            &:before {
+                display: block;
+                width: 380px;
+                height: 380px;
+                background-repeat: no-repeat;
+                content: '';
+            }
+            &.seoul {
+                &:before {
+                    background-image: url("../images/intro-seoul.png");
+                }
+            }
+            &.jeju {
+                &:before {
+                    background-image: url("../images/intro-jeju.png");
+                }
+            }
+            &.busan{
+                &:before {
+                    background-image: url("../images/intro-busan.png");
+                }
+            }
+            .title {
+                position: absolute;
+                top: 325px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                padding-right: 44px;
+                font-size: 30px;
+                font-family: 'Montserrat', 'NanumSquare', sans-serif;
+                color: $white;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                span {
+                    display: block;
+                    font-size: 25px;
+                }
+            }
+            &:hover {
+                &.seoul {
+                    &:before {
+                        background-image: url("../images/intro-seoul-on.gif");
+                    }
+                }
+                &.jeju {
+                    &:before {
+                        background-image: url("../images/intro-jeju-on.gif");
+                    }
+                }
+                &.busan{
+                    &:before {
+                        background-image: url("../images/intro-busan-on.gif");
+                    }
+                }
+                .title {
+                    font-size: 50px;
+                    letter-spacing: -0.5px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1600px) {
+    .intro-title {
+        span {
+            padding: 7px 0 5px;
+            font-size: 20px;
+        }
+        .title {
+            font-size: 60px;
+        }
+    }
+    .intro-content {
+        .text {
+            margin: 20px 0 30px;
+            font-size: 20px;
+            &:before {
+                @include sp-size(18px,25px);
+                margin-right: 10px;
+                background-position: -301px -129px;
+            }
+        }
+        .city-list {
+            li {
+                a {
+                    .title {
+                        font-size: 25px;
+                        letter-spacing: 0;
+                        span {
+                            font-size: 20px;
+                        }
+                    }
+                    &:hover {
+                        .title {
+                            font-size: 35px;
+                            letter-spacing: -1px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 /*******************************
     Main
