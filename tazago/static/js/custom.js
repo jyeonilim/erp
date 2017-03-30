@@ -145,8 +145,8 @@ $(document).ready(function() {
         $('.tab-pane:last').show();
     });
 
-    // 자주하는 질문
-    $(".question").on("click", function() {
+    // 자주하는 질문, 공지사항
+    $(".board-title").on("click", function() {
         $(this).siblings().removeClass("open").next().slideUp();
         $(this).toggleClass("open").next().slideToggle();
         $(this).parent().siblings().children().removeClass("open").next().slideUp();

@@ -31,6 +31,7 @@ button {
     Layout
 *******************************/
 .scrollFixed {
+    overflow: hidden;
     .fp-scroller,
     .iScrollIndicator {
         height: 100%;
@@ -90,6 +91,9 @@ button {
             padding: 92px 136px 150px 126px;
         }
     }
+}
+.default {
+    //height: 100% !important;
 }
 
 /*******************************
@@ -330,6 +334,11 @@ button {
             .image-area {
                 padding: 0 30px;
             }
+        }
+    }
+    &.default {
+        .sidebar {
+            position: fixed;
         }
     }
 }
@@ -629,6 +638,11 @@ button {
         padding: 0;
     }
 }
+.sub.default {
+    .footer {
+        position: fixed;
+    }
+}
 
 /*******************************
     Common
@@ -707,6 +721,38 @@ button {
     }
     .point {
         color: #ffe01c;
+    }
+}
+// Page Nation
+.page-nation {
+    margin-right: 5px;
+    padding: 15px 0;
+    text-align: center;
+    .prev,
+    .next,
+    .number span {
+        display: inline-block;
+        width: 38px;
+        height: 38px;
+        margin: 0 2px;
+        border: 1px solid #dedfdf;
+        text-align: center;
+    }
+    .prev,
+    .next {
+        padding: 10px 0;
+    }
+    .number {
+        span {
+            a {
+                display: block;
+                padding: 10px 0;
+                color: $text-color;
+            }
+            &.current {
+                border: 1px solid $brand-primary;
+            }
+        }
     }
 }
 // 안내 리스트
@@ -2583,7 +2629,7 @@ button {
         padding: 40px 0;
         @include border-side-radius(top,left,8px);
         @include border-side-radius(bottom,left,8px);
-        background: $brand-primary url("../images/bg-coupon.jpg") repeat-y 101% 0;
+        background: $brand-primary url("../images/bg-coupon.jpg") repeat-y 100% 0;
         text-align: center;
         vertical-align: middle;
         .name {
@@ -2632,7 +2678,6 @@ button {
 }
 .coupon-list {
     @include clearfix;
-    min-height: 670px;
     margin: 36px -9px 0;
     li {
         float: left;
@@ -2641,19 +2686,15 @@ button {
     }
 }
 .no-coupon {
-    li {
-        float: none;
-        width: 100%;
-        font-size: 25px;
-        color: #505050;
-        text-align: center;
-        &:before {
-            @include sp-icon(-645px,-215px);
-            @include sp-size(140px,120px);
-            display: block;
-            margin: 128px auto 20px;
-            content: '';
-        }
+    font-size: 25px;
+    color: #505050;
+    text-align: center;
+    &:before {
+        @include sp-icon(-645px,-215px);
+        @include sp-size(140px,120px);
+        display: block;
+        margin: 164px auto 20px;
+        content: '';
     }
 }
 // 마이페이지 - 내 정보 수정
@@ -2755,8 +2796,9 @@ button {
         }
     }
 }
-// 자주하는 질문
-.qna {
+// 자주하는 질문, 공지사항
+.qna,
+.notice {
     margin-top: 32px;
     .input-search {
         display: inline-block;
@@ -2771,17 +2813,18 @@ button {
         .btn-search {
             position: absolute;
             top: 0;
-            right: 13px;
+            right: 0;
             bottom: 0;
             margin: auto;
+            padding: 0 13px;
         }
     }
 }
-.qna-list {
+.board {
     border-bottom: 1px solid #c6c6c6;
     li {
     }
-    .question {
+    .board-title {
         position: relative;
         display: table;
         width: 100%;
@@ -2815,6 +2858,7 @@ button {
             width: 70px;
         }
         .title {
+            padding-right: 55px;
             font-size: 22px;
             text-align: left;
             .date {
@@ -2847,7 +2891,7 @@ button {
             }
         }
     }
-    .answer {
+    .board-content {
         display: none;
         position: relative;
         padding: 40px 70px 40px 110px;
@@ -2862,6 +2906,11 @@ button {
             top: 35px;
             left: 35px;
         }
+    }
+}
+.notice {
+    .board-content {
+        padding-left: 60px;
     }
 }
 

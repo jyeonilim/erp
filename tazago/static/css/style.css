@@ -856,8 +856,7 @@ textarea.form-control {
 *******************************/
 .tabs {
   display: table;
-  width: 100%;
-  border-collapse: collapse; }
+  width: 100%; }
   .tabs .tab {
     position: relative;
     display: table-cell;
@@ -865,11 +864,14 @@ textarea.form-control {
     padding: 15px 0 14px;
     border: 1px solid #dedede;
     border-bottom: 2px solid #4aaf9d;
+    border-left: 0;
     background-color: #f3f3f3;
     font-size: 20px;
     color: #a2a2a2;
     text-align: center;
     cursor: pointer; }
+    .tabs .tab:first-child {
+      border-left: 1px solid #dedede; }
     .tabs .tab.active {
       border-bottom-color: white;
       background-color: white;
@@ -1123,13 +1125,14 @@ button {
 /*******************************
     Layout
 *******************************/
-.scrollFixed .fp-scroller,
-.scrollFixed .iScrollIndicator {
-  height: 100%;
-  transform: translate(0px, 0px) translateZ(0px) !important; }
-
-.scrollFixed .iScrollVerticalScrollbar {
-  display: none !important; }
+.scrollFixed {
+  overflow: hidden; }
+  .scrollFixed .fp-scroller,
+  .scrollFixed .iScrollIndicator {
+    height: 100%;
+    transform: translate(0px, 0px) translateZ(0px) !important; }
+  .scrollFixed .iScrollVerticalScrollbar {
+    display: none !important; }
 
 #wrap {
   min-width: 1200px; }
@@ -1377,6 +1380,9 @@ button {
       .sub .side-container .image-area {
         padding: 0 30px; } }
 
+.sub.default .sidebar {
+  position: fixed; }
+
 /*******************************
     Header
 *******************************/
@@ -1612,6 +1618,9 @@ button {
   min-width: 460px;
   padding: 0; }
 
+.sub.default .footer {
+  position: fixed; }
+
 /*******************************
     Common
 *******************************/
@@ -1689,6 +1698,29 @@ button {
     content: ''; }
   .tooltip .point {
     color: #ffe01c; }
+
+.page-nation {
+  margin-right: 5px;
+  padding: 15px 0;
+  text-align: center; }
+  .page-nation .prev,
+  .page-nation .next,
+  .page-nation .number span {
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    margin: 0 2px;
+    border: 1px solid #dedfdf;
+    text-align: center; }
+  .page-nation .prev,
+  .page-nation .next {
+    padding: 10px 0; }
+  .page-nation .number span a {
+    display: block;
+    padding: 10px 0;
+    color: #000; }
+  .page-nation .number span.current {
+    border: 1px solid #4aaf9d; }
 
 .notify-list li {
   padding-left: 8px;
@@ -3275,7 +3307,7 @@ button {
     border-bottom-left-radius: 8px;
     -moz-border-radius-bottomleft: 8px;
     -webkit-border-bottom-left-radius: 8px;
-    background: #4aaf9d url("../images/bg-coupon.jpg") repeat-y 101% 0;
+    background: #4aaf9d url("../images/bg-coupon.jpg") repeat-y 100% 0;
     text-align: center;
     vertical-align: middle; }
     .couponbox .coupon-info .name {
@@ -3320,7 +3352,6 @@ button {
       font-size: 20px; }
 
 .coupon-list {
-  min-height: 670px;
   margin: 36px -9px 0; }
   .coupon-list:before, .coupon-list:after {
     content: " ";
@@ -3332,13 +3363,11 @@ button {
     width: 50%;
     padding: 9px; }
 
-.no-coupon li {
-  float: none;
-  width: 100%;
+.no-coupon {
   font-size: 25px;
   color: #505050;
   text-align: center; }
-  .no-coupon li:before {
+  .no-coupon:before {
     display: inline-block;
     background: url("../images/sprites-icon.png") repeat -645px -215px;
     line-height: 0;
@@ -3347,7 +3376,7 @@ button {
     width: 140px;
     height: 120px;
     display: block;
-    margin: 128px auto 20px;
+    margin: 164px auto 20px;
     content: ''; }
 
 .member-edit {
@@ -3446,43 +3475,49 @@ button {
       padding: 28px 40px;
       border-width: 1px 0 0; }
 
-.qna {
+.qna,
+.notice {
   margin-top: 32px; }
-  .qna .input-search {
+  .qna .input-search,
+  .notice .input-search {
     display: inline-block;
     float: right;
     margin: 18px 0 14px; }
     .qna .input-search label,
-    .qna .input-search .form-control {
+    .qna .input-search .form-control,
+    .notice .input-search label,
+    .notice .input-search .form-control {
       height: 44px;
       padding: 0 54px 0 20px;
       line-height: 44px; }
-    .qna .input-search .btn-search {
+    .qna .input-search .btn-search,
+    .notice .input-search .btn-search {
       position: absolute;
       top: 0;
-      right: 13px;
+      right: 0;
       bottom: 0;
-      margin: auto; }
+      margin: auto;
+      padding: 0 13px; }
 
-.qna-list {
+.board {
   border-bottom: 1px solid #c6c6c6; }
-  .qna-list .question {
+  .board .board-title {
     position: relative;
     display: table;
     width: 100%;
     padding: 25px 0;
     border-top: 1px solid #c6c6c6;
     font-family: 'Montserrat', 'NanumSquare', sans-serif; }
-    .qna-list .question > * {
+    .board .board-title > * {
       display: table-cell;
       text-align: center;
       vertical-align: middle; }
-    .qna-list .question .number {
+    .board .board-title .number {
       position: relative;
       width: 86px;
       font-weight: 300;
       font-size: 33px; }
-      .qna-list .question .number:after {
+      .board .board-title .number:after {
         display: inline-block;
         position: absolute;
         top: 0;
@@ -3493,20 +3528,21 @@ button {
         height: 34px;
         background-color: #d9d9d9;
         content: ''; }
-    .qna-list .question .outer {
+    .board .board-title .outer {
       width: 70px; }
-    .qna-list .question .title {
+    .board .board-title .title {
+      padding-right: 55px;
       font-size: 22px;
       text-align: left; }
-      .qna-list .question .title .date {
+      .board .board-title .title .date {
         display: block;
         margin-top: 6px;
         font-size: 14px;
         color: #8c8c8c;
         letter-spacing: 0; }
-        .qna-list .question .title .date i {
+        .board .board-title .title .date i {
           margin-right: 5px; }
-    .qna-list .question:after {
+    .board .board-title:after {
       display: inline-block;
       background: url("../images/sprites-icon.png") repeat -645px 0;
       line-height: 0;
@@ -3520,11 +3556,11 @@ button {
       bottom: 0;
       margin: auto;
       content: ''; }
-    .qna-list .question.open .icon-question {
+    .board .board-title.open .icon-question {
       background-position: -688px -43px; }
-    .qna-list .question.open:after {
+    .board .board-title.open:after {
       background-position: -688px 0; }
-  .qna-list .answer {
+  .board .board-content {
     display: none;
     position: relative;
     padding: 40px 70px 40px 110px;
@@ -3534,10 +3570,13 @@ button {
     line-height: 24px;
     font-family: 'NotoSans', sans-serif;
     color: #777; }
-    .qna-list .answer .icon-answer {
+    .board .board-content .icon-answer {
       position: absolute;
       top: 35px;
       left: 35px; }
+
+.notice .board-content {
+  padding-left: 60px; }
 
 /*******************************
     Modal
