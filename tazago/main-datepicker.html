@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>타자고</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" src="static/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="static/js/scrolloverflow.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.fullPage.min.js"></script>
+    <script type="text/javascript" src="static/js/custom.js"></script>
+    <!--[if lt IE 9]>
+    <script src="static/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="main">
+<div id="wrap">
+    <div class="sidebar">
+        <div class="header">
+            <div class="site-home">
+                <h1 class="brand-logo"><a href="#"><span class="sr-only">타자고</span></a></h1>
+                <a href="#" class="btn-menu">Menu</a>
+            </div>
+            <ul class="site-quick-access">
+               <li><a href="#">로그인</a></li>
+               <li><a href="#">회원가입</a></li>
+               <li><a href="#">예약확인</a></li>
+            </ul>
+        </div>
+        <div class="side-container">
+            <div class="side-content">
+                <span>세상쉬운 렌터카 예약</span>
+                <strong>타자고</strong>
+                <ul id="menu-page">
+                    <li data-menuanchor="firstPage"><a href="#firstPage">예약하기</a></li>
+                    <li data-menuanchor="secondPage"><a href="#secondPage">서비스소개</a></li>
+                    <li data-menuanchor="thirdPage"><a href="#thirdPage">고객센터</a></li>
+                </ul>
+            </div>
+            <div class="image-area">
+                <img src="static/images/main_animation.gif" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div id="fullpage">
+            <div class="section main-reservation" id="section0">
+                <!-- 예약하기 -->
+                <h2 class="section-title">예약하기</h2>
+                <ul class="reservation-step">
+                    <!-- STEP 02 일정선택 -->
+                    <li>
+                        <h3 class="step-title"><span>STEP 02</span> 일정선택</h3>
+                        <div class="select-datetime">
+                            <!-- [D] 선택시 각각 active 클래스 추가 -->
+                            <!-- [D] 선택완료시 각각 complete 클래스 추가 -->
+                            <div class="select-date active complete" id="datepicker">
+                                <div class="text-date">
+                                    <strong>03.15</strong>
+                                    <small>수요일<span>2017</span></small>
+                                </div>
+                            </div>
+                            <div class="select-time">
+                                <strong class="text-time">10:00</strong>
+                                <!-- 시간선택 레이어 -->
+                                <div class="timepicker">
+                                    <div class="selectbox hour">
+                                        <strong class="selectbox-value">10</strong>
+                                        <select onchange="selectboxEvent(this);">
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                    </div>
+                                    <div class="add-time-colon">:</div>
+                                    <div class="selectbox minute">
+                                        <strong class="selectbox-value">00</strong>
+                                        <select onchange="selectboxEvent(this);">
+                                            <option value="00">00</option>
+                                            <option value="15">15</option>
+                                            <option value="30">30</option>
+                                            <option value="45">45</option>
+                                        </select>
+                                    </div>
+                                    <div class="btn-align-center">
+                                        <button type="button" class="btn btn-md btn-primary">시간선택</button>
+                                    </div>
+                                </div>
+                                <!-- 시간선택 레이어 //end -->
+                            </div>
+                            <div class="add-on"></div>
+                            <div class="select-date">
+                                <div class="text-date">
+                                    <strong>03.15</strong>
+                                    <small>수요일<span>2017</span></small>
+                                </div>
+                            </div>
+                            <div class="select-time">
+                                <strong class="text-time">10:00</strong>
+                                <!-- 시간선택 레이어 -->
+                                <div class="timepicker">
+                                    <div class="selectbox hour">
+                                        <strong class="selectbox-value">10</strong>
+                                        <select onchange="selectboxEvent(this);">
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                    </div>
+                                    <div class="add-time-colon">:</div>
+                                    <div class="selectbox minute">
+                                        <strong class="selectbox-value">00</strong>
+                                        <select onchange="selectboxEvent(this);">
+                                            <option value="00">00</option>
+                                            <option value="15">15</option>
+                                            <option value="30">30</option>
+                                            <option value="45">45</option>
+                                        </select>
+                                    </div>
+                                    <div class="btn-align-center">
+                                        <button type="button" class="btn btn-md btn-primary">시간선택</button>
+                                    </div>
+                                </div>
+                                <!-- 시간선택 레이어 //end -->
+                            </div>
+                        </div>
+                    </li>
+                    <!-- STEP 02 일정선택 //end -->
+                </ul>
+                <!-- 예약하기 //end -->
+            </div>
+        </div>
+    </div>
+    <!-- FEEDBACK -->
+    <div class="feedback">
+        <a href="#"><span class="sr-only">feedback</span></a>
+    </div>
+    <!-- FEEDBACK //end -->
+    <div class="footer">
+        <ul class="terms-menu">
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보취급방침</a></li>
+        </ul>
+        <ul class="company-info">
+            <li>(주)제주비앤에프</li>
+            <li>사업자등록번호 105-87-76000</li>
+            <li>통신판매신고</li>
+            <li>제2015-제주연동-43호</li>
+        </ul>
+        <p class="copyright">대표이사 윤형준  @ 2017 TAZAGO. All rights reserved</p>
+    </div>
+    <script>
+        $( function() {
+            $( "#datepicker" ).datepicker({ minDate: -20, maxDate: "+1M +10D" });
+        } );
+    </script>
+</div>
+</body>
+</html>

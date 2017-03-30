@@ -61,29 +61,29 @@ $(document).ready(function() {
     $('.select-place-seoul li:first .content-place').show();
     $('.select-place-jeju li:first .content-place').show();
     $('.select-place-busan li:first .content-place').show();
-    $(".content-select-place input[name=place-seoul]").change(function () {
-        $(".select-place-seoul .content-place").hide();
+    $('.content-select-place input[name=place-seoul]').change(function () {
+        $('.select-place-seoul .content-place').hide();
         // console.log($(this));
-        $("."+$(this).val()).show();
+        $('.'+$(this).val()).show();
     });
-    $(".content-select-place input[name=place-jeju]").change(function () {
-        $(".select-place-jeju .content-place").hide();
-        $("."+$(this).val()).show();
+    $('.content-select-place input[name=place-jeju]').change(function () {
+        $('.select-place-jeju .content-place').hide();
+        $('.'+$(this).val()).show();
     });
-    $(".content-select-place input[name=place-busan]").change(function () {
-        $(".select-place-busan .content-place").hide();
-        $("."+$(this).val()).show();
+    $('.content-select-place input[name=place-busan]').change(function () {
+        $('.select-place-busan .content-place').hide();
+        $('.'+$(this).val()).show();
     });
     // 예약하기 : 일정선택 - 날짜선택 레이어
-    $('.text-date').on('click', function() {
-        var display = $(this).siblings('.datepicker').css('display');
-        if(display == 'none') {
-            $('.select-datetime').children('.select-date,.select-time').removeClass('active').children('.datepicker,.timepicker').hide();
-            $(this).parent().addClass('active').children('.datepicker').show();
-        } else {
-            $(this).parent().removeClass('active').children('.datepicker').hide();
-        }
-    });
+    // $('.text-date').on('click', function() {
+    //     var display = $(this).siblings('.datepicker').css('display');
+    //     if(display == 'none') {
+    //         $('.select-datetime').children('.select-date,.select-time').removeClass('active').children('.datepicker,.timepicker').hide();
+    //         $(this).parent().addClass('active').children('.datepicker').show();
+    //     } else {
+    //         $(this).parent().removeClass('active').children('.datepicker').hide();
+    //     }
+    // });
     // 예약하기 : 일정선택 - 시간선택 레이어
     $('.text-time').on('click', function() {
         var display = $(this).siblings('.timepicker').css('display');
@@ -105,14 +105,8 @@ $(document).ready(function() {
         $(this).parent().hide();
     });
 
-    $( "#coupon" ).selectmenu();
-    // $('.ui-selectmenu-button').click(function () {
-    //     var hasSelBtn = $(this).hasClass('ui-selectmenu-button-open');
-    //     console.log(hasSelBtn);
-    //     if(hasSelBtn == true) {
-    //         $(this).parent('.selectbox').css('border-color','#4aaf9d');
-    //     }
-    // });
+    $('#coupon').selectmenu();
+    $('.ui-selectmenu-menu').insertAfter('.footer');
 
     var h = $(window).height();
     $('.detail-view .image-area').height(h);
