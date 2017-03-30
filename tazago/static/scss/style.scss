@@ -725,8 +725,7 @@ button {
 }
 // Page Nation
 .page-nation {
-    margin-right: 5px;
-    padding: 15px 0;
+    padding: 22px 0;
     text-align: center;
     .prev,
     .next,
@@ -751,6 +750,9 @@ button {
             }
             &.current {
                 border: 1px solid $brand-primary;
+                a {
+                    color: $brand-primary
+                }
             }
         }
     }
@@ -2857,6 +2859,13 @@ button {
         .outer {
             width: 70px;
         }
+        .badge {
+            padding: 0 10px;
+            background-color: $brand-primary;
+            line-height: (23)/13;
+            font-family: 'NotoSans', sans-serif;
+            color: $white;
+        }
         .title {
             padding-right: 55px;
             font-size: 22px;
@@ -2909,6 +2918,11 @@ button {
     }
 }
 .notice {
+    .board-title {
+        .outer {
+            width: 105px;
+        }
+    }
     .board-content {
         padding-left: 60px;
     }

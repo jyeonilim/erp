@@ -1700,8 +1700,7 @@ button {
     color: #ffe01c; }
 
 .page-nation {
-  margin-right: 5px;
-  padding: 15px 0;
+  padding: 22px 0;
   text-align: center; }
   .page-nation .prev,
   .page-nation .next,
@@ -1721,6 +1720,8 @@ button {
     color: #000; }
   .page-nation .number span.current {
     border: 1px solid #4aaf9d; }
+    .page-nation .number span.current a {
+      color: #4aaf9d; }
 
 .notify-list li {
   padding-left: 8px;
@@ -3530,6 +3531,12 @@ button {
         content: ''; }
     .board .board-title .outer {
       width: 70px; }
+    .board .board-title .badge {
+      padding: 0 10px;
+      background-color: #4aaf9d;
+      line-height: 1.769;
+      font-family: 'NotoSans', sans-serif;
+      color: white; }
     .board .board-title .title {
       padding-right: 55px;
       font-size: 22px;
@@ -3574,6 +3581,9 @@ button {
       position: absolute;
       top: 35px;
       left: 35px; }
+
+.notice .board-title .outer {
+  width: 105px; }
 
 .notice .board-content {
   padding-left: 60px; }
