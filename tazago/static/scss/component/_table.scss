@@ -204,9 +204,9 @@
         &:after {
             position: absolute;
             right: 0;
-            @include sp-icon(-507px,-79px);
-            @include sp-size(12px,7px);
-            padding: 7px 9px;
+            @include sp-icon(-507px,-76px);
+            @include sp-size(12px,12px);
+            padding: 8px 9px;
             border-left: 1px solid #b0b0b0;
             line-height: 29px;
             content: '';
@@ -218,7 +218,7 @@
             top: inherit;
             bottom: 0;
             border-top: 1px solid #b0b0b0;
-            background-position: -550px -79px;
+            background-position: -550px -75px;
         }
     }
     .add-time-colon {

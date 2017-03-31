@@ -1190,18 +1190,20 @@ button {
             }
         }
         .select-date {
-            .text-date{
+            .text-date {
                 @include clearfix;
+                display: inline-block;
                 &:before {
                     float: left;
                     @include sp-icon(-172px,-86px);
                     @include sp-size(25px,25px);
-                    margin: 8px 9px 0 0;
+                    margin: 8px 13px 0 0;
                     content: '';
                 }
                 strong {
                     float: left;
                     font: 500 35px 'Montserrat', sans-serif;
+                    letter-spacing: -2px;
                 }
                 small {
                     float: left;
@@ -1231,20 +1233,23 @@ button {
             }
         }
         .select-time {
-            &:before {
-                float: left;
-                @include sp-icon(-258px,-86px);
-                @include sp-size(23px,23px);
-                margin: 10px 9px 0 0;
-                content: '';
-            }
             border-left: 1px solid #e1e1e1;
-            strong {
+            .text-time {
                 font: 500 35px 'Montserrat', sans-serif;
+                letter-spacing: -2px;
+                &:before {
+                    @include sp-icon(-258px,-86px);
+                    @include sp-size(23px,23px);
+                    margin-right: 9px;
+                    vertical-align: baseline;
+                    content: '';
+                }
             }
             &.active {
-                &:before {
-                    background-position: -301px -86px;
+                .text-time {
+                    &:before {
+                        background-position: -301px -86px;
+                    }
                 }
                 &:after {
                     right: -1px;
@@ -1252,22 +1257,33 @@ button {
             }
         }
         @media (max-width: 1200px) {
-            .select-date,
-            .select-time {
-                padding: 0 11px;
-                &:before {
-                    margin-top: 3px;
-                }
-                strong {
-                    font-size: 26px;
-                }
-                small {
-                    margin-top: 4px;
-                    font-size: 12px;
-                    span {
-                        margin-top: -1px;
-                        font-size: 11px;
+            .select-date {
+                padding: 0 17px;
+                .text-date {
+                    &:before {
+                        margin-top: 3px;
                     }
+                    strong {
+                        font-size: 27px;
+                    }
+                    small {
+                        margin-top: 4px;
+                        font-size: 12px;
+                        span {
+                            margin-top: -1px;
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+            .select-time {
+                padding: 0 17px;
+                .text-time {
+                    font-size: 29px;
+                    &:before {
+                        margin-top: 3px;
+                    }
+
                 }
             }
         }

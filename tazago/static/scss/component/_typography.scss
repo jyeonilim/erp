@@ -2,6 +2,9 @@
     Typography
 *******************************/
 
+/*
+* NanumSquare
+ */
 @font-face {
     font-family: 'NanumSquare';
     font-style: normal;
@@ -22,7 +25,7 @@
 }
 
 /*
-* Noto Sans KR (korean) http://www.google.com/fonts/earlyaccess
+* Noto Sans KR (korean)
  */
 @font-face {
     font-family: 'NotoSans';
@@ -73,5 +76,61 @@
 //    url('../font/NotoSansKR-Black.otf') format('opentype');
 //}
 
+/*
+* Montserrat
+ */
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../font/Montserrat-Light.woff2") format('woff2'),
+    url("../font/Montserrat-Light.woff") format('woff'),
+    url('../font/Montserrat-Light.otf') format('opentype');
+}
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../font/Montserrat-Regular.woff2") format('woff2'),
+    url("../font/Montserrat-Regular.woff") format('woff'),
+    url('../font/Montserrat-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../font/Montserrat-Medium.woff2") format('woff2'),
+    url("../font/Montserrat-Medium.woff") format('woff'),
+    url('../font/Montserrat-Medium.otf') format('opentype');
+}
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../font/Montserrat-Bold.woff2") format('woff2'),
+    url("../font/Montserrat-Bold.woff") format('woff'),
+    url('../font/Montserrat-Bold.otf') format('opentype');
+}
+
+/*
+* Lato
+ */
+@font-face {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../font/Lato-Regular.eot?") format('eot'),
+    url("../font/Lato-Regular.woff2") format('woff2'),
+    url("../font/Lato-Regular.woff") format('woff');
+}
+@font-face {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../font/Lato-Bold.eot?") format('eot'),
+    url("../font/Lato-Bold.woff2") format('woff2'),
+    url("../font/Lato-Bold.woff") format('woff');
+}
+
 //@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:100,300,400,500,700');
+//@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:100,300,400,500,700');

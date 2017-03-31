@@ -3,7 +3,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:100,300,400,500,700");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -54,6 +53,9 @@ table {
 /*******************************
     Typography
 *******************************/
+/*
+* NanumSquare
+ */
 @font-face {
   font-family: 'NanumSquare';
   font-style: normal;
@@ -69,7 +71,7 @@ table {
   src: url("../font/NanumSquareB.eot?#iefix") format("embedded-opentype"), url("../font/NanumSquareB.woff") format("woff"), url("../font/NanumSquareB.ttf") format("truetype"); }
 
 /*
-* Noto Sans KR (korean) http://www.google.com/fonts/earlyaccess
+* Noto Sans KR (korean)
  */
 @font-face {
   font-family: 'NotoSans';
@@ -100,6 +102,48 @@ table {
   font-style: normal;
   font-weight: 700;
   src: url("../font/NotoSansKR-Bold.woff2") format("woff2"), url("../font/NotoSansKR-Bold.woff") format("woff"), url("../font/NotoSansKR-Bold.otf") format("opentype"); }
+
+/*
+* Montserrat
+ */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../font/Montserrat-Light.woff2") format("woff2"), url("../font/Montserrat-Light.woff") format("woff"), url("../font/Montserrat-Light.otf") format("opentype"); }
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../font/Montserrat-Regular.woff2") format("woff2"), url("../font/Montserrat-Regular.woff") format("woff"), url("../font/Montserrat-Regular.otf") format("opentype"); }
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../font/Montserrat-Medium.woff2") format("woff2"), url("../font/Montserrat-Medium.woff") format("woff"), url("../font/Montserrat-Medium.otf") format("opentype"); }
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../font/Montserrat-Bold.woff2") format("woff2"), url("../font/Montserrat-Bold.woff") format("woff"), url("../font/Montserrat-Bold.otf") format("opentype"); }
+
+/*
+* Lato
+ */
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../font/Lato-Regular.eot?") format("eot"), url("../font/Lato-Regular.woff2") format("woff2"), url("../font/Lato-Regular.woff") format("woff"); }
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../font/Lato-Bold.eot?") format("eot"), url("../font/Lato-Bold.woff2") format("woff2"), url("../font/Lato-Bold.woff") format("woff"); }
 
 /*******************************
     Icon
@@ -865,13 +909,13 @@ textarea.form-control {
       position: absolute;
       right: 0;
       display: inline-block;
-      background: url("../images/sprites-icon.png") repeat -507px -79px;
+      background: url("../images/sprites-icon.png") repeat -507px -76px;
       line-height: 0;
       color: transparent;
       vertical-align: middle;
       width: 12px;
-      height: 7px;
-      padding: 7px 9px;
+      height: 12px;
+      padding: 8px 9px;
       border-left: 1px solid #b0b0b0;
       line-height: 29px;
       content: ''; }
@@ -881,7 +925,7 @@ textarea.form-control {
       top: inherit;
       bottom: 0;
       border-top: 1px solid #b0b0b0;
-      background-position: -550px -79px; }
+      background-position: -550px -75px; }
   .timepicker .add-time-colon {
     display: inline-block;
     padding: 0 2px;
@@ -2102,79 +2146,84 @@ button {
           height: 84px;
           border: 2px solid #4aaf9d;
           content: ''; }
-    .reservation-step .select-datetime .select-date .text-date:before, .reservation-step .select-datetime .select-date .text-date:after {
-      content: " ";
-      display: table; }
-    .reservation-step .select-datetime .select-date .text-date:after {
-      clear: both; }
-    .reservation-step .select-datetime .select-date .text-date:before {
-      float: left;
-      display: inline-block;
-      background: url("../images/sprites-icon.png") repeat -172px -86px;
-      line-height: 0;
-      color: transparent;
-      vertical-align: middle;
-      width: 25px;
-      height: 25px;
-      margin: 8px 9px 0 0;
-      content: ''; }
-    .reservation-step .select-datetime .select-date .text-date strong {
-      float: left;
-      font: 500 35px 'Montserrat', sans-serif; }
-    .reservation-step .select-datetime .select-date .text-date small {
-      float: left;
-      margin: 6px 0 0 9px;
-      padding-left: 9px;
-      border-left: 1px solid #d6d6d6;
-      font-size: 15px;
-      color: #545454; }
-      .reservation-step .select-datetime .select-date .text-date small span {
-        display: block;
-        margin-top: -3px;
-        font: 14px 'Montserrat', sans-serif;
-        color: #434343;
-        letter-spacing: 1.5px; }
+    .reservation-step .select-datetime .select-date .text-date {
+      display: inline-block; }
+      .reservation-step .select-datetime .select-date .text-date:before, .reservation-step .select-datetime .select-date .text-date:after {
+        content: " ";
+        display: table; }
+      .reservation-step .select-datetime .select-date .text-date:after {
+        clear: both; }
+      .reservation-step .select-datetime .select-date .text-date:before {
+        float: left;
+        display: inline-block;
+        background: url("../images/sprites-icon.png") repeat -172px -86px;
+        line-height: 0;
+        color: transparent;
+        vertical-align: middle;
+        width: 25px;
+        height: 25px;
+        margin: 8px 13px 0 0;
+        content: ''; }
+      .reservation-step .select-datetime .select-date .text-date strong {
+        float: left;
+        font: 500 35px 'Montserrat', sans-serif;
+        letter-spacing: -2px; }
+      .reservation-step .select-datetime .select-date .text-date small {
+        float: left;
+        margin: 6px 0 0 9px;
+        padding-left: 9px;
+        border-left: 1px solid #d6d6d6;
+        font-size: 15px;
+        color: #545454; }
+        .reservation-step .select-datetime .select-date .text-date small span {
+          display: block;
+          margin-top: -3px;
+          font: 14px 'Montserrat', sans-serif;
+          color: #434343;
+          letter-spacing: 1.5px; }
     .reservation-step .select-datetime .select-date.active .text-date:before {
       background-position: -215px -86px; }
     .reservation-step .select-datetime .select-date.active:after {
       left: -1px; }
     .reservation-step .select-datetime .select-time {
       border-left: 1px solid #e1e1e1; }
-      .reservation-step .select-datetime .select-time:before {
-        float: left;
-        display: inline-block;
-        background: url("../images/sprites-icon.png") repeat -258px -86px;
-        line-height: 0;
-        color: transparent;
-        vertical-align: middle;
-        width: 23px;
-        height: 23px;
-        margin: 10px 9px 0 0;
-        content: ''; }
-      .reservation-step .select-datetime .select-time strong {
-        font: 500 35px 'Montserrat', sans-serif; }
-      .reservation-step .select-datetime .select-time.active:before {
+      .reservation-step .select-datetime .select-time .text-time {
+        font: 500 35px 'Montserrat', sans-serif;
+        letter-spacing: -2px; }
+        .reservation-step .select-datetime .select-time .text-time:before {
+          display: inline-block;
+          background: url("../images/sprites-icon.png") repeat -258px -86px;
+          line-height: 0;
+          color: transparent;
+          vertical-align: middle;
+          width: 23px;
+          height: 23px;
+          margin-right: 9px;
+          vertical-align: baseline;
+          content: ''; }
+      .reservation-step .select-datetime .select-time.active .text-time:before {
         background-position: -301px -86px; }
       .reservation-step .select-datetime .select-time.active:after {
         right: -1px; }
     @media (max-width: 1200px) {
-      .reservation-step .select-datetime .select-date,
-      .reservation-step .select-datetime .select-time {
-        padding: 0 11px; }
-        .reservation-step .select-datetime .select-date:before,
-        .reservation-step .select-datetime .select-time:before {
+      .reservation-step .select-datetime .select-date {
+        padding: 0 17px; }
+        .reservation-step .select-datetime .select-date .text-date:before {
           margin-top: 3px; }
-        .reservation-step .select-datetime .select-date strong,
-        .reservation-step .select-datetime .select-time strong {
-          font-size: 26px; }
-        .reservation-step .select-datetime .select-date small,
-        .reservation-step .select-datetime .select-time small {
+        .reservation-step .select-datetime .select-date .text-date strong {
+          font-size: 27px; }
+        .reservation-step .select-datetime .select-date .text-date small {
           margin-top: 4px;
           font-size: 12px; }
-          .reservation-step .select-datetime .select-date small span,
-          .reservation-step .select-datetime .select-time small span {
+          .reservation-step .select-datetime .select-date .text-date small span {
             margin-top: -1px;
-            font-size: 11px; } }
+            font-size: 11px; }
+      .reservation-step .select-datetime .select-time {
+        padding: 0 17px; }
+        .reservation-step .select-datetime .select-time .text-time {
+          font-size: 29px; }
+          .reservation-step .select-datetime .select-time .text-time:before {
+            margin-top: 3px; } }
     .reservation-step .select-datetime .ui-datepicker,
     .reservation-step .select-datetime .timepicker {
       display: none;
