@@ -1,0 +1,105 @@
+/*******************************
+    Button
+*******************************/
+
+.btn {
+    display: inline-block;
+    border: 1px solid #8b8c8d;
+    background-color: $brand-default;
+    font-family: 'NanumSquare', sans-serif;
+    color: $white;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.btn-sm {
+    padding: 0 14px;
+    font-size: 14px;
+    line-height: (30-2)/14;
+}
+.btn-md {
+    padding: 0 39px;
+    font-size: 18px;
+    line-height: (45-2)/18;
+}
+.btn-lg {
+    height: 60px;
+    font-size: 22px;
+    line-height: (60-2)/22;
+}
+.btn-xlg {
+    padding: 0 76px;
+    font-size: 28px;
+    line-height: (66-2)/28;
+}
+
+.btn-primary {
+    border-color: $brand-primary;
+    background-color: $brand-primary;
+    &.inverse {
+        background-color: $white;
+        border-color: $brand-primary;
+        color: $brand-primary;
+    }
+}
+.btn-white {
+    border-color: #dcdcdc;
+    background-color: $white;
+}
+
+.btn-icon {
+    font-size: 0;
+}
+
+.has-arrow {
+    position: relative;
+    &:after {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        z-index: 10;
+        margin-top: -8px;
+        @include sprite-image(-602px,-86px);
+        @include sprite-size(16px,17px);
+        content: '';
+    }
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.btn-block-group {
+    .btn {
+        margin-bottom: 5px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.btn-group {
+    display: table;
+    width: 100%;
+    .outer {
+        display: table-cell;
+        padding: 0 5px;
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
+        .btn {
+            width: 100%;
+        }
+    }
+}
+
+//.btn-align {
+//    margin-top: 25px;
+//}
+.btn-align-center {
+    text-align: center;
+}

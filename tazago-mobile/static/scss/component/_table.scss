@@ -1,0 +1,164 @@
+/*******************************
+    Table
+*******************************/
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #e1e1e1;
+    border-top: 2px solid $brand-primary;
+    th {
+        padding: 14px 0;
+        border: 1px solid #e1e1e1;
+        font-weight: 700;
+        font-size: 16px;
+        vertical-align: middle;
+    }
+    td {
+        padding: 14px 0;
+        border: 1px solid #e1e1e1;
+        font: 300 17px 'NotoSans', sans-serif;
+        text-align: center;
+        vertical-align: middle;
+    }
+    thead {
+        th {
+            background-color: #edf7f5;
+        }
+    }
+}
+
+// Calendar(Datepicker)
+.ui-datepicker {
+    display: none;
+    width: 370px;
+    padding: 22px 45px 40px;
+    border: 2px solid $brand-primary;
+    background-color: $white;
+}
+.ui-datepicker-header {
+    position: relative;
+    margin-bottom: 7px;
+    .ui-datepicker-title {
+        font: 500 20px 'Montserrat', 'NotoSans', sans-serif;
+        color: #575757;
+        text-align: center;
+        vertical-align: middle;
+        letter-spacing: 1px;
+    }
+    .ui-datepicker-prev,
+    .ui-datepicker-next {
+        position: absolute;
+        top: -2px;
+        width: 37px;
+        height: 30px;
+        padding: 6px 0;
+        border: 1px solid #dce0e0;
+        @include border-radius(3px);
+        background-color: $white;
+        cursor: pointer;
+        .ui-icon {
+            @include sprite-image(0,0);
+            @include sprite-size(17px,10px);
+        }
+    }
+    .ui-datepicker-prev {
+        left: -27px;
+        .ui-icon {
+            background-position: -473px -43px;
+        }
+    }
+    .ui-datepicker-next {
+        right: -27px;
+        .ui-icon {
+            background-position: -516px -43px;
+        }
+    }
+}
+.ui-datepicker-calendar {
+    width: 100%;
+    border-collapse: collapse;
+    th, td {
+        width: 40px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    th {
+        height: 30px;
+        font: 400 16px 'Montserrat', 'NotoSans', sans-serif;
+        color: #8e8e8e;
+        text-transform: capitalize;
+    }
+    td {
+        font-family: 'Lato', sans-serif;
+    }
+    .ui-state-default {
+        display: block;
+        margin: -1px;
+        padding: 6px 0 7px;
+        border: 1px solid #9ec3bb;
+        background-color: #b4d6cf;
+        color: #fff;
+    }
+    a.ui-state-default:hover {
+        border: 1px solid #409182;
+        background-color: #4aaf9d;
+    }
+    .ui-datepicker-current-day {
+        .ui-state-default {
+            border: 1px solid #409182;
+            background-color: #4aaf9d;
+        }
+    }
+    .ui-state-disabled {
+        border: 0;
+        background-color: transparent;
+        cursor: default;
+        .ui-state-default {
+            border: 1px solid #ccc;
+            background-color: #dedede;
+            color: #bdbdbd;
+        }
+    }
+}
+// Timepicker
+.timepicker {
+    padding: 38px 28px 27px;
+    border: 2px solid $brand-primary;
+    background-color: $white;
+    .selectbox-value {
+        display: inline-block;
+        width: 136px;
+        padding: 0 30px 0 0;
+        font: 500 35px 'Montserrat', sans-serif;
+        line-height: (60-2)/35;
+        color: $text-color;
+        text-align: center;
+        &:before,
+        &:after {
+            position: absolute;
+            right: 0;
+            @include sprite-image(-507px,-76px);
+            @include sprite-size(12px,12px);
+            padding: 8px 9px;
+            border-left: 1px solid #b0b0b0;
+            line-height: 29px;
+            content: '';
+        }
+        &:before {
+            top: 0;
+        }
+        &:after {
+            top: inherit;
+            bottom: 0;
+            border-top: 1px solid #b0b0b0;
+            background-position: -550px -75px;
+        }
+    }
+    .add-time-colon {
+        display: inline-block;
+        padding: 0 2px;
+        font: 500 35px 'Montserrat', sans-serif;
+        vertical-align: text-bottom;
+    }
+}

@@ -1,0 +1,148 @@
+/*******************************
+    Typography
+*******************************/
+
+/*
+* Icon Font
+ */
+@font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.eot?3895453');
+    src: url('../font/fontello.eot?3895453#iefix') format('embedded-opentype'),
+    url('../font/fontello.woff2?3895453') format('woff2'),
+    url('../font/fontello.woff?3895453') format('woff'),
+    url('../font/fontello.ttf?3895453') format('truetype'),
+    url('../font/fontello.svg?3895453#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*
+* NanumSquare
+ */
+@font-face {
+    font-family: 'NanumSquare';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../font/NanumSquareR.eot');
+    src: url('../font/NanumSquareR.eot?#iefix') format('embedded-opentype'),
+    url('../font/NanumSquareR.woff') format('woff'),
+    url('../font/NanumSquareR.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'NanumSquare';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../font/NanumSquareB.eot');
+    src: url('../font/NanumSquareB.eot?#iefix') format('embedded-opentype'),
+    url('../font/NanumSquareB.woff') format('woff'),
+    url('../font/NanumSquareB.ttf') format('truetype');
+}
+
+/*
+* Noto Sans KR (korean)
+ */
+//@font-face {
+//    font-family: 'NotoSans';
+//    font-style: normal;
+//    font-weight: 100;
+//    src: url('../font/NotoSansKR-Thin.woff2') format('woff2'),
+//    url('../font/NotoSansKR-Thin.woff') format('woff'),
+//    url('../font/NotoSansKR-Thin.otf') format('opentype');
+//}
+//@font-face {
+//    font-family: 'NotoSans';
+//    font-style: normal;
+//    font-weight: 300;
+//    src: url('../font/NotoSansKR-Light.woff2') format('woff2'),
+//    url('../font/NotoSansKR-Light.woff') format('woff'),
+//    url('../font/NotoSansKR-Light.otf') format('opentype');
+//}
+//@font-face {
+//    font-family: 'NotoSans';
+//    font-style: normal;
+//    font-weight: 400;
+//    src: url('../font/NotoSansKR-Regular.woff2') format('woff2'),
+//    url('../font/NotoSansKR-Regular.woff') format('woff'),
+//    url('../font/NotoSansKR-Regular.otf') format('opentype');
+//}
+//@font-face {
+//    font-family: 'NotoSans';
+//    font-style: normal;
+//    font-weight: 500;
+//    src: url('../font/NotoSansKR-Medium.woff2') format('woff2'),
+//    url('../font/NotoSansKR-Medium.woff') format('woff'),
+//    url('../font/NotoSansKR-Medium.otf') format('opentype');
+//}
+//@font-face {
+//    font-family: 'NotoSans';
+//    font-style: normal;
+//    font-weight: 700;
+//    src: url('../font/NotoSansKR-Bold.woff2') format('woff2'),
+//    url('../font/NotoSansKR-Bold.woff') format('woff'),
+//    url('../font/NotoSansKR-Bold.otf') format('opentype');
+//}
+//@font-face {
+//    font-family: 'NotoSans';
+//    font-style: normal;
+//    font-weight: 900;
+//    src: url('../font/NotoSansKR-Black.woff2') format('woff2'),
+//    url('../font/NotoSansKR-Black.woff') format('woff'),
+//    url('../font/NotoSansKR-Black.otf') format('opentype');
+//}
+
+/*
+* Montserrat
+ */
+//@font-face {
+//    font-family: "Montserrat";
+//    font-style: normal;
+//    font-weight: 300;
+//    src: url("../font/Montserrat-Light.woff2") format('woff2'),
+//    url("../font/Montserrat-Light.woff") format('woff'),
+//    url('../font/Montserrat-Light.otf') format('opentype');
+//}
+//@font-face {
+//    font-family: "Montserrat";
+//    font-style: normal;
+//    font-weight: 400;
+//    src: url("../font/Montserrat-Regular.woff2") format('woff2'),
+//    url("../font/Montserrat-Regular.woff") format('woff'),
+//    url('../font/Montserrat-Regular.otf') format('opentype');
+//}
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../font/Montserrat-Medium.woff2") format('woff2'),
+    url("../font/Montserrat-Medium.woff") format('woff'),
+    url('../font/Montserrat-Medium.otf') format('opentype');
+}
+//@font-face {
+//    font-family: "Montserrat";
+//    font-style: normal;
+//    font-weight: 700;
+//    src: url("../font/Montserrat-Bold.woff2") format('woff2'),
+//    url("../font/Montserrat-Bold.woff") format('woff'),
+//    url('../font/Montserrat-Bold.otf') format('opentype');
+//}
+
+/*
+* Lato
+ */
+//@font-face {
+//    font-family: "Lato";
+//    font-style: normal;
+//    font-weight: 400;
+//    src: url("../font/Lato-Regular.eot?") format('eot'),
+//    url("../font/Lato-Regular.woff2") format('woff2'),
+//    url("../font/Lato-Regular.woff") format('woff');
+//}
+//@font-face {
+//    font-family: "Lato";
+//    font-style: normal;
+//    font-weight: 700;
+//    src: url("../font/Lato-Bold.eot?") format('eot'),
+//    url("../font/Lato-Bold.woff2") format('woff2'),
+//    url("../font/Lato-Bold.woff") format('woff');
+//}

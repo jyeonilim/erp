@@ -1,0 +1,128 @@
+/*******************************
+    Icon
+*******************************/
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+
+    /* you can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-double-right:before { content: '\e800'; } /* '' */
+.icon-left-open:before { content: '\e801'; } /* '' */
+.icon-right-circle:before { content: '\e802'; } /* '' */
+.icon-right-open:before { content: '\e803'; } /* '' */
+.icon-target:before { content: '\e804'; } /* '' */
+
+[class^="sp-icon"] {
+    @include sprite-image(0,0);
+}
+
+.sp-icon-left {}
+.icon-right {}
+.icon-left-open {}
+.icon-right-open {}
+.icon-big-up {}
+.icon-big-down {}
+.icon-big-close {}
+.icon-target {}
+.icon-map {}
+.icon-map-white {}
+.icon-phone {}
+.icon-clock {}
+.icon-sm-clock {}
+.icon-sm-clock-primary {}
+.icon-clock-white {}
+.icon-big-phone {}
+.icon-message {}
+.icon-point {}
+.icon-point-gray {}
+.icon-calendar {}
+.icon-sm-calendar {}
+.icon-car {}
+.icon-sm-car {}
+.icon-sm-car-primary {}
+.icon-vehicle {}
+.icon-won {}
+.icon-search {}
+.icon-watch {}
+.icon-lock {}
+.icon-person-plus {}
+.icon-person {}
+.icon-check {}
+.icon-big-check {}
+.icon-electric-cord {}
+.icon-big-21 {}
+.icon-big-license {}
+.icon-navigation {}
+.icon-nosmoking {}
+.icon-cable {}
+.icon-bluetooth {}
+.icon-camera {}
+.icon-big-cancel {}
+.icon-big-car {}
+.icon-print {}
+.icon-percent {}
+.icon-comment {}
+.icon-facebook {}
+.icon-google {}
+.icon-naver {}
+.icon-kakaotalk {}
+.icon-mail {}
+.icon-question {}
+.icon-answer {}
+
+// Badge
+.badge {
+    display: inline-block;
+    @include border-radius(11px);
+    font: 500 13px 'Montserrat', 'Noto Sans KR', sans-serif;
+    line-height: (23-2)/13;
+    vertical-align: baseline;
+}
+.badge-primary {
+    padding: 0 14px;
+    background-color: $brand-primary;
+    line-height: (23)/13;
+    color: $white;
+}
+.badge-discount {
+    padding: 0 9px;
+    border: 1px solid $brand-primary;
+    background-color: $white;
+}
+.badge-coupon {
+    padding: 0 9px;
+    border: 1px solid #275475;
+    background-color: #275475;
+    color: $white;
+}

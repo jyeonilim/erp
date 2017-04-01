@@ -1,0 +1,338 @@
+@import "variables";
+@import "reset";
+@import "mixins";
+@import "component/component";
+
+/*******************************
+    Scaffolding
+*******************************/
+body {
+    background-color: $body-bg;
+    @include font-set(400,16px,NanumSquare);
+    letter-spacing: -1px;
+}
+a,
+a:hover {
+    color: $text-color;
+    text-decoration: none;
+}
+img,
+.image img {
+    width: 100%;
+}
+button {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+/*******************************
+    Layout
+*******************************/
+.content {
+    padding: 0 18px;
+}
+
+/*******************************
+    Header
+*******************************/
+.brand-logo {
+    display: inline-block;
+    margin-left: 72px;
+    a {
+        display: block;
+        width: 119px;
+        height: 39px;
+        background: url("../images/brand-logo.png") no-repeat 0 0;
+    }
+}
+.header {
+    @include clearfix;
+    padding: 33px 39px 0;
+    .site-home {
+        float: left;
+    }
+}
+
+/*******************************
+    Footer
+*******************************/
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    z-index: 10;
+    width: 346px;
+    padding: 0 25px;
+    text-align: center;
+    font: 12px/17px 'Lato', 'NotoSans', sans-serif;
+    color: #bce2db;
+    .terms-menu {
+        margin-bottom: 6px;
+        li {
+            display: inline-block;
+            a {
+                font-size: 14px;
+                color: $white;
+            }
+            &:before {
+                display: inline-block;
+                width: 1px;
+                height: 12px;
+                margin: 0 11px;
+                background-color: #86c2b7;
+                content: '';
+            }
+            &:first-child:before {
+                display: none;
+            }
+        }
+    }
+    .company-info {
+        li {
+            display: inline-block;
+            margin: 0 5px;
+        }
+    }
+}
+
+/*******************************
+    Common
+*******************************/
+// Indicator
+.indicator {
+    margin: 0 -18px;
+    background-color: $brand-primary;
+    li {
+        float: left;
+        .badge-step {
+            border: 1px solid #7bc5b8;
+            color: #7bc5b8;
+            @include font-set(500,14px,Montserrat);
+        }
+        .current {
+            color: $white;
+        }
+    }
+}
+// Title
+.section-title {
+    padding-bottom: 30px;
+    border-bottom: 2px solid $brand-primary;
+    font-weight: 700;
+    font-size: 55px;
+    text-align: center;
+    letter-spacing: -2px;
+    &.lineless {
+        border-bottom: 0;
+    }
+}
+.secondary-title {
+    font-weight: 700;
+    font-size: 25px;
+}
+.third-title {
+    font-weight: 700;
+    font-size: 36px;
+}
+// Tooltip
+.tooltip {
+    display: none;
+    position: absolute;
+    padding: 15px 40px;
+    @include border-radius(4px);
+    background-color: $brand-primary;
+    font: 300 15px 'NotoSans', sans-serif;
+    color: $white;
+    &:after {
+        @include sprite-image(-516px,0);
+        @include sprite-size(17px,15px);
+        position: absolute;
+        left: 50%;
+        bottom: -15px;
+        margin-left: -8px;
+        content: '';
+    }
+    .point {
+        color: #ffe01c;
+    }
+}
+// Page Nation
+.page-nation {
+    padding: 22px 0;
+    text-align: center;
+    .prev,
+    .next,
+    .number span {
+        display: inline-block;
+        width: 38px;
+        height: 38px;
+        margin: 0 2px;
+        border: 1px solid #dedfdf;
+        text-align: center;
+    }
+    .prev,
+    .next {
+        padding: 10px 0;
+    }
+    .number {
+        span {
+            a {
+                display: block;
+                padding: 10px 0;
+                color: $text-color;
+            }
+            &.current {
+                border: 1px solid $brand-primary;
+                a {
+                    color: $brand-primary
+                }
+            }
+        }
+    }
+}
+
+/*******************************
+    Intro
+*******************************/
+
+/*******************************
+    메인(렌터카검색)
+*******************************/
+// 예약하기
+// 서비스 소개
+// 고객센터
+
+/*******************************
+    차량검색
+*******************************/
+// 상단 이벤트
+// 로딩화면
+// 일정변경
+// 차량 검색 리스트
+// 차량상세 - 레이어 팝업
+
+/*******************************
+    예약하기
+*******************************/
+// 예약완료
+// 예약내용
+
+/*******************************
+    간편 회원가입
+*******************************/
+
+/*******************************
+    로그인
+*******************************/
+
+/*******************************
+    My Page
+*******************************/
+// 마이페이지 - 쿠폰
+// 쿠폰
+// 마이페이지 - 내 정보 수정
+// 자주하는 질문, 공지사항
+
+// 대여가이드
+// 대여안내
+// 보험안내
+
+/*******************************
+    Modal
+*******************************/
+.scroll-lock {
+    &, body {
+        overflow-y: hidden;
+        height: 100%;
+    }
+    .modal {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+.modal {
+    display: none;
+    &.modal-backdrop {
+        &:after {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 20;
+            margin: auto;
+            background-color: #000;
+            opacity: .8;
+            filter: alpha(opacity=80);
+            content: '';
+        }
+    }
+    .btn-modal-close {
+        position: absolute;
+        top: 18px;
+        right: 28px;
+        @include sprite-image(-473px,0);
+        @include sprite-size(30px,30px);
+    }
+    .modal-content {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 21;
+    }
+    .modal-head {
+        padding: 20px 38px;
+        background-color: $brand-primary;
+        font-weight: 700;
+        font-size: 27px;
+        color: $white;
+    }
+    .modal-body {
+        padding: 0 10px 10px;
+        background-color: $white;
+        .modal-body-inner {
+            padding: 0 20px;
+        }
+    }
+}
+// 예약하기 - 업그레이드
+// 예약하기 - 딜리버리 선택
+// 예약하기 - 프로모션 코드
+// 예약하기 - 취소 수수료 안내
+// 예약하기 - 인수/반납 안내
+// 마이페이지 - 예약확인 - 이용후기 등록
+// 마이페이지 - 예약확인 - 구매영수증
+// 아이디/비밀번호 찾기
+// 회원가입
+// 회원탈퇴
+
+/*******************************
+    Helper Class
+*******************************/
+.clearfix {
+    @include clearfix;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+.pull-right {
+    float: right;
+}
+.pull-left {
+    float: left;
+}
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}

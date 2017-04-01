@@ -1,0 +1,62 @@
+// Clearfix
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+//Typography
+@mixin font-set($weight,$size,$font) {
+    font-weight: $weight;
+    font-size: $size;
+    font-family: '#{$font}', sans-serif;
+}
+
+// Sprites Image
+@mixin sprite-image($left,$top) {
+    display: inline-block;
+    background: url("../images/sprite-icon.png") no-repeat ($left/2) ($top/2);
+    background-size: 375px auto;
+    line-height: 0;
+    color: transparent;
+    vertical-align: middle;
+}
+@mixin sprite-position($left,$top) {
+    background-position: ($left/2) ($top/2);
+}
+@mixin sprite-size($width,$height) {
+    width: ($width/2);
+    height: ($height/2);
+}
+
+// Border Radius
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+// Border Radius Side
+@mixin border-side-radius($edge1, $edge2, $radius) {
+    border-#{$edge1}-#{$edge2}-radius: $radius;
+    -moz-border-radius-#{$edge1}#{$edge2}: $radius;
+    -webkit-border-#{$edge1}-#{$edge2}-radius: $radius;
+}
+
+// Box Shadow
+@mixin box-shadow($shadow...) {
+    -webkit-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+
+// Box Sizing
+@mixin box-sizing($boxmodel) {
+    -webkit-box-sizing: $boxmodel;
+    -moz-box-sizing: $boxmodel;
+    box-sizing: $boxmodel;
+}
