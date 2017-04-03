@@ -1,11 +1,22 @@
 $(document).ready(function() {
 
-    $('.btn-menu-close').on('click',function () {
-        $('.megamenu').hide();
-        $('body').removeClass('scrollFixed');
+    // Mobile Side Bar Menu
+    $(".btn-menu").click(function(e) {
+        e.preventDefault();
+        $("html").addClass("menu-open");
+    });
+    $(".menu-close, .menu-backdrop").on("click", function() {
+        $("html").removeClass("menu-open");
     });
 
-    $(".service-info").slick();
+    $(".service-info").slick({
+        arrows: false,
+        dots: true,
+        infinite: true,
+        autoplay: true,
+        speed: 500,
+        slidesToShow: 1
+    });
 
     // Tab
     $('.tab-pane:first').show();
@@ -20,43 +31,24 @@ $(document).ready(function() {
 
     // 메인
     // 예약하기 : 장소선택 - 레이어
-    $('.select-place').on('click',function () {
-        var hasActive = $(this).parent('li').hasClass('active');
+    $('.select-place .form-control').on('click',function () {
+        var hasActive = $(this).parents('.select-place').hasClass('active');
         if(hasActive == true) {
-            $(this).parent('li').removeClass('active');
-            $('.select-place-picker').hide();
+            $(this).parents('.select-place').removeClass('active');
+            $(this).parent().siblings('.place-picker').hide();
         } else {
-            $(this).parent('li').addClass('active');
-            $('.select-place-picker').show();
+            $(this).parents('.select-place').addClass('active');
+            $(this).parent().siblings('.place-picker').show();
         }
     });
     // 예약하기 : 장소선택 - 지점선택 탭
-    $('.select-place-seoul li:first .content-place').show();
-    $('.select-place-jeju li:first .content-place').show();
-    $('.select-place-busan li:first .content-place').show();
-    $('.content-select-place input[name=place-seoul]').change(function () {
-        $('.select-place-seoul .content-place').hide();
+    $('#branch-seoul1').show();
+    $('.select-place.branch .place-picker input[name=select-place]').change(function () {
+        $('.content-place').hide();
         // console.log($(this));
-        $('.'+$(this).val()).show();
+        $('#'+$(this).val()).show();
     });
-    $('.content-select-place input[name=place-jeju]').change(function () {
-        $('.select-place-jeju .content-place').hide();
-        $('.'+$(this).val()).show();
-    });
-    $('.content-select-place input[name=place-busan]').change(function () {
-        $('.select-place-busan .content-place').hide();
-        $('.'+$(this).val()).show();
-    });
-    // 예약하기 : 일정선택 - 시간선택 레이어
-    $('.text-time').on('click', function() {
-        var display = $(this).siblings('.timepicker').css('display');
-        if(display == 'none') {
-            $('.select-datetime').children('.select-date,.select-time').removeClass('active').children('.datepicker,.timepicker').hide();
-            $(this).parent().addClass('active').children('.timepicker').show();
-        } else {
-            $(this).parent().removeClass('active').children('.timepicker').hide();
-        }
-    });
+
 
     // 예약하기 - 업그레이드 레이어
     $('.btn-upgrade').on('click',function () {
@@ -117,6 +109,13 @@ function selectboxEvent(target) {
     var $this = $(target),
         str = $this.val();
     $this.parent().children('.selectbox-value').text(str);
+}
+// Select Box - 시간선택
+function selectTime(target) {
+    var $this = $(target),
+        str = $this.val(),
+        arr = str.split(' ');
+    $this.parent().children('.selectbox-value').html('<em>'+arr[0]+'</em>'+arr[1]);
 }
 
 // Modal

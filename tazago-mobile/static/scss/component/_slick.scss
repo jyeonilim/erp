@@ -96,3 +96,51 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+
+/* Dots */
+.slick-dots {
+    position: absolute;
+    left: 18px;
+    bottom: 19px;
+    list-style: none;
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    li {
+        position: relative;
+        display: inline-block;
+        height: 9px;
+        width: 9px;
+        margin: 0 3px;
+        padding: 0;
+        cursor: pointer;
+        button {
+            display: block;
+            outline: none;
+            font-size: 0;
+            line-height: 0;
+            color: transparent;
+            cursor: pointer;
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 9px;
+                height: 9px;
+                border: 1px solid #999;
+                @include border-radius(50%);
+                background: $white;
+                line-height: 20px;
+                text-align: center;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                content: '';
+            }
+        }
+        &.slick-active button:before {
+            border: 1px solid $brand-primary;
+            background-color: $brand-primary;
+        }
+    }
+}

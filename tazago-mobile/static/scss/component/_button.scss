@@ -6,35 +6,23 @@
     display: inline-block;
     border: 1px solid #8b8c8d;
     background-color: $brand-default;
-    font-family: 'NanumSquare', sans-serif;
+    @include font-set(400,14px,NanumSquare);
+    line-height: (50-2)/14;
     color: $white;
     vertical-align: middle;
     cursor: pointer;
 }
 
 .btn-sm {
-    padding: 0 14px;
-    font-size: 14px;
-    line-height: (30-2)/14;
-}
-.btn-md {
-    padding: 0 39px;
-    font-size: 18px;
-    line-height: (45-2)/18;
+    line-height: (32-2)/14;
 }
 .btn-lg {
-    height: 60px;
-    font-size: 22px;
-    line-height: (60-2)/22;
-}
-.btn-xlg {
-    padding: 0 76px;
-    font-size: 28px;
-    line-height: (66-2)/28;
+    font-size: 23px;
+    line-height: (55-2)/23;
 }
 
 .btn-primary {
-    border-color: $brand-primary;
+    border-color: #99d2c8;
     background-color: $brand-primary;
     &.inverse {
         background-color: $white;
@@ -42,26 +30,13 @@
         color: $brand-primary;
     }
 }
-.btn-white {
-    border-color: #dcdcdc;
-    background-color: $white;
-}
-
-.btn-icon {
-    font-size: 0;
-}
 
 .has-arrow {
     position: relative;
-    &:after {
+    [class^="icon-"] {
         position: absolute;
-        top: 50%;
         right: 20px;
         z-index: 10;
-        margin-top: -8px;
-        @include sprite-image(-602px,-86px);
-        @include sprite-size(16px,17px);
-        content: '';
     }
 }
 
@@ -84,7 +59,7 @@
     width: 100%;
     .outer {
         display: table-cell;
-        padding: 0 5px;
+        padding: 0 3px;
         &:first-child {
             padding-left: 0;
         }

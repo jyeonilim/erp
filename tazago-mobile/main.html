@@ -18,51 +18,222 @@
         <h1 class="brand-logo"><span class="sr-only">타자고</span></h1>
         <a href="#" class="btn-back"><i class="icon-right-open"></i></a>
         <a href="#" class="btn-menu">Menu</a>
+        <!-- Sidebar Menu -->
+        <div class="sidebar-wrap">
+            <div class="sidebar">
+                <a href="#" class="btn-home"><i class="icon-home"></i><span class="sr-only">메인으로 가기</span></a>
+                <!-- 로그인 전 -->
+                <div class="quick-access">
+                    <p class="text">로그인을 해주세요</p>
+                    <div class="btn-group">
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary inverse">로그인</button></span>
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary">회원가입</button></span>
+                    </div>
+                </div>
+                <!-- 로그인 전 //end -->
+                <!-- 로그인 후 --
+                <div class="quick-access">
+                    <p class="text">홍길동 님, 안녕하세요</p>
+                    <div class="btn-group">
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary">마이페이지</button></span>
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary inverse">로그아웃</button></span>
+                    </div>
+                </div>
+                !-- 로그인 후 //end -->
+                <ul class="menu">
+                    <li class="item-reservation-confirm"><a href="#">예약확인</a></li>
+                    <li class="item-rental-info"><a href="#">대여가이드</a></li>
+                    <li class="item-notice"><a href="#">공지사항</a></li>
+                    <li class="item-faq"><a href="#">자주하는 질문</a></li>
+                </ul>
+                <p class="customer-number">
+                    <span>고객센터 (평일 9시~6시)</span>
+                    <strong>1544-1544</strong>
+                </p>
+            </div>
+            <a href="#" class="menu-close"><i class="icon-close"></i></a>
+            <div class="menu-backdrop"></div>
+        </div>
+        <!-- Sidebar Menu //end -->
     </div>
     <div class="content">
         <ul class="indicator">
-            <li class="current"><i class="badge-step">1</i>렌터카검색</li>
-            <li><i class="badge-step">2</i></li>
-            <li><i class="badge-step">3</i></li>
+            <li class="current"><i class="badge-step">01</i>렌터카검색</li>
+            <li><i class="badge-step">02</i></li>
+            <li><i class="badge-step">03</i></li>
         </ul>
         <div class="reservation-step">
             <!-- STEP 01 장소선택 -->
-            <div></div>
+            <!-- [D] 선택완료시 complete 클래스 추가 -->
+            <div class="select-place city complete">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="서울">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-primary"><i class="icon-target"></i></button>
+                    </span>
+                </div>
+                <!-- 장소선택 레이어 -->
+                <div class="place-picker">
+                    <p class="text">도시를 선택하세요</p>
+                    <div class="radio-group">
+                        <div class="radio">
+                            <input type="radio" id="place-seoul" name="select-city" checked>
+                            <label for="place-seoul" class="radio-label">서울</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="place-jeju" name="select-city">
+                            <label for="place-jeju" class="radio-label">제주</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="place-busan" name="select-city">
+                            <label for="place-busan" class="radio-label">부산</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- 장소선택 레이어 //end -->
+            </div>
+            <!-- [D] 선택완료시 complete 클래스 추가 -->
+            <div class="select-place branch">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="장소를 선택해 주세요.">
+                </div>
+                <!-- 장소선택 레이어 -->
+                <div class="place-picker">
+                    <p class="text">도시를 선택하세요</p>
+                    <div class="radio-group">
+                        <div class="radio">
+                            <input type="radio" id="place-seoul1" name="select-place" value="branch-seoul1" checked>
+                            <label for="place-seoul1" class="radio-label">김포</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="place-seoul2" name="select-place" value="branch-seoul2">
+                            <label for="place-seoul2" class="radio-label">마포</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="place-seoul3" name="select-place" value="branch-seoul3">
+                            <label for="place-seoul3" class="radio-label">강서</label>
+                        </div>
+                    </div>
+                    <div class="content-place" id="branch-seoul1">
+                        <h5 class="place-name">김포공항지점</h5>
+                        <ul class="place-info">
+                            <li>김포국제공항 국내선청사 1층 (7~8번 게이트)</li>
+                            <li>TEL : 02)2664-1466</li>
+                            <li>운영시간 : 08:00-20:00</li>
+                        </ul>
+                    </div>
+                    <div class="content-place" id="branch-seoul2">
+                        <h5 class="place-name">마포구 지점</h5>
+                        <ul class="place-info">
+                            <li>김포국제공항 국내선청사 1층 (7~8번 게이트)</li>
+                            <li>TEL : 02)2664-1466</li>
+                            <li>운영시간 : 08:00-20:00</li>
+                        </ul>
+                    </div>
+                    <div class="content-place" id="branch-seoul3">
+                        <h5 class="place-name">강남구 지점</h5>
+                        <ul class="place-info">
+                            <li>김포국제공항 국내선청사 1층 (7~8번 게이트)</li>
+                            <li>TEL : 02)2664-1466</li>
+                            <li>운영시간 : 08:00-20:00</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 장소선택 레이어 //end -->
+            </div>
             <!-- STEP 01 장소선택 //end -->
             <!-- STEP 02 일정선택 -->
-            <div></div>
+            <div class="select-datetime">
+                <div class="start-date">
+                    <h3 class="title">대여일시</h3>
+                    <div class="text-date">
+                        <strong>2<em>/</em>15</strong>
+                        <small>(토)<span>2017</span></small>
+                    </div>
+                    <div class="selectbox">
+                        <strong class="selectbox-value"><em>오전</em> 10:00</strong>
+                        <select onchange="selectTime(this);">
+                            <option value="오전 10:00">오전 10:00</option>
+                            <option value="오전 10:30">오전 10:30</option>
+                            <option value="오전 11:00">오전 11:00</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="end-date">
+                    <h3 class="title">반납일시</h3>
+                    <div class="text-date">
+                        <strong>2<em>/</em>18</strong>
+                        <small>(수)<span>2017</span></small>
+                    </div>
+                    <div class="selectbox">
+                        <strong class="selectbox-value"><em>오전</em> 10:00</strong>
+                        <select onchange="selectTime(this);">
+                            <option value="오전 10:00">오전 10:00</option>
+                            <option value="오전 10:30">오전 10:30</option>
+                            <option value="오전 11:00">오전 11:00</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
             <!-- STEP 02 일정선택 //end -->
             <!-- STEP 03 차량선택 -->
-            <div></div>
+            <div class="select-car">
+                <div class="checkbox small-light">
+                    <input type="checkbox" id="small-light" name="car-pick" checked>
+                    <label for="small-light" class="checkbox-label">경/소형</label>
+                </div>
+                <div class="checkbox medium-large">
+                    <input type="checkbox" id="medium-large" name="car-pick">
+                    <label for="medium-large" class="checkbox-label">중/대형</label>
+                </div>
+                <div class="checkbox suv-van">
+                    <input type="checkbox" id="suv-van" name="car-pick">
+                    <label for="suv-van" class="checkbox-label">SUV/승합</label>
+                </div>
+            </div>
             <!-- STEP 03 차량선택 //end -->
-            <button type="button" class="btn">렌터카 조회 <i class="icon-double-right"></i></button>
+            <button type="button" class="btn btn-lg btn-primary btn-block has-arrow">렌트카 조회 <i class="icon-double-right"></i></button>
         </div>
+        <!-- 서비스소개 -->
         <div class="service-info">
-            <div>
-                서비스1
+            <div class="service-content">
+                <h3 class="text">전국렌터카를 한곳에!<br>국내 최대 렌터카</h3>
+                <ul class="service-list">
+                    <li class="service1">50개<br>제휴사</li>
+                    <li class="service2">15,000대<br>차량</li>
+                </ul>
             </div>
-            <div>
-                2
+            <div class="service-content">
+                <h3 class="text">매일매일 초특가<br>최대 97% 할인!</h3>
+                <ul class="service-list">
+                    <li class="service3">회원가입<br>할인쿠폰 제공</li>
+                    <li class="service4">이용후기 작성하면<br>더블할인</li>
+                </ul>
             </div>
-            <div>
-                3
+            <div class="service-content">
+                <h3 class="text">언제 어디서나<br>빠른 예약과 인수</h3>
+                <ul class="service-list">
+                    <li class="service5">3분이면<br>예약확정OK!</li>
+                    <li class="service6">2시간 후<br>차량인수</li>
+                </ul>
             </div>
         </div>
-        <div class="customer-service">
-            <ul>
-                <li><a href="#">예약확인</a></li>
-                <li><a href="#">대여가이드</a></li>
-                <li><a href="#">공지사항</a></li>
-                <li><a href="#">자주하는 질문</a></li>
-            </ul>
-        </div>
+        <!-- 서비스소개 //end -->
+        <!-- 고객센터 -->
+        <ul class="customer-service">
+            <li><a href="#">예약확인</a></li>
+            <li><a href="#">대여가이드</a></li>
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">자주하는 질문</a></li>
+        </ul>
+        <!-- 고객센터 //end -->
     </div>
     <div class="footer">
-        <ul>
+        <ul class="terms-menu">
             <li><a href="#">이용약관</a></li>
             <li><a href="#">개인정보취급방침</a></li>
         </ul>
-        <p>@ 2017 TAZAGO. All rights reserved</p>
+        <p class="copyright">@ 2017 TAZAGO. All rights reserved</p>
     </div>
 </div>
 </body>

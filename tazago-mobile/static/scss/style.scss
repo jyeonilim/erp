@@ -8,7 +8,7 @@
 *******************************/
 body {
     background-color: $body-bg;
-    @include font-set(400,16px,NanumSquare);
+    @include font-mixed-set(400,16px,Montserrat,NanumSquare);
     letter-spacing: -1px;
 }
 a,
@@ -21,6 +21,8 @@ img,
     width: 100%;
 }
 button {
+    margin: 0;
+    padding: 0;
     border: 0;
     background-color: transparent;
     cursor: pointer;
@@ -30,28 +32,220 @@ button {
 /*******************************
     Layout
 *******************************/
+.wrap {
+    overflow-x: hidden;
+}
 .content {
-    padding: 0 18px;
+    padding: 23px 18px;
 }
 
 /*******************************
     Header
 *******************************/
 .brand-logo {
-    display: inline-block;
-    margin-left: 72px;
-    a {
-        display: block;
-        width: 119px;
-        height: 39px;
-        background: url("../images/brand-logo.png") no-repeat 0 0;
-    }
+    width: 79px;
+    height: 26px;
+    margin: 0 auto;
+    background: url("../images/brand-logo.png") no-repeat 0 0;
+    background-size: 79px 26px;
 }
 .header {
-    @include clearfix;
-    padding: 33px 39px 0;
-    .site-home {
-        float: left;
+    position: relative;
+    padding: 15px 0 20px;
+    .btn-back {
+        position: absolute;
+        top: 16px;
+        left: 0;
+        i:before {
+            font-weight: 700;
+            font-size: 25px;
+            color: $brand-primary;
+        }
+    }
+    .btn-menu {
+        position: absolute;
+        top: 8px;
+        right: 13px;
+        font-size: 10px;
+        color: $brand-primary;
+        letter-spacing: 0;
+        text-transform: uppercase;
+        &:before,
+        &:after {
+            display: block;
+            width: 100%;
+            height: 5px;
+            margin: 5px 0;
+            @include border-radius(3px);
+            background-color: $brand-primary;
+            content: '';
+        }
+    }
+}
+.sidebar-wrap {
+    .sidebar,
+    .menu-close,
+    .menu-backdrop {
+        @include transition(all 0.3s ease-out);
+        @include translate3d(0,0,0);
+    }
+    .sidebar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 1010;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        width: 283px;
+        height: 100%;
+        background-color: $brand-primary;
+    }
+    .menu-close {
+        position: absolute;
+        top: 15px;
+        right: -300px;
+        z-index: 1001;
+        .icon-close {
+            font-size: 21px;
+            color: $brand-primary;
+        }
+    }
+    .menu-backdrop {
+        visibility: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        content: '';
+    }
+}
+.menu-open {
+    &,
+    body {
+        height: 100%;
+        overflow: hidden;
+    }
+    .sidebar {
+        right: 0;
+    }
+    .menu-close {
+        right: 296px;
+        opacity: 1;
+    }
+    .menu-backdrop {
+        visibility: visible;
+        left: 0;
+        z-index: 1000;
+        background-color: #000;
+        opacity: .7;
+        cursor: pointer;
+    }
+}
+.sidebar {
+    &, a {
+        color: $white;
+    }
+    .btn-home {
+        display: block;
+        margin: 15px 12px 25px 0;
+        text-align: right;
+        &:before {
+            display: inline-block;
+            @include image-size(142px,48px);
+            background: url('../images/brand-logo-sub.png') no-repeat 0 0;
+            background-size: 71px 24px;
+            vertical-align: bottom;
+            content: '';
+        }
+        .icon-home {
+            font-size: 27px;
+        }
+    }
+    .quick-access {
+        padding: 0 20px;
+        .text {
+            margin-bottom: 14px;
+            font-size: 15px;
+        }
+        .btn-group {
+            .outer {
+                width: 50%;
+            }
+        }
+    }
+    .menu {
+        margin-top: 24px;
+        border-top: 1px solid #86c9bd;
+        li {
+            border-bottom: 1px solid #86c9bd;
+            a {
+                display: block;
+                padding: 16px 22px;
+                &:before {
+                    @include sprite-image(0,0);
+                    @include image-size(88px,62px);
+                    margin-right: 15px;
+                    content: '';
+                }
+            }
+        }
+        .item-reservation-confirm {
+            a:before {
+                @include sprite-position(0,-210px);
+            }
+        }
+        .item-rental-info {
+            a:before {
+                @include sprite-position(-140px,-210px);
+            }
+        }
+        .item-notice {
+            a:before {
+                @include sprite-position(-280px,-210px);
+            }
+        }
+        .item-faq {
+            a:before {
+                @include sprite-position(-420px,-210px);
+            }
+        }
+        .badge-unit {
+            width: 36px;
+            height: 36px;
+            margin-left: 10px;
+            @include border-radius(50%);
+            background-color: $white;
+            font-size: 25px;
+            line-height: 36px;
+            color: $brand-primary;
+            text-align: center;
+        }
+    }
+    .customer-number {
+        position: relative;
+        padding: 30px 22px 0;
+        &:after {
+            position: absolute;
+            top: 25px;
+            right: 23px;
+            @include sprite-image(-560px,-140px);
+            @include image-size(114px,114px);
+            border: 3px solid $white;
+            @include border-radius(50%);
+            content: '';
+        }
+        span {
+            font-size: 13px;
+        }
+        strong {
+            display: block;
+            margin-top: 10px;
+            font-size: 30px;
+            letter-spacing: 0;
+        }
     }
 }
 
@@ -59,29 +253,23 @@ button {
     Footer
 *******************************/
 .footer {
-    position: absolute;
-    left: 0;
-    bottom: 20px;
-    z-index: 10;
-    width: 346px;
-    padding: 0 25px;
+    padding: 15px 0;
+    border-top: 1px solid #d7d7d7;
+    background-color: #f9f9f9;
     text-align: center;
-    font: 12px/17px 'Lato', 'NotoSans', sans-serif;
     color: #bce2db;
     .terms-menu {
         margin-bottom: 6px;
         li {
             display: inline-block;
-            a {
-                font-size: 14px;
-                color: $white;
-            }
+            font-size: 10px;
             &:before {
                 display: inline-block;
                 width: 1px;
-                height: 12px;
-                margin: 0 11px;
-                background-color: #86c2b7;
+                height: 10px;
+                margin: 0 6px;
+                background-color: #c0c0c0;
+                vertical-align: -2px;
                 content: '';
             }
             &:first-child:before {
@@ -89,11 +277,10 @@ button {
             }
         }
     }
-    .company-info {
-        li {
-            display: inline-block;
-            margin: 0 5px;
-        }
+    .copyright {
+        @include font-set(400,10px,Lato);
+        color: #727272;
+        letter-spacing: 0;
     }
 }
 
@@ -102,17 +289,33 @@ button {
 *******************************/
 // Indicator
 .indicator {
-    margin: 0 -18px;
+    @include clearfix;
+    margin: -23px -18px 23px;
+    padding: 18px 25px;
     background-color: $brand-primary;
     li {
         float: left;
         .badge-step {
+            display: inline-block;
+            width: 31px;
+            margin-right: 4px;
             border: 1px solid #7bc5b8;
             color: #7bc5b8;
             @include font-set(500,14px,Montserrat);
+            line-height: (31-2)/14;
+            text-align: center;
+            vertical-align: text-bottom;
         }
-        .current {
+        &.current {
+            margin-right: 15px;
+            font-size: 23px;
             color: $white;
+            .badge-step {
+                margin-right: 13px;
+                border: 1px solid $white;
+                background-color: $white;
+                color: $brand-primary;
+            }
         }
     }
 }
@@ -147,7 +350,7 @@ button {
     color: $white;
     &:after {
         @include sprite-image(-516px,0);
-        @include sprite-size(17px,15px);
+        @include image-size(17px,15px);
         position: absolute;
         left: 50%;
         bottom: -15px;
@@ -200,9 +403,385 @@ button {
 /*******************************
     메인(렌터카검색)
 *******************************/
-// 예약하기
+// 예약하기 - 장소선택
+.select-place {
+    position: relative;
+    .input-group {
+        position: relative;
+        &:before {
+            @include sprite-image(0,0);
+            @include image-size(34px,48px);
+            position: absolute;
+            top: 0;
+            left: 19px;
+            bottom: 0;
+            margin: auto;
+            content: '';
+        }
+        .form-control {
+            padding: 0 20px 0 45px;
+            border: 1px solid #dbdbdb;
+            line-height: (48-2)/14;
+        }
+        .btn {
+            height: 48px;
+            padding: 0 5px;
+            line-height: 48px;
+            .icon-target {
+                font-size: 23px;
+            }
+        }
+    }
+    &.active {
+        .input-group {
+            &:before {
+                @include sprite-image(-70px,0);
+            }
+            .form-control {
+                border: 2px solid $brand-primary;
+                font-weight: 700;
+                line-height: (48-4)/14;
+            }
+        }
+    }
+    &.complete {
+        .input-group {
+            &:before {
+                @include sprite-image(-70px,0);
+            }
+            .form-control {
+                font-weight: 700;
+            }
+        }
+    }
+    .place-picker {
+        display: none;
+        position: absolute;
+        top: 46px;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        padding: 17px 20px;
+        border: 2px solid $brand-primary;
+        background-color: #eef6f5;
+        .text {
+            margin-bottom: 10px;
+            font-weight: 700;
+            font-size: 13px;
+        }
+        .radio-group {
+            margin: 0 -1px;
+            .radio {
+                width: 33.3%;
+                padding: 0 1px;
+                .radio-label {
+                    display: inline-block;
+                    width: 100%;
+                    padding: 7px 0;
+                    border: 1px solid #b2dcd5;
+                    font-weight: 700;
+                    font-size: 13px;
+                    color: $brand-primary;
+                    text-align: center;
+                }
+                input[type="radio"]:checked ~ .radio-label {
+                    background-color: $brand-primary;
+                    color: $white;
+                }
+            }
+        }
+        .content-place {
+            display: none;
+            margin-top: 13px;
+            font-family: 'Lato', 'NanumSquare', sans-serif;
+            .place-name {
+                margin-bottom: 5px;
+                font-weight: 700;
+                font-size: 16px;
+            }
+            .place-info {
+                font-size: 13px;
+                color: $gray-darker;
+                li {
+                    padding: 3px 0;
+                }
+            }
+        }
+    }
+    &.branch {
+        margin-top: -1px;
+    }
+}
+// 예약하기 - 일정선택
+.select-datetime {
+    display: table;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    border: 1px solid #dbdbdb;
+    .start-date,
+    .end-date {
+        position: relative;
+        display: table-cell;
+        width: 50%;
+        text-align: center;
+    }
+    .start-date {
+        &:after {
+            position: absolute;
+            top: 37%;
+            right: -14px;
+            font-size: 28px;
+            font-family: 'fontello';
+            color: $brand-primary;
+            content: '\e802';
+        }
+    }
+    .title {
+        padding: 10px 0;
+        border-bottom: 1px solid #dbdbdb;
+        background-color: #ededed;
+        font-weight: 700;
+        font-size: 15px;
+    }
+    .text-date {
+        //display: inline-table;
+        display: block;
+        padding: 30px 0;
+        cursor: pointer;
+        strong {
+            font-weight: 500;
+            font-size: 38px;
+            color: $brand-primary;
+            vertical-align: middle;
+            letter-spacing: -2.5px;
+            em {
+                font-size: 20px;
+            }
+        }
+        small {
+            display: inline-block;
+            margin-left: 10px;
+            padding-left: 5px;
+            border-left: 1px solid #d6d6d6;
+            color: #444;
+            vertical-align: middle;
+            span {
+                display: block;
+            }
+        }
+    }
+    .selectbox {
+        border: 0;
+        border-top: 1px solid #dbdbdb;
+        .selectbox-value {
+            background-color: transparent;
+            width: auto;
+            padding: 0 27px 0 0;
+            font-weight: 500;
+            font-size: 22px;
+            color: $text-color;
+            &:after {
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 10px;
+                width: 0;
+                height: 0;
+                margin: auto;
+                border: 5px solid transparent;
+                border-width: 7px 5px 0;
+                border-top-color: #000;
+                content: "";
+            }
+            em {
+                font-weight: 700;
+                font-size: 13px;
+            }
+        }
+    }
+}
+// 예약하기 - 차량선택
+.select-car {
+    @include clearfix;
+    margin: 27px 0 23px;
+    .checkbox {
+        float: left;
+        width: 33.33%;
+        text-align: center;
+        .checkbox-label {
+            display: inline-block;
+            width: 84px;
+            height: 84px;
+            padding-top: 13px;
+            border: 1px solid #949599;
+            @include border-radius(50%);
+            background-color: $white;
+            font-weight: 700;
+            font-size: 13px;
+            text-align: center;
+            &:after {
+                @include sprite-image(0,0);
+                display: block;
+                margin: 7px auto 0;
+                content: '';
+            }
+        }
+        input[type="checkbox"]:checked ~ .checkbox-label {
+            background-color: #949599;
+            color: $white;
+        }
+        &.small-light {
+            .checkbox-label {
+                &:after {
+                    @include image-size(86px,50px);
+                    background-position: 0 -70px;
+                }
+            }
+            input[type="checkbox"]:checked ~ .checkbox-label {
+                &:after {
+                    background-position: 0 -35px;
+                }
+            }
+        }
+        &.medium-large {
+            .checkbox-label {
+                &:after {
+                    @include image-size(108px,46px);
+                    background-position: -70px -70px;
+                }
+            }
+            input[type="checkbox"]:checked ~ .checkbox-label {
+                &:after {
+                    background-position: -70px -35px;
+                }
+            }
+        }
+        &.suv-van {
+            .checkbox-label {
+                &:after {
+                    @include image-size(108px,44px);
+                    background-position: -140px -70px;
+                }
+            }
+            input[type="checkbox"]:checked ~ .checkbox-label {
+                &:after {
+                    background-position: -140px -35px;
+                }
+            }
+        }
+    }
+}
 // 서비스 소개
+.service-info {
+    margin: 22px -18px 0;
+    .service-content {
+        @include clearfix;
+        padding: 20px 18px 13px;
+        background-color: #f4f4f4;
+        .text {
+            float: left;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+            color: $gray-dark;
+        }
+        .service-list {
+            float: right;
+            li {
+                float: left;
+                padding: 0 7px;
+                font-size: 10px;
+                text-align: center;
+                &:before {
+                    @include sprite-image(0,0);
+                    @include image-size(108px,108px);
+                    display: block;
+                    margin-bottom: 6px;
+                    content: '';
+                }
+            }
+            .service1 {
+                &:before {
+                    @include sprite-position(0,-420px);
+                }
+            }
+            .service2 {
+                &:before {
+                    @include sprite-position(-140px,-420px);
+                }
+            }
+            .service3 {
+                &:before {
+                    @include sprite-position(-280px,-420px);
+                }
+            }
+            .service4 {
+                &:before {
+                    @include sprite-position(-420px,-420px);
+                }
+            }
+            .service5 {
+                &:before {
+                    @include sprite-position(0,-560px);
+                }
+            }
+            .service6 {
+                &:before {
+                    @include sprite-position(-140px,-560px);
+                }
+            }
+        }
+    }
+}
 // 고객센터
+.customer-service {
+    @include clearfix;
+    margin: 0 -18px -24px;
+    border-bottom: 1px solid #d7d7d7;
+    li {
+        float: left;
+        width: 50%;
+        border-top: 1px solid #d7d7d7;
+        border-left: 1px solid #d7d7d7;
+        a {
+            display: block;
+            padding: 22px 0 18px;
+            font-size: 16px;
+            text-align: center;
+            &:before {
+                @include sprite-image(0,0);
+                @include image-size(134px,92px);
+                display: block;
+                margin: 0 auto 6px;
+                content: '';
+            }
+        }
+        &:nth-child(1) {
+            border-left: 0;
+            a:before {
+                @include sprite-position(0,-280px);
+            }
+        }
+        &:nth-child(2) {
+            a:before {
+                @include sprite-position(-140px,-280px);
+            }
+        }
+        &:nth-child(3) {
+            border-left: 0;
+            a:before {
+                @include sprite-position(-280px,-280px);
+            }
+        }
+        &:nth-child(4) {
+            a:before {
+                @include sprite-position(-420px,-280px);
+            }
+        }
+    }
+}
 
 /*******************************
     차량검색
@@ -274,7 +853,7 @@ button {
         top: 18px;
         right: 28px;
         @include sprite-image(-473px,0);
-        @include sprite-size(30px,30px);
+        @include image-size(30px,30px);
     }
     .modal-content {
         position: fixed;

@@ -29,11 +29,52 @@
 }
 
 // Calendar(Datepicker)
+.hasDatepicker {
+    .ui-datepicker-wrap {
+        .modal-content {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 12;
+            width: 100%;
+            height: 341px;
+            margin: auto;
+            padding: 0 18px;
+        }
+        &:after {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 11;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,.7);
+            content: '';
+        }
+        .modal-head {
+            padding: 13px 23px;
+            background-color: $brand-primary;
+            font-weight: 700;
+            font-size: 20px;
+            color: $white;
+            text-align: left;
+        }
+        .btn-modal-close {
+            position: absolute;
+            top: 13px;
+            right: 34px;
+            .icon-close {
+                font-size: 20px;
+                color: $white;
+            }
+        }
+    }
+}
 .ui-datepicker {
     display: none;
-    width: 370px;
-    padding: 22px 45px 40px;
-    border: 2px solid $brand-primary;
+    width: 100%;
+    padding: 22px 20px 35px;
     background-color: $white;
 }
 .ui-datepicker-header {
@@ -52,26 +93,26 @@
         top: -2px;
         width: 37px;
         height: 30px;
-        padding: 6px 0;
+        padding: 5px 0;
         border: 1px solid #dce0e0;
         @include border-radius(3px);
         background-color: $white;
         cursor: pointer;
         .ui-icon {
             @include sprite-image(0,0);
-            @include sprite-size(17px,10px);
+            @include image-size(32px,20px);
         }
     }
     .ui-datepicker-prev {
-        left: -27px;
+        left: 0;
         .ui-icon {
-            background-position: -473px -43px;
+            @include sprite-position(-140px,0);
         }
     }
     .ui-datepicker-next {
-        right: -27px;
+        right: 0;
         .ui-icon {
-            background-position: -516px -43px;
+            @include sprite-position(-210px,0);
         }
     }
 }
@@ -119,46 +160,5 @@
             background-color: #dedede;
             color: #bdbdbd;
         }
-    }
-}
-// Timepicker
-.timepicker {
-    padding: 38px 28px 27px;
-    border: 2px solid $brand-primary;
-    background-color: $white;
-    .selectbox-value {
-        display: inline-block;
-        width: 136px;
-        padding: 0 30px 0 0;
-        font: 500 35px 'Montserrat', sans-serif;
-        line-height: (60-2)/35;
-        color: $text-color;
-        text-align: center;
-        &:before,
-        &:after {
-            position: absolute;
-            right: 0;
-            @include sprite-image(-507px,-76px);
-            @include sprite-size(12px,12px);
-            padding: 8px 9px;
-            border-left: 1px solid #b0b0b0;
-            line-height: 29px;
-            content: '';
-        }
-        &:before {
-            top: 0;
-        }
-        &:after {
-            top: inherit;
-            bottom: 0;
-            border-top: 1px solid #b0b0b0;
-            background-position: -550px -75px;
-        }
-    }
-    .add-time-colon {
-        display: inline-block;
-        padding: 0 2px;
-        font: 500 35px 'Montserrat', sans-serif;
-        vertical-align: text-bottom;
     }
 }

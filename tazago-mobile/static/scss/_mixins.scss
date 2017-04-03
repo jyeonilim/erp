@@ -11,6 +11,11 @@
 }
 
 //Typography
+@mixin font-mixed-set($weight,$size,$font1,$font2) {
+    font-weight: $weight;
+    font-size: $size;
+    font-family: '#{$font1}', '#{$font2}', sans-serif;
+}
 @mixin font-set($weight,$size,$font) {
     font-weight: $weight;
     font-size: $size;
@@ -29,7 +34,7 @@
 @mixin sprite-position($left,$top) {
     background-position: ($left/2) ($top/2);
 }
-@mixin sprite-size($width,$height) {
+@mixin image-size($width,$height) {
     width: ($width/2);
     height: ($height/2);
 }
@@ -59,4 +64,23 @@
     -webkit-box-sizing: $boxmodel;
     -moz-box-sizing: $boxmodel;
     box-sizing: $boxmodel;
+}
+
+// Transformations
+@mixin translate($x, $y) {
+    -webkit-transform: translate($x, $y);
+    -ms-transform: translate($x, $y); // IE9 only
+    -o-transform: translate($x, $y);
+    transform: translate($x, $y);
+}
+@mixin translate3d($x, $y, $z) {
+    -webkit-transform: translate3d($x, $y, $z);
+    transform: translate3d($x, $y, $z);
+}
+
+// Transitions
+@mixin transition($transition...) {
+    -webkit-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
 }
