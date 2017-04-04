@@ -15,7 +15,7 @@
     border: 0;
     @include border-radius(0);
     @include font-set(300,14px,NotoSans);
-    line-height: (50)/14;
+    line-height: (48)/14;
     color: $text-color;
     -webkit-appearance: none;
 }

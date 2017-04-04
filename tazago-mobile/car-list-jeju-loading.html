@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>차량선택</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" src="static/js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="static/js/slick.min.js"></script>
+    <script type="text/javascript" src="static/js/custom.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="header">
+        <h1 class="brand-logo"><span class="sr-only">타자고</span></h1>
+        <a href="#" class="btn-back"><i class="icon-right-open"></i></a>
+        <a href="#" class="btn-menu">Menu</a>
+        <!-- Sidebar Menu -->
+        <div class="sidebar-wrap">
+            <div class="sidebar">
+                <a href="#" class="btn-home"><i class="icon-home"></i><span class="sr-only">메인으로 가기</span></a>
+                <!-- 로그인 전 -->
+                <div class="quick-access">
+                    <p class="text">로그인을 해주세요</p>
+                    <div class="btn-group">
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary inverse">로그인</button></span>
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary">회원가입</button></span>
+                    </div>
+                </div>
+                <!-- 로그인 전 //end -->
+                <!-- 로그인 후 --
+                <div class="quick-access">
+                    <p class="text">홍길동 님, 안녕하세요</p>
+                    <div class="btn-group">
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary">마이페이지</button></span>
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary inverse">로그아웃</button></span>
+                    </div>
+                </div>
+                !-- 로그인 후 //end -->
+                <ul class="menu">
+                    <li class="item-reservation-confirm"><a href="#">예약확인</a></li>
+                    <li class="item-rental-info"><a href="#">대여가이드</a></li>
+                    <li class="item-notice"><a href="#">공지사항</a></li>
+                    <li class="item-faq"><a href="#">자주하는 질문</a></li>
+                </ul>
+                <p class="customer-number">
+                    <span>고객센터 (평일 9시~6시)</span>
+                    <strong>1544-1544</strong>
+                </p>
+            </div>
+            <a href="#" class="menu-close"><i class="icon-close"></i></a>
+            <div class="menu-backdrop"></div>
+        </div>
+        <!-- Sidebar Menu //end -->
+    </div>
+    <div class="content">
+        <div class="indicator-wrap">
+            <ul class="indicator">
+                <li><i class="badge-step">01</i></li>
+                <li class="current"><i class="badge-step">02</i>차량선택</li>
+                <li><i class="badge-step">03</i></li>
+            </ul>
+            <button type="button" class="btn-filter" onclick="modalOpen('.search-results');"><i class="icon-filter"></i></button>
+        </div>
+        <div class="event">
+            <strong class="main-text">쉽게 가격비교하고 TAZAGO!</strong>
+            <p class="sub-text">50개 회사, 15,000대 차량 최저가 검색</p>
+        </div>
+        <div class="reservation-content">
+            <ul>
+                <li><i class="sp-icon-map"></i>제주</li>
+                <li class="date"><i class="sp-icon-calendar"></i>02/14~02/15</li>
+            </ul>
+            <button type="button" class="btn btn-xs-circle btn-change-schedule">일정변경</button>
+        </div>
+        <!-- 일정변경 -->
+        <div class="reservation-step change-schedule">
+            <!-- STEP 01 장소선택 -->
+            <div class="select-place city">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="서울">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-primary"><i class="icon-target"></i></button>
+                    </span>
+                </div>
+                <!-- 장소선택 레이어 -->
+                <div class="place-picker">
+                    <p class="text">도시를 선택하세요</p>
+                    <div class="radio-group">
+                        <div class="radio">
+                            <input type="radio" id="place-seoul" name="select-city" checked>
+                            <label for="place-seoul" class="radio-label">서울</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="place-jeju" name="select-city">
+                            <label for="place-jeju" class="radio-label">제주</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="place-busan" name="select-city">
+                            <label for="place-busan" class="radio-label">부산</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- 장소선택 레이어 //end -->
+            </div>
+            <div class="select-place branch">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="장소를 선택해 주세요.">
+                </div>
+                <!-- 장소선택 레이어 -->
+                <div class="place-picker">
+                    <p class="text">도시를 선택하세요</p>
+                    <div class="radio-group">
+                        <div class="radio">
+                            <input type="radio" id="place-seoul1" name="select-place" value="branch-seoul1" checked>
+                            <label for="place-seoul1" class="radio-label">김포</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="place-seoul2" name="select-place" value="branch-seoul2">
+                            <label for="place-seoul2" class="radio-label">마포</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" id="place-seoul3" name="select-place" value="branch-seoul3">
+                            <label for="place-seoul3" class="radio-label">강서</label>
+                        </div>
+                    </div>
+                    <div class="content-place" id="branch-seoul1">
+                        <h5 class="place-name">김포공항지점</h5>
+                        <ul class="place-info">
+                            <li>김포국제공항 국내선청사 1층 (7~8번 게이트)</li>
+                            <li>TEL : 02)2664-1466</li>
+                            <li>운영시간 : 08:00-20:00</li>
+                        </ul>
+                    </div>
+                    <div class="content-place" id="branch-seoul2">
+                        <h5 class="place-name">마포구 지점</h5>
+                        <ul class="place-info">
+                            <li>김포국제공항 국내선청사 1층 (7~8번 게이트)</li>
+                            <li>TEL : 02)2664-1466</li>
+                            <li>운영시간 : 08:00-20:00</li>
+                        </ul>
+                    </div>
+                    <div class="content-place" id="branch-seoul3">
+                        <h5 class="place-name">강남구 지점</h5>
+                        <ul class="place-info">
+                            <li>김포국제공항 국내선청사 1층 (7~8번 게이트)</li>
+                            <li>TEL : 02)2664-1466</li>
+                            <li>운영시간 : 08:00-20:00</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 장소선택 레이어 //end -->
+            </div>
+            <!-- STEP 01 장소선택 //end -->
+            <!-- STEP 02 일정선택 -->
+            <div class="select-datetime">
+                <div class="start-date">
+                    <h3 class="title">대여일시</h3>
+                    <div class="text-date">
+                        <strong>2<em>/</em>15</strong>
+                        <small>(토)<span>2017</span></small>
+                    </div>
+                    <div class="selectbox">
+                        <strong class="selectbox-value"><em>오전</em> 10:00</strong>
+                        <select onchange="selectTime(this);">
+                            <option value="오전 10:00">오전 10:00</option>
+                            <option value="오전 10:30">오전 10:30</option>
+                            <option value="오전 11:00">오전 11:00</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="end-date">
+                    <h3 class="title">반납일시</h3>
+                    <div class="text-date">
+                        <strong>2<em>/</em>18</strong>
+                        <small>(수)<span>2017</span></small>
+                    </div>
+                    <div class="selectbox">
+                        <strong class="selectbox-value"><em>오전</em> 10:00</strong>
+                        <select onchange="selectTime(this);">
+                            <option value="오전 10:00">오전 10:00</option>
+                            <option value="오전 10:30">오전 10:30</option>
+                            <option value="오전 11:00">오전 11:00</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- STEP 02 일정선택 //end -->
+            <!-- STEP 03 차량선택 -->
+            <div class="select-car">
+                <div class="checkbox small-light">
+                    <input type="checkbox" id="small-light" name="car-pick" checked>
+                    <label for="small-light" class="checkbox-label">경/소형</label>
+                </div>
+                <div class="checkbox medium-large">
+                    <input type="checkbox" id="medium-large" name="car-pick">
+                    <label for="medium-large" class="checkbox-label">중/대형</label>
+                </div>
+                <div class="checkbox suv-van">
+                    <input type="checkbox" id="suv-van" name="car-pick">
+                    <label for="suv-van" class="checkbox-label">SUV/승합</label>
+                </div>
+            </div>
+            <!-- STEP 03 차량선택 //end -->
+            <button type="button" class="btn btn-lg btn-primary btn-block has-arrow">렌트카 조회 <i class="icon-double-right"></i></button>
+        </div>
+        <!-- 일정변경 //end -->
+        <div class="loading">
+            <p class="text">잠시만 기다려 주세요<br>최상의 렌터카를 추천해 드리겠습니다.</p>
+            <div class="loading-bar">
+                <img src="static/images/loading.gif" alt="">
+            </div>
+            <p class="text2"><em>50</em>개 회사 <em>15,000</em>대 차량<br><b>가격비교 중</b></p>
+            <p class="partner">
+                <img src="static/images/partner.png" alt="">
+            </p>
+        </div>
+        <!-- 결과 내 검색 -->
+        <div class="modal search-results">
+            <div class="modal-content">
+                <h3 class="modal-head">
+                    결과 내 검색
+                    <button class="btn-reset btn-xs-circle"><i class="icon-arrows-ccw"></i>설정 초기화</button>
+                </h3>
+                <div class="modal-body">
+                    <div class="maker">
+                        <label class="form-label">제조사 선택</label>
+                        <div class="select-maker">
+                            <div class="checkbox">
+                                <input type="checkbox" id="maker1" checked>
+                                <label for="maker1" class="checkbox-label">현대자동차</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="maker2">
+                                <label for="maker2" class="checkbox-label">기아자동차</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="maker3">
+                                <label for="maker3" class="checkbox-label">르노삼성</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="maker4">
+                                <label for="maker4" class="checkbox-label">쌍용자동차</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="maker5">
+                                <label for="maker5" class="checkbox-label">쉐보레</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="maker6">
+                                <label for="maker6" class="checkbox-label">수입차</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gas-type">
+                        <label class="form-label">연료 타입 선택</label>
+                        <div class="select-gas-type">
+                            <div class="checkbox">
+                                <input type="checkbox" id="gas-type1">
+                                <label for="gas-type1" class="checkbox-label">LPG</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="gas-type2">
+                                <label for="gas-type2" class="checkbox-label">휘발유</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="gas-type3">
+                                <label for="gas-type3" class="checkbox-label">경유</label>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="gas-type4">
+                                <label for="gas-type4" class="checkbox-label">전기</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-search">
+                        <label for="search-car" class="form-label">차량 모델명 검색</label>
+                        <input type="text" id="search-car" class="form-control" placeholder="차량명을 입력해주세요">
+                    </div>
+                    <button type="button" class="btn btn-primary btn-block">결과 내 검색</button>
+                </div>
+                <button class="btn-modal-close" onclick="modalClose('.search-results');"><i class="icon-close"></i></button>
+            </div>
+        </div>
+        <!-- 결과 내 검색 //end -->
+    </div>
+    <div class="footer">
+        <ul class="terms-menu">
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보취급방침</a></li>
+        </ul>
+        <p class="copyright">@ 2017 TAZAGO. All rights reserved</p>
+    </div>
+</div>
+</body>
+</html>

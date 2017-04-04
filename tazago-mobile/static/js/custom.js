@@ -68,14 +68,8 @@ $(document).ready(function() {
 
     // 차량검색 - 일정변경 레이어
     $('.btn-change-schedule').on('click',function () {
-        $(this).addClass('on');
-        $('.change-schedule').show();
-        $('body').addClass('scrollFixed');
-    });
-    $('.change-schedule .btn-close').on('click',function () {
-        $('.btn-change-schedule').removeClass('on');
-        $(this).parent().hide();
-        $('body').removeClass('scrollFixed');
+        $(this).toggleClass('on');
+        $('.change-schedule').slideToggle();
     });
 
     // 로그인 - 아이디/패스워드 찾기
@@ -100,6 +94,24 @@ $(document).ready(function() {
         $(this).toggleClass("open").next().slideToggle();
         $(this).parent().siblings().children().removeClass("open").next().slideUp();
         return false;
+    });
+
+    var offset = 300,
+        offset_opacity = 1200,
+        scroll_top_duration = 700,
+        $back_to_top = $('.btn-top');
+    $(window).scroll(function(){
+        ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('is-visible') : $back_to_top.removeClass('is-visible fade-out');
+        if( $(this).scrollTop() > offset_opacity ) {
+            $back_to_top.addClass('fade-out');
+        }
+    });
+    $back_to_top.on('click', function(event){
+        event.preventDefault();
+        $('body,html').animate({
+                scrollTop: 0 ,
+            }, scroll_top_duration
+        );
     });
 
 });

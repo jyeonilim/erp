@@ -44,8 +44,22 @@
 .icon-target:before { content: '\e804'; } /* '' */
 .icon-close:before { content: '\e805'; } /* '' */
 .icon-home:before { content: '\e806'; } /* '' */
-.icon-right:before { content: '\e807'; } /* '' */
-.icon-left:before { content: '\e808'; } /* '' */
+.icon-arrows-ccw:before { content: '\e807'; } /* '' */
+.icon-clock:before { content: '\e809'; } /* '' */
+.icon-alam-clock:before { content: '\e80a'; } /* '' */
+.icon-cancel:before { content: '\e80b'; } /* '' */
+.icon-car-hand:before { content: '\e80c'; } /* '' */
+.icon-car:before { content: '\e80d'; } /* '' */
+.icon-check-circle:before { content: '\e80e'; } /* '' */
+.icon-star:before { content: '\e80f'; } /* '' */
+.icon-filter:before { content: '\e810'; } /* '' */
+.icon-bluetooth:before { content: '\e811'; } /* '' */
+.icon-cable:before { content: '\e812'; } /* '' */
+.icon-camera:before { content: '\e813'; } /* '' */
+.icon-check:before { content: '\e814'; } /* '' */
+.icon-nosmoking:before { content: '\e815'; } /* '' */
+.icon-up:before { content: '\e816'; } /* '' */
+.icon-navigation:before { content: '\e817'; } /* '' */
 
 [class^="sp-icon"] {
     @include sprite-image(0,0);
@@ -59,7 +73,11 @@
 .icon-big-down {}
 .icon-big-close {}
 .icon-target {}
-.icon-map {}
+.sp-icon-map {
+    @include image-size(28px,40px);
+    @include sprite-position(0,0);
+    background-size: 320px auto;
+}
 .icon-map-white {}
 .icon-phone {}
 .icon-clock {}
@@ -70,7 +88,10 @@
 .icon-message {}
 .icon-point {}
 .icon-point-gray {}
-.icon-calendar {}
+.sp-icon-calendar {
+    @include image-size(36px,30px);
+    @include sprite-position(-280px,0);
+}
 .icon-sm-calendar {}
 .icon-car {}
 .icon-sm-car {}
@@ -81,12 +102,24 @@
 .icon-watch {}
 .icon-lock {}
 .icon-person-plus {}
-.icon-person {}
+.sp-icon-person {
+    @include image-size(22px,26px);
+    @include sprite-position(-420px,-70px);
+}
 .icon-check {}
 .icon-big-check {}
-.icon-electric-cord {}
-.icon-big-21 {}
-.icon-big-license {}
+.sp-icon-electric-cord {
+    @include image-size(20px,30px);
+    @include sprite-position(-490px,-70px);
+}
+.sp-icon-21 {
+    @include image-size(68px,68px);
+    @include sprite-position(-560px,-280px);
+}
+.sp-icon-license {
+    @include image-size(66px,58px);
+    @include sprite-position(-630px,-280px);
+}
 .icon-navigation {}
 .icon-nosmoking {}
 .icon-cable {}
@@ -108,9 +141,9 @@
 // Badge
 .badge {
     display: inline-block;
-    @include border-radius(11px);
-    font: 500 13px 'Montserrat', 'Noto Sans KR', sans-serif;
-    line-height: (23-2)/13;
+    @include border-radius(8px);
+    font: 500 9px 'Montserrat', 'Noto Sans KR', sans-serif;
+    line-height: (17-2)/9;
     vertical-align: middle;
 }
 .badge-primary {
@@ -123,6 +156,7 @@
     padding: 0 9px;
     border: 1px solid $brand-primary;
     background-color: $white;
+    color: $brand-primary;
 }
 .badge-coupon {
     padding: 0 9px;

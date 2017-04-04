@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>차량선택</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" src="static/js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="static/js/slick.min.js"></script>
+    <script type="text/javascript" src="static/js/custom.js"></script>
+</head>
+<body class="sub">
+<div class="wrap">
+    <div class="header">
+        <h1>아이오닉 가격비교</h1>
+        <a href="#" class="btn-back"><i class="icon-right-open"></i></a>
+        <a href="#" class="btn-menu">Menu</a>
+        <!-- Sidebar Menu -->
+        <div class="sidebar-wrap">
+            <div class="sidebar">
+                <a href="#" class="btn-home"><i class="icon-home"></i><span class="sr-only">메인으로 가기</span></a>
+                <!-- 로그인 전 -->
+                <div class="quick-access">
+                    <p class="text">로그인을 해주세요</p>
+                    <div class="btn-group">
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary inverse">로그인</button></span>
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary">회원가입</button></span>
+                    </div>
+                </div>
+                <!-- 로그인 전 //end -->
+                <!-- 로그인 후 --
+                <div class="quick-access">
+                    <p class="text">홍길동 님, 안녕하세요</p>
+                    <div class="btn-group">
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary">마이페이지</button></span>
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary inverse">로그아웃</button></span>
+                    </div>
+                </div>
+                !-- 로그인 후 //end -->
+                <ul class="menu">
+                    <li class="item-reservation-confirm"><a href="#">예약확인</a></li>
+                    <li class="item-rental-info"><a href="#">대여가이드</a></li>
+                    <li class="item-notice"><a href="#">공지사항</a></li>
+                    <li class="item-faq"><a href="#">자주하는 질문</a></li>
+                </ul>
+                <p class="customer-number">
+                    <span>고객센터 (평일 9시~6시)</span>
+                    <strong>1544-1544</strong>
+                </p>
+            </div>
+            <a href="#" class="menu-close"><i class="icon-close"></i></a>
+            <div class="menu-backdrop"></div>
+        </div>
+        <!-- Sidebar Menu //end -->
+    </div>
+    <div class="content">
+        <div class="car-info-content">
+            <div class="car-info">
+                <div class="car-image">
+                    <img src="static/images/temp/car2.png" alt="">
+                </div>
+                <ul class="car-option">
+                    <li><i class="text-year">16</i>2016년식</li>
+                    <li><i class="icon-navigation"></i>네비게이션</li>
+                    <li><i class="icon-nosmoking"></i>금연차량</li>
+                    <li><i class="icon-cable"></i>AUX선제공</li>
+                    <li><i class="icon-bluetooth"></i>블루투스</li>
+                    <li><i class="icon-camera"></i>후방카메라</li>
+                </ul>
+            </div>
+            <ul class="overview">
+                <li><i class="icon-car"></i> 중형차</li>
+                <li><i class="sp-icon-person"></i> 5인승</li>
+                <li><i class="sp-icon-electric-cord"></i> 전기차</li>
+            </ul>
+        </div>
+        <div class="lowest-price-content">
+            <h2 class="title">
+                대여업체 최저가 TOP10
+                <span>* 일반자차 보험 포함 금액</span>
+            </h2>
+            <ul class="lowest-price-list">
+                <li>
+                    <h3 class="company-name">KD렌터카</h3>
+                    <!-- [D] 불만족 level1 - 매우만족 level5 -->
+                    <span class="reviews-state satisfied level5">4.5<em>(후기 10개)</em></span>
+                    <span class="rent-regulation">만21세이상<br>면허 1년 이상</span>
+                    <span class="price">12,000<em>원</em></span>
+                </li>
+                <li>
+                    <h3 class="company-name">탐라렌터카</h3>
+                    <span class="reviews-state satisfied level1">1<em>(후기 10개)</em></span>
+                    <span class="rent-regulation">만21세이상<br>면허 1년 이상</span>
+                    <span class="price">12,000<em>원</em></span>
+                </li>
+                <li>
+                    <h3 class="company-name">KD렌터카</h3>
+                    <span class="reviews-state satisfied level5">4.5<em>(후기 10개)</em></span>
+                    <span class="rent-regulation">만21세이상<br>면허 1년 이상</span>
+                    <span class="price">12,000<em>원</em></span>
+                </li>
+                <li>
+                    <h3 class="company-name">탐라렌터카</h3>
+                    <span class="reviews-state satisfied level5">4.5<em>(후기 10개)</em></span>
+                    <span class="rent-regulation">만21세이상<br>면허 1년 이상</span>
+                    <span class="price">12,000<em>원</em></span>
+                </li>
+                <li>
+                    <h3 class="company-name">KD렌터카</h3>
+                    <span class="reviews-state satisfied level5">4.5<em>(후기 10개)</em></span>
+                    <span class="rent-regulation">만21세이상<br>면허 1년 이상</span>
+                    <span class="price">12,000<em>원</em></span>
+                </li>
+            </ul>
+        </div>
+        <div class="btn-fixed">
+            <button type="button" class="btn btn-lg btn-primary btn-block">예약하기</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
