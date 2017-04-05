@@ -36,7 +36,12 @@ button {
     overflow-x: hidden;
 }
 .content {
-    padding: 23px 18px;
+    //padding: 23px 18px;
+}
+.sub {
+    .content {
+        padding-bottom: 72px;
+    }
 }
 
 /*******************************
@@ -265,9 +270,6 @@ button {
             }
         }
     }
-    .content {
-        padding: 0 0 72px;
-    }
 }
 
 /*******************************
@@ -308,10 +310,30 @@ button {
 /*******************************
     Common
 *******************************/
+.group-wrap {
+    background-color: #f3f3f3;
+    .group {
+        margin-top: 4px;
+        padding: 20px;
+        border-top: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+        background-color: $white;
+        .group-title {
+            margin-bottom: 12px;
+            font-weight: 700;
+            font-size: 17px;
+            small {
+                margin-left: 5px;
+                font-size: 12px;
+                color: $brand-primary;
+            }
+        }
+    }
+}
 // Indicator
 .indicator {
     @include clearfix;
-    margin: -23px -18px 23px;
+    margin-bottom: 23px;
     padding: 18px 25px;
     background-color: $brand-primary;
     li {
@@ -353,30 +375,45 @@ button {
     }
 }
 .secondary-title {
+    margin-bottom: 15px;
     font-weight: 700;
-    font-size: 25px;
+    font-size: 17px;
 }
 .third-title {
     font-weight: 700;
     font-size: 36px;
 }
 // Tooltip
+.help-point {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-left: 7px;
+    border: 2px solid $brand-primary;
+    @include border-radius(50%);
+    background-color: $white;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 23px;
+    color: $brand-primary;
+    text-align: center;
+    cursor: help;
+}
 .tooltip {
     display: none;
     position: absolute;
-    padding: 15px 40px;
+    padding: 15px 35px;
     @include border-radius(4px);
     background-color: $brand-primary;
-    font: 300 15px 'NotoSans', sans-serif;
+    font: 300 13px 'NotoSans', sans-serif;
     color: $white;
     &:after {
-        @include sprite-image(-516px,0);
-        @include image-size(17px,15px);
         position: absolute;
-        left: 50%;
-        bottom: -15px;
-        margin-left: -8px;
-        content: '';
+        left: 30px;
+        bottom: -19px;
+        font-family: 'fontello';
+        font-size: 25px;
+        content: '\e818';
     }
     .point {
         color: #ffe01c;
@@ -449,6 +486,14 @@ button {
 /*******************************
     메인(렌터카검색)
 *******************************/
+.main {
+    .content {
+        padding: 0 18px;
+    }
+    .indicator {
+        margin: 0 -18px 23px;
+    }
+}
 // 예약하기 - 장소선택
 .select-place {
     position: relative;
@@ -784,7 +829,7 @@ button {
 // 고객센터
 .customer-service {
     @include clearfix;
-    margin: 0 -18px -24px;
+    margin: 0 -18px -1px;
     border-bottom: 1px solid #d7d7d7;
     li {
         float: left;
@@ -851,7 +896,7 @@ button {
     .btn-filter {
         position: absolute;
         top: 15px;
-        right: -10px;
+        right: 9px;
         .icon-filter {
             font-size: 30px;
             color: $white;
@@ -860,7 +905,6 @@ button {
 }
 .reservation-content {
     @include clearfix;
-    margin: 0 -18px;
     padding: 4px 18px;
     border-top: 1px solid #ccc;
     border-bottom: 2px solid $brand-primary;
@@ -889,7 +933,7 @@ button {
     }
 }
 .car-list {
-    margin: 0 -18px -24px;
+    margin-bottom: -1px;
     .item {
         padding: 13px 18px;
         border-bottom: 1px solid #e2e2e2;
@@ -987,7 +1031,7 @@ button {
 }
 .change-schedule {
     display: none;
-    padding: 15px 0;
+    padding: 15px 18px;
     border-bottom: 1px solid #dedede;
 }
 // 상세, 가격비교
@@ -1111,24 +1155,6 @@ button {
     }
 }
 .detail-content {
-    background-color: #f3f3f3;
-    .group {
-        margin-top: 4px;
-        padding: 20px;
-        border-top: 1px solid #e5e5e5;
-        border-bottom: 1px solid #e5e5e5;
-        background-color: $white;
-        .group-title {
-            margin-bottom: 12px;
-            font-weight: 700;
-            font-size: 17px;
-            small {
-                margin-left: 5px;
-                font-size: 12px;
-                color: $brand-primary;
-            }
-        }
-    }
     .rent-regulation {
         ul {
             display: table;
@@ -1281,6 +1307,7 @@ button {
     border-top: 1px solid #dedede;
     li {
         display: table;
+        width: 100%;
         padding: 15px 20px 20px;
         border-bottom: 1px solid #dedede;
         &:nth-child(even) {
@@ -1329,7 +1356,7 @@ button {
 }
 // 로딩화면
 .loading {
-    padding: 40px 0 20px;
+    padding: 40px 18px 20px;
     text-align: center;
     .text {
         font-size: 14px;
@@ -1355,7 +1382,7 @@ button {
     }
     .partner {
         margin-top: 20px;
-        padding: 12px 0;
+        padding: 12px 10px;
         border-top: 1px solid #dedede;
         border-bottom: 1px solid #dedede;
     }
@@ -1364,8 +1391,327 @@ button {
 /*******************************
     예약하기
 *******************************/
+// 예약하기
+.reservation {
+    .content {
+        padding-bottom: 61px;
+    }
+}
+.reservation-list-wrap {
+    margin-top: -23px;
+    padding-top: 3px;
+    background-color: $brand-primary;
+    text-align: center;
+}
+.reservation-car-image {
+    padding: 0 90px;
+}
+.reservation-list {
+    display: inline-block;
+    margin: 13px 0 25px;
+    padding-left: 17px;
+    background: url("../images/line-dotted.png") no-repeat 0 100%;
+    background-size: 7px auto;
+    text-align: left;
+    li {
+        padding-top: 7px;
+        color: $white;
+        letter-spacing: 0;
+        &:first-child {
+            padding-top: 0;
+        }
+        .sp-icon-sm-calendar,
+        .sp-icon-map-white {
+            margin: 0 3px;
+        }
+        .icon-car,
+        .icon-car-hand {
+            font-size: 9px;
+        }
+        > span {
+            margin-left: 6px;
+            font-size: 12px;
+        }
+        p {
+            display: inline-block;
+            margin-left: 33px;
+            font-weight: 700;
+            font-size: 11px;
+            b {
+                font: 500 14px 'Montserrat', sans-serif;
+                small {
+                    font-weight: 400;
+                    font-size: 9px;
+                }
+            }
+        }
+    }
+}
+.reservation-option {
+    .secondary-title {
+        position: relative;
+        .help-point:hover {
+            & + .tooltip {
+                display: block;
+                bottom: 37px;
+                left: 0;
+            }
+        }
+    }
+    .delivery {
+        .tooltip {
+            background-color: $brand-default;
+            &:after {
+                color: $brand-default;
+                left: 105px;
+            }
+        }
+    }
+    .insurance {
+        .tooltip {
+            background-color: $brand-primary;
+            &:after {
+                color: $brand-primary;
+                left: 74px;
+            }
+        }
+    }
+}
+.btn-reservation {
+    padding: 11px 0;
+    background-color: rgba(67,69,73,.95);
+    font-size: 15px;
+    color: $white;
+    text-align: center;
+    strong {
+        margin: 0 20px;
+        font-size: 25px;
+        color: $brand-primary;
+        vertical-align: middle;
+        em {
+            font-size: 14px;
+        }
+    }
+    .btn {
+        padding: 0 20px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: (39-2)/18;
+    }
+}
+// 예약정보 입력
+.reservation-input {
+    margin-top: -23px;
+    margin-bottom: 18px;
+    .group-title {
+        &.clearfix {
+            .title {
+                float: left;
+            }
+            .checkbox {
+                float: right;
+                margin-top: -5px;
+            }
+        }
+    }
+}
+.input-info {
+    .radio {
+        .radio-label {
+            display: inline-block;
+            width: 100%;
+            border: 1px solid #dadada;
+            border-left: 0;
+            background-color: #f6f6f6;
+            font-size: 14px;
+            line-height: (40-2)/14;
+            text-align: center;
+        }
+        &:first-child .radio-label {
+            border-left: 1px solid #dadada;
+        }
+        input[type=radio]:checked + .radio-label {
+            background-color: $brand-primary;
+            color: $white;
+        }
+    }
+}
+.form-list {
+    border-top: 1px solid #000;
+    li {
+        border-bottom: 1px solid #bcbcbc;
+        &.line-checkbox {
+            padding: 11px 0;
+            text-align: right;
+        }
+        &.line-radio {
+            padding: 5px 0;
+        }
+    }
+}
+.select-payment {
+    .credit-card {
+        .radio-label {
+            i {
+                margin-right: 6px;
+            }
+        }
+    }
+    .account-transfer {
+        .radio-label {
+            //font-size: 11px;
+            //line-height: 37px;
+            &:before {
+                @include sprite-image(-560px,-490px);
+                @include image-size(36px,36px);
+                margin-right: 3px;
+                content: '';
+            }
+        }
+        input[type=radio]:checked + .radio-label {
+            &:before {
+                @include sprite-position(-630px,-490px);
+            }
+        }
+    }
+    .promotion-code {
+        .radio-label {
+            //font-size: 13px;
+            //line-height: (40-2)/13;
+            &:before {
+                @include sprite-image(-560px,-420px);
+                @include image-size(40px,34px);
+                margin-right: 3px;
+                content: '';
+            }
+        }
+        input[type=radio]:checked + .radio-label {
+            &:before {
+                @include sprite-position(-630px,-420px);
+            }
+        }
+    }
+    @media (max-width: 350px) {
+        .account-transfer {
+            .radio-label {
+                font-size: 11px;
+                line-height: 37px;
+            }
+        }
+        .promotion-code {
+            .radio-label {
+                font-size: 13px;
+                line-height: (40-2)/13;
+            }
+        }
+    }
+    .select-coupon,
+    .input-promotion-code {
+        padding: 5px 0 5px 80px;
+        .btn {
+            width: 56px;
+            font-size: 13px;
+            line-height: (40-2)/13;
+        }
+    }
+    .select-coupon {
+        .selectbox {
+            .selectbox-value {
+                overflow: hidden;
+                height: 37px;
+                color: $brand-primary;
+                &:after {
+                    color: #999;
+                }
+            }
+        }
+    }
+    .input-promotion-code {
+        display: none;
+        .form-control {
+            height: 39px;
+            padding: 0 20px;
+            border: 1px solid #d5d5d5;
+        }
+    }
+}
+.payment-info {
+    margin-top: -1px;
+    padding: 25px 20px 20px;
+    border: 1px solid #dfe3e2;
+    background-color: #e9f1f0;
+    li {
+        @include clearfix;
+        padding: 8px 0;
+        span {
+            float: left;
+            font-size: 12px;
+            i {
+                display: inline-block;
+                width: 18px;
+                margin-right: 5px;
+                color: $brand-primary;
+                &.icon-car {
+                    font-size: 11px;
+                }
+                &.text-percent {
+                    margin: 0 .2em;
+                    font-size: 13px;
+                }
+            }
+        }
+        strong {
+            float: right;
+            font-weight: 500;
+            font-size: 15px;
+            em {
+                font-weight: 400;
+                font-size: 12px;
+            }
+        }
+        &.discount {
+            strong {
+                color: $brand-primary;
+            }
+        }
+        &.total {
+            span {
+                font-weight: 700;
+                font-size: 15px;
+            }
+            strong {
+                font-size: 25px;
+                color: $brand-primary;
+                em {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+.reservation-agreement {
+    .group-title {
+        padding-bottom: 15px;
+        border-bottom: 1px solid #000;
+    }
+    dd {
+        @include clearfix;
+        padding: 4px 0;
+        .checkbox {
+            float: left;
+            .checkbox-label {
+                font-size: 14px;
+            }
+        }
+        .btn {
+            float: right;
+            padding: 0 10px;
+            font-size: 11px;
+            line-height: (23-2)/11;
+        }
+    }
+}
 // 예약완료
-// 예약내용
 
 /*******************************
     간편 회원가입
@@ -1521,6 +1867,7 @@ button {
     .input-search {
         margin-bottom: 16px;
         .form-control {
+            padding: 0 20px;
             border: 1px solid #dbdbdb;
             font-size: 16px;
             line-height: (48)/16;
@@ -1529,6 +1876,66 @@ button {
 }
 // 예약하기 - 업그레이드
 // 예약하기 - 딜리버리 선택
+.select-delivery {
+    .modal-body {
+        padding: 0;
+    }
+    .search-delivery {
+        position: relative;
+        .icon-search {
+            position: absolute;
+            top: 13px;
+            left: 15px;
+        }
+        .form-control {
+            padding-left: 40px;
+            border-bottom: 1px solid #d8d8d8;
+            background-color: #f8f8f8;
+            font-size: 14px;
+            line-height: (45-2)/14;
+        }
+    }
+    .delivery-place-list {
+        overflow-x: hidden;
+        overflow-y: auto;
+        border-top: 0;
+        li {
+            @include clearfix;
+            padding: 15px;
+            border-bottom: 1px solid #d8d8d8;
+            .place {
+                float: left;
+                padding-top: 5px;
+                padding-left: 16px;
+                p {
+                    display: block;
+                    margin: 0 0 5px -16px;
+                    font-weight: 700;
+                    font-size: 18px;
+                }
+                .line-number {
+                    width: 50px;
+                    height: 23px;
+                    margin-right: 2px;
+                    @include border-radius(12px);
+                    background-color: $brand-default;
+                    font-weight: 400;
+                    font-size: 11px;
+                    line-height: (23)/11;
+                    color: $white;
+                }
+            }
+            &.select {
+                border: 2px solid $brand-primary;
+                background-color: #f3f9f7;
+            }
+            .btn {
+                float: right;
+                padding: 0 29px;
+            }
+        }
+    }
+}
 // 예약하기 - 프로모션 코드
 // 예약하기 - 취소 수수료 안내
 // 예약하기 - 인수/반납 안내

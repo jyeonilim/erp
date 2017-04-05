@@ -45,6 +45,7 @@
 .icon-close:before { content: '\e805'; } /* '' */
 .icon-home:before { content: '\e806'; } /* '' */
 .icon-arrows-ccw:before { content: '\e807'; } /* '' */
+.icon-search:before { content: '\e808'; } /* '' */
 .icon-clock:before { content: '\e809'; } /* '' */
 .icon-alam-clock:before { content: '\e80a'; } /* '' */
 .icon-cancel:before { content: '\e80b'; } /* '' */
@@ -60,6 +61,9 @@
 .icon-nosmoking:before { content: '\e815'; } /* '' */
 .icon-up:before { content: '\e816'; } /* '' */
 .icon-navigation:before { content: '\e817'; } /* '' */
+.icon-down-dir:before { content: '\e818'; } /* '' */
+.icon-credit-card:before { content: '\e819'; } /* '' */
+.icon-down-open:before { content: '\e81b'; } /* '' */
 
 [class^="sp-icon"] {
     @include sprite-image(0,0);
@@ -78,7 +82,15 @@
     @include sprite-position(0,0);
     background-size: 320px auto;
 }
-.icon-map-white {}
+.sp-icon-map-primary {
+    @include image-size(28px,40px);
+    @include sprite-position(-60px,0);
+    background-size: 320px auto;
+}
+.sp-icon-map-white {
+    @include image-size(18px,26px);
+    @include sprite-position(-630px,-70px);
+}
 .icon-phone {}
 .icon-clock {}
 .icon-sm-clock {}
@@ -92,12 +104,18 @@
     @include image-size(36px,30px);
     @include sprite-position(-280px,0);
 }
-.icon-sm-calendar {}
+.sp-icon-sm-calendar {
+    @include image-size(18px,18px);
+    @include sprite-position(-560px,-70px);
+}
 .icon-car {}
 .icon-sm-car {}
 .icon-sm-car-primary {}
 .icon-vehicle {}
-.icon-won {}
+.sp-icon-won {
+    @include image-size(34px,34px);
+    @include sprite-position(-700px,-490px);
+}
 .icon-search {}
 .icon-watch {}
 .icon-lock {}
@@ -144,6 +162,7 @@
     @include border-radius(8px);
     font: 500 9px 'Montserrat', 'Noto Sans KR', sans-serif;
     line-height: (17-2)/9;
+    text-align: center;
     vertical-align: middle;
 }
 .badge-primary {

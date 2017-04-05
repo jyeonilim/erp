@@ -50,6 +50,14 @@ $(document).ready(function() {
     });
 
 
+    // 결제수단 선택 - 할인수단
+    $('.discount-methods input[name=discount-option]').change(function () {
+        $('.discount-option').hide();
+        // console.log($(this));
+        $('.'+$(this).val()).show();
+    });
+
+
     // 예약하기 - 업그레이드 레이어
     $('.btn-upgrade').on('click',function () {
         $(this).addClass('on');

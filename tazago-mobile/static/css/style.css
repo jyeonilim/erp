@@ -193,6 +193,10 @@ table {
   content: '\e807'; }
 
 /* '' */
+.icon-search:before {
+  content: '\e808'; }
+
+/* '' */
 .icon-clock:before {
   content: '\e809'; }
 
@@ -253,6 +257,18 @@ table {
   content: '\e817'; }
 
 /* '' */
+.icon-down-dir:before {
+  content: '\e818'; }
+
+/* '' */
+.icon-credit-card:before {
+  content: '\e819'; }
+
+/* '' */
+.icon-down-open:before {
+  content: '\e81b'; }
+
+/* '' */
 [class^="sp-icon"] {
   display: inline-block;
   background: url("../images/sprite-icon.png") no-repeat 0 0;
@@ -267,10 +283,31 @@ table {
   background-position: 0 0;
   background-size: 320px auto; }
 
+.sp-icon-map-primary {
+  width: 14px;
+  height: 20px;
+  background-position: -30px 0;
+  background-size: 320px auto; }
+
+.sp-icon-map-white {
+  width: 9px;
+  height: 13px;
+  background-position: -315px -35px; }
+
 .sp-icon-calendar {
   width: 18px;
   height: 15px;
   background-position: -140px 0; }
+
+.sp-icon-sm-calendar {
+  width: 9px;
+  height: 9px;
+  background-position: -280px -35px; }
+
+.sp-icon-won {
+  width: 17px;
+  height: 17px;
+  background-position: -350px -245px; }
 
 .sp-icon-person {
   width: 11px;
@@ -300,6 +337,7 @@ table {
   border-radius: 8px;
   font: 500 9px 'Montserrat', 'Noto Sans KR', sans-serif;
   line-height: 1.667;
+  text-align: center;
   vertical-align: middle; }
 
 .badge-primary {
@@ -343,6 +381,10 @@ table {
 
 .btn-sm {
   line-height: 2.143; }
+
+.btn-md {
+  font-size: 18px;
+  line-height: 2.111; }
 
 .btn-lg {
   font-size: 23px;
@@ -427,7 +469,6 @@ table {
 
 .form-control {
   width: 100%;
-  padding: 0 20px;
   border: 0;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -456,6 +497,7 @@ textarea.form-control {
 .input-group {
   display: table;
   width: 100%; }
+  .input-group .selectbox,
   .input-group .form-control,
   .input-group .input-group-btn {
     display: table-cell;
@@ -464,6 +506,16 @@ textarea.form-control {
     width: 1%; }
     .input-group .input-group-btn .btn {
       margin-left: -1px; }
+
+.form-inline {
+  display: table;
+  width: 100%; }
+  .form-inline .form-label,
+  .form-inline .form-control {
+    display: table-cell;
+    vertical-align: middle; }
+  .form-inline .form-label {
+    width: 80px; }
 
 .checkbox,
 .radio {
@@ -491,14 +543,14 @@ textarea.form-control {
   .radio .radio-display {
     position: relative;
     display: inline-block;
-    margin-right: 12px;
-    vertical-align: top; }
+    margin-right: 9px;
+    vertical-align: middle; }
   .checkbox .checkbox-label,
   .checkbox .radio-label,
   .radio .checkbox-label,
   .radio .radio-label {
-    font: 20px 'NotoSans', sans-serif;
-    color: #898989; }
+    font: 16px 'NotoSans', sans-serif;
+    color: #888; }
   .checkbox input[type="checkbox"]:checked ~ .checkbox-display,
   .checkbox input[type="checkbox"]:checked ~ .checkbox-label,
   .checkbox input[type="radio"]:checked ~ .radio-display,
@@ -513,18 +565,19 @@ textarea.form-control {
     transition: all 0.3s ease; }
   .checkbox .checkbox-display,
   .radio .checkbox-display {
-    width: 24px;
-    height: 24px;
+    width: 21px;
+    height: 21px;
     background-image: url(../images/form-checkbox.png);
-    vertical-align: text-bottom; }
+    background-size: 21px 21px; }
   .checkbox input[type="checkbox"]:checked ~ .checkbox-display,
   .radio input[type="checkbox"]:checked ~ .checkbox-display {
     background-image: url(../images/form-checkbox-checked.png); }
   .checkbox .radio-display,
   .radio .radio-display {
-    width: 31px;
-    height: 31px;
-    background-image: url(../images/form-radio.png); }
+    width: 25px;
+    height: 25px;
+    background-image: url(../images/form-radio.png);
+    background-size: 25px 25px; }
   .checkbox input[type="radio"]:checked ~ .radio-display,
   .radio input[type="radio"]:checked ~ .radio-display {
     background-image: url(../images/form-radio-checked.png); }
@@ -532,17 +585,15 @@ textarea.form-control {
 .checkbox-block,
 .radio-block {
   display: block;
-  margin-bottom: 18px; }
+  margin-bottom: 13px; }
 
 .radio-group {
+  display: table;
   width: 100%; }
-  .radio-group:before, .radio-group:after {
-    content: " ";
-    display: table; }
-  .radio-group:after {
-    clear: both; }
   .radio-group .radio {
-    float: left; }
+    display: table-cell;
+    width: 50%;
+    vertical-align: top; }
 
 .selectbox {
   position: relative;
@@ -556,30 +607,22 @@ textarea.form-control {
     left: 0;
     width: 100%;
     height: 100%;
-    min-height: 30px;
+    min-height: 40px;
     opacity: 0;
     cursor: pointer; }
   .selectbox .selectbox-value {
     display: block;
-    padding: 0 70px 0 20px;
+    padding: 0 35px 0 20px;
     background-color: #fff;
-    font-size: 16px;
-    line-height: 2.625;
+    font-size: 13px;
+    line-height: 2.923;
     color: #898989; }
     .selectbox .selectbox-value:after {
       position: absolute;
       top: 0;
-      right: 0;
-      border-left: 1px solid #d5d5d5;
-      display: inline-block;
-      background: url("../images/sprite-icon.png") no-repeat -273px -34px;
-      background-size: 375px auto;
-      line-height: 0;
-      color: transparent;
-      vertical-align: middle;
-      width: 20px;
-      height: 21px;
-      content: ''; }
+      right: 13px;
+      font-family: 'fontello';
+      content: '\e81b'; }
 
 /*******************************
     Table
@@ -921,8 +964,8 @@ button {
 .wrap {
   overflow-x: hidden; }
 
-.content {
-  padding: 23px 18px; }
+.sub .content {
+  padding-bottom: 72px; }
 
 /*******************************
     Header
@@ -1133,9 +1176,6 @@ button {
     .sub .header .btn-menu:before, .sub .header .btn-menu:after {
       background-color: white; }
 
-.sub .content {
-  padding: 0 0 72px; }
-
 /*******************************
     Footer
 *******************************/
@@ -1170,8 +1210,25 @@ button {
 /*******************************
     Common
 *******************************/
+.group-wrap {
+  background-color: #f3f3f3; }
+  .group-wrap .group {
+    margin-top: 4px;
+    padding: 20px;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: white; }
+    .group-wrap .group .group-title {
+      margin-bottom: 12px;
+      font-weight: 700;
+      font-size: 17px; }
+      .group-wrap .group .group-title small {
+        margin-left: 5px;
+        font-size: 12px;
+        color: #4aaf9d; }
+
 .indicator {
-  margin: -23px -18px 23px;
+  margin-bottom: 23px;
   padding: 18px 25px;
   background-color: #4aaf9d; }
   .indicator:before, .indicator:after {
@@ -1214,38 +1271,50 @@ button {
     border-bottom: 0; }
 
 .secondary-title {
+  margin-bottom: 15px;
   font-weight: 700;
-  font-size: 25px; }
+  font-size: 17px; }
 
 .third-title {
   font-weight: 700;
   font-size: 36px; }
 
+.help-point {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-left: 7px;
+  border: 2px solid #4aaf9d;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  background-color: white;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 23px;
+  color: #4aaf9d;
+  text-align: center;
+  cursor: help; }
+
 .tooltip {
   display: none;
   position: absolute;
-  padding: 15px 40px;
+  padding: 15px 35px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   border-radius: 4px;
   background-color: #4aaf9d;
-  font: 300 15px 'NotoSans', sans-serif;
+  font: 300 13px 'NotoSans', sans-serif;
   color: white; }
   .tooltip:after {
-    display: inline-block;
-    background: url("../images/sprite-icon.png") no-repeat -258px 0;
-    background-size: 375px auto;
-    line-height: 0;
-    color: transparent;
-    vertical-align: middle;
-    width: 8.5px;
-    height: 7.5px;
     position: absolute;
-    left: 50%;
-    bottom: -15px;
-    margin-left: -8px;
-    content: ''; }
+    left: 30px;
+    bottom: -19px;
+    font-family: 'fontello';
+    font-size: 25px;
+    content: '\e818'; }
   .tooltip .point {
     color: #ffe01c; }
 
@@ -1303,6 +1372,12 @@ button {
 /*******************************
     메인(렌터카검색)
 *******************************/
+.main .content {
+  padding: 0 18px; }
+
+.main .indicator {
+  margin: 0 -18px 23px; }
+
 .select-place {
   position: relative; }
   .select-place .input-group {
@@ -1579,7 +1654,7 @@ button {
         background-position: -70px -280px; }
 
 .customer-service {
-  margin: 0 -18px -24px;
+  margin: 0 -18px -1px;
   border-bottom: 1px solid #d7d7d7; }
   .customer-service:before, .customer-service:after {
     content: " ";
@@ -1640,13 +1715,12 @@ button {
   .indicator-wrap .btn-filter {
     position: absolute;
     top: 15px;
-    right: -10px; }
+    right: 9px; }
     .indicator-wrap .btn-filter .icon-filter {
       font-size: 30px;
       color: white; }
 
 .reservation-content {
-  margin: 0 -18px;
   padding: 4px 18px;
   border-top: 1px solid #ccc;
   border-bottom: 2px solid #4aaf9d; }
@@ -1676,7 +1750,7 @@ button {
     font-weight: 700; }
 
 .car-list {
-  margin: 0 -18px -24px; }
+  margin-bottom: -1px; }
   .car-list .item {
     padding: 13px 18px;
     border-bottom: 1px solid #e2e2e2; }
@@ -1758,7 +1832,7 @@ button {
 
 .change-schedule {
   display: none;
-  padding: 15px 0;
+  padding: 15px 18px;
   border-bottom: 1px solid #dedede; }
 
 .satisfied {
@@ -1859,137 +1933,125 @@ button {
       .car-info-content .overview li i {
         margin-right: 5px; }
 
-.detail-content {
-  background-color: #f3f3f3; }
-  .detail-content .group {
-    margin-top: 4px;
-    padding: 20px;
-    border-top: 1px solid #e5e5e5;
-    border-bottom: 1px solid #e5e5e5;
-    background-color: white; }
-    .detail-content .group .group-title {
-      margin-bottom: 12px;
-      font-weight: 700;
-      font-size: 17px; }
-      .detail-content .group .group-title small {
-        margin-left: 5px;
-        font-size: 12px;
-        color: #4aaf9d; }
-  .detail-content .rent-regulation ul {
-    display: table;
-    width: 100%; }
-    .detail-content .rent-regulation ul li {
-      position: relative;
-      display: table-cell;
-      width: 50%;
-      padding-left: 40px;
-      font-weight: 300;
-      font-size: 13px;
-      font-family: "NotoSans", sans-serif;
-      vertical-align: middle; }
-      .detail-content .rent-regulation ul li i {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        margin: auto; }
-  .detail-content .car-option ul:before, .detail-content .car-option ul:after {
-    content: " ";
-    display: table; }
-  .detail-content .car-option ul:after {
-    clear: both; }
-  .detail-content .car-option ul li {
-    float: left;
-    width: 33.33%;
-    margin: 10px 0 10px;
+.detail-content .rent-regulation ul {
+  display: table;
+  width: 100%; }
+  .detail-content .rent-regulation ul li {
+    position: relative;
+    display: table-cell;
+    width: 50%;
+    padding-left: 40px;
     font-weight: 300;
     font-size: 13px;
     font-family: "NotoSans", sans-serif;
-    text-align: center; }
-    .detail-content .car-option ul li i {
-      display: block;
-      height: 25px;
-      margin-bottom: 11px;
-      font-weight: 700;
-      line-height: 25px;
-      font-size: 25px;
-      color: #555; }
-      .detail-content .car-option ul li i.text-year {
-        font-size: 20px;
-        font-family: 'Montserrat', sans-serif; }
-      .detail-content .car-option ul li i.icon-nosmoking:before {
-        font-weight: 700; }
-      .detail-content .car-option ul li i.icon-cable, .detail-content .car-option ul li i.icon-bluetooth {
-        font-size: 23px; }
-      .detail-content .car-option ul li i.icon-camera {
-        font-size: 21px; }
-  .detail-content .reviews {
-    padding: 0; }
-    .detail-content .reviews .clearfix {
-      padding: 14px 20px;
-      border-bottom: 1px solid #e9e9e9; }
-      .detail-content .reviews .clearfix .group-title {
-        float: left;
-        margin: 4px 0 0; }
-      .detail-content .reviews .clearfix .btn-group {
-        float: right;
-        display: block;
-        width: auto; }
-        .detail-content .reviews .clearfix .btn-group .btn {
-          width: 25px;
-          height: 25px;
-          margin-left: -4px;
-          line-height: 25px;
-          font-size: 6px; }
-    .detail-content .reviews .review li {
-      padding: 14px 20px;
-      border-bottom: 1px solid #e1e1e1; }
-      .detail-content .reviews .review li:last-child {
-        border-bottom: 0; }
-      .detail-content .reviews .review li.reply {
-        position: relative;
-        padding: 24px 20px 24px 40px;
-        background-color: #f5f5f5; }
-        .detail-content .reviews .review li.reply:before {
-          position: absolute;
-          left: 20px;
-          top: 20px;
-          display: inline-block;
-          background: url("../images/sprite-icon.png") no-repeat -350px 0;
-          background-size: 375px auto;
-          line-height: 0;
-          color: transparent;
-          vertical-align: middle;
-          width: 11px;
-          height: 12px;
-          content: ''; }
-    .detail-content .reviews .review .review-head:before, .detail-content .reviews .review .review-head:after {
-      content: " ";
-      display: table; }
-    .detail-content .reviews .review .review-head:after {
-      clear: both; }
-    .detail-content .reviews .review .review-head .reviewer {
+    vertical-align: middle; }
+    .detail-content .rent-regulation ul li i {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto; }
+
+.detail-content .car-option ul:before, .detail-content .car-option ul:after {
+  content: " ";
+  display: table; }
+
+.detail-content .car-option ul:after {
+  clear: both; }
+
+.detail-content .car-option ul li {
+  float: left;
+  width: 33.33%;
+  margin: 10px 0 10px;
+  font-weight: 300;
+  font-size: 13px;
+  font-family: "NotoSans", sans-serif;
+  text-align: center; }
+  .detail-content .car-option ul li i {
+    display: block;
+    height: 25px;
+    margin-bottom: 11px;
+    font-weight: 700;
+    line-height: 25px;
+    font-size: 25px;
+    color: #555; }
+    .detail-content .car-option ul li i.text-year {
+      font-size: 20px;
+      font-family: 'Montserrat', sans-serif; }
+    .detail-content .car-option ul li i.icon-nosmoking:before {
+      font-weight: 700; }
+    .detail-content .car-option ul li i.icon-cable, .detail-content .car-option ul li i.icon-bluetooth {
+      font-size: 23px; }
+    .detail-content .car-option ul li i.icon-camera {
+      font-size: 21px; }
+
+.detail-content .reviews {
+  padding: 0; }
+  .detail-content .reviews .clearfix {
+    padding: 14px 20px;
+    border-bottom: 1px solid #e9e9e9; }
+    .detail-content .reviews .clearfix .group-title {
       float: left;
-      margin-right: 12px;
-      font-weight: 500;
-      font-size: 15px;
-      font-family: "NotoSans", sans-serif; }
-    .detail-content .reviews .review .review-head .satisfied {
-      float: left; }
-    .detail-content .reviews .review .review-head .date {
+      margin: 4px 0 0; }
+    .detail-content .reviews .clearfix .btn-group {
       float: right;
-      font-size: 14px;
-      font-family: 'Lato', sans-serif;
-      color: #999; }
-    .detail-content .reviews .review .review-content {
-      margin-top: 7px;
-      font-weight: 300;
-      font-size: 14px;
-      font-family: "NotoSans", sans-serif;
-      color: #696969; }
-    .detail-content .reviews .review .rent-info {
-      margin-top: 17px;
-      font-size: 13px; }
+      display: block;
+      width: auto; }
+      .detail-content .reviews .clearfix .btn-group .btn {
+        width: 25px;
+        height: 25px;
+        margin-left: -4px;
+        line-height: 25px;
+        font-size: 6px; }
+  .detail-content .reviews .review li {
+    padding: 14px 20px;
+    border-bottom: 1px solid #e1e1e1; }
+    .detail-content .reviews .review li:last-child {
+      border-bottom: 0; }
+    .detail-content .reviews .review li.reply {
+      position: relative;
+      padding: 24px 20px 24px 40px;
+      background-color: #f5f5f5; }
+      .detail-content .reviews .review li.reply:before {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        display: inline-block;
+        background: url("../images/sprite-icon.png") no-repeat -350px 0;
+        background-size: 375px auto;
+        line-height: 0;
+        color: transparent;
+        vertical-align: middle;
+        width: 11px;
+        height: 12px;
+        content: ''; }
+  .detail-content .reviews .review .review-head:before, .detail-content .reviews .review .review-head:after {
+    content: " ";
+    display: table; }
+  .detail-content .reviews .review .review-head:after {
+    clear: both; }
+  .detail-content .reviews .review .review-head .reviewer {
+    float: left;
+    margin-right: 12px;
+    font-weight: 500;
+    font-size: 15px;
+    font-family: "NotoSans", sans-serif; }
+  .detail-content .reviews .review .review-head .satisfied {
+    float: left; }
+  .detail-content .reviews .review .review-head .date {
+    float: right;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    color: #999; }
+  .detail-content .reviews .review .review-content {
+    margin-top: 7px;
+    font-weight: 300;
+    font-size: 14px;
+    font-family: "NotoSans", sans-serif;
+    color: #696969; }
+  .detail-content .reviews .review .rent-info {
+    margin-top: 17px;
+    font-size: 13px; }
 
 .lowest-price-content {
   background-color: #f3f3f3; }
@@ -2017,6 +2079,7 @@ button {
   border-top: 1px solid #dedede; }
   .lowest-price-list li {
     display: table;
+    width: 100%;
     padding: 15px 20px 20px;
     border-bottom: 1px solid #dedede; }
     .lowest-price-list li:nth-child(even) {
@@ -2055,7 +2118,7 @@ button {
         font-size: 13px; }
 
 .loading {
-  padding: 40px 0 20px;
+  padding: 40px 18px 20px;
   text-align: center; }
   .loading .text {
     font-size: 14px;
@@ -2076,13 +2139,260 @@ button {
     margin-top: 15px; }
   .loading .partner {
     margin-top: 20px;
-    padding: 12px 0;
+    padding: 12px 10px;
     border-top: 1px solid #dedede;
     border-bottom: 1px solid #dedede; }
 
 /*******************************
     예약하기
 *******************************/
+.reservation .content {
+  padding-bottom: 61px; }
+
+.reservation-list-wrap {
+  margin-top: -23px;
+  padding-top: 3px;
+  background-color: #4aaf9d;
+  text-align: center; }
+
+.reservation-car-image {
+  padding: 0 90px; }
+
+.reservation-list {
+  display: inline-block;
+  margin: 13px 0 25px;
+  padding-left: 17px;
+  background: url("../images/line-dotted.png") no-repeat 0 100%;
+  background-size: 7px auto;
+  text-align: left; }
+  .reservation-list li {
+    padding-top: 7px;
+    color: white;
+    letter-spacing: 0; }
+    .reservation-list li:first-child {
+      padding-top: 0; }
+    .reservation-list li .sp-icon-sm-calendar,
+    .reservation-list li .sp-icon-map-white {
+      margin: 0 3px; }
+    .reservation-list li .icon-car,
+    .reservation-list li .icon-car-hand {
+      font-size: 9px; }
+    .reservation-list li > span {
+      margin-left: 6px;
+      font-size: 12px; }
+    .reservation-list li p {
+      display: inline-block;
+      margin-left: 33px;
+      font-weight: 700;
+      font-size: 11px; }
+      .reservation-list li p b {
+        font: 500 14px 'Montserrat', sans-serif; }
+        .reservation-list li p b small {
+          font-weight: 400;
+          font-size: 9px; }
+
+.reservation-option .secondary-title {
+  position: relative; }
+  .reservation-option .secondary-title .help-point:hover + .tooltip {
+    display: block;
+    bottom: 37px;
+    left: 0; }
+
+.reservation-option .delivery .tooltip {
+  background-color: #939598; }
+  .reservation-option .delivery .tooltip:after {
+    color: #939598;
+    left: 105px; }
+
+.reservation-option .insurance .tooltip {
+  background-color: #4aaf9d; }
+  .reservation-option .insurance .tooltip:after {
+    color: #4aaf9d;
+    left: 74px; }
+
+.btn-reservation {
+  padding: 11px 0;
+  background-color: rgba(67, 69, 73, 0.95);
+  font-size: 15px;
+  color: white;
+  text-align: center; }
+  .btn-reservation strong {
+    margin: 0 20px;
+    font-size: 25px;
+    color: #4aaf9d;
+    vertical-align: middle; }
+    .btn-reservation strong em {
+      font-size: 14px; }
+  .btn-reservation .btn {
+    padding: 0 20px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2.056; }
+
+.reservation-input {
+  margin-top: -23px;
+  margin-bottom: 18px; }
+  .reservation-input .group-title.clearfix .title {
+    float: left; }
+  .reservation-input .group-title.clearfix .checkbox {
+    float: right;
+    margin-top: -5px; }
+
+.input-info .radio .radio-label {
+  display: inline-block;
+  width: 100%;
+  border: 1px solid #dadada;
+  border-left: 0;
+  background-color: #f6f6f6;
+  font-size: 14px;
+  line-height: 2.714;
+  text-align: center; }
+
+.input-info .radio:first-child .radio-label {
+  border-left: 1px solid #dadada; }
+
+.input-info .radio input[type=radio]:checked + .radio-label {
+  background-color: #4aaf9d;
+  color: white; }
+
+.form-list {
+  border-top: 1px solid #000; }
+  .form-list li {
+    border-bottom: 1px solid #bcbcbc; }
+    .form-list li.line-checkbox {
+      padding: 11px 0;
+      text-align: right; }
+    .form-list li.line-radio {
+      padding: 5px 0; }
+
+.select-payment .credit-card .radio-label i {
+  margin-right: 6px; }
+
+.select-payment .account-transfer .radio-label:before {
+  display: inline-block;
+  background: url("../images/sprite-icon.png") no-repeat -280px -245px;
+  background-size: 375px auto;
+  line-height: 0;
+  color: transparent;
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+  margin-right: 3px;
+  content: ''; }
+
+.select-payment .account-transfer input[type=radio]:checked + .radio-label:before {
+  background-position: -315px -245px; }
+
+.select-payment .promotion-code .radio-label:before {
+  display: inline-block;
+  background: url("../images/sprite-icon.png") no-repeat -280px -210px;
+  background-size: 375px auto;
+  line-height: 0;
+  color: transparent;
+  vertical-align: middle;
+  width: 20px;
+  height: 17px;
+  margin-right: 3px;
+  content: ''; }
+
+.select-payment .promotion-code input[type=radio]:checked + .radio-label:before {
+  background-position: -315px -210px; }
+
+@media (max-width: 350px) {
+  .select-payment .account-transfer .radio-label {
+    font-size: 11px;
+    line-height: 37px; }
+  .select-payment .promotion-code .radio-label {
+    font-size: 13px;
+    line-height: 2.923; } }
+
+.select-payment .select-coupon,
+.select-payment .input-promotion-code {
+  padding: 5px 0 5px 80px; }
+  .select-payment .select-coupon .btn,
+  .select-payment .input-promotion-code .btn {
+    width: 56px;
+    font-size: 13px;
+    line-height: 2.923; }
+
+.select-payment .select-coupon .selectbox .selectbox-value {
+  overflow: hidden;
+  height: 37px;
+  color: #4aaf9d; }
+  .select-payment .select-coupon .selectbox .selectbox-value:after {
+    color: #999; }
+
+.select-payment .input-promotion-code {
+  display: none; }
+  .select-payment .input-promotion-code .form-control {
+    height: 39px;
+    padding: 0 20px;
+    border: 1px solid #d5d5d5; }
+
+.payment-info {
+  margin-top: -1px;
+  padding: 25px 20px 20px;
+  border: 1px solid #dfe3e2;
+  background-color: #e9f1f0; }
+  .payment-info li {
+    padding: 8px 0; }
+    .payment-info li:before, .payment-info li:after {
+      content: " ";
+      display: table; }
+    .payment-info li:after {
+      clear: both; }
+    .payment-info li span {
+      float: left;
+      font-size: 12px; }
+      .payment-info li span i {
+        display: inline-block;
+        width: 18px;
+        margin-right: 5px;
+        color: #4aaf9d; }
+        .payment-info li span i.icon-car {
+          font-size: 11px; }
+        .payment-info li span i.text-percent {
+          margin: 0 .2em;
+          font-size: 13px; }
+    .payment-info li strong {
+      float: right;
+      font-weight: 500;
+      font-size: 15px; }
+      .payment-info li strong em {
+        font-weight: 400;
+        font-size: 12px; }
+    .payment-info li.discount strong {
+      color: #4aaf9d; }
+    .payment-info li.total span {
+      font-weight: 700;
+      font-size: 15px; }
+    .payment-info li.total strong {
+      font-size: 25px;
+      color: #4aaf9d; }
+      .payment-info li.total strong em {
+        font-size: 12px; }
+
+.reservation-agreement .group-title {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #000; }
+
+.reservation-agreement dd {
+  padding: 4px 0; }
+  .reservation-agreement dd:before, .reservation-agreement dd:after {
+    content: " ";
+    display: table; }
+  .reservation-agreement dd:after {
+    clear: both; }
+  .reservation-agreement dd .checkbox {
+    float: left; }
+    .reservation-agreement dd .checkbox .checkbox-label {
+      font-size: 14px; }
+  .reservation-agreement dd .btn {
+    float: right;
+    padding: 0 10px;
+    font-size: 11px;
+    line-height: 1.909; }
+
 /*******************************
     간편 회원가입
 *******************************/
@@ -2213,9 +2523,67 @@ button {
 .search-results .input-search {
   margin-bottom: 16px; }
   .search-results .input-search .form-control {
+    padding: 0 20px;
     border: 1px solid #dbdbdb;
     font-size: 16px;
     line-height: 3; }
+
+.select-delivery .modal-body {
+  padding: 0; }
+
+.select-delivery .search-delivery {
+  position: relative; }
+  .select-delivery .search-delivery .icon-search {
+    position: absolute;
+    top: 13px;
+    left: 15px; }
+  .select-delivery .search-delivery .form-control {
+    padding-left: 40px;
+    border-bottom: 1px solid #d8d8d8;
+    background-color: #f8f8f8;
+    font-size: 14px;
+    line-height: 3.071; }
+
+.select-delivery .delivery-place-list {
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-top: 0; }
+  .select-delivery .delivery-place-list li {
+    padding: 15px;
+    border-bottom: 1px solid #d8d8d8; }
+    .select-delivery .delivery-place-list li:before, .select-delivery .delivery-place-list li:after {
+      content: " ";
+      display: table; }
+    .select-delivery .delivery-place-list li:after {
+      clear: both; }
+    .select-delivery .delivery-place-list li .place {
+      float: left;
+      padding-top: 5px;
+      padding-left: 16px; }
+      .select-delivery .delivery-place-list li .place p {
+        display: block;
+        margin: 0 0 5px -16px;
+        font-weight: 700;
+        font-size: 18px; }
+      .select-delivery .delivery-place-list li .place .line-number {
+        width: 50px;
+        height: 23px;
+        margin-right: 2px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+        border-radius: 12px;
+        background-color: #939598;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 2.091;
+        color: white; }
+    .select-delivery .delivery-place-list li.select {
+      border: 2px solid #4aaf9d;
+      background-color: #f3f9f7; }
+    .select-delivery .delivery-place-list li .btn {
+      float: right;
+      padding: 0 29px; }
 
 /*******************************
     Helper Class

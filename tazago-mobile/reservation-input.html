@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>예약하기</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" src="static/js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="static/js/slick.min.js"></script>
+    <script type="text/javascript" src="static/js/custom.js"></script>
+</head>
+<body class="reservation">
+<div class="wrap">
+    <div class="header">
+        <h1 class="brand-logo"><span class="sr-only">타자고</span></h1>
+        <a href="#" class="btn-back"><i class="icon-right-open"></i></a>
+        <a href="#" class="btn-menu">Menu</a>
+        <!-- Sidebar Menu -->
+        <div class="sidebar-wrap">
+            <div class="sidebar">
+                <a href="#" class="btn-home"><i class="icon-home"></i><span class="sr-only">메인으로 가기</span></a>
+                <!-- 로그인 전 -->
+                <div class="quick-access">
+                    <p class="text">로그인을 해주세요</p>
+                    <div class="btn-group">
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary inverse">로그인</button></span>
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary">회원가입</button></span>
+                    </div>
+                </div>
+                <!-- 로그인 전 //end -->
+                <!-- 로그인 후 --
+                <div class="quick-access">
+                    <p class="text">홍길동 님, 안녕하세요</p>
+                    <div class="btn-group">
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary">마이페이지</button></span>
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary inverse">로그아웃</button></span>
+                    </div>
+                </div>
+                !-- 로그인 후 //end -->
+                <ul class="menu">
+                    <li class="item-reservation-confirm"><a href="#">예약확인</a></li>
+                    <li class="item-rental-info"><a href="#">대여가이드</a></li>
+                    <li class="item-notice"><a href="#">공지사항</a></li>
+                    <li class="item-faq"><a href="#">자주하는 질문</a></li>
+                </ul>
+                <p class="customer-number">
+                    <span>고객센터 (평일 9시~6시)</span>
+                    <strong>1544-1544</strong>
+                </p>
+            </div>
+            <a href="#" class="menu-close"><i class="icon-close"></i></a>
+            <div class="menu-backdrop"></div>
+        </div>
+        <!-- Sidebar Menu //end -->
+    </div>
+    <div class="content">
+        <div class="indicator-wrap">
+            <ul class="indicator">
+                <li><i class="badge-step">01</i></li>
+                <li><i class="badge-step">02</i></li>
+                <li class="current"><i class="badge-step">03</i>예약하기</li>
+            </ul>
+        </div>
+        <div class="reservation-input group-wrap">
+            <!-- 예약정보 입력 -->
+            <div class="input-reservation-info group">
+                <h3 class="group-title clearfix">
+                    <span class="title">예약정보 입력</span>
+                    <div class="checkbox">
+                        <input type="checkbox" id="same-membership-info">
+                        <label for="same-membership-info" class="checkbox-display"></label>
+                        <label for="same-membership-info" class="checkbox-label">회원 정보와 동일</label>
+                    </div>
+                </h3>
+                <ul class="form-list">
+                    <li class="form-inline">
+                        <label for="booker" class="form-label">예약자</label>
+                        <input type="text" class="form-control" id="booker" placeholder="이름을 입력해 주세요">
+                    </li>
+                    <li class="form-inline">
+                        <label for="phone" class="form-label">연락처</label>
+                        <input type="number" class="form-control" id="phone" placeholder="숫자만 입력해주세요">
+                    </li>
+                    <li class="line-checkbox">
+                        <div class="checkbox">
+                            <input type="checkbox" id="same-booker-info">
+                            <label for="same-booker-info" class="checkbox-display"></label>
+                            <label for="same-booker-info" class="checkbox-label">예약자와 운전자 동일</label>
+                        </div>
+                    </li>
+                    <li class="form-inline">
+                        <label for="driver" class="form-label">운전자</label>
+                        <input type="text" class="form-control" id="driver" placeholder="이름을 입력해주세요">
+                    </li>
+                    <li class="form-inline">
+                        <label for="driver-phone" class="form-label">연락처</label>
+                        <input type="number" class="form-control" id="driver-phone" placeholder="숫자만 입력해주세요">
+                    </li>
+                    <li class="form-inline">
+                        <label for="birth-date" class="form-label">생년월일</label>
+                        <input type="number" class="form-control" id="birth-date" placeholder="예) 19901201">
+                    </li>
+                    <li class="form-inline line-radio">
+                        <label for="class1" class="form-label">면허종류</label>
+                        <div class="radio-group input-info license-type">
+                            <div class="radio">
+                                <input type="radio" id="class1" name="license-type" checked>
+                                <label for="class1" class="radio-label">1종보통</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" id="class2" name="license-type">
+                                <label for="class2" class="radio-label">2종보통</label>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- 예약정보 입력 //end -->
+            <div class="select-payment group">
+                <h3 class="group-title">결제수단 선택</h3>
+                <!-- 결제방법 선택 -->
+                <ul class="form-list">
+                    <li class="form-inline line-radio">
+                        <label for="credit-card" class="form-label">결제수단</label>
+                        <div class="radio-group input-info payment-methods">
+                            <div class="radio credit-card">
+                                <input type="radio" id="credit-card" name="payment-option" checked>
+                                <label for="credit-card" class="radio-label"><i class="icon-credit-card"></i>신용카드</label>
+                            </div>
+                            <div class="radio account-transfer">
+                                <input type="radio" id="account-transfer" name="payment-option">
+                                <label for="account-transfer" class="radio-label">실시간계좌이체</label>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="form-inline line-radio">
+                        <label for="discount" class="form-label">할인수단</label>
+                        <div class="radio-group input-info discount-methods">
+                            <div class="radio discount">
+                                <input type="radio" id="discount" name="discount-option" value="select-coupon" checked>
+                                <label for="discount" class="radio-label">% 할인쿠폰</label>
+                            </div>
+                            <div class="radio promotion-code">
+                                <input type="radio" id="promotion" name="discount-option" value="input-promotion-code">
+                                <label for="promotion" class="radio-label">프로모션코드</label>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="discount-option select-coupon">
+                        <div class="input-group">
+                            <div class="selectbox">
+                                <strong class="selectbox-value">사용 가능한 쿠폰 (2)</strong>
+                                <select onchange="selectboxEvent(this);">
+                                    <option value="사용 가능한 쿠폰 (2)">사용 가능한 쿠폰 (2)</option>
+                                    <option value="회원가입 감사 2,000원 할인">회원가입 감사 2,000원 할인</option>
+                                    <option value="리뷰 작성 1,000원 할인">리뷰 작성 1,000원 할인</option>
+                                </select>
+                            </div>
+                            <span class="input-group-btn"><button type="button" class="btn btn-md">확인</button></span>
+                        </div>
+                    </li>
+                    <li class="discount-option input-promotion-code">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="코드입력">
+                            <span class="input-group-btn"><button type="button" class="btn btn-md">확인</button></span>
+                        </div>
+                    </li>
+                </ul>
+                <!-- 결제방법 선택 //end -->
+                <!-- 결제금액 -->
+                <ul class="payment-info">
+                    <li>
+                        <span><i class="icon-alam-clock"></i>차량 대여료 / 24시간</span>
+                        <strong>8,000<em>원</em></strong>
+                    </li>
+                    <li>
+                        <span><i class="icon-car"></i>일반자차 보험료 / 2일</span>
+                        <strong>10,000<em>원</em></strong>
+                    </li>
+                    <li class="discount">
+                        <span><i class="text-percent">%</i>할인금액</span>
+                        <strong>-2,000<em>원</em></strong>
+                    </li>
+                    <li class="total">
+                        <span><i class="sp-icon-won"></i>총 결제금액</span>
+                        <strong>16,000<em>원</em></strong>
+                    </li>
+                </ul>
+                <!-- 결제금액 //end -->
+            </div>
+            <!-- 약관동의 -->
+            <dl class="reservation-agreement group">
+                <dt class="group-title clearfix">
+                    <span class="title">약관동의</span>
+                    <div class="checkbox">
+                        <input type="checkbox" id="agree-all">
+                        <label for="agree-all" class="checkbox-display"></label>
+                        <label for="agree-all" class="checkbox-label">전체 동의</label>
+                    </div>
+                </dt>
+                <dd>
+                    <div class="checkbox">
+                        <input type="checkbox" id="agree-rental">
+                        <label for="agree-rental" class="checkbox-display"></label>
+                        <label for="agree-rental" class="checkbox-label">차량 대여 규정에 동의합니다.</label>
+                    </div>
+                    <button type="button" class="btn btn-xs">내용보기</button>
+                </dd>
+                <dd>
+                    <div class="checkbox">
+                        <input type="checkbox" id="agree-insurance">
+                        <label for="agree-insurance" class="checkbox-display"></label>
+                        <label for="agree-insurance" class="checkbox-label">자차보험 규정에 동의합니다.</label>
+                    </div>
+                    <button type="button" class="btn btn-xs">내용보기</button>
+                </dd>
+                <dd>
+                    <div class="checkbox">
+                        <input type="checkbox" id="agree-refund">
+                        <label for="agree-refund" class="checkbox-display"></label>
+                        <label for="agree-refund" class="checkbox-label">환불 규정에 동의합니다.</label>
+                    </div>
+                    <button type="button" class="btn btn-xs">내용보기</button>
+                </dd>
+            </dl>
+            <!-- 약관동의 //end -->
+            <button type="button" class="btn btn-lg btn-primary btn-block btn-fixed">결제하기</button>
+        </div>
+        <!-- 딜리버리 팝업 -->
+        <div class="modal select-delivery">
+            <div class="modal-content">
+                <h3 class="modal-head">서울-강남</h3>
+                <div class="modal-body">
+                    <div class="delivery-list">
+                        <div class="search-delivery">
+                            <i class="icon-search"></i>
+                            <input type="text" class="form-control" placeholder="딜리버리 장소를 선택해 주세요">
+                        </div>
+                        <ul class="delivery-place-list">
+                            <li>
+                                <div class="place">
+                                    <p>
+                                        <i class="sp-icon-map-primary"></i>
+                                        서울/강남구청
+                                    </p>
+                                    <span class="badge line-number">7호선</span>
+                                    <span class="badge line-number">분당선</span>
+                                </div>
+                                <button type="button" class="btn btn-md">선택</button>
+                            </li>
+                            <li class="select">
+                                <div class="place">
+                                    <p>
+                                        <i class="sp-icon-map-primary"></i>
+                                        서울/강남구청
+                                    </p>
+                                    <span class="badge line-number">2호선</span>
+                                </div>
+                                <button type="button" class="btn btn-md btn-primary">선택</button>
+                            </li>
+                            <li>
+                                <div class="place">
+                                    <p>
+                                        <i class="sp-icon-map-primary"></i>
+                                        서울/강남구청
+                                    </p>
+                                    <span class="badge line-number">7호선</span>
+                                </div>
+                                <button type="button" class="btn btn-md">선택</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="map-area">
+                        <img src="static/images/temp/map.jpg" alt="">
+                    </div>
+                </div>
+                <button class="btn-modal-close" onclick="modalClose('.select-delivery');"><i class="icon-close"></i></button>
+            </div>
+        </div>
+        <!-- 딜리버리 팝업 //end -->
+    </div>
+</div>
+</body>
+</html>

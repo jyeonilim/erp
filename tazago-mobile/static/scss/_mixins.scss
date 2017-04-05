@@ -34,6 +34,9 @@
 @mixin sprite-position($left,$top) {
     background-position: ($left/2) ($top/2);
 }
+@mixin background-size($width,$height) {
+    background-size: ($width/2) ($height/2);
+}
 @mixin image-size($width,$height) {
     width: ($width/2);
     height: ($height/2);
