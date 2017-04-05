@@ -65,6 +65,7 @@
 .icon-credit-card:before { content: '\e819'; } /* '' */
 .icon-mail:before { content: '\e81a'; } /* '' */
 .icon-down-open:before { content: '\e81b'; } /* '' */
+.icon-up-open:before { content: '\e81c'; } /* '' */
 
 [class^="sp-icon"] {
     @include sprite-image(0,0);

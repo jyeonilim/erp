@@ -273,6 +273,10 @@ table {
   content: '\e81b'; }
 
 /* '' */
+.icon-up-open:before {
+  content: '\e81c'; }
+
+/* '' */
 [class^="sp-icon"] {
   display: inline-block;
   background: url("../images/sprite-icon.png") no-repeat 0 0;
@@ -842,6 +846,9 @@ textarea.form-control {
 .tab-pane {
   display: none; }
 
+.tab4 .tab {
+  width: 25%; }
+
 .tab5 .tab {
   width: 20%; }
 
@@ -997,6 +1004,8 @@ button {
 
 .content.is-padding {
   padding: 23px 18px; }
+  .content.is-padding .section-title {
+    margin: -23px -18px 15px; }
 
 .sub .content {
   padding-bottom: 72px; }
@@ -1295,7 +1304,6 @@ button {
         color: #4aaf9d; }
 
 .section-title {
-  margin: -23px -18px 15px;
   padding: 15px 0 15px 20px;
   background-color: #4aaf9d;
   font-weight: 700;
@@ -2826,6 +2834,100 @@ button {
       .dashboard-content .reservation-state .marker.finish:before {
         font-size: 37px;
         content: '\e80d'; }
+
+.board {
+  margin-bottom: -1px;
+  border-bottom: 1px solid #c6c6c6; }
+  .board li:first-child .board-title {
+    border-top: 0; }
+  .board .icon-question,
+  .board .icon-answer {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #939598;
+    font-size: 15px;
+    line-height: 25px;
+    color: white;
+    text-align: center; }
+  .board .board-title {
+    position: relative;
+    display: table;
+    width: 100%;
+    padding: 15px 0 15px 18px;
+    border-top: 1px solid #c6c6c6; }
+    .board .board-title > * {
+      display: table-cell;
+      vertical-align: middle; }
+    .board .board-title .outer {
+      width: 70px; }
+    .board .board-title .badge {
+      padding: 0 10px;
+      background-color: #4aaf9d;
+      line-height: 1.769;
+      color: white; }
+    .board .board-title .title {
+      padding-right: 55px;
+      font-size: 16px;
+      line-height: 20px; }
+    .board .board-title:after {
+      position: absolute;
+      top: 0;
+      right: 17px;
+      bottom: 0;
+      height: 18px;
+      margin: auto;
+      font-size: 18px;
+      font-family: 'fontello';
+      color: #939598;
+      content: '\e81c'; }
+    .board .board-title.open .icon-question {
+      background-color: #4aaf9d; }
+    .board .board-title.open + .board-content .icon-answer {
+      background-color: #4aaf9d; }
+    .board .board-title.open:after {
+      color: #4aaf9d;
+      content: '\e81b'; }
+  .board .board-content {
+    display: none;
+    position: relative;
+    padding: 15px;
+    border-top: 1px solid #4aaf9d;
+    background-color: white;
+    font-weight: 300;
+    font-size: 13px;
+    font-family: "NotoSans", sans-serif;
+    line-height: 18px;
+    color: #777; }
+    .board .board-content .icon-answer {
+      position: absolute;
+      top: 15px;
+      left: 18px; }
+
+.qna .tabs .tab {
+  width: 25%;
+  padding: 15px 0 14px;
+  border: 0;
+  border-bottom: 1px solid #dedede;
+  background-color: transparent; }
+  .qna .tabs .tab.active {
+    border-bottom-color: white;
+    background-color: transparent;
+    font-weight: 700;
+    color: #000;
+    border-bottom: 3px solid #4aaf9d; }
+    .qna .tabs .tab.active:after {
+      display: none; }
+
+.qna .board .board-title .outer {
+  width: 35px; }
+
+.qna .board .board-content {
+  padding-left: 53px; }
 
 /*******************************
     Modal

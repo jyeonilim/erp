@@ -38,6 +38,9 @@ button {
 .content {
     &.is-padding {
         padding: 23px 18px;
+        .section-title {
+            margin: -23px -18px 15px;
+        }
     }
 }
 .sub {
@@ -366,7 +369,6 @@ button {
 }
 // Title
 .section-title {
-    margin: -23px -18px 15px;
     padding: 15px 0 15px 20px;
     background-color: $brand-primary;
     font-weight: 700;
@@ -2154,6 +2156,127 @@ button {
     }
 }
 // 자주하는 질문, 공지사항
+.board {
+    margin-bottom: -1px;
+    border-bottom: 1px solid #c6c6c6;
+    li {
+        &:first-child {
+            .board-title {
+                border-top: 0;
+            }
+        }
+    }
+    .icon-question,
+    .icon-answer {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        @include border-radius(50%);
+        background-color: $brand-default;
+        font-size: 15px;
+        line-height: 25px;
+        color: $white;
+        text-align: center;
+    }
+    .board-title {
+        position: relative;
+        display: table;
+        width: 100%;
+        padding: 15px 0 15px 18px;
+        border-top: 1px solid #c6c6c6;
+        > * {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .outer {
+            width: 70px;
+        }
+        .badge {
+            padding: 0 10px;
+            background-color: $brand-primary;
+            line-height: (23)/13;
+            color: $white;
+        }
+        .title {
+            padding-right: 55px;
+            font-size: 16px;
+            line-height: 20px;
+        }
+        &:after {
+            position: absolute;
+            top: 0;
+            right: 17px;
+            bottom: 0;
+            height: 18px;
+            margin: auto;
+            font-size: 18px;
+            font-family: 'fontello';
+            color: #939598;
+            content: '\e81c';
+        }
+        &.open {
+            .icon-question {
+                background-color: $brand-primary;
+            }
+            + .board-content {
+                .icon-answer {
+                    background-color: $brand-primary;
+                }
+            }
+            &:after {
+                color: $brand-primary;
+                content: '\e81b';
+            }
+        }
+    }
+    .board-content {
+        display: none;
+        position: relative;
+        padding: 15px;
+        border-top: 1px solid $brand-primary;
+        background-color: $white;
+        @include font-set(300,13px,NotoSans);
+        line-height: 18px;
+        color: #777;
+        .icon-answer {
+            position: absolute;
+            top: 15px;
+            left: 18px;
+        }
+    }
+}
+.qna {
+    .tabs {
+        .tab {
+            width: 25%;
+            padding: 15px 0 14px;
+            border: 0;
+            border-bottom: 1px solid #dedede;
+            background-color: transparent;
+            //&:hover,
+            &.active {
+                border-bottom-color: $white;
+                background-color: transparent;
+                font-weight: 700;
+                color: $text-color;
+                border-bottom: 3px solid $brand-primary;
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+    .board {
+        .board-title {
+            .outer {
+                width: 35px;
+            }
+        }
+        .board-content {
+            padding-left: 53px;
+        }
+    }
+}
 // 대여가이드
 // 대여안내
 // 보험안내
