@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>예약확인</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" src="static/js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="static/js/slick.min.js"></script>
+    <script type="text/javascript" src="static/js/custom.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="header">
+        <h1 class="brand-logo"><span class="sr-only">타자고</span></h1>
+        <a href="#" class="btn-back"><i class="icon-right-open"></i></a>
+        <a href="#" class="btn-menu">Menu</a>
+        <!-- Sidebar Menu -->
+        <div class="sidebar-wrap">
+            <div class="sidebar">
+                <a href="#" class="btn-home"><i class="icon-home"></i><span class="sr-only">메인으로 가기</span></a>
+                <!-- 로그인 전 -->
+                <div class="quick-access">
+                    <p class="text">로그인을 해주세요</p>
+                    <div class="btn-group">
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary inverse">로그인</button></span>
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary">회원가입</button></span>
+                    </div>
+                </div>
+                <!-- 로그인 전 //end -->
+                <!-- 로그인 후 --
+                <div class="quick-access">
+                    <p class="text">홍길동 님, 안녕하세요</p>
+                    <div class="btn-group">
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary">마이페이지</button></span>
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary inverse">로그아웃</button></span>
+                    </div>
+                </div>
+                !-- 로그인 후 //end -->
+                <ul class="menu">
+                    <li class="item-reservation-confirm"><a href="#">예약확인</a></li>
+                    <li class="item-rental-info"><a href="#">대여가이드</a></li>
+                    <li class="item-notice"><a href="#">공지사항</a></li>
+                    <li class="item-faq"><a href="#">자주하는 질문</a></li>
+                </ul>
+                <p class="customer-number">
+                    <span>고객센터 (평일 9시~6시)</span>
+                    <strong>1544-1544</strong>
+                </p>
+            </div>
+            <a href="#" class="menu-close"><i class="icon-close"></i></a>
+            <div class="menu-backdrop"></div>
+        </div>
+        <!-- Sidebar Menu //end -->
+    </div>
+    <div class="content is-padding">
+        <h2 class="section-title">예약확인</h2>
+        <ul class="dashboard">
+            <li>
+                <span><b>0</b>건</span>
+                <i class="icon-check-circle"></i> 예약 완료
+            </li>
+            <li>
+                <span><b>0</b>건</span>
+                <i class="icon-cancel"></i> 예약 취소
+            </li>
+            <li>
+                <span><b>1</b>건</span>
+                <i class="icon-car"></i> 이용 완료
+            </li>
+        </ul>
+        <div class="dashboard-content">
+            <p class="text">* 구매영수증은 PC버전에서 출력할 수 있습니다.</p>
+            <div class="reservation-state">
+                <span>예약번호</span>
+                <strong>16092118421</strong>
+                <p class="marker finish">이용완료</p>
+            </div>
+            <div class="reservation-info">
+                <ul class="reservation-info-list">
+                    <li>
+                        <span>대여</span>
+                        <p>2017.02.14(화) 오전 09 : 00</p>
+                    </li>
+                    <li>
+                        <span>반납</span>
+                        <p>2017.02.14(화) 오전 09 : 00</p>
+                    </li>
+                    <li>
+                        <span>장소</span>
+                        <p>서울,김포공항</p>
+                    </li>
+                    <li>
+                        <span>차량</span>
+                        <p>아이오닉(전기)</p>
+                    </li>
+                    <li>
+                        <span>보험</span>
+                        <p>일반자차 보험</p>
+                    </li>
+                    <li>
+                        <span>인수/반납</span>
+                        <p>KD렌터카 <i class="help-point" onclick="modalOpen('.take-return-info');">i</i></p>
+                    </li>
+                </ul>
+                <ul class="payment-info">
+                    <li>
+                        <span><i class="icon-alam-clock"></i>차량 대여료 / 24시간</span>
+                        <strong>8,000<em>원</em></strong>
+                    </li>
+                    <li>
+                        <span><i class="icon-car"></i>일반자차 보험료 / 2일</span>
+                        <strong>10,000<em>원</em></strong>
+                    </li>
+                    <li class="discount">
+                        <span><i class="text-percent">%</i>할인금액</span>
+                        <strong>2,000<em>원</em></strong>
+                    </li>
+                    <li class="total">
+                        <span><i class="sp-icon-won"></i>총 결제금액</span>
+                        <strong>16,000<em>원</em></strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <button type="button" class="btn btn-lg btn-primary btn-block" onclick="modalOpen('.consumer-reviews');">이용후기 작성</button>
+        <!-- 인수/반납 안내 -->
+        <div class="modal take-return-info">
+            <div class="modal-content">
+                <h3 class="modal-head">인수/반납 안내</h3>
+                <div class="modal-body">
+                    <div class="take-info">
+                        <p class="info-text">
+                            <span class="badge">인수</span>
+                            제주공항에서 셔틀버스 탑승 후 렌터카 본사로 이동해 차량을 인수합니다.
+                        </p>
+                        <p class="address">제주공항 렌터카종합안내센터<br>
+                            탑승장 <span>1구역 3번</span></p>
+                    </div>
+                    <div class="return-info">
+                        <p class="info-text">
+                            <span class="badge">반납</span>
+                            렌터카 본사에서 차량 반납 후 셔틀버스 탑승해 제주공항으로 이동합니다.
+                        </p>
+                        <p class="address">
+                            <span>KD렌터카</span><br>
+                            주소 : 제주시 용담2동 881-12,<br>
+                            연락처 : 0507-000-0000
+                        </p>
+                    </div>
+                </div>
+                <button class="btn-modal-close" onclick="modalClose('.take-return-info');"><i class="icon-close"></i></button>
+            </div>
+        </div>
+        <!-- 인수/반납 안내 //end -->
+        <!-- 이용후기 작성 -->
+        <div class="modal consumer-reviews">
+            <div class="modal-content">
+                <h3 class="modal-head">이용후기 작성</h3>
+                <div class="modal-body">
+                    <p class="text">렌터카 이용에 만족하셨나요?</p>
+                    <ul class="satisfaction-level">
+                        <li class="level5">
+                            <div class="radio">
+                                <input type="radio" id="level5" name="level" checked>
+                                <label for="level5" class="radio-label">&quot;매우 만족해요&quot;</label>
+                                <label for="level5" class="radio-display"></label>
+                            </div>
+                        </li>
+                        <li class="level4">
+                            <div class="radio">
+                                <input type="radio" id="level4" name="level">
+                                <label for="level4" class="radio-label">&quot;만족해요&quot;</label>
+                                <label for="level4" class="radio-display"></label>
+                            </div>
+                        </li>
+                        <li class="level3">
+                            <div class="radio">
+                                <input type="radio" id="level3" name="level">
+                                <label for="level3" class="radio-label">&quot;보통이에요&quot;</label>
+                                <label for="level3" class="radio-display"></label>
+                            </div>
+                        </li>
+                        <li class="level2">
+                            <div class="radio">
+                                <input type="radio" id="level2" name="level">
+                                <label for="level2" class="radio-label">&quot;불만족해요&quot;</label>
+                                <label for="level2" class="radio-display"></label>
+                            </div>
+                        </li>
+                        <li class="level1">
+                            <div class="radio">
+                                <input type="radio" id="level1" name="level">
+                                <label for="level1" class="radio-label">&quot;매우 불만족해요&quot;</label>
+                                <label for="level1" class="radio-display"></label>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="review-write">
+                        <textarea class="form-control" id="review-write">고객님의 소중한 후기를 남겨주세요. 이용후기 작성 시 1,000원 할인 쿠폰이 발급됩니다.</textarea>
+                    </div>
+                    <div class="btn-group">
+                        <span class="outer"><button type="button" class="btn btn-md" onclick="modalClose('.consumer-reviews');">취소</button></span>
+                        <span class="outer"><button type="button" class="btn btn-md btn-primary">등록</button></span>
+                    </div>
+                </div>
+                <button class="btn-modal-close" onclick="modalClose('.consumer-reviews');"><i class="icon-close"></i></button>
+            </div>
+        </div>
+        <!-- 이용후기 작성 //end -->
+    </div>
+    <div class="footer">
+        <ul class="terms-menu">
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보취급방침</a></li>
+        </ul>
+        <p class="copyright">@ 2017 TAZAGO. All rights reserved</p>
+    </div>
+</div>
+</body>
+</html>

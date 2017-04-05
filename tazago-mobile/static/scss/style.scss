@@ -1921,6 +1921,52 @@ button {
         }
     }
 }
+// 예약확인
+#guestLogin {
+    .member-login {
+        margin-bottom: 17px;
+    }
+    .customer-center {
+        margin-top: 33px;
+        .text {
+            font-size: 13px;
+            color: #444;
+        }
+        .customer-number {
+            margin-top: 10px;
+            padding: 20px 0 20px 57px;
+            border: 1px solid #ececec;
+            background-color: #f3f3f3;
+            text-align: center;
+            letter-spacing: 0;
+            span {
+                position: relative;
+                padding: 3px 12px;
+                background-color: $brand-primary;
+                font-size: 12px;
+                font-family: 'NanumSquare', sans-serif;
+                color: $white;
+                &:before {
+                    position: absolute;
+                    top: 0;
+                    left: -72px;
+                    @include sprite-image(-210px,-700px);
+                    @include image-size(114px,114px);
+                    border: 3px solid $brand-primary;
+                    @include border-radius(50%);
+                    background-color: $white;
+                    content: '';
+                }
+            }
+            strong {
+                display: block;
+                margin-top: 15px;
+                font-size: 30px;
+                color: $brand-primary;
+            }
+        }
+    }
+}
 
 /*******************************
     My Page
@@ -2021,6 +2067,89 @@ button {
         margin: 7px 0 35px;
         .checkbox-label {
             font-size: 14px;
+        }
+    }
+}
+// 예약확인
+.dashboard {
+    @include clearfix;
+    margin: -15px -18px 0;
+    background-color: #39a28e;
+    li {
+        float: left;
+        width: 33.33%;
+        padding: 14px 0;
+        font-size: 14px;
+        color: $white;
+        text-align: center;
+        span {
+            display: block;
+            font-weight: 400;
+            font-size: 13px;
+            b {
+                font-weight: 500;
+                font-size: 47px;
+            }
+        }
+        .icon-check-circle,
+        .icon-cancel {
+            font-size: 18px;
+        }
+        &:before {
+            float: left;
+            width: 1px;
+            height: 60px;
+            background-color: #69bcae;
+            content: '';
+        }
+    }
+}
+.dashboard-content {
+    position: relative;
+    margin: 40px 0 20px;
+    border: 1px solid $brand-primary;
+    .text {
+        margin-top: -25px;
+        font-size: 12px;
+        color: #777;
+    }
+    .reservation-state {
+        margin-top: 40px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #dfe3e2;
+        text-align: center;
+        span {
+            font-size: 15px;
+        }
+        strong {
+            display: block;
+            margin: 10px 0 16px;
+            font-weight: 500;
+            font-size: 26px;
+            color: $brand-primary;
+        }
+        .marker {
+            font-size: 12px;
+            color: $brand-primary;
+            &:before {
+                display: block;
+                margin: 0 auto 10px;
+                width: 80px;
+                height: 80px;
+                @include border-radius(50%);
+                background-color: $brand-primary;
+                font-size: 44px;
+                line-height: 80px;
+                font-family: 'fontello';
+                color: $white;
+            }
+            &.reserve:before {
+                content: '\e80e';
+            }
+            &.finish:before {
+                font-size: 37px;
+                content: '\e80d';
+            }
         }
     }
 }
@@ -2300,7 +2429,110 @@ button {
     }
 }
 // 마이페이지 - 예약확인 - 이용후기 등록
-// 마이페이지 - 예약확인 - 구매영수증
+.consumer-reviews {
+    .modal-body {
+        .text {
+            padding: 35px 0 20px;
+            font-weight: 700;
+            font-size: 18px;
+            text-align: center;
+        }
+    }
+    .satisfaction-level {
+        position: relative;
+        @include clearfix;
+        margin-bottom: 47px;
+        li {
+            float: left;
+            width: 20%;
+            .radio {
+                display: block;
+                text-align: center;
+                .radio-label {
+                    position: absolute;
+                    bottom: -35px;
+                    left: 0;
+                    right: 0;
+                    z-index: 9;
+                    margin: auto;
+                    background-color: $white;
+                    font-weight: 700;
+                    font-size: 16px;
+                    color: $brand-primary;
+                }
+                .radio-display {
+                    @include sprite-image(0,0);
+                    @include image-size(80px,80px);
+                    @include transition(all 0s ease);
+                }
+                input[type="radio"]:checked ~ .radio-label {
+                    z-index: 10;
+                }
+            }
+        }
+        .level1 {
+            .radio {
+                .radio-display {
+                    @include sprite-position(-560px,-890px);
+                }
+                input[type="radio"]:checked ~ .radio-display {
+                    @include sprite-position(-560px,-980px);
+                }
+            }
+        }
+        .level2 {
+            .radio {
+                .radio-display {
+                    @include sprite-position(-420px,-890px);
+                }
+                input[type="radio"]:checked ~ .radio-display {
+                    @include sprite-position(-420px,-980px);
+                }
+            }
+        }
+        .level3 {
+            .radio {
+                .radio-display {
+                    @include sprite-position(-280px,-890px);
+                }
+                input[type="radio"]:checked ~ .radio-display {
+                    @include sprite-position(-280px,-980px);
+                }
+            }
+        }
+        .level4 {
+            .radio {
+                .radio-display {
+                    @include sprite-position(-140px,-890px);
+                }
+                input[type="radio"]:checked ~ .radio-display {
+                    @include sprite-position(-140px,-980px);
+                }
+            }
+        }
+        .level5 {
+            .radio {
+                .radio-display {
+                    @include sprite-position(0,-890px);
+                }
+                input[type="radio"]:checked ~ .radio-display {
+                    @include sprite-position(0,-980px);
+                }
+            }
+        }
+    }
+    .review-write {
+        margin-bottom: 20px;
+        .form-control {
+            height: 90px;
+            padding: 13px;
+            border: 1px solid #d8d8d8;
+            background-color: #f6f6f6;
+            font-size: 12px;
+            color: #9a9a9a;
+        }
+    }
+}
 // 아이디/비밀번호 찾기
 // 회원가입
 .simple-signup {

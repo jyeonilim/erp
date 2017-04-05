@@ -2600,6 +2600,53 @@ button {
     padding-bottom: 15px;
     border-bottom: 1px solid #dbdbdb; }
 
+#guestLogin .member-login {
+  margin-bottom: 17px; }
+
+#guestLogin .customer-center {
+  margin-top: 33px; }
+  #guestLogin .customer-center .text {
+    font-size: 13px;
+    color: #444; }
+  #guestLogin .customer-center .customer-number {
+    margin-top: 10px;
+    padding: 20px 0 20px 57px;
+    border: 1px solid #ececec;
+    background-color: #f3f3f3;
+    text-align: center;
+    letter-spacing: 0; }
+    #guestLogin .customer-center .customer-number span {
+      position: relative;
+      padding: 3px 12px;
+      background-color: #4aaf9d;
+      font-size: 12px;
+      font-family: 'NanumSquare', sans-serif;
+      color: white; }
+      #guestLogin .customer-center .customer-number span:before {
+        position: absolute;
+        top: 0;
+        left: -72px;
+        display: inline-block;
+        background: url("../images/sprite-icon.png") no-repeat -105px -350px;
+        background-size: 375px auto;
+        line-height: 0;
+        color: transparent;
+        vertical-align: middle;
+        width: 57px;
+        height: 57px;
+        border: 3px solid #4aaf9d;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        border-radius: 50%;
+        background-color: white;
+        content: ''; }
+    #guestLogin .customer-center .customer-number strong {
+      display: block;
+      margin-top: 15px;
+      font-size: 30px;
+      color: #4aaf9d; }
+
 /*******************************
     My Page
 *******************************/
@@ -2703,6 +2750,82 @@ button {
   margin: 7px 0 35px; }
   #memberEdit .checkbox .checkbox-label {
     font-size: 14px; }
+
+.dashboard {
+  margin: -15px -18px 0;
+  background-color: #39a28e; }
+  .dashboard:before, .dashboard:after {
+    content: " ";
+    display: table; }
+  .dashboard:after {
+    clear: both; }
+  .dashboard li {
+    float: left;
+    width: 33.33%;
+    padding: 14px 0;
+    font-size: 14px;
+    color: white;
+    text-align: center; }
+    .dashboard li span {
+      display: block;
+      font-weight: 400;
+      font-size: 13px; }
+      .dashboard li span b {
+        font-weight: 500;
+        font-size: 47px; }
+    .dashboard li .icon-check-circle,
+    .dashboard li .icon-cancel {
+      font-size: 18px; }
+    .dashboard li:before {
+      float: left;
+      width: 1px;
+      height: 60px;
+      background-color: #69bcae;
+      content: ''; }
+
+.dashboard-content {
+  position: relative;
+  margin: 40px 0 20px;
+  border: 1px solid #4aaf9d; }
+  .dashboard-content .text {
+    margin-top: -25px;
+    font-size: 12px;
+    color: #777; }
+  .dashboard-content .reservation-state {
+    margin-top: 40px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #dfe3e2;
+    text-align: center; }
+    .dashboard-content .reservation-state span {
+      font-size: 15px; }
+    .dashboard-content .reservation-state strong {
+      display: block;
+      margin: 10px 0 16px;
+      font-weight: 500;
+      font-size: 26px;
+      color: #4aaf9d; }
+    .dashboard-content .reservation-state .marker {
+      font-size: 12px;
+      color: #4aaf9d; }
+      .dashboard-content .reservation-state .marker:before {
+        display: block;
+        margin: 0 auto 10px;
+        width: 80px;
+        height: 80px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        border-radius: 50%;
+        background-color: #4aaf9d;
+        font-size: 44px;
+        line-height: 80px;
+        font-family: 'fontello';
+        color: white; }
+      .dashboard-content .reservation-state .marker.reserve:before {
+        content: '\e80e'; }
+      .dashboard-content .reservation-state .marker.finish:before {
+        font-size: 37px;
+        content: '\e80d'; }
 
 /*******************************
     Modal
@@ -2945,6 +3068,82 @@ button {
   .take-return-info .return-info .address {
     background: url("../images/return-info.png") no-repeat 50% 0;
     background-size: contain; }
+
+.consumer-reviews .modal-body .text {
+  padding: 35px 0 20px;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center; }
+
+.consumer-reviews .satisfaction-level {
+  position: relative;
+  margin-bottom: 47px; }
+  .consumer-reviews .satisfaction-level:before, .consumer-reviews .satisfaction-level:after {
+    content: " ";
+    display: table; }
+  .consumer-reviews .satisfaction-level:after {
+    clear: both; }
+  .consumer-reviews .satisfaction-level li {
+    float: left;
+    width: 20%; }
+    .consumer-reviews .satisfaction-level li .radio {
+      display: block;
+      text-align: center; }
+      .consumer-reviews .satisfaction-level li .radio .radio-label {
+        position: absolute;
+        bottom: -35px;
+        left: 0;
+        right: 0;
+        z-index: 9;
+        margin: auto;
+        background-color: white;
+        font-weight: 700;
+        font-size: 16px;
+        color: #4aaf9d; }
+      .consumer-reviews .satisfaction-level li .radio .radio-display {
+        display: inline-block;
+        background: url("../images/sprite-icon.png") no-repeat 0 0;
+        background-size: 375px auto;
+        line-height: 0;
+        color: transparent;
+        vertical-align: middle;
+        width: 40px;
+        height: 40px;
+        -webkit-transition: all 0s ease;
+        -o-transition: all 0s ease;
+        transition: all 0s ease; }
+      .consumer-reviews .satisfaction-level li .radio input[type="radio"]:checked ~ .radio-label {
+        z-index: 10; }
+  .consumer-reviews .satisfaction-level .level1 .radio .radio-display {
+    background-position: -280px -445px; }
+  .consumer-reviews .satisfaction-level .level1 .radio input[type="radio"]:checked ~ .radio-display {
+    background-position: -280px -490px; }
+  .consumer-reviews .satisfaction-level .level2 .radio .radio-display {
+    background-position: -210px -445px; }
+  .consumer-reviews .satisfaction-level .level2 .radio input[type="radio"]:checked ~ .radio-display {
+    background-position: -210px -490px; }
+  .consumer-reviews .satisfaction-level .level3 .radio .radio-display {
+    background-position: -140px -445px; }
+  .consumer-reviews .satisfaction-level .level3 .radio input[type="radio"]:checked ~ .radio-display {
+    background-position: -140px -490px; }
+  .consumer-reviews .satisfaction-level .level4 .radio .radio-display {
+    background-position: -70px -445px; }
+  .consumer-reviews .satisfaction-level .level4 .radio input[type="radio"]:checked ~ .radio-display {
+    background-position: -70px -490px; }
+  .consumer-reviews .satisfaction-level .level5 .radio .radio-display {
+    background-position: 0 -445px; }
+  .consumer-reviews .satisfaction-level .level5 .radio input[type="radio"]:checked ~ .radio-display {
+    background-position: 0 -490px; }
+
+.consumer-reviews .review-write {
+  margin-bottom: 20px; }
+  .consumer-reviews .review-write .form-control {
+    height: 90px;
+    padding: 13px;
+    border: 1px solid #d8d8d8;
+    background-color: #f6f6f6;
+    font-size: 12px;
+    color: #9a9a9a; }
 
 .simple-signup .modal-body {
   padding: 16px 18px 40px; }
