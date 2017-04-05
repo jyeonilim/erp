@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>간편 회원가입</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" src="static/js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="static/js/slick.min.js"></script>
+    <script type="text/javascript" src="static/js/custom.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="header">
+        <h1 class="brand-logo"><span class="sr-only">타자고</span></h1>
+        <a href="#" class="btn-back"><i class="icon-right-open"></i></a>
+        <a href="#" class="btn-menu">Menu</a>
+        <!-- Sidebar Menu -->
+        <div class="sidebar-wrap">
+            <div class="sidebar">
+                <a href="#" class="btn-home"><i class="icon-home"></i><span class="sr-only">메인으로 가기</span></a>
+                <!-- 로그인 전 -->
+                <div class="quick-access">
+                    <p class="text">로그인을 해주세요</p>
+                    <div class="btn-group">
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary inverse">로그인</button></span>
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary">회원가입</button></span>
+                    </div>
+                </div>
+                <!-- 로그인 전 //end -->
+                <!-- 로그인 후 --
+                <div class="quick-access">
+                    <p class="text">홍길동 님, 안녕하세요</p>
+                    <div class="btn-group">
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary">마이페이지</button></span>
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary inverse">로그아웃</button></span>
+                    </div>
+                </div>
+                !-- 로그인 후 //end -->
+                <ul class="menu">
+                    <li class="item-reservation-confirm"><a href="#">예약확인</a></li>
+                    <li class="item-rental-info"><a href="#">대여가이드</a></li>
+                    <li class="item-notice"><a href="#">공지사항</a></li>
+                    <li class="item-faq"><a href="#">자주하는 질문</a></li>
+                </ul>
+                <p class="customer-number">
+                    <span>고객센터 (평일 9시~6시)</span>
+                    <strong>1544-1544</strong>
+                </p>
+            </div>
+            <a href="#" class="menu-close"><i class="icon-close"></i></a>
+            <div class="menu-backdrop"></div>
+        </div>
+        <!-- Sidebar Menu //end -->
+    </div>
+    <div class="content is-padding">
+        <h2 class="section-title">간편 회원가입</h2>
+        <div class="signup-agreement">
+            <p class="text">이용약관, 개인정보 수집 및 이용 약관에 동의하셔야 회원 서비스 이용이 가능합니다.</p>
+            <div class="checkbox checkbox-block agreement-all">
+                <input type="checkbox" id="agree-all" checked>
+                <label for="agree-all" class="checkbox-display"></label>
+                <label for="agree-all" class="checkbox-label">전체 동의합니다.</label>
+            </div>
+            <div class="agreement-wrap">
+                <h3 class="third-title">이용약관 [필수]</h3>
+                <div class="scroll-box">
+                    <div class="agreement">
+                        <dl>
+                            <dt>제 1 조 (목적)</dt>
+                            <dd>이 약관은 주식회사 제주비앤에프(이하 ”회사”라 한다)가 운영하는 타자고 인터넷사이트(이하 “사이트”라 한다)에서 제공하는 인터넷 관련 서비스(이하 “서비스”라 한다)를 이용함에 있어 회원의 권리·의무 및 책임사항을 규정함을 목적으로 합니다.<br>
+                                *「인터넷, 정보통신망, 모바일 및 스마트 장치 등을 이용하는 전자상거래에 대하여도 그 성질에 반하지 않는 한 이 약관을 준용합니다」</dd>
+                            <dt>제 2 조 (용어의 정의)</dt>
+                        </dl>
+                    </div>
+                </div>
+                <div class="checkbox checkbox-block">
+                    <input type="checkbox" id="agree-terms-use">
+                    <label for="agree-terms-use" class="checkbox-display"></label>
+                    <label for="agree-terms-use" class="checkbox-label">위 내용을 확인했으며 동의합니다.</label>
+                </div>
+                <h3 class="third-title">개인정보 수집 및 이용안내 [필수]</h3>
+                <div class="scroll-box">
+                    <div class="agreement">
+                        <p>주식회사 제주비앤에프 (이후 ‘타자고’ 라고 함)는 최소한의 정보만을 필요한 시점에 수집하며, 수집하는 정보는 고지한 범위 내에서만 사용되며, 사전 동의 없이 그 범위를 초과하여 이용하거나 외부에 공개하지 않습니다.<br>
+                            수집된 정보에 대하여 여러분은 충분한 권리를 행사할 수 있습니다.<br>
+                            또한, 개인정보 취급 방침이 변경되었을 때는 여러분께 항상 알리며, 수시로 확인할 수 있도록 게시하겠습니다. 다만, 법령에 규정이 있는 경우 또는 수사기관, 행정기관이 법원의 허가서와 함께 요청한 경우에만 내부 절차를 거쳐 최소한의 정보가 동의</p>
+                    </div>
+                </div>
+                <div class="checkbox checkbox-block">
+                    <input type="checkbox" id="agree-privacy-policy">
+                    <label for="agree-privacy-policy" class="checkbox-display"></label>
+                    <label for="agree-privacy-policy" class="checkbox-label">위 내용을 확인했으며 동의합니다.</label>
+                </div>
+                <button type="button" class="btn btn-lg btn-primary btn-block">다음</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

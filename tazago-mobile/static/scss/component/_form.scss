@@ -54,13 +54,11 @@ textarea.form-control {
 .form-inline {
     display: table;
     width: 100%;
+    .form-group,
     .form-label,
     .form-control {
         display: table-cell;
         vertical-align: middle;
-    }
-    .form-label {
-        width: 80px;
     }
 }
 
@@ -85,7 +83,7 @@ textarea.form-control {
     .radio-display {
         position: relative;
         display: inline-block;
-        margin-right: 9px;
+        margin-right: 5px;
         vertical-align: middle;
     }
     .checkbox-label,

@@ -7,7 +7,7 @@
     Scaffolding
 *******************************/
 body {
-    background-color: $body-bg;
+    //background-color: $body-bg;
     @include font-mixed-set(400,16px,Montserrat,NanumSquare);
     letter-spacing: -1px;
 }
@@ -366,17 +366,13 @@ button {
 }
 // Title
 .section-title {
-    padding-bottom: 25px;
-    border-bottom: 2px solid $brand-primary;
+    margin: -23px -18px 15px;
+    padding: 15px 0 15px 20px;
+    background-color: $brand-primary;
     font-weight: 700;
-    font-size: 30px;
-    text-align: center;
+    font-size: 23px;
+    color: $white;
     letter-spacing: -2px;
-    .text {
-        margin-top: 15px;
-        font-size: 15px;
-        color: $brand-primary;
-    }
 }
 .secondary-title {
     margin-bottom: 15px;
@@ -385,7 +381,7 @@ button {
 }
 .third-title {
     font-weight: 700;
-    font-size: 36px;
+    font-size: 15px;
 }
 // Tooltip
 .help-point {
@@ -478,6 +474,36 @@ button {
         -webkit-transition: opacity .3s 0s, visibility 0s 0s;
         -moz-transition: opacity .3s 0s, visibility 0s 0s;
         transition: opacity .3s 0s, visibility 0s 0s;
+    }
+}
+.form-list {
+    border-top: 1px solid #000;
+    li {
+        border-bottom: 1px solid #bcbcbc;
+        &.line-checkbox {
+            padding: 11px 0;
+            text-align: right;
+        }
+        &.line-radio {
+            padding: 5px 0;
+        }
+    }
+    .form-label {
+        width: 80px;
+        font-weight: 700;
+    }
+    &.input-member {
+        .form-label {
+            width: 100px;
+        }
+        .help-text {
+            padding: 10px 0 5px 5px;
+            border-bottom: 0;
+            font-size: 12px;
+            line-height: 16px;
+            color: #777;
+            text-indent: -5px;
+        }
     }
 }
 
@@ -1538,19 +1564,6 @@ button {
         }
     }
 }
-.form-list {
-    border-top: 1px solid #000;
-    li {
-        border-bottom: 1px solid #bcbcbc;
-        &.line-checkbox {
-            padding: 11px 0;
-            text-align: right;
-        }
-        &.line-radio {
-            padding: 5px 0;
-        }
-    }
-}
 .select-payment {
     .credit-card {
         .radio-label {
@@ -1787,6 +1800,60 @@ button {
 /*******************************
     간편 회원가입
 *******************************/
+.simple-signup {
+    .form-list {
+        margin-bottom: 15px;
+        border-top: 0;
+        .input-group-btn {
+            .btn {
+                width: 70px;
+            }
+        }
+    }
+    .checkbox {
+        margin: 7px 0 35px;
+        .checkbox-label {
+            font-size: 14px;
+        }
+    }
+}
+.signup-agreement {
+    .text {
+        font-size: 14px;
+        line-height: 20px;
+        color: #999;
+    }
+    .checkbox {
+        margin: 15px 0;
+        .checkbox-label {
+            font-weight: 300;
+            font-size: 14px;
+            color: $text-color;
+        }
+    }
+    .agreement-wrap {
+        margin: 0 -18px -23px;
+        padding: 0 18px 20px;
+        border-top: 1px solid #d5d5d5;
+        background-color: #f9f8f9;
+        .third-title {
+            margin: 23px 0 10px;
+        }
+        .scroll-box {
+            overflow-y: scroll;
+            height: 160px;
+            border: 1px solid #d5d5d5;
+            background-color: #f7f7f7;
+        }
+        .agreement {
+            padding: 12px 15px;
+            font-size: 12px;
+            line-height: 16px;
+            font-family: 'NotoSans', sans-serif;
+            color: #777;
+        }
+    }
+}
 
 /*******************************
     로그인

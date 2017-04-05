@@ -510,12 +510,11 @@ textarea.form-control {
 .form-inline {
   display: table;
   width: 100%; }
+  .form-inline .form-group,
   .form-inline .form-label,
   .form-inline .form-control {
     display: table-cell;
     vertical-align: middle; }
-  .form-inline .form-label {
-    width: 80px; }
 
 .checkbox,
 .radio {
@@ -543,7 +542,7 @@ textarea.form-control {
   .radio .radio-display {
     position: relative;
     display: inline-block;
-    margin-right: 9px;
+    margin-right: 5px;
     vertical-align: middle; }
   .checkbox .checkbox-label,
   .checkbox .radio-label,
@@ -936,7 +935,6 @@ textarea.form-control {
     Scaffolding
 *******************************/
 body {
-  background-color: #f9f9f9;
   font-weight: 400;
   font-size: 16px;
   font-family: "Montserrat", "NanumSquare", sans-serif;
@@ -1264,16 +1262,13 @@ button {
         color: #4aaf9d; }
 
 .section-title {
-  padding-bottom: 25px;
-  border-bottom: 2px solid #4aaf9d;
+  margin: -23px -18px 15px;
+  padding: 15px 0 15px 20px;
+  background-color: #4aaf9d;
   font-weight: 700;
-  font-size: 30px;
-  text-align: center;
+  font-size: 23px;
+  color: white;
   letter-spacing: -2px; }
-  .section-title .text {
-    margin-top: 15px;
-    font-size: 15px;
-    color: #4aaf9d; }
 
 .secondary-title {
   margin-bottom: 15px;
@@ -1282,7 +1277,7 @@ button {
 
 .third-title {
   font-weight: 700;
-  font-size: 36px; }
+  font-size: 15px; }
 
 .help-point {
   display: inline-block;
@@ -1369,6 +1364,28 @@ button {
     -webkit-transition: opacity .3s 0s, visibility 0s 0s;
     -moz-transition: opacity .3s 0s, visibility 0s 0s;
     transition: opacity .3s 0s, visibility 0s 0s; }
+
+.form-list {
+  border-top: 1px solid #000; }
+  .form-list li {
+    border-bottom: 1px solid #bcbcbc; }
+    .form-list li.line-checkbox {
+      padding: 11px 0;
+      text-align: right; }
+    .form-list li.line-radio {
+      padding: 5px 0; }
+  .form-list .form-label {
+    width: 80px;
+    font-weight: 700; }
+  .form-list.input-member .form-label {
+    width: 100px; }
+  .form-list.input-member .help-text {
+    padding: 10px 0 5px 5px;
+    border-bottom: 0;
+    font-size: 12px;
+    line-height: 16px;
+    color: #777;
+    text-indent: -5px; }
 
 /*******************************
     Intro
@@ -2259,16 +2276,6 @@ button {
   background-color: #4aaf9d;
   color: white; }
 
-.form-list {
-  border-top: 1px solid #000; }
-  .form-list li {
-    border-bottom: 1px solid #bcbcbc; }
-    .form-list li.line-checkbox {
-      padding: 11px 0;
-      text-align: right; }
-    .form-list li.line-radio {
-      padding: 5px 0; }
-
 .select-payment .credit-card .radio-label i {
   margin-right: 6px; }
 
@@ -2458,6 +2465,48 @@ button {
 /*******************************
     간편 회원가입
 *******************************/
+.simple-signup .form-list {
+  margin-bottom: 15px;
+  border-top: 0; }
+  .simple-signup .form-list .input-group-btn .btn {
+    width: 70px; }
+
+.simple-signup .checkbox {
+  margin: 7px 0 35px; }
+  .simple-signup .checkbox .checkbox-label {
+    font-size: 14px; }
+
+.signup-agreement .text {
+  font-size: 14px;
+  line-height: 20px;
+  color: #999; }
+
+.signup-agreement .checkbox {
+  margin: 15px 0; }
+  .signup-agreement .checkbox .checkbox-label {
+    font-weight: 300;
+    font-size: 14px;
+    color: #000; }
+
+.signup-agreement .agreement-wrap {
+  margin: 0 -18px -23px;
+  padding: 0 18px 20px;
+  border-top: 1px solid #d5d5d5;
+  background-color: #f9f8f9; }
+  .signup-agreement .agreement-wrap .third-title {
+    margin: 23px 0 10px; }
+  .signup-agreement .agreement-wrap .scroll-box {
+    overflow-y: scroll;
+    height: 160px;
+    border: 1px solid #d5d5d5;
+    background-color: #f7f7f7; }
+  .signup-agreement .agreement-wrap .agreement {
+    padding: 12px 15px;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: 'NotoSans', sans-serif;
+    color: #777; }
+
 /*******************************
     로그인
 *******************************/
