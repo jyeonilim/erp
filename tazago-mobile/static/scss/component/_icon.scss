@@ -63,6 +63,7 @@
 .icon-navigation:before { content: '\e817'; } /* '' */
 .icon-down-dir:before { content: '\e818'; } /* '' */
 .icon-credit-card:before { content: '\e819'; } /* '' */
+.icon-mail:before { content: '\e81a'; } /* '' */
 .icon-down-open:before { content: '\e81b'; } /* '' */
 
 [class^="sp-icon"] {
@@ -148,10 +149,22 @@
 .icon-print {}
 .icon-percent {}
 .icon-comment {}
-.icon-facebook {}
-.icon-google {}
-.icon-naver {}
-.icon-kakaotalk {}
+.sp-icon-facebook {
+    @include image-size(120px,120px);
+    @include sprite-position(-280px,-560px);
+}
+.sp-icon-google {
+    @include image-size(120px,120px);
+    @include sprite-position(-420px,-560px);
+}
+.sp-icon-naver {
+    @include image-size(120px,120px);
+    @include sprite-position(-560px,-560px);
+}
+.sp-icon-kakaotalk {
+    @include image-size(120px,120px);
+    @include sprite-position(-560px,-700px);
+}
 .icon-mail {}
 .icon-question {}
 .icon-answer {}

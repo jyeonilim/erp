@@ -86,13 +86,18 @@ textarea.form-control {
         margin-right: 5px;
         vertical-align: middle;
     }
-    .checkbox-label,
+    .checkbox-label {
+        @include font-set(300,14px,NotoSans);
+        color: $text-color;
+    }
     .radio-label {
         font: 16px 'NotoSans', sans-serif;
         color: #888;
     }
     input[type="checkbox"]:checked ~ .checkbox-display,
-    input[type="checkbox"]:checked ~ .checkbox-label,
+    input[type="checkbox"]:checked ~ .checkbox-label {
+        @include transition(all 0.3s ease);
+    }
     input[type="radio"]:checked ~ .radio-display,
     input[type="radio"]:checked ~ .radio-label {
         color: $text-color;

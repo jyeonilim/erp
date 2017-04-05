@@ -1800,7 +1800,7 @@ button {
 /*******************************
     간편 회원가입
 *******************************/
-.simple-signup {
+.signup {
     .form-list {
         margin-bottom: 15px;
         border-top: 0;
@@ -1825,11 +1825,6 @@ button {
     }
     .checkbox {
         margin: 15px 0;
-        .checkbox-label {
-            font-weight: 300;
-            font-size: 14px;
-            color: $text-color;
-        }
     }
     .agreement-wrap {
         margin: 0 -18px -23px;
@@ -1858,6 +1853,74 @@ button {
 /*******************************
     로그인
 *******************************/
+.member-login {
+    .form-list {
+        border-top: 0;
+    }
+    .checkbox {
+        margin: 8px 0 18px;
+    }
+    .forgot-info {
+        margin-top: 13px;
+        text-align: center;
+        li {
+            display: inline-block;
+            @include font-set(300,15px,NotoSans);
+            &:before {
+                display: inline-block;
+                width: 1px;
+                height: 14px;
+                margin: 0 15px;
+                background-color: #bababa;
+                vertical-align: -1px;
+                content: '';
+            }
+            &:first-child:before {
+                display: none;
+            }
+            button {
+                padding: 0;
+                font-size: 16px;
+                font-family: 'NotoSans', sans-serif;
+                color: #7f7f7f;
+
+            }
+        }
+    }
+}
+.sns-login {
+    margin-top: 35px;
+    text-align: center;
+    .sns-title {
+        margin: 0 0 18px;
+        @include font-set(700,20px,NanumSquare);
+    }
+    ul {
+        @include clearfix;
+        li {
+            float: left;
+            width: 25%;
+        }
+    }
+}
+.guest-box {
+    margin: 35px -18px -23px;
+    padding: 35px 18px;
+    background-color: #f9f9f9;
+    .text {
+        margin-bottom: 18px;
+        font-size: 14px;
+        line-height: 18px;
+        color: #666;
+    }
+    li {
+        &:first-child {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #dbdbdb;
+        }
+    }
+}
 
 /*******************************
     My Page
@@ -2145,6 +2208,61 @@ button {
 // 마이페이지 - 예약확인 - 구매영수증
 // 아이디/비밀번호 찾기
 // 회원가입
+.simple-signup {
+    .modal-body {
+        padding: 16px 18px 40px;
+        .email-signup-box {
+            position: relative;
+            &:before {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 13px;
+                z-index: 3;
+                width: 31px;
+                height: 31px;
+                margin: auto;
+                @include border-radius(50%);
+                background-color: $brand-primary;
+                font-size: 13px;
+                line-height: 31px;
+                font-family: 'fontello';
+                color: $white;
+                text-align: center;
+                content: '\e81a';
+            }
+            .email-signup {
+                display: block;
+                width: 100%;
+                padding: 0 15px 0 50px;
+                border: 1px solid #d5d5d5;
+                font-weight: 300;
+                font-size: 14px;
+                line-height: (46-2)/14;
+                font-family: 'NotoSans', sans-serif;
+                color: #303030;
+                text-align: center;
+                letter-spacing: -1px;
+            }
+        }
+        .sns-signup {
+            margin-top: 20px;
+            border-top: 1px solid #e6e6e6;
+            text-align: center;
+            .text {
+                padding: 28px 0 17px;
+                @include font-set(400,15px,NanumSquare);
+            }
+            ul {
+                @include clearfix;
+                li {
+                    float: left;
+                    width: 25%;
+                }
+            }
+        }
+    }
+}
 // 회원탈퇴
 
 /*******************************
