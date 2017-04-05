@@ -496,6 +496,11 @@ button {
         .form-label {
             width: 100px;
         }
+        .input-group-btn {
+            .btn {
+                width: 70px;
+            }
+        }
         .help-text {
             padding: 10px 0 5px 5px;
             border-bottom: 0;
@@ -1804,11 +1809,6 @@ button {
     .form-list {
         margin-bottom: 15px;
         border-top: 0;
-        .input-group-btn {
-            .btn {
-                width: 70px;
-            }
-        }
     }
     .checkbox {
         margin: 7px 0 35px;
@@ -1926,10 +1926,105 @@ button {
     My Page
 *******************************/
 // 마이페이지 - 쿠폰
+.no-coupon {
+    font-size: 17px;
+    color: #505050;
+    text-align: center;
+    &:before {
+        @include sprite-image(0,-700px);
+        @include image-size(196px,170px);
+        display: block;
+        margin: 105px auto 25px;
+        content: '';
+    }
+}
+.coupon-list {
+    margin-top: 20px;
+    li {
+        padding: 6px 25px;
+    }
+}
 // 쿠폰
+.couponbox {
+    display: table;
+    width: 100%;
+    border: 1px solid #dfdfdf;
+    @include border-radius(8px);
+    .coupon-info {
+        display: table-cell;
+        width: 60%;
+        padding: 25px 0;
+        @include border-side-radius(top,left,6px);
+        @include border-side-radius(bottom,left,6px);
+        background: $brand-primary url("../images/bg-coupon.png") repeat-y 100% 0;
+        @include background-size(12px,22px);
+        text-align: center;
+        vertical-align: middle;
+        letter-spacing: 0;
+        .name {
+            display: block;
+            font-weight: 500;
+            font-size: 22px;
+            color: $white;
+            text-transform: uppercase;
+        }
+        .price {
+            display: block;
+            margin: 4px 0 11px 0;
+            font-weight: 700;
+            font-size: 18px;
+            font-family: 'NanumSquare', sans-serif;
+            color: #fff000;
+        }
+        .date {
+            display: inline-block;
+            padding: 4px 0;
+            border-top: 1px solid #92cfc4;
+            border-bottom: 1px solid #92cfc4;
+            font-size: 10px;
+            color: $white;
+            letter-spacing: -0.5px;
+        }
+    }
+    .coupon-terms {
+        display: table-cell;
+        width: 40%;
+        padding: 0 15px;
+        @include border-side-radius(top,right,6px);
+        @include border-side-radius(bottom,right,6px);
+        background-color: $white;
+        text-align: center;
+        vertical-align: middle;
+        .type {
+            display: inline-block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            font-size: 10px;
+            line-height: 12px;
+            color: $brand-primary;
+        }
+        .terms {
+            display: block;
+            font-size: 13px;
+            line-height: 16px;
+            font-family: 'NanumSquare', sans-serif;
+        }
+    }
+}
 // 마이페이지 - 내 정보 수정
+#memberEdit {
+    .form-list {
+        margin: 15px 0;
+        border-top: 0;
+    }
+    .checkbox {
+        margin: 7px 0 35px;
+        .checkbox-label {
+            font-size: 14px;
+        }
+    }
+}
 // 자주하는 질문, 공지사항
-
 // 대여가이드
 // 대여안내
 // 보험안내
@@ -2264,6 +2359,22 @@ button {
     }
 }
 // 회원탈퇴
+.quit {
+    .modal-body {
+        padding-top: 40px;
+        text-align: center;
+        strong {
+            font-size: 18px;
+        }
+        .text {
+            padding: 7px 0 30px;
+            font-size: 14px;
+            line-height: 18px;
+            font-family: 'NotoSans', sans-serif;
+            color: #868686;
+        }
+    }
+}
 
 /*******************************
     Helper Class

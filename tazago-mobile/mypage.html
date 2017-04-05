@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>마이페이지</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" src="static/js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="static/js/slick.min.js"></script>
+    <script type="text/javascript" src="static/js/custom.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="header">
+        <h1 class="brand-logo"><span class="sr-only">타자고</span></h1>
+        <a href="#" class="btn-back"><i class="icon-right-open"></i></a>
+        <a href="#" class="btn-menu">Menu</a>
+        <!-- Sidebar Menu -->
+        <div class="sidebar-wrap">
+            <div class="sidebar">
+                <a href="#" class="btn-home"><i class="icon-home"></i><span class="sr-only">메인으로 가기</span></a>
+                <!-- 로그인 전 -->
+                <div class="quick-access">
+                    <p class="text">로그인을 해주세요</p>
+                    <div class="btn-group">
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary inverse">로그인</button></span>
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary">회원가입</button></span>
+                    </div>
+                </div>
+                <!-- 로그인 전 //end -->
+                <!-- 로그인 후 --
+                <div class="quick-access">
+                    <p class="text">홍길동 님, 안녕하세요</p>
+                    <div class="btn-group">
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary">마이페이지</button></span>
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary inverse">로그아웃</button></span>
+                    </div>
+                </div>
+                !-- 로그인 후 //end -->
+                <ul class="menu">
+                    <li class="item-reservation-confirm"><a href="#">예약확인</a></li>
+                    <li class="item-rental-info"><a href="#">대여가이드</a></li>
+                    <li class="item-notice"><a href="#">공지사항</a></li>
+                    <li class="item-faq"><a href="#">자주하는 질문</a></li>
+                </ul>
+                <p class="customer-number">
+                    <span>고객센터 (평일 9시~6시)</span>
+                    <strong>1544-1544</strong>
+                </p>
+            </div>
+            <a href="#" class="menu-close"><i class="icon-close"></i></a>
+            <div class="menu-backdrop"></div>
+        </div>
+        <!-- Sidebar Menu //end -->
+    </div>
+    <div class="content is-padding">
+        <h2 class="section-title">마이페이지</h2>
+        <ul class="tabs">
+            <li class="tab active" rel="myCoupon">쿠폰함<span class="unit">(0)</span></li>
+            <li class="tab" rel="memberEdit">내 정보 수정</li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane" id="myCoupon">
+                <!-- 쿠폰이 없을 때 -->
+                <!--<p class="no-coupon">사용 가능한 쿠폰이 없습니다.</p>-->
+                <!-- 쿠폰이 없을 때 //end -->
+                <!-- 쿠폰이 있을 때 -->
+                <ul class="coupon-list">
+                    <li>
+                        <div class="couponbox">
+                            <div class="coupon-info">
+                                <span class="name">coupon</span>
+                                <strong class="price">2,000원 할인</strong>
+                                <small class="date">2017.04.01-2017.06.30</small>
+                            </div>
+                            <div class="coupon-terms">
+                                <span class="type">이용후기 할인쿠폰</span>
+                                <strong class="terms">중형차 48시간 이상 대여 시</strong>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="couponbox">
+                            <div class="coupon-info">
+                                <span class="name">coupon</span>
+                                <strong class="price">1,000원 할인</strong>
+                                <small class="date">2017.04.01-2017.06.30</small>
+                            </div>
+                            <div class="coupon-terms">
+                                <span class="type">회원가입 감사쿠폰</span>
+                                <strong class="terms">24시간 이상 대여 시</strong>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="couponbox">
+                            <div class="coupon-info">
+                                <span class="name">coupon</span>
+                                <strong class="price">2,000원 할인</strong>
+                                <small class="date">2017.04.01-2017.06.30</small>
+                            </div>
+                            <div class="coupon-terms">
+                                <span class="type">이용후기 할인쿠폰</span>
+                                <strong class="terms">중형차 48시간 이상 대여 시</strong>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- 쿠폰이 있을 때 //end -->
+            </div>
+            <div class="tab-pane" id="memberEdit">
+                <ul class="form-list input-member">
+                    <li class="form-inline">
+                        <label for="email" class="form-label">아이디</label>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="email" class="form-control" id="email" placeholder="이메일을 입력해주세요" value="test@mail.com">
+                                <span class="input-group-btn"><button type="button" class="btn btn-xs-circle" onclick="modalOpen('.quit');">회원탈퇴</button></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="form-inline">
+                        <label for="password" class="form-label">비밀번호</label>
+                        <input type="password" class="form-control" id="password" placeholder="비밀번호를 입력해주세요">
+                    </li>
+                    <li class="help-text">* 영문,숫자,특수문자 조합 8~16자로 특수문자 없이 입력 가능하며, 보안을 위해 개인정보 관련 숫자는 사용하지 마세요</li>
+                    <li>
+                        <div class="form-inline">
+                            <label for="password-confirm" class="form-label">비밀번호 확인</label>
+                            <input type="password" class="form-control" id="password-confirm" placeholder="비밀번호를 입력해주세요">
+                        </div>
+                    </li>
+                    <li class="form-inline">
+                        <label for="name" class="form-label">이름</label>
+                        <input type="text" class="form-control" id="name" placeholder="이름을 입력해주세요">
+                    </li>
+                    <li class="form-inline">
+                        <label for="phone" class="form-label">연락처</label>
+                        <input type="number" class="form-control" id="phone" placeholder="숫자만 입력해주세요">
+                    </li>
+                    <li class="form-inline">
+                        <label for="birth-date" class="form-label">생년월일</label>
+                        <input type="number" class="form-control" id="birth-date" placeholder="예) 19901201">
+                    </li>
+                    <li class="help-text">* 만 21세 이상부터 차량 대여가 가능합니다.</li>
+                </ul>
+                <div class="checkbox checkbox-block">
+                    <input type="checkbox" id="agree-receive" checked>
+                    <label for="agree-receive" class="checkbox-display"></label>
+                    <label for="agree-receive" class="checkbox-label">할인쿠폰 및 이벤트 등 마케팅 이메일 수신을 허용합니다.</label>
+                </div>
+                <button type="button" class="btn btn-lg btn-primary btn-block">수정하기</button>
+            </div>
+        </div>
+        <!-- 회원탈퇴 -->
+        <div class="modal quit">
+            <div class="modal-content">
+                <h3 class="modal-head">회원탈퇴</h3>
+                <div class="modal-body">
+                    <strong>회원탈퇴 하시겠습니까?</strong>
+                    <p class="text">회원 탈퇴 시 동일한 계정으로 재가입할 수 없습니다.</p>
+                    <div class="btn-group">
+                        <span class="outer"><button type="button" class="btn btn-sm" onclick="modalClose('.quit');">취소</button></span>
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary">확인</button></span>
+                    </div>
+                </div>
+                <button class="btn-modal-close" onclick="modalClose('.quit');"><i class="icon-close"></i></button>
+            </div>
+        </div>
+        <!-- 회원탈퇴 //end -->
+    </div>
+</div>
+</body>
+</html>

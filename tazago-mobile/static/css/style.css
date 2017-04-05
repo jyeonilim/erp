@@ -813,7 +813,8 @@ textarea.form-control {
     border-bottom: 2px solid #4aaf9d;
     border-left: 0;
     background-color: #f3f3f3;
-    font-size: 20px;
+    font-size: 15px;
+    font-family: 'NanumSquare', sans-serif;
     color: #a2a2a2;
     text-align: center;
     cursor: pointer; }
@@ -830,11 +831,12 @@ textarea.form-control {
         left: -2px;
         z-index: 2;
         width: 100%;
-        height: 51px;
+        height: 43px;
         border: 2px solid #4aaf9d;
         border-bottom-color: white;
         content: ''; }
     .tabs .tab .unit {
+      margin-left: 3px;
       color: #4aaf9d; }
 
 .tab-pane {
@@ -1410,6 +1412,8 @@ button {
     font-weight: 700; }
   .form-list.input-member .form-label {
     width: 100px; }
+  .form-list.input-member .input-group-btn .btn {
+    width: 70px; }
   .form-list.input-member .help-text {
     padding: 10px 0 5px 5px;
     border-bottom: 0;
@@ -2499,8 +2503,6 @@ button {
 .signup .form-list {
   margin-bottom: 15px;
   border-top: 0; }
-  .signup .form-list .input-group-btn .btn {
-    width: 70px; }
 
 .signup .checkbox {
   margin: 7px 0 35px; }
@@ -2601,6 +2603,107 @@ button {
 /*******************************
     My Page
 *******************************/
+.no-coupon {
+  font-size: 17px;
+  color: #505050;
+  text-align: center; }
+  .no-coupon:before {
+    display: inline-block;
+    background: url("../images/sprite-icon.png") no-repeat 0 -350px;
+    background-size: 375px auto;
+    line-height: 0;
+    color: transparent;
+    vertical-align: middle;
+    width: 98px;
+    height: 85px;
+    display: block;
+    margin: 105px auto 25px;
+    content: ''; }
+
+.coupon-list {
+  margin-top: 20px; }
+  .coupon-list li {
+    padding: 6px 25px; }
+
+.couponbox {
+  display: table;
+  width: 100%;
+  border: 1px solid #dfdfdf;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px; }
+  .couponbox .coupon-info {
+    display: table-cell;
+    width: 60%;
+    padding: 25px 0;
+    border-top-left-radius: 6px;
+    -moz-border-radius-topleft: 6px;
+    -webkit-border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    -moz-border-radius-bottomleft: 6px;
+    -webkit-border-bottom-left-radius: 6px;
+    background: #4aaf9d url("../images/bg-coupon.png") repeat-y 100% 0;
+    background-size: 6px 11px;
+    text-align: center;
+    vertical-align: middle;
+    letter-spacing: 0; }
+    .couponbox .coupon-info .name {
+      display: block;
+      font-weight: 500;
+      font-size: 22px;
+      color: white;
+      text-transform: uppercase; }
+    .couponbox .coupon-info .price {
+      display: block;
+      margin: 4px 0 11px 0;
+      font-weight: 700;
+      font-size: 18px;
+      font-family: 'NanumSquare', sans-serif;
+      color: #fff000; }
+    .couponbox .coupon-info .date {
+      display: inline-block;
+      padding: 4px 0;
+      border-top: 1px solid #92cfc4;
+      border-bottom: 1px solid #92cfc4;
+      font-size: 10px;
+      color: white;
+      letter-spacing: -0.5px; }
+  .couponbox .coupon-terms {
+    display: table-cell;
+    width: 40%;
+    padding: 0 15px;
+    border-top-right-radius: 6px;
+    -moz-border-radius-topright: 6px;
+    -webkit-border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    -moz-border-radius-bottomright: 6px;
+    -webkit-border-bottom-right-radius: 6px;
+    background-color: white;
+    text-align: center;
+    vertical-align: middle; }
+    .couponbox .coupon-terms .type {
+      display: inline-block;
+      margin-bottom: 8px;
+      font-weight: 700;
+      font-size: 10px;
+      line-height: 12px;
+      color: #4aaf9d; }
+    .couponbox .coupon-terms .terms {
+      display: block;
+      font-size: 13px;
+      line-height: 16px;
+      font-family: 'NanumSquare', sans-serif; }
+
+#memberEdit .form-list {
+  margin: 15px 0;
+  border-top: 0; }
+
+#memberEdit .checkbox {
+  margin: 7px 0 35px; }
+  #memberEdit .checkbox .checkbox-label {
+    font-size: 14px; }
+
 /*******************************
     Modal
 *******************************/
@@ -2896,6 +2999,18 @@ button {
     .simple-signup .modal-body .sns-signup ul li {
       float: left;
       width: 25%; }
+
+.quit .modal-body {
+  padding-top: 40px;
+  text-align: center; }
+  .quit .modal-body strong {
+    font-size: 18px; }
+  .quit .modal-body .text {
+    padding: 7px 0 30px;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: 'NotoSans', sans-serif;
+    color: #868686; }
 
 /*******************************
     Helper Class
