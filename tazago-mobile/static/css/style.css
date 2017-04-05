@@ -964,6 +964,9 @@ button {
 .wrap {
   overflow-x: hidden; }
 
+.content.is-padding {
+  padding: 23px 18px; }
+
 .sub .content {
   padding-bottom: 72px; }
 
@@ -1261,14 +1264,16 @@ button {
         color: #4aaf9d; }
 
 .section-title {
-  padding-bottom: 30px;
+  padding-bottom: 25px;
   border-bottom: 2px solid #4aaf9d;
   font-weight: 700;
-  font-size: 55px;
+  font-size: 30px;
   text-align: center;
   letter-spacing: -2px; }
-  .section-title.lineless {
-    border-bottom: 0; }
+  .section-title .text {
+    margin-top: 15px;
+    font-size: 15px;
+    color: #4aaf9d; }
 
 .secondary-title {
   margin-bottom: 15px;
@@ -1359,12 +1364,11 @@ button {
   .btn-top .icon-up {
     font-size: 30px; }
   .btn-top.is-visible {
+    visibility: visible;
+    opacity: 1;
     -webkit-transition: opacity .3s 0s, visibility 0s 0s;
     -moz-transition: opacity .3s 0s, visibility 0s 0s;
     transition: opacity .3s 0s, visibility 0s 0s; }
-  .btn-top.is-visible {
-    visibility: visible;
-    opacity: 1; }
 
 /*******************************
     Intro
@@ -2327,7 +2331,15 @@ button {
   .select-payment .input-promotion-code .form-control {
     height: 39px;
     padding: 0 20px;
-    border: 1px solid #d5d5d5; }
+    border: 1px solid #d5d5d5;
+    font-weight: 700;
+    color: #4aaf9d; }
+    .select-payment .input-promotion-code .form-control::-moz-placeholder {
+      font-weight: 400; }
+    .select-payment .input-promotion-code .form-control:-ms-input-placeholder {
+      font-weight: 400; }
+    .select-payment .input-promotion-code .form-control::-webkit-input-placeholder {
+      font-weight: 400; }
 
 .payment-info {
   margin-top: -1px;
@@ -2352,7 +2364,7 @@ button {
         .payment-info li span i.icon-car {
           font-size: 11px; }
         .payment-info li span i.text-percent {
-          margin: 0 .2em;
+          margin: 0 .4em 0 0;
           font-size: 13px; }
     .payment-info li strong {
       float: right;
@@ -2393,6 +2405,56 @@ button {
     font-size: 11px;
     line-height: 1.909; }
 
+.reservation-completed .completed-info {
+  padding: 15px 0 25px;
+  border-bottom: 2px solid #4aaf9d;
+  font-weight: 700;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: -2px; }
+  .reservation-completed .completed-info .text {
+    margin-top: 15px;
+    font-size: 15px;
+    color: #4aaf9d; }
+
+.reservation-info {
+  font-family: 'Montserrat', 'NotoSans', sans-serif;
+  text-align: center; }
+  .reservation-info .reservation-info-list {
+    display: inline-block;
+    padding: 20px 0; }
+    .reservation-info .reservation-info-list li {
+      padding: 6px 0;
+      font-size: 13px;
+      text-align: left; }
+      .reservation-info .reservation-info-list li:before {
+        display: inline-block;
+        width: 3px;
+        height: 3px;
+        margin-right: 5px;
+        -webkit-border-radius: 1px;
+        -moz-border-radius: 1px;
+        -ms-border-radius: 1px;
+        border-radius: 1px;
+        background-color: #a8a8a8;
+        vertical-align: middle;
+        content: ''; }
+      .reservation-info .reservation-info-list li span {
+        display: inline-block;
+        width: 110px;
+        color: #5e5e5e; }
+      .reservation-info .reservation-info-list li p {
+        display: inline-block; }
+        .reservation-info .reservation-info-list li p .icon-point {
+          margin-left: 6px;
+          cursor: pointer; }
+      .reservation-info .reservation-info-list li .help-point {
+        background-color: #4aaf9d;
+        color: white;
+        vertical-align: middle; }
+  .reservation-info + .btn-group {
+    margin-top: 11px; }
+
 /*******************************
     간편 회원가입
 *******************************/
@@ -2409,13 +2471,16 @@ button {
   overflow-y: hidden;
   height: 100%; }
 
-.scroll-lock .modal-content {
-  height: 100%; }
-
-.scroll-lock .modal-body {
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  height: 100%; }
+.scroll-lock .modal-content.is-scroll {
+  height: 100%;
+  padding: 50px 20px 92px; }
+  .scroll-lock .modal-content.is-scroll .btn-modal-close {
+    top: 57px; }
+  .scroll-lock .modal-content.is-scroll .modal-body {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+    padding-top: 8px; }
 
 .modal {
   display: none; }
@@ -2433,7 +2498,7 @@ button {
     content: ''; }
   .modal .btn-modal-close {
     position: absolute;
-    top: 57px;
+    top: 7px;
     right: 36px; }
     .modal .btn-modal-close .icon-close {
       font-size: 20px;
@@ -2444,7 +2509,8 @@ button {
     left: 0;
     z-index: 21;
     width: 100%;
-    padding: 50px 20px 92px; }
+    margin: auto;
+    padding: 0 20px; }
   .modal .modal-head {
     padding: 9px 20px;
     background-color: #4aaf9d;
@@ -2584,6 +2650,61 @@ button {
     .select-delivery .delivery-place-list li .btn {
       float: right;
       padding: 0 29px; }
+
+.take-return-info .modal-body {
+  padding: 0;
+  background-color: #e7f1ef; }
+
+.take-return-info .badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 17px;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -ms-border-radius: 14px;
+  border-radius: 14px;
+  background-color: #4aaf9d;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: "NanumSquare", sans-serif;
+  line-height: 1.75;
+  color: white; }
+
+.take-return-info .info-text {
+  position: relative;
+  min-height: 28px;
+  padding-left: 75px;
+  font-size: 14px;
+  line-height: 17px;
+  font-family: 'NotoSans', sans-serif;
+  color: #444; }
+
+.take-return-info .address {
+  margin-top: 18px;
+  padding-top: 12%;
+  font-weight: 700;
+  font-size: 12px;
+  font-family: "NanumSquare", sans-serif;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: -0.5px; }
+  .take-return-info .address span {
+    color: #4aaf9d; }
+
+.take-return-info .take-info {
+  padding: 20px;
+  background-color: white; }
+  .take-return-info .take-info .address {
+    background: url("../images/take-info.png") no-repeat 50% 0;
+    background-size: contain; }
+
+.take-return-info .return-info {
+  padding: 20px;
+  background-color: #e7f1ef; }
+  .take-return-info .return-info .address {
+    background: url("../images/return-info.png") no-repeat 50% 0;
+    background-size: contain; }
 
 /*******************************
     Helper Class

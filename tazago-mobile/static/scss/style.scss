@@ -36,7 +36,9 @@ button {
     overflow-x: hidden;
 }
 .content {
-    //padding: 23px 18px;
+    &.is-padding {
+        padding: 23px 18px;
+    }
 }
 .sub {
     .content {
@@ -364,14 +366,16 @@ button {
 }
 // Title
 .section-title {
-    padding-bottom: 30px;
+    padding-bottom: 25px;
     border-bottom: 2px solid $brand-primary;
     font-weight: 700;
-    font-size: 55px;
+    font-size: 30px;
     text-align: center;
     letter-spacing: -2px;
-    &.lineless {
-        border-bottom: 0;
+    .text {
+        margin-top: 15px;
+        font-size: 15px;
+        color: $brand-primary;
     }
 }
 .secondary-title {
@@ -469,13 +473,11 @@ button {
         font-size: 30px;
     }
     &.is-visible {
+        visibility: visible;
+        opacity: 1;
         -webkit-transition: opacity .3s 0s, visibility 0s 0s;
         -moz-transition: opacity .3s 0s, visibility 0s 0s;
         transition: opacity .3s 0s, visibility 0s 0s;
-    }
-    &.is-visible {
-        visibility: visible;
-        opacity: 1;
     }
 }
 
@@ -1632,6 +1634,17 @@ button {
             height: 39px;
             padding: 0 20px;
             border: 1px solid #d5d5d5;
+            font-weight: 700;
+            color: $brand-primary;
+            &::-moz-placeholder {
+                font-weight: 400;
+            }
+            &:-ms-input-placeholder {
+                font-weight: 400;
+            }
+            &::-webkit-input-placeholder  {
+                font-weight: 400;
+            }
         }
     }
 }
@@ -1655,7 +1668,7 @@ button {
                     font-size: 11px;
                 }
                 &.text-percent {
-                    margin: 0 .2em;
+                    margin: 0 .4em 0 0;
                     font-size: 13px;
                 }
             }
@@ -1712,6 +1725,64 @@ button {
     }
 }
 // 예약완료
+.reservation-completed {
+    .completed-info {
+        padding: 15px 0 25px;
+        border-bottom: 2px solid $brand-primary;
+        font-weight: 700;
+        font-size: 30px;
+        text-align: center;
+        letter-spacing: -2px;
+        .text {
+            margin-top: 15px;
+            font-size: 15px;
+            color: $brand-primary;
+        }
+    }
+}
+.reservation-info {
+    font-family: 'Montserrat', 'NotoSans', sans-serif;
+    text-align: center;
+    .reservation-info-list {
+        display: inline-block;
+        padding: 20px 0;
+        li {
+            padding: 6px 0;
+            font-size: 13px;
+            text-align: left;
+            &:before {
+                display: inline-block;
+                width: 3px;
+                height: 3px;
+                margin-right: 5px;
+                @include border-radius(1px);
+                background-color: #a8a8a8;
+                vertical-align: middle;
+                content: '';
+            }
+            span {
+                display: inline-block;
+                width: 110px;
+                color: #5e5e5e;
+            }
+            p {
+                display: inline-block;
+                .icon-point {
+                    margin-left: 6px;
+                    cursor: pointer;
+                }
+            }
+            .help-point {
+                background-color: $brand-primary;
+                color: $white;
+                vertical-align: middle;
+            }
+        }
+    }
+    + .btn-group {
+        margin-top: 11px;
+    }
+}
 
 /*******************************
     간편 회원가입
@@ -1742,12 +1813,19 @@ button {
         height: 100%;
     }
     .modal-content {
-        height: 100%;
-    }
-    .modal-body {
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        height: 100%;
+        &.is-scroll {
+            height: 100%;
+            padding: 50px 20px 92px;
+            .btn-modal-close {
+                top: 57px;
+            }
+            .modal-body {
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                height: 100%;
+                padding-top: 8px;
+            }
+        }
     }
 }
 .modal {
@@ -1769,7 +1847,7 @@ button {
     }
     .btn-modal-close {
         position: absolute;
-        top: 57px;
+        top: 7px;
         right: 36px;
         .icon-close {
             font-size: 20px;
@@ -1782,7 +1860,8 @@ button {
         left: 0;
         z-index: 21;
         width: 100%;
-        padding: 50px 20px 92px;
+        margin: auto;
+        padding: 0 20px;
     }
     .modal-head {
         padding: 9px 20px;
@@ -1801,6 +1880,9 @@ button {
 }
 // 차량검색 - 결과 내 검색
 .search-results {
+    //.btn-modal-close {
+    //    top: 29px !important;
+    //}
     .modal-body {
         padding-top: 8px;
     }
@@ -1939,6 +2021,59 @@ button {
 // 예약하기 - 프로모션 코드
 // 예약하기 - 취소 수수료 안내
 // 예약하기 - 인수/반납 안내
+.take-return-info {
+    .modal-body {
+        padding: 0;
+        background-color: #e7f1ef;
+    }
+    .badge {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 17px;
+        @include border-radius(14px);
+        background-color: $brand-primary;
+        @include font-set(700,16px,NanumSquare);
+        line-height: (28)/16;
+        color: $white;
+    }
+    .info-text {
+        position: relative;
+        min-height: 28px;
+        padding-left: 75px;
+        font-size: 14px;
+        line-height: 17px;
+        font-family: 'NotoSans', sans-serif;
+        color: #444;
+    }
+    .address {
+        margin-top: 18px;
+        padding-top: 12%;
+        @include font-set(700,12px,NanumSquare);
+        line-height: 16px;
+        text-align: center;
+        letter-spacing: -0.5px;
+        span {
+            color: $brand-primary;
+        }
+    }
+    .take-info {
+        padding: 20px;
+        background-color: $white;
+        .address {
+            background: url("../images/take-info.png") no-repeat 50% 0;
+            background-size: contain;
+        }
+    }
+    .return-info {
+        padding: 20px;
+        background-color: #e7f1ef;
+        .address {
+            background: url("../images/return-info.png") no-repeat 50% 0;
+            background-size: contain;
+        }
+    }
+}
 // 마이페이지 - 예약확인 - 이용후기 등록
 // 마이페이지 - 예약확인 - 구매영수증
 // 아이디/비밀번호 찾기

@@ -143,6 +143,14 @@ function modalOpen(modal) {
     var $this = $(modal);
     $this.addClass('modal-backdrop').show();
     $("html").addClass("scroll-lock");
+    var hasScroll = $this.children('.modal-content').hasClass('is-scroll');
+    if(hasScroll == false) {
+        var modalH = $this.children('.modal-content').height();
+        $this.children('.modal-content').css({
+            'height': modalH,
+            'bottom': 0
+        });
+    }
 }
 function modalClose(modal) {
     var $this = $(modal);
