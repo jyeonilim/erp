@@ -1435,6 +1435,125 @@ button {
 /*******************************
     Intro
 *******************************/
+.intro,
+.intro body {
+  height: 100%;
+  background-color: #4aaf9d; }
+
+.intro .header {
+  padding: 15px 0 20px;
+  background-color: #4aaf9d;
+  font-size: 20px;
+  color: white; }
+  .intro .header .brand-logo {
+    background-image: url("../images/brand-logo-white.png"); }
+  .intro .header .btn-back i:before {
+    color: white; }
+  .intro .header .btn-menu {
+    color: white; }
+    .intro .header .btn-menu:before, .intro .header .btn-menu:after {
+      background-color: white; }
+
+.intro .wrap {
+  height: 100%; }
+
+.intro-wrap {
+  display: table;
+  width: 100%;
+  height: 100%; }
+  .intro-wrap .intro-content {
+    display: table-cell;
+    color: white;
+    text-align: center;
+    vertical-align: middle; }
+    .intro-wrap .intro-content .intro-title {
+      position: relative;
+      z-index: 10;
+      margin-bottom: -16px; }
+      .intro-wrap .intro-content .intro-title span {
+        display: inline-block;
+        margin-bottom: 8px;
+        padding: 8px 0;
+        border-top: 1px solid #8ecdc2;
+        border-bottom: 1px solid #8ecdc2;
+        font-size: 23px; }
+      .intro-wrap .intro-content .intro-title .title {
+        font-weight: 700;
+        font-size: 72px; }
+    .intro-wrap .intro-content .intro-image {
+      padding: 0 20px; }
+      .intro-wrap .intro-content .intro-image img {
+        max-width: 500px; }
+  .intro-wrap .copyright {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 18px 0;
+    background-color: #4aaf9d;
+    font-weight: 400;
+    font-size: 10px;
+    font-family: "Lato", sans-serif;
+    color: #bce2db;
+    letter-spacing: 1px;
+    text-align: center; }
+
+.intro-select {
+  height: 100%;
+  color: white;
+  text-align: center; }
+  .intro-select .text-city {
+    padding: 25px 0 22px;
+    font-size: 19px; }
+    .intro-select .text-city:before {
+      display: inline-block;
+      background: url("../images/sprite-icon.png") no-repeat -350px -70px;
+      background-size: 375px auto;
+      line-height: 0;
+      color: transparent;
+      vertical-align: middle;
+      width: 23px;
+      height: 33px;
+      margin-right: 10px;
+      content: ''; }
+  .intro-select .city-list li {
+    border-top: 1px solid #96d1c6; }
+    .intro-select .city-list li a {
+      display: table;
+      width: 100%; }
+      .intro-select .city-list li a:before {
+        display: table-cell;
+        width: 174px;
+        height: 166px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: ''; }
+      .intro-select .city-list li a.seoul:before {
+        background-image: url("../images/intro-seoul.png"); }
+      .intro-select .city-list li a.jeju:before {
+        background-image: url("../images/intro-jeju.png"); }
+      .intro-select .city-list li a.busan:before {
+        background-image: url("../images/intro-busan.png"); }
+      .intro-select .city-list li a .title {
+        display: table-cell;
+        font-size: 35px;
+        font-family: 'Montserrat', 'NanumSquare', sans-serif;
+        color: white;
+        letter-spacing: 0;
+        text-transform: uppercase;
+        vertical-align: middle; }
+        .intro-select .city-list li a .title span {
+          display: block;
+          font-size: 20px; }
+      .intro-select .city-list li a:hover {
+        -webkit-tap-highlight-color: transparent; }
+        .intro-select .city-list li a:hover.seoul:before {
+          background-image: url("../images/intro-seoul-on.jpg"); }
+        .intro-select .city-list li a:hover.jeju:before {
+          background-image: url("../images/intro-jeju-on.jpg"); }
+        .intro-select .city-list li a:hover.busan:before {
+          background-image: url("../images/intro-busan-on.jpg"); }
+
 /*******************************
     메인(렌터카검색)
 *******************************/

@@ -483,6 +483,161 @@ button {
 /*******************************
     Intro
 *******************************/
+.intro {
+    &,
+    body {
+        height: 100%;
+        background-color: $brand-primary;
+    }
+    .header {
+        padding: 15px 0 20px;
+        background-color: $brand-primary;
+        font-size: 20px;
+        color: $white;
+        .brand-logo {
+            background-image: url("../images/brand-logo-white.png");
+        }
+        .btn-back {
+            i:before {
+                color: $white;
+            }
+        }
+        .btn-menu {
+            color: $white;
+            &:before,
+            &:after {
+                background-color: $white;
+            }
+        }
+    }
+    .wrap {
+        height: 100%;
+    }
+}
+.intro-wrap {
+    display: table;
+    width: 100%;
+    height: 100%;
+    .intro-content {
+        display: table-cell;
+        color: $white;
+        text-align: center;
+        vertical-align: middle;
+        .intro-title {
+            position: relative;
+            z-index: 10;
+            margin-bottom: -16px;
+            span {
+                display: inline-block;
+                margin-bottom: 8px;
+                padding: 8px 0;
+                border-top: 1px solid #8ecdc2;
+                border-bottom: 1px solid #8ecdc2;
+                font-size: 23px;
+            }
+            .title {
+                font-weight: 700;
+                font-size: 72px;
+            }
+        }
+        .intro-image {
+            padding: 0 20px;
+            img {
+                max-width: 500px;
+            }
+        }
+    }
+    .copyright {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 18px 0;
+        background-color: $brand-primary;
+        @include font-set(400,10px,Lato);
+        color: #bce2db;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+}
+.intro-select {
+    height: 100%;
+    color: $white;
+    text-align: center;
+    .text-city {
+        padding: 25px 0 22px;
+        font-size: 19px;
+        &:before {
+            @include sprite-image(-700px,-140px);
+            @include image-size(46px,66px);
+            margin-right: 10px;
+            content: '';
+        }
+    }
+    .city-list {
+        li {
+            border-top: 1px solid #96d1c6;
+            a {
+                display: table;
+                width: 100%;
+                &:before {
+                    display: table-cell;
+                    width: 174px;
+                    height: 166px;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    content: '';
+                }
+                &.seoul {
+                    &:before {
+                        background-image: url("../images/intro-seoul.png");
+                    }
+                }
+                &.jeju {
+                    &:before {
+                        background-image: url("../images/intro-jeju.png");
+                    }
+                }
+                &.busan{
+                    &:before {
+                        background-image: url("../images/intro-busan.png");
+                    }
+                }
+                .title {
+                    display: table-cell;
+                    font-size: 35px;
+                    font-family: 'Montserrat', 'NanumSquare', sans-serif;
+                    color: $white;
+                    letter-spacing: 0;
+                    text-transform: uppercase;
+                    vertical-align: middle;
+                    span {
+                        display: block;
+                        font-size: 20px;
+                    }
+                }
+                &:hover {
+                    -webkit-tap-highlight-color: transparent;
+                    &.seoul {
+                        &:before {
+                            background-image: url("../images/intro-seoul-on.jpg");
+                        }
+                    }
+                    &.jeju {
+                        &:before {
+                            background-image: url("../images/intro-jeju-on.jpg");
+                        }
+                    }
+                    &.busan{
+                        &:before {
+                            background-image: url("../images/intro-busan-on.jpg");
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 /*******************************
     메인(렌터카검색)
@@ -2463,8 +2618,6 @@ button {
         }
     }
 }
-.take-return-guide {
-}
 .cancel-guide {
     display: table;
     margin-top: 32px;
@@ -2512,7 +2665,6 @@ button {
         }
     }
 }
-// 보험안내
 
 /*******************************
     Modal
