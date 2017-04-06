@@ -63,9 +63,13 @@
 .icon-navigation:before { content: '\e817'; } /* '' */
 .icon-down-dir:before { content: '\e818'; } /* '' */
 .icon-credit-card:before { content: '\e819'; } /* '' */
+.icon-car-check:before { content: '\e81a'; } /* '' */
 .icon-down-open:before { content: '\e81b'; } /* '' */
 .icon-up-open:before { content: '\e81c'; } /* '' */
 .icon-mail:before { content: '\e81d'; } /* '' */
+.icon-coin:before { content: '\e81e'; } /* '' */
+.icon-edit:before { content: '\e81f'; } /* '' */
+.icon-map:before { content: '\e820'; } /* '' */
 
 [class^="sp-icon"] {
     @include sprite-image(0,0);

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>대여가이드</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script type="text/javascript" src="static/js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="static/js/slick.min.js"></script>
+    <script type="text/javascript" src="static/js/custom.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="header">
+        <h1 class="brand-logo"><span class="sr-only">타자고</span></h1>
+        <a href="#" class="btn-back"><i class="icon-right-open"></i></a>
+        <a href="#" class="btn-menu">Menu</a>
+        <!-- Sidebar Menu -->
+        <div class="sidebar-wrap">
+            <div class="sidebar">
+                <a href="#" class="btn-home"><i class="icon-home"></i><span class="sr-only">메인으로 가기</span></a>
+                <!-- 로그인 전 -->
+                <div class="quick-access">
+                    <p class="text">로그인을 해주세요</p>
+                    <div class="btn-group">
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary inverse">로그인</button></span>
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary">회원가입</button></span>
+                    </div>
+                </div>
+                <!-- 로그인 전 //end -->
+                <!-- 로그인 후 --
+                <div class="quick-access">
+                    <p class="text">홍길동 님, 안녕하세요</p>
+                    <div class="btn-group">
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary">마이페이지</button></span>
+                        <span class="outer"><button type="button" class="btn btn-sm btn-primary inverse">로그아웃</button></span>
+                    </div>
+                </div>
+                !-- 로그인 후 //end -->
+                <ul class="menu">
+                    <li class="item-reservation-confirm"><a href="#">예약확인</a></li>
+                    <li class="item-rental-info"><a href="#">대여가이드</a></li>
+                    <li class="item-notice"><a href="#">공지사항</a></li>
+                    <li class="item-faq"><a href="#">자주하는 질문</a></li>
+                </ul>
+                <p class="customer-number">
+                    <span>고객센터 (평일 9시~6시)</span>
+                    <strong>1544-1544</strong>
+                </p>
+            </div>
+            <a href="#" class="menu-close"><i class="icon-close"></i></a>
+            <div class="menu-backdrop"></div>
+        </div>
+        <!-- Sidebar Menu //end -->
+    </div>
+    <div class="content is-padding">
+        <h2 class="section-title">대여가이드</h2>
+        <ul class="tabs">
+            <li class="tab active" rel="rentalGuide">대여안내</li>
+            <li class="tab" rel="insuranceGuide">보험안내</li>
+        </ul>
+        <div class="tab-content guide">
+            <div class="tab-pane" id="rentalGuide">
+                <h3 class="secondary-title">차량 예약하기</h3>
+                <p class="guide-content">세상 쉬운 렌터카 예약! 더 이상 고민하지 말고 <em>TAZAGO!</em></p>
+                <ul class="step-guide">
+                    <li>
+                        <i class="badge badge-primary">step 01</i>
+                        <p class="text"><i class="icon-map"></i>지역 선택<br>(서울/제주/부산)</p>
+                    </li>
+                    <li>
+                        <i class="badge badge-primary">step 02</i>
+                        <p class="text"><i class="icon-car-check"></i>차량 선택<br><small>최저가만 보여주는<br>똑똑한 가격비교!</small></p>
+                    </li>
+                    <li>
+                        <i class="badge badge-primary">step 03</i>
+                        <p class="text"><i class="icon-edit"></i>예약정보 입력</p>
+                    </li>
+                    <li>
+                        <i class="badge badge-primary">step 04</i>
+                        <p class="text"><i class="icon-coin"></i>결제하기</p>
+                    </li>
+                </ul>
+                <h3 class="secondary-title">차량 인수/반납하기</h3>
+                <div class="guide-box primary seoul">
+                    <h4 class="title-box">서울/부산</h4>
+                    <ul class="content-box">
+                        <li>선택한 지점 직접 방문<br>(예약 시 주소 별도 안내)</li>
+                        <li>딜리버리 서비스 가능<br>(유료 ₩11,000)</li>
+                    </ul>
+                </div>
+                <div class="guide-box gray jeju">
+                    <h4 class="title-box">제주</h4>
+                    <div class="content-box">
+                        <ul>
+                            <li>제주공항 1층 5번 게이트 건너편 렌터카 종합안내센터로 이동</li>
+                            <li>업체별 셔틀버스 탑승 후 대여업체 차고지로 이동</li>
+                            <li>본사에서 인수/반납</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="insuranceGuide">
+                <h3 class="secondary-title">자차보험이란?</h3>
+                <div class="guide-content">
+                    모든 렌터카 업체는 운전자의 안전을 위해 ‘자동차종합보험’에 가입되어 있습니다.<br>
+                    다만 렌트카 종합보험의 보상범위는 대인 / 대물 / 자손에 한정하며, 본인 임차차량 손괴 즉, ‘자기차량(자차)’은 보상이 되지 않습니다.<br><br>
+                    따라서, 만약의 사고에 대비하여 대부분의 제주도 렌터카 회사들이 자차보험(차량손해면책제도) 가입을 권고하고 있습니다.<br><br>
+                    <ul>
+                        <li>* 만 21세 미만 운전자의 경우 차량 대여가 불가합니다.</li>
+                        <li>* 계약서상 등록되지 않은 운전자일 경우, 종합보험 및 자차보험의 혜택을 받으실 수 없습니다.)</li>
+                    </ul>
+                </div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>보험종류</th>
+                        <th>내용</th>
+                        <th>보상범위</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th>대인</th>
+                        <td>운전자 과실로 인한 인명 사고(동승자 포함)</td>
+                        <td>무제한</td>
+                    </tr>
+                    <tr>
+                        <th>대물</th>
+                        <td>운전자 과실로 인한 차량 및 물건 피해 사고</td>
+                        <td>사고건당 2,000만원 한도</td>
+                    </tr>
+                    <tr>
+                        <th>치손</th>
+                        <td>운전자 과실로 인한 인명 피해 사고</td>
+                        <td>사고건당 1,500만원 한도</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <dl class="caution-box">
+                    <dt>보험처리 및 차량손해(자차) 면책처리가 불가한 경우</dt>
+                    <dd>- 임차인의 고의로 인한 사고</dd>
+                    <dd>- 무면허 운전사고</dd>
+                    <dd>- 범죄를 목적으로 렌터카를 사용하던 중 발생한 사고</dd>
+                    <dd>- 음주운전, 약물중독 운전사고</dd>
+                    <dd>- 렌터카를 경기용이나 연습용, 테스트용으로 사용하던중 발생한 사고</dd>
+                    <dd>- 임차인(임차인과 기록된 공동임차인 포함)외의 제3자가 렌터카를 사용하여 발생한 사고</dd>
+                    <dd>- 본인 부주의로 인한 차량도난 사고</dd>
+                </dl>
+                <h3 class="secondary-title">일반자차 / 완전자차 보험</h3>
+                <div class="guide-box primary">
+                    <h4 class="title-box">일반자차 보험</h4>
+                    <ul class="content-box">
+                        <li>
+                            <span>면책금</span>
+                            <p>통상차량 수리비의 <em>20%</em> 수준
+                                <small>업체별로 최소 10만원~30만원 부터 부담</small></p>
+                        </li>
+                        <li>
+                            <span>휴차보상료</span>
+                            <p>표준대여요금의 <em>50%</em>부담(1일정상대여요금X50%X수리기간)</p>
+                        </li>
+                        <li>
+                            <span>보상한도</span>
+                            <p>차량에 따라 최소 250만원부터 1,500만원까지 부담
+                                <small>(보상한도 초과 금액은 고객이 전액 부담)</small></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="guide-box gray">
+                    <h4 class="title-box">완전자차 보험</h4>
+                    <ul class="content-box">
+                        <li>
+                            <span>면책금</span>
+                            <p>차량별 수리비, 면책금 <em>면제</em>
+                                <small>(단 출동서비스,견인, 체인, 네비게이션, 실내부품, 타이어, 휠 등은 제외되는 경우가 많음)</small></p>
+                        </li>
+                        <li>
+                            <span>휴차보상료</span>
+                            <p><em>면제</em></p>
+                        </li>
+                        <li>
+                            <span>보상한도</span>
+                            <p>차량에 따라 최소 250만원부터 1,500만원까지 부담
+                                <small>(보상한도 초과 금액은 고객이 전액 부담)</small></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <ul class="terms-menu">
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보취급방침</a></li>
+        </ul>
+        <p class="copyright">@ 2017 TAZAGO. All rights reserved</p>
+    </div>
+</div>
+</body>
+</html>
