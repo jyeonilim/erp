@@ -283,7 +283,6 @@ button {
 .footer {
     padding: 15px 0;
     border-top: 1px solid #d7d7d7;
-    background-color: #f9f9f9;
     text-align: center;
     color: #bce2db;
     .terms-menu {
@@ -404,6 +403,7 @@ button {
 .tooltip {
     display: none;
     position: absolute;
+    bottom: 37px;
     padding: 15px 35px;
     @include border-radius(4px);
     background-color: $brand-primary;
@@ -412,7 +412,7 @@ button {
     &:after {
         position: absolute;
         left: 30px;
-        bottom: -19px;
+        bottom: -18px;
         font-family: 'fontello';
         font-size: 25px;
         content: '\e818';
@@ -701,7 +701,6 @@ button {
         border: 0;
         border-top: 1px solid #dbdbdb;
         .selectbox-value {
-            background-color: transparent;
             width: auto;
             padding: 0 27px 0 0;
             font-weight: 500;
@@ -1223,7 +1222,7 @@ button {
                 i {
                     display: block;
                     height: 25px;
-                    margin-bottom: 11px;
+                    margin: 0 auto 11px;
                     font-weight: 700;
                     line-height: 25px;
                     font-size: 25px;
@@ -1362,7 +1361,7 @@ button {
             font-size: 16px;
         }
         .reviews-state {
-            width: 15%;
+            width: 17%;
             text-align: center;
             em {
                 display: block;
@@ -1372,13 +1371,13 @@ button {
             }
         }
         .rent-regulation {
-            width: 20%;
+            width: 22%;
             font-size: 12px;
             font-family: 'NotoSans', sans-serif;
             color: #555;
         }
         .price {
-            width: 20%;
+            width: 16%;
             padding-right: 0;
             font-weight: 500;
             font-size: 23px;
@@ -1392,6 +1391,7 @@ button {
 // 로딩화면
 .loading {
     padding: 40px 18px 20px;
+    background-color: #f9f9f9;
     text-align: center;
     .text {
         font-size: 14px;
@@ -1485,20 +1485,13 @@ button {
 .reservation-option {
     .secondary-title {
         position: relative;
-        .help-point:hover {
-            & + .tooltip {
-                display: block;
-                bottom: 37px;
-                left: 0;
-            }
-        }
     }
     .delivery {
         .tooltip {
             background-color: $brand-default;
             &:after {
                 color: $brand-default;
-                left: 105px;
+                left: 108px;
             }
         }
     }
@@ -1535,6 +1528,60 @@ button {
     }
 }
 // 예약정보 입력
+.payment-info {
+    margin-top: -1px;
+    padding: 25px 20px 20px;
+    border: 1px solid #dfe3e2;
+    background-color: #e9f1f0;
+    li {
+        @include clearfix;
+        padding: 8px 0;
+        span {
+            float: left;
+            font-size: 12px;
+            i {
+                display: inline-block;
+                width: 18px;
+                margin-right: 5px;
+                color: $brand-primary;
+                &.icon-car {
+                    font-size: 11px;
+                }
+                &.text-percent {
+                    margin-right: .4em;
+                    font-size: 13px;
+                }
+            }
+        }
+        strong {
+            float: right;
+            font-weight: 500;
+            font-size: 15px;
+            em {
+                font-weight: 400;
+                font-size: 12px;
+            }
+        }
+        &.discount {
+            strong {
+                color: $brand-primary;
+            }
+        }
+        &.total {
+            span {
+                font-weight: 700;
+                font-size: 15px;
+            }
+            strong {
+                font-size: 25px;
+                color: $brand-primary;
+                em {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
 .reservation-input {
     margin-top: -23px;
     margin-bottom: 18px;
@@ -1655,6 +1702,7 @@ button {
             padding: 0 20px;
             border: 1px solid #d5d5d5;
             font-weight: 700;
+            line-height: 39px;
             color: $brand-primary;
             &::-moz-placeholder {
                 font-weight: 400;
@@ -1667,58 +1715,9 @@ button {
             }
         }
     }
-}
-.payment-info {
-    margin-top: -1px;
-    padding: 25px 20px 20px;
-    border: 1px solid #dfe3e2;
-    background-color: #e9f1f0;
-    li {
-        @include clearfix;
-        padding: 8px 0;
-        span {
-            float: left;
-            font-size: 12px;
-            i {
-                display: inline-block;
-                width: 18px;
-                margin-right: 5px;
-                color: $brand-primary;
-                &.icon-car {
-                    font-size: 11px;
-                }
-                &.text-percent {
-                    margin: 0 .4em 0 0;
-                    font-size: 13px;
-                }
-            }
-        }
-        strong {
-            float: right;
-            font-weight: 500;
-            font-size: 15px;
-            em {
-                font-weight: 400;
-                font-size: 12px;
-            }
-        }
-        &.discount {
-            strong {
-                color: $brand-primary;
-            }
-        }
-        &.total {
-            span {
-                font-weight: 700;
-                font-size: 15px;
-            }
-            strong {
-                font-size: 25px;
-                color: $brand-primary;
-                em {
-                    font-size: 12px;
-                }
-            }
+    .payment-info {
+        .text-percent {
+            margin: 0 .2em;
         }
     }
 }
@@ -2173,6 +2172,7 @@ button {
         height: 25px;
         @include border-radius(50%);
         background-color: $brand-default;
+        font-weight: 700;
         font-size: 15px;
         line-height: 25px;
         color: $white;
@@ -2300,7 +2300,7 @@ button {
                 overflow-y: auto;
                 -webkit-overflow-scrolling: touch;
                 height: 100%;
-                padding-top: 8px;
+                //padding-top: 8px;
             }
         }
     }
@@ -2674,12 +2674,12 @@ button {
                 margin: auto;
                 @include border-radius(50%);
                 background-color: $brand-primary;
-                font-size: 13px;
+                font-size: 18px;
                 line-height: 31px;
                 font-family: 'fontello';
                 color: $white;
                 text-align: center;
-                content: '\e81a';
+                content: '\e81d';
             }
             .email-signup {
                 display: block;

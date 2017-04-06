@@ -63,9 +63,9 @@
 .icon-navigation:before { content: '\e817'; } /* '' */
 .icon-down-dir:before { content: '\e818'; } /* '' */
 .icon-credit-card:before { content: '\e819'; } /* '' */
-.icon-mail:before { content: '\e81a'; } /* '' */
 .icon-down-open:before { content: '\e81b'; } /* '' */
 .icon-up-open:before { content: '\e81c'; } /* '' */
+.icon-mail:before { content: '\e81d'; } /* '' */
 
 [class^="sp-icon"] {
     @include sprite-image(0,0);
@@ -144,7 +144,14 @@
 .icon-nosmoking {}
 .icon-cable {}
 .icon-bluetooth {}
-.icon-camera {}
+.sp-icon-camera {
+    @include image-size(52px,46px);
+    @include sprite-position(-350px,-700px);
+}
+.sp-icon-sm-camera {
+    @include image-size(32px,28px);
+    @include sprite-position(-420px,-700px);
+}
 .icon-big-cancel {}
 .icon-big-car {}
 .icon-print {}

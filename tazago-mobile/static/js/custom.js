@@ -58,43 +58,17 @@ $(document).ready(function() {
     });
 
 
-    // 예약하기 - 업그레이드 레이어
-    $('.btn-upgrade').on('click',function () {
-        $(this).addClass('on');
-        $('.modal.upgrade').show();
-    });
-    $('.modal.upgrade .btn-modal-close').on('click',function () {
-        $('.btn-upgrade').removeClass('on');
-        $(this).parent().hide();
-    });
-
-    $('#coupon').selectmenu();
-    $('.ui-selectmenu-menu').insertAfter('.footer');
-
-    var h = $(window).height();
-    $('.detail-view .image-area').height(h);
-
     // 차량검색 - 일정변경 레이어
     $('.btn-change-schedule').on('click',function () {
         $(this).toggleClass('on');
         $('.change-schedule').slideToggle();
     });
 
-    // 로그인 - 아이디/패스워드 찾기
-    $('.find-id').on('click',function () {
-        modalOpen('.forgot');
-        $('.tab').removeClass('active');
-        $('.tab-pane').hide();
-        $('.tab:first').addClass('active');
-        $('.tab-pane:first').show();
+    // 예약하기 툴팁
+    $('.reservation-option .help-point').on("click",function() {
+        $(this).siblings('.tooltip').toggle();
     });
-    $('.find-password').on('click',function () {
-        modalOpen('.forgot');
-        $('.tab').removeClass('active');
-        $('.tab-pane').hide();
-        $('.tab:last').addClass('active');
-        $('.tab-pane:last').show();
-    });
+
 
     // 자주하는 질문, 공지사항
     $(".board-title").on("click", function() {
