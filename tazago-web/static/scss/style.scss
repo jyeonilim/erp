@@ -1256,7 +1256,7 @@ button {
                 }
             }
         }
-        @media (max-width: 1200px) {
+        @media (max-width: 1500px) {
             .select-date {
                 padding: 0 17px;
                 .text-date {
@@ -1264,7 +1264,7 @@ button {
                         margin-top: 3px;
                     }
                     strong {
-                        font-size: 27px;
+                        font-size: 26px;
                     }
                     small {
                         margin-top: 4px;
@@ -1279,7 +1279,7 @@ button {
             .select-time {
                 padding: 0 17px;
                 .text-time {
-                    font-size: 29px;
+                    font-size: 28px;
                     &:before {
                         margin-top: 3px;
                     }
@@ -1407,6 +1407,26 @@ button {
         }
         .service6:before {
             background-position: -129px -344px;
+        }
+    }
+    @media (max-width: 1500px) {
+        > li {
+            .main-text {
+                font-size: 29px;
+                line-height: 35px;
+            }
+            .sub-text {
+                font-size: 22px;
+                line-height: 30px;
+            }
+        }
+        .partner-info,
+        .discount-info,
+        .reservation-info {
+            margin: 63px 0 60px;
+            li {
+                padding: 0 6px;
+            }
         }
     }
 }

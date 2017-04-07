@@ -2205,13 +2205,13 @@ button {
         background-position: -301px -86px; }
       .reservation-step .select-datetime .select-time.active:after {
         right: -1px; }
-    @media (max-width: 1200px) {
+    @media (max-width: 1500px) {
       .reservation-step .select-datetime .select-date {
         padding: 0 17px; }
         .reservation-step .select-datetime .select-date .text-date:before {
           margin-top: 3px; }
         .reservation-step .select-datetime .select-date .text-date strong {
-          font-size: 27px; }
+          font-size: 26px; }
         .reservation-step .select-datetime .select-date .text-date small {
           margin-top: 4px;
           font-size: 12px; }
@@ -2221,7 +2221,7 @@ button {
       .reservation-step .select-datetime .select-time {
         padding: 0 17px; }
         .reservation-step .select-datetime .select-time .text-time {
-          font-size: 29px; }
+          font-size: 28px; }
           .reservation-step .select-datetime .select-time .text-time:before {
             margin-top: 3px; } }
     .reservation-step .select-datetime .ui-datepicker,
@@ -2330,6 +2330,22 @@ button {
 
 .service-info .reservation-info .service6:before {
   background-position: -129px -344px; }
+
+@media (max-width: 1500px) {
+  .service-info > li .main-text {
+    font-size: 29px;
+    line-height: 35px; }
+  .service-info > li .sub-text {
+    font-size: 22px;
+    line-height: 30px; }
+  .service-info .partner-info,
+  .service-info .discount-info,
+  .service-info .reservation-info {
+    margin: 63px 0 60px; }
+    .service-info .partner-info li,
+    .service-info .discount-info li,
+    .service-info .reservation-info li {
+      padding: 0 6px; } }
 
 .customer-service {
   text-align: center; }
