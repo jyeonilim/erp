@@ -97,7 +97,7 @@ label {
     }
 }
 .table-option {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     .checkbox,
     .search-number {
         margin-top: 5px;
@@ -144,14 +144,44 @@ label {
 .tablesaw-bar .tablesaw-toolbar .btn-select:after {
     padding-top: .4em;
 }
+hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 /*******************************
     Contents
 *******************************/
+.w-70 {
+    width: 70px;
+}
+.font-15 {
+    font-size: 15px;
+}
+.list-wrap {
+    margin: 0;
+    border: 1px solid @light5;
+    > * {
+        margin-bottom: 0;
+        padding: 0;
+    }
+}
+.head-inverse {
+    padding: 5px 0;
+    background-color: @lightdark3;
+    color: @white;
+    text-align: center;
+}
 @media (max-width: 767px) {
     .xs-form-align {
         .clearfix;
         margin-bottom: 3px;
+    }
+    .xs-m-t-5 {
+        margin-top: 5px !important;
+    }
+    .xs-m-t-10 {
+        margin-top: 10px !important;
     }
 }
 .content-page {
@@ -235,6 +265,104 @@ label {
         margin: -5px 0 -3px;
     }
 }
+.tab-card-box {
+    padding: 0;
+    background-color: #f5f5f5;
+}
+.badge-title {
+    width: 100%;
+    padding: 10px 5px;
+    border: 1px solid @dark;
+    background-color: @white;
+    font-size: 14px;
+    color: @inverse;
+    p {
+        margin: 5px 0 0;
+        font-size: 11px;
+    }
+}
+.info-content {
+    width: 100%;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ededed;
+    @media (min-width: 768px) {
+        display: table;
+        > * {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .name-list {
+            text-align: center;
+        }
+    }
+}
+.bottom-info {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 10px;
+    background-color: #a5a5a5;
+    .alert {
+        margin: 0 5px;
+        background-color: #d8d8d8;
+    }
+    @media (max-width: 767px) {
+        .alert {
+            display: block;
+        }
+    }
+}
+// Top Button
+.btn-top {
+    visibility: hidden;
+    position: fixed;
+    bottom: 65px;
+    right: 15px;
+    z-index: 10;
+    width: 60px;
+    height: 60px;
+    .border-radius(50%);
+    border: 0;
+    background-color: @primary;
+    color: @white;
+    opacity: 0;
+    .fa {
+        font-size: 25px;
+    }
+    &.is-visible {
+        visibility: visible;
+        opacity: 1;
+        -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+        -moz-transition: opacity .3s 0s, visibility 0s 0s;
+        transition: opacity .3s 0s, visibility 0s 0s;
+    }
+}
+.list-dotted {
+    li {
+        padding-left: 8px;
+        text-indent: -8px;
+        &:before {
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            margin-right: 5px;
+            .border-radius(2px);
+            background-color: @inverse;
+            vertical-align: 3px;
+            content: '';
+        }
+    }
+}
+.datetime-group {
+    .bootstrap-timepicker {
+        display: table-cell;
+        width: 19%;
+        padding-left: 5px;
+    }
+}
 
 /*******************************
   대여업무 > 얘약관리
@@ -243,6 +371,10 @@ label {
 /* 예약접수 */
 .customer-card {
     padding: 0;
+    .nav.nav-tabs + .tab-content {
+        margin-bottom: 5px;
+        padding: 0;
+    }
 }
 .left-card-box {
     @media (max-width: 991px) {
@@ -358,6 +490,9 @@ label {
     font-size: 11px;
 }
 .charge-info {
+    &.no-line {
+        border: 0;
+    }
     input.form-control {
         display: inline-block;
         width: 70px;
@@ -418,5 +553,77 @@ label {
         & + .col-xs-offset-5 {
             padding-left: 10px;
         }
+    }
+}
+.block-list-check {
+    dl {
+        dt {
+            padding: 5px 0;
+            color: @white;
+            text-align: center;
+        }
+    }
+    .block-left {
+        dt {
+            background-color: @lightdark3;
+        }
+        dd {
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 83px;
+            text-align: center;
+        }
+    }
+    .block-state {
+        dt {
+            background-color: @lightdark7;
+        }
+        dd {
+            position: relative;
+            padding: 0 25px;
+            .btn-block-prev,
+            .btn-block-next {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                .fa {
+                    font-size: 16px;
+                }
+            }
+            .btn-block-prev {
+                left: 0;
+            }
+            .btn-block-next {
+                right: 0;
+            }
+        }
+    }
+}
+.paid-manage {
+    display: table;
+    width: 100%;
+    margin: -11px 0 0;
+    border: 1px solid #ededed;
+    > * {
+        display: table-cell;
+        float: none;
+        padding: 2px 5px;
+        vertical-align: middle;
+        .row {
+            padding: 2px 0;
+        }
+    }
+    @media (max-width: 767px) {
+        display: block;
+        > * {
+            display: block;
+        }
+    }
+}
+.total-paid {
+    border-left: 1px solid @light;
+    dd {
+        line-height: 55px;
+        text-align: center;
     }
 }

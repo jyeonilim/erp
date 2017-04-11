@@ -262,6 +262,9 @@ pre {
 .bg-pink {
   background-color: #f76397 !important;
 }
+.bg-lightpink {
+  background-color: #ffdae7 !important;
+}
 .bg-white {
   background-color: #ffffff !important;
 }
@@ -485,7 +488,7 @@ pre {
 }
 .nav.nav-tabs + .tab-content {
   background: #ffffff;
-  margin-bottom: 5px;
+  padding: 10px;
 }
 .card-box .nav-pills li a {
   color: #4c5667 !important;
@@ -624,20 +627,20 @@ pre {
   border-color: #DDDDDD;
   border-radius: 2px;
   box-shadow: none;
-  padding: 30px;
+  padding: 15px;
 }
 .modal .modal-dialog .modal-content .modal-header {
   border-bottom-width: 2px;
   margin: 0;
   padding: 0;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
 }
 .modal .modal-dialog .modal-content .modal-body {
-  padding: 20px 0;
+  padding: 10px 0;
 }
 .modal .modal-dialog .modal-content .modal-footer {
   padding: 0;
-  padding-top: 15px;
+  padding-top: 10px;
 }
 .modal-full {
   width: 98%;
@@ -726,6 +729,14 @@ pre {
 }
 .alert-danger .alert-link {
   color: #ef5350;
+}
+.alert-inverse {
+  background-color: rgba(76, 86, 103, 0.2) !important;
+  border-color: rgba(76, 86, 103, 0.5) !important;
+  color: #4c5667;
+}
+.alert-inverse .alert-link {
+  color: #4c5667;
 }
 /* List Group */
 .list-group-item.active {

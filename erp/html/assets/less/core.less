@@ -263,6 +263,10 @@ code, pre {
   background-color: @pink !important;
 }
 
+.bg-lightpink {
+  background-color: #ffdae7 !important;
+}
+
 .bg-white {
   background-color: @white !important;
 }
@@ -528,7 +532,7 @@ code, pre {
 
 .nav.nav-tabs + .tab-content {
   background: @white;
-  margin-bottom: 5px;
+  padding: 10px;
 }
 
 .card-box .nav-pills li a {
@@ -700,19 +704,19 @@ code, pre {
       border-color: #DDDDDD;
       border-radius: 2px;
       box-shadow: none;
-      padding: 30px;
+      padding: 15px;
       .modal-header {
         border-bottom-width: 2px;
         margin: 0;
         padding: 0;
-        padding-bottom: 15px;
+        padding-bottom: 10px;
       }
       .modal-body {
-        padding: 20px 0;
+        padding: 10px 0;
       }
       .modal-footer {
       padding: 0;
-        padding-top: 15px;
+        padding-top: 10px;
       }
     }
   }
@@ -818,6 +822,15 @@ code, pre {
   color: @danger;
   .alert-link {
     color: @danger;
+  }
+}
+
+.alert-inverse {
+  background-color: fade(@inverse, 20%) !important;
+  border-color: fade(@inverse, 50%) !important;
+  color: @inverse;
+  .alert-link {
+    color: @inverse;
   }
 }
 

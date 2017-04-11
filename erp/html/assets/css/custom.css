@@ -93,7 +93,7 @@ label {
   text-align: center;
 }
 .table-option {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 .table-option .checkbox,
 .table-option .search-number {
@@ -139,9 +139,33 @@ label {
 .tablesaw-bar .tablesaw-toolbar .btn-select:after {
   padding-top: .4em;
 }
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 /*******************************
     Contents
 *******************************/
+.w-70 {
+  width: 70px;
+}
+.font-15 {
+  font-size: 15px;
+}
+.list-wrap {
+  margin: 0;
+  border: 1px solid #f5f5f5;
+}
+.list-wrap > * {
+  margin-bottom: 0;
+  padding: 0;
+}
+.head-inverse {
+  padding: 5px 0;
+  background-color: #333333;
+  color: #ffffff;
+  text-align: center;
+}
 @media (max-width: 767px) {
   .xs-form-align {
     margin-bottom: 3px;
@@ -154,6 +178,12 @@ label {
     clear: both;
     display: table;
     content: '';
+  }
+  .xs-m-t-5 {
+    margin-top: 5px !important;
+  }
+  .xs-m-t-10 {
+    margin-top: 10px !important;
   }
 }
 .content-page > .content {
@@ -231,11 +261,116 @@ label {
 .card-title-box .checkbox {
   margin: -5px 0 -3px;
 }
+.tab-card-box {
+  padding: 0;
+  background-color: #f5f5f5;
+}
+.badge-title {
+  width: 100%;
+  padding: 10px 5px;
+  border: 1px solid #2a3142;
+  background-color: #ffffff;
+  font-size: 14px;
+  color: #4c5667;
+}
+.badge-title p {
+  margin: 5px 0 0;
+  font-size: 11px;
+}
+.info-content {
+  width: 100%;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ededed;
+}
+@media (min-width: 768px) {
+  .info-content {
+    display: table;
+  }
+  .info-content > * {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .info-content .name-list {
+    text-align: center;
+  }
+}
+.bottom-info {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 10px;
+  background-color: #a5a5a5;
+}
+.bottom-info .alert {
+  margin: 0 5px;
+  background-color: #d8d8d8;
+}
+@media (max-width: 767px) {
+  .bottom-info .alert {
+    display: block;
+  }
+}
+.btn-top {
+  visibility: hidden;
+  position: fixed;
+  bottom: 65px;
+  right: 15px;
+  z-index: 10;
+  width: 60px;
+  height: 60px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  background-clip: padding-box;
+  border: 0;
+  background-color: #3bafda;
+  color: #ffffff;
+  opacity: 0;
+}
+.btn-top .fa {
+  font-size: 25px;
+}
+.btn-top.is-visible {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+  -moz-transition: opacity .3s 0s, visibility 0s 0s;
+  transition: opacity .3s 0s, visibility 0s 0s;
+}
+.list-dotted li {
+  padding-left: 8px;
+  text-indent: -8px;
+}
+.list-dotted li:before {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  margin-right: 5px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  background-clip: padding-box;
+  background-color: #4c5667;
+  vertical-align: 3px;
+  content: '';
+}
+.datetime-group .bootstrap-timepicker {
+  display: table-cell;
+  width: 19%;
+  padding-left: 5px;
+}
 /*******************************
   대여업무 > 얘약관리
 *******************************/
 /* 예약접수 */
 .customer-card {
+  padding: 0;
+}
+.customer-card .nav.nav-tabs + .tab-content {
+  margin-bottom: 5px;
   padding: 0;
 }
 @media (max-width: 991px) {
@@ -345,6 +480,9 @@ label {
   display: block;
   font-size: 11px;
 }
+.charge-info.no-line {
+  border: 0;
+}
 .charge-info input.form-control {
   display: inline-block;
   width: 70px;
@@ -403,5 +541,72 @@ label {
 }
 .total-payment .deposit-info + .col-xs-offset-5 {
   padding-left: 10px;
+}
+.block-list-check dl dt {
+  padding: 5px 0;
+  color: #ffffff;
+  text-align: center;
+}
+.block-list-check .block-left dt {
+  background-color: #333333;
+}
+.block-list-check .block-left dd {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 83px;
+  text-align: center;
+}
+.block-list-check .block-state dt {
+  background-color: #797979;
+}
+.block-list-check .block-state dd {
+  position: relative;
+  padding: 0 25px;
+}
+.block-list-check .block-state dd .btn-block-prev,
+.block-list-check .block-state dd .btn-block-next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.block-list-check .block-state dd .btn-block-prev .fa,
+.block-list-check .block-state dd .btn-block-next .fa {
+  font-size: 16px;
+}
+.block-list-check .block-state dd .btn-block-prev {
+  left: 0;
+}
+.block-list-check .block-state dd .btn-block-next {
+  right: 0;
+}
+.paid-manage {
+  display: table;
+  width: 100%;
+  margin: -11px 0 0;
+  border: 1px solid #ededed;
+}
+.paid-manage > * {
+  display: table-cell;
+  float: none;
+  padding: 2px 5px;
+  vertical-align: middle;
+}
+.paid-manage > * .row {
+  padding: 2px 0;
+}
+@media (max-width: 767px) {
+  .paid-manage {
+    display: block;
+  }
+  .paid-manage > * {
+    display: block;
+  }
+}
+.total-paid {
+  border-left: 1px solid #eeeeee;
+}
+.total-paid dd {
+  line-height: 55px;
+  text-align: center;
 }
 /*# sourceMappingURL=custom.css.map */
