@@ -65,11 +65,11 @@ label {
 }
 .checkbox,
 .radio {
-  margin: 3px 0;
+  margin: 2px 0;
 }
 .checkbox label,
 .radio label {
-  font-size: 11px;
+  font-size: 13px;
 }
 .form-horizontal .checkbox,
 .form-horizontal .checkbox-inline,
