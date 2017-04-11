@@ -10,6 +10,9 @@
     color: $white;
     vertical-align: middle;
     cursor: pointer;
+    .unit {
+        color: #ffed29;
+    }
 }
 
 .btn-sm {
@@ -93,6 +96,11 @@
         }
         .btn {
             width: 100%;
+        }
+    }
+    &.btn-inline {
+        .outer {
+            padding: 0;
         }
     }
 }
