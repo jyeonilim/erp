@@ -8,15 +8,16 @@
 
         <link rel="shortcut icon" href="../../assets/images/favicon_1.ico">
 
-        <title>Minton - Responsive Admin Dashboard Template</title>
+        <title>요금정보/차고지 설정</title>
 
         <!-- Plugins css-->
         <link href="../../../plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
-        <link href="../../../plugins/multiselect/css/multi-select.css"  rel="stylesheet" type="text/css" />
+        <link href="../../../plugins/multiselect/css/multi-select.css" rel="stylesheet" type="text/css" />
         <link href="../../../plugins/select2/select2.css" rel="stylesheet" type="text/css" />
         <link href="../../../plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
 
         <link href="../../../plugins/timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
+        <link href="../../../plugins/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
         <link href="../../../plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet">
         <link href="../../../plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
@@ -55,7 +56,7 @@
             <!-- LOGO -->
             <div class="topbar-left">
                 <div class="text-center">
-                    <a href="index.html" class="logo"><i class="md md-equalizer"></i> <span>Minton</span> </a>
+                    <a href="#" class="logo"><i class="md md-equalizer"></i> <span>렌트카 영업관리 시스템</span> </a>
                 </div>
             </div>
 
@@ -494,160 +495,230 @@
                     <!-- Page-Title -->
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="page-title-box">
+                            <div class="page-title-box not-fixed">
                                 <div class="breadcrumb pull-right">
                                     <button type="button" class="btn btn-default btn-rounded w-md waves-effect">즐겨찾기</button>
                                 </div>
-                                <h4 class="page-title">고장/사고접보</h4>
+                                <h4 class="page-title">요금정보/차고지 설정</h4>
                             </div>
                         </div>
                     </div>
-
-
-                    <div class="row m-b-10">
-                        <div class="col-sm-12">
-                            <form class="form-inline" role="form">
-                                <div class="form-group">
-                                    <label for="datepicker-search-date">검색기간</label>
-                                    <div class="input-daterange input-group" id="datepicker-search-date">
-                                        <input type="text" class="form-control" name="start">
-                                        <span class="input-group-addon bg-muted b-0">-</span>
-                                        <input type="text" class="form-control" name="end">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="list-search" class="sr-only">목록검색</label>
-                                    <select class="form-control" id="list-search">
-                                        <option>차번</option>
-                                        <option>임차인</option>
-                                        <option>처리사원</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <input type="text" id="example-input2-group2" name="example-input2-group2" class="form-control" placeholder="검색어 입력">
-                                        <span class="input-group-btn">
-                                                <button type="button" class="btn waves-effect waves-light btn-inverse">검색</button>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <button type="button" class="btn btn-inverse waves-effect waves-light">엑셀저장</button>
-                                    <button type="button" class="btn btn-primary waves-effect waves-light">신규등록</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
 
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-sm-4">
                             <div class="card-box">
-                                <div class="row table-option">
-                                    <div class="col-xs-4 col-sm-2">
-                                        <label for="sort-table" class="sr-only">정렬 목록</label>
-                                        <select class="form-control input-sm" id="sort-table">
-                                            <option>최근등록</option>
-                                            <option>예약자 명순</option>
-                                            <option>거래처명순</option>
-                                            <option>차량명순</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xs-8 col-sm-7">
-                                        <div class="checkbox checkbox-inline checkbox-primary">
-                                            <input id="all-date" type="checkbox">
-                                            <label for="all-date">전체기간</label>
+                                <div class="card-title-box">
+                                    추가요금 설정
+                                </div>
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="extra-charge" class="col-xs-12"><b>추가요금 적용</b></label>
+                                        <div class="col-xs-12 input-group">
+                                            <input type="text" class="form-control" id="extra-charge">
+                                            <span class="input-group-addon bg-empty b-0">시간 까지</span>
                                         </div>
-                                        <div class="checkbox checkbox-inline checkbox-primary">
-                                            <input id="only-processing" type="checkbox">
-                                            <label for="only-processing">처리 중 항목만 보기</label>
+                                        <p>(입력시간 이상은 상위요금 적용)</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="extra-charge-standard" class="col-xs-12"><b>추가요금 기준</b></label>
+                                        <div class="col-xs-12 input-group">
+                                            <input type="text" class="form-control" id="extra-charge-standard">
+                                            <span class="input-group-addon bg-empty b-0">분 초과 시</span>
+                                        </div>
+                                        <p>(1시간 추가요금 적용기준)</p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="card-box">
+                                <div class="card-title-box">
+                                    자차요금 설정
+                                </div>
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-xs-12 col-sm-4"><b>기준설정</b></label>
+                                        <div class="col-xs-12 col-sm-8">
+                                            <div class="radio">
+                                                <input type="radio" name="set-standard" id="hours">
+                                                <label for="hours">24시간 단위로 산출</label>
+                                            </div>
+                                            <div class="radio">
+                                                <input type="radio" name="set-standard" id="days">
+                                                <label for="days">사용일수로 산출</label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-12 col-sm-3 text-right search-number">총 <b class="text-primary">$5$</b>건</div>
+                                    <div class="form-group">
+                                        <label class="col-xs-12"><b>명칭설정</b></label>
+                                        <ul class="col-xs-12 list-unstyled">
+                                            <li>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control">
+                                                    <span class="input-group-btn"><button type="button" class="btn btn-default"><i class="ion-ios7-plus-outline"></i> 추가</button></span>
+                                                </div>
+                                            </li>
+                                            <li class="m-t-2">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control">
+                                                    <span class="input-group-btn"><button type="button" class="btn btn-default"><i class="ion-ios7-minus-outline"></i> 삭제</button></span>
+                                                </div>
+                                            </li>
+                                            <li class="m-t-2">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control">
+                                                    <span class="input-group-btn"><button type="button" class="btn btn-default"><i class="ion-ios7-minus-outline"></i> 삭제</button></span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="card-box">
+                                <div class="card-title-box">
+                                    차고지 명칭/구분색 설정
                                 </div>
-                                <div class="table-responsive">
-                                    <table class="table table-center m-b-0">
-                                        <thead>
-                                        <tr>
-                                            <th scope="col" class="bg-muted">차번</th>
-                                            <th scope="col" class="bg-muted">접수일시</th>
-                                            <th scope="col" class="bg-muted">접보내용</th>
-                                            <th scope="col" class="bg-muted">처리상태</th>
-                                            <th scope="col" class="bg-muted">처리일시</th>
-                                            <th scope="col" class="bg-muted">처리내역</th>
-                                            <th scope="col" class="bg-muted">처리사원</th>
-                                            <th scope="col" class="bg-muted">비고</th>
-                                            <th scope="col" class="bg-muted">임차인</th>
-                                            <th scope="col" class="bg-muted">전화번호</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>차번</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>접보</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>담당자명</td>
-                                            <td><a href="#" class="btn-link btn-sm">상세보기</a></td>
-                                            <td>임차인명</td>
-                                            <td>전화번호</td>
-                                        </tr>
-                                        <tr>
-                                            <td>차번</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td><span class="text-primary">처리중</span></td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>담당자명</td>
-                                            <td><a href="#" class="btn-link btn-sm">상세보기</a></td>
-                                            <td>임차인명</td>
-                                            <td>전화번호</td>
-                                        </tr>
-                                        <tr>
-                                            <td>차번</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>접보</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>담당자명</td>
-                                            <td><a href="#" class="btn-link btn-sm">상세보기</a></td>
-                                            <td>임차인명</td>
-                                            <td>전화번호</td>
-                                        </tr>
-                                        <tr>
-                                            <td>차번</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>접보</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>담당자명</td>
-                                            <td><a href="#" class="btn-link btn-sm">상세보기</a></td>
-                                            <td>임차인명</td>
-                                            <td>전화번호</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="text-center">
-                                    <ul class="pagination pagination-split m-t-30">
-                                        <li class="footable-page-arrow disabled"><a data-page="first"
-                                                                                    href="#first">«</a></li>
-                                        <li class="footable-page-arrow disabled"><a data-page="prev" href="#prev">‹</a>
-                                        </li>
-                                        <li class="footable-page active"><a data-page="0" href="#">1</a></li>
-                                        <li class="footable-page"><a data-page="1" href="#">2</a></li>
-                                        <li class="footable-page-arrow"><a data-page="next" href="#next">›</a></li>
-                                        <li class="footable-page-arrow"><a data-page="last" href="#last">»</a></li>
-                                    </ul>
-                                </div>
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <ul class="col-xs-12 list-unstyled">
+                                            <li>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control">
+                                                    <div class="input-group-btn add-on">
+                                                        <div data-color-format="rgb" data-color="rgb(255, 146, 180)" class="colorpicker-default input-group">
+                                                            <input type="text" readonly="readonly" value="" class="form-control w-70">
+                                                            <span class="input-group-btn add-on">
+																<button class="btn btn-white btn-md" type="button">
+																	<i style="background-color: rgb(124, 66, 84);"></i>
+																</button>
+															</span>
+                                                        </div>
+                                                    </div>
+                                                    <span class="input-group-btn"><button type="button" class="btn btn-default"><i class="ion-ios7-plus-outline"></i> 추가</button></span>
+                                                </div>
+                                            </li>
+                                            <li class="m-t-2">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control">
+                                                    <div class="input-group-btn add-on">
+                                                        <div data-color-format="rgb" data-color="rgb(255, 146, 180)" class="colorpicker-default input-group">
+                                                            <input type="text" readonly="readonly" value="" class="form-control w-70">
+                                                            <span class="input-group-btn add-on">
+																<button class="btn btn-white btn-md" type="button">
+																	<i style="background-color: rgb(124, 66, 84);"></i>
+																</button>
+															</span>
+                                                        </div>
+                                                    </div>
+                                                    <span class="input-group-btn"><button type="button" class="btn btn-default"><i class="ion-ios7-minus-outline"></i> 삭제</button></span>
+                                                </div>
+                                            </li>
+                                            <li class="m-t-2">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control">
+                                                    <div class="input-group-btn add-on">
+                                                        <div data-color-format="rgb" data-color="rgb(255, 146, 180)" class="colorpicker-default input-group">
+                                                            <input type="text" readonly="readonly" value="" class="form-control w-70">
+                                                            <span class="input-group-btn add-on">
+																<button class="btn btn-white btn-md" type="button">
+																	<i style="background-color: rgb(124, 66, 84);"></i>
+																</button>
+															</span>
+                                                        </div>
+                                                    </div>
+                                                    <span class="input-group-btn"><button type="button" class="btn btn-default"><i class="ion-ios7-minus-outline"></i> 삭제</button></span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card-box">
+                                <div class="card-title-box">
+                                    배/반차 기본장소
+                                </div>
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="allocate" class="col-xs-12 col-sm-2"><b>기본 배차장소</b></label>
+                                        <div class="col-xs-12 col-sm-10">
+                                            <select class="form-control" id="allocate">
+                                                <option>선택하세요</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="return" class="col-xs-12 col-sm-2"><b>기본 반차장소</b></label>
+                                        <div class="col-xs-12 col-sm-10">
+                                            <select class="form-control" id="return">
+                                                <option>선택하세요</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="card-box">
+                                <div class="card-title-box">
+                                    배차간격 설정
+                                </div>
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-xs-12 col-sm-2"><b>당사</b></label>
+                                        <div class="col-xs-12 col-sm-10">
+                                            <div class="radio radio-primary radio-inline">
+                                                <input type="radio" name="company" id="company-no-interval">
+                                                <label for="company-no-interval">간격없음</label>
+                                            </div>
+                                            <div class="radio radio-primary radio-inline">
+                                                <input type="radio" name="company" id="company-interval-half-hour">
+                                                <label for="company-interval-half-hour">30분</label>
+                                            </div>
+                                            <div class="radio radio-primary radio-inline">
+                                                <input type="radio" name="company" id="company-interval-hour">
+                                                <label for="company-interval-hour">1시간</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-xs-12 col-sm-2"><b>Agent</b></label>
+                                        <div class="col-xs-12 col-sm-10">
+                                            <div class="radio radio-primary radio-inline">
+                                                <input type="radio" name="agent" id="agent-no-interval">
+                                                <label for="agent-no-interval">간격없음</label>
+                                            </div>
+                                            <div class="radio radio-primary radio-inline">
+                                                <input type="radio" name="agent" id="agent-interval-half-hour">
+                                                <label for="agent-interval-half-hour">30분</label>
+                                            </div>
+                                            <div class="radio radio-primary radio-inline">
+                                                <input type="radio" name="agent" id="agent-interval-hour">
+                                                <label for="agent-interval-hour">1시간</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bottom-info row">
+                        <div class="col-sm-12 text-center">
+                            <button class="btn btn-primary btn-lg waves-effect waves-light" type="submit">적용</button>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-top"><i class="fa fa-arrow-up"></i></button>
 
                 </div>
                 <!-- end container -->
@@ -704,6 +775,7 @@
 
         <script src="../../../plugins/moment/moment.js"></script>
         <script src="../../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
+        <script src="../../../plugins/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
         <script src="../../../plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
         <script src="../../../plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
 
@@ -717,7 +789,14 @@
 				$('form').parsley();
 
                 // Date Picker
-                jQuery('#datepicker-search-date').datepicker({toggleActive: true});
+                jQuery('#datepicker-pickup-date').datepicker({toggleActive: true});
+                jQuery('#datepicker-ship-date').datepicker({toggleActive: true});
+
+                //colorpicker start
+                $('.colorpicker-default').colorpicker({
+                    format: 'hex'
+                });
+
             });
 		</script>
 

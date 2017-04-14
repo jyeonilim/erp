@@ -306,7 +306,7 @@ pre {
   -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   -webkit-border-radius: 2px;
   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-  background-color: #fafafa;
+  background-color: #ffffff;
   border-radius: 2px;
   border: 1px solid #eeeeee;
   box-shadow: none;
@@ -534,7 +534,7 @@ pre {
   border: 0;
 }
 .nav.nav-tabs > li > a {
-  background-color: transparent;
+  background-color: #eeeeee;
   border-radius: 0;
   border: none;
   color: #333333 !important;
@@ -812,7 +812,8 @@ pre {
 }
 .input-group-addon {
   border-radius: 2px;
-  border: 1px solid #eeeeee;
+  border: 0;
+  background-color: transparent;
   font-size: 13px;
 }
 /* Tooltips */

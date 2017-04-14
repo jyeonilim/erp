@@ -27,10 +27,33 @@
         top: 1px;
     }
 }
+.btn-login,
+.btn-login:hover,
+.btn-login:visited,
+.btn-login:active {
+    background-color: transparent !important;
+    color: @white !important;
+    text-decoration: underline !important;
+    vertical-align: baseline;
+    box-shadow: none;
+}
 
 /*******************************
   Form
 *******************************/
+@media (min-width: 768px) {
+    .form-inline {
+        .input-group {
+            width: auto;
+        }
+    }
+}
+.input-group {
+    width: 100%;
+    .text-left {
+        padding-left: 0;
+    }
+}
 label {
     margin-bottom: 3px;
 }
@@ -71,11 +94,16 @@ label {
         width: 70%;
     }
 }
-.checkbox, .radio {
+.checkbox,
+.radio {
     margin: 2px 0;
-}
-.checkbox label, .radio label {
-    font-size: 13px;
+    label{
+        font-size: 13px;
+    }
+    & + .checkbox,
+    & + .radio {
+        margin-top: 0;
+    }
 }
 .form-horizontal .checkbox, .form-horizontal .checkbox-inline, .form-horizontal .radio, .form-horizontal .radio-inline {
     padding-top: 3px;
@@ -93,7 +121,11 @@ label {
     &.table-center {
         th, td {
             text-align: center;
+            vertical-align: middle;
         }
+    }
+    .table-cell-persist {
+        border-right: 1px solid #e4e1de;
     }
 }
 .table-option {
@@ -126,6 +158,13 @@ label {
     .form-group {
         margin-left: -5px;
         margin-right: -5px;
+        .form-group {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        p {
+            margin-bottom: 0;
+        }
     }
 }
 .form-control-static {
@@ -148,15 +187,46 @@ hr {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.custom-dd-empty {
+    .dd-list {
+        .dd3-handle {
+            height: 100%;
+            &:before {
+                top: 0;
+                bottom: 0;
+                height: 20px;
+                margin: auto;
+            }
+        }
+    }
+}
+.dd {
+    max-width: inherit;
+}
 
 /*******************************
     Contents
 *******************************/
+.w-50 {
+    width: 50px !important;
+}
 .w-70 {
-    width: 70px;
+    width: 70px !important;
+}
+.w-auto {
+    width: auto !important;
 }
 .font-15 {
     font-size: 15px;
+}
+.m-t-2 {
+    margin-top: 2px;
+}
+.display-table {
+    display: table;
+}
+.display-cell {
+    display: table-cell;
 }
 .list-wrap {
     margin: 0;
@@ -210,12 +280,12 @@ hr {
         top: -40px;
         right: -15px !important;
         left: 15px !important;
-        h4.page-title {
-            font-size: 14px;
-            span {
-                margin-left: 5px;
-                font-size: 11px;
-            }
+    }
+    h4.page-title {
+        font-size: 14px;
+        span {
+            margin-left: 5px;
+            font-size: 11px;
         }
     }
 }
@@ -302,7 +372,7 @@ hr {
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 10;
+    z-index: 111;
     padding: 10px;
     background-color: #a5a5a5;
     .alert {
@@ -321,7 +391,7 @@ hr {
     position: fixed;
     bottom: 65px;
     right: 15px;
-    z-index: 10;
+    z-index: 112;
     width: 60px;
     height: 60px;
     .border-radius(50%);
@@ -361,6 +431,16 @@ hr {
         display: table-cell;
         width: 19%;
         padding-left: 5px;
+    }
+}
+.delete-message {
+    padding: 30px 0;
+    font-size: 20px;
+    text-align: center;
+    i {
+        margin-bottom: 10px;
+        font-size: 50px;
+        color: @primary;
     }
 }
 
@@ -442,6 +522,14 @@ hr {
     @media (max-width: 767px) {
         .form-group.m-r-10 {
             margin-right: 0;
+        }
+    }
+}
+.scroll-content {
+    @media (max-width: 767px) {
+        .slimScrollDiv,
+        .portlet {
+            height: auto !important;
         }
     }
 }
@@ -625,5 +713,162 @@ hr {
     dd {
         line-height: 55px;
         text-align: center;
+    }
+}
+
+// SMS 관리
+.send-message-box {
+    margin: 0;
+    border: 1px solid @light;
+    > .col-xs-6 {
+        padding: 0;
+    }
+    .form-control {
+        border: 0;
+        background-color: @white;
+    }
+}
+.send-message-help {
+    padding: 3px !important;
+    text-align: center;
+    .alert {
+        display: inline-block;
+        margin-bottom: 0;
+    }
+    ul {
+        .clearfix;
+        margin-bottom: 0;
+        padding: 0;
+        list-style: none;
+        li {
+            float: left;
+            width: 33.33%;
+            padding: 2px;
+            text-align: center;
+            a {
+                display: block;
+                padding: 3px 0;
+                background-color: @inverse;
+                color: @white;
+            }
+        }
+    }
+}
+// 고객정보 관리
+.customer-info-manage {
+    margin: 5px -2px 0;
+    dl {
+        margin-bottom: 0;
+        padding: 2px;
+        dt {
+            padding: 5px 0;
+            color: @white;
+        }
+        dd {
+            padding: 10px 0;
+        }
+    }
+}
+// 웹 Agent 기초설정
+.search-url {
+    background-color: @lightdark-alt;
+    margin: -10px -10px 10px;
+    padding: 10px;
+}
+// 퀵메뉴 설정
+.menuset-box {
+    .clearfix;
+    &, ul {
+        padding: 0;
+        list-style: none;
+    }
+    .menuset-item {
+        float: left;
+        width: 25%;
+        margin-bottom: 10px;
+        &:nth-child(4n+1) {
+            clear: left;
+        }
+        > span {
+            font-weight: 700;
+        }
+        @media (max-width: 767px) {
+            width: 50%;
+            &:nth-child(2n+1) {
+                clear: left;
+            }
+        }
+    }
+    .menuset-item-depth {
+        > span {
+            margin-left: 25px;
+            &:before {
+                margin-right: 5px;
+                content: '-';
+            }
+        }
+        > ul {
+            margin-left: 33px;
+        }
+    }
+}
+.selected-menu {
+    .selected-menu-head {
+        .clearfix;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        a {
+            color: @light;
+        }
+        @media (min-width: 767px) {
+            .pull-left,
+            .pull-right {
+                display: block;
+                float: none !important;
+            }
+        }
+    }
+    .tag{
+        position: relative;
+        padding: 2px 5px;
+        color: @white;
+        .label {
+            display: block;
+            padding: 5px 20px;
+            font-size: 12px;
+            line-height: 14px;
+            white-space: normal;
+        }
+        [data-role="remove"] {
+            position: absolute;
+            top: 3px;
+            right: 10px;
+            cursor: pointer;
+            &:after {
+                content: "x";
+                padding: 0 2px;
+            }
+            &:hover {
+                box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+            }
+            &:hover:active {
+                box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+            }
+        }
+    }
+}
+// sms발송
+.sms-record-box {
+    .search-receive-number {
+        padding: 5px 40px;
+        .border-radius(17px);
+        background-color: fade(@muted,20%);
+    }
+    .table-option {
+        .input-group {
+            select.form-control {
+                width: auto;
+            }
+        }
     }
 }

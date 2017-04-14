@@ -8,7 +8,7 @@
 
         <link rel="shortcut icon" href="../../assets/images/favicon_1.ico">
 
-        <title>Minton - Responsive Admin Dashboard Template</title>
+        <title>웹 Agent 기초설정</title>
 
         <!-- Plugins css-->
         <link href="../../../plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
@@ -494,160 +494,175 @@
                     <!-- Page-Title -->
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="page-title-box">
+                            <div class="page-title-box not-fixed">
                                 <div class="breadcrumb pull-right">
                                     <button type="button" class="btn btn-default btn-rounded w-md waves-effect">즐겨찾기</button>
                                 </div>
-                                <h4 class="page-title">고장/사고접보</h4>
+                                <h4 class="page-title">웹 Agent 기초설정</h4>
                             </div>
                         </div>
                     </div>
-
 
                     <div class="row m-b-10">
                         <div class="col-sm-12">
                             <form class="form-inline" role="form">
                                 <div class="form-group">
-                                    <label for="datepicker-search-date">검색기간</label>
-                                    <div class="input-daterange input-group" id="datepicker-search-date">
-                                        <input type="text" class="form-control" name="start">
-                                        <span class="input-group-addon bg-muted b-0">-</span>
-                                        <input type="text" class="form-control" name="end">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="list-search" class="sr-only">목록검색</label>
-                                    <select class="form-control" id="list-search">
-                                        <option>차번</option>
-                                        <option>임차인</option>
-                                        <option>처리사원</option>
+                                    <label for="sort-option">거래처</label>
+                                    <select class="form-control" id="sort-option">
+                                        <option>선택하세요</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <div class="input-group">
-                                        <input type="text" id="example-input2-group2" name="example-input2-group2" class="form-control" placeholder="검색어 입력">
-                                        <span class="input-group-btn">
-                                                <button type="button" class="btn waves-effect waves-light btn-inverse">검색</button>
-                                        </span>
+                                    <div class="checkbox checkbox-primary">
+                                        <input id="not-code" type="checkbox">
+                                        <label for="not-code">코드 사용하지 않음.</label>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <button type="button" class="btn btn-inverse waves-effect waves-light">엑셀저장</button>
-                                    <button type="button" class="btn btn-primary waves-effect waves-light">신규등록</button>
                                 </div>
                             </form>
                         </div>
                     </div>
 
-
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-xs-12">
                             <div class="card-box">
-                                <div class="row table-option">
-                                    <div class="col-xs-4 col-sm-2">
-                                        <label for="sort-table" class="sr-only">정렬 목록</label>
-                                        <select class="form-control input-sm" id="sort-table">
-                                            <option>최근등록</option>
-                                            <option>예약자 명순</option>
-                                            <option>거래처명순</option>
-                                            <option>차량명순</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xs-8 col-sm-7">
-                                        <div class="checkbox checkbox-inline checkbox-primary">
-                                            <input id="all-date" type="checkbox">
-                                            <label for="all-date">전체기간</label>
+                                <form class="form-horizontal" role="form">
+                                    <div class="form-group">
+                                        <label for="agent-code" class="col-xs-12 col-sm-2 control-label">Agent 부여 당사코드</label>
+                                        <div class="col-xs-12 col-sm-4">
+                                            <input class="form-control" type="number" name="" id="agent-code">
                                         </div>
-                                        <div class="checkbox checkbox-inline checkbox-primary">
-                                            <input id="only-processing" type="checkbox">
-                                            <label for="only-processing">처리 중 항목만 보기</label>
+                                        <p class="col-sm-6">중복되는 코드입니다. 확인 후, 다시 입력해주세요.</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="discount-class" class="col-xs-12 col-sm-2 control-label">할인등급</label>
+                                        <div class="col-xs-12 col-sm-4">
+                                            <select class="form-control" id="discount-class">
+                                                <option>선택하세요</option>
+                                            </select>
+                                        </div>
+                                        <label for="reservation-desk" class="col-xs-12 col-sm-2 control-label">예약접수 시 사용할 데스크</label>
+                                        <div class="col-xs-12 col-sm-4">
+                                            <select class="form-control" id="reservation-desk">
+                                                <option>선택하세요</option>
+                                            </select>
                                         </div>
                                     </div>
-                                    <div class="col-xs-12 col-sm-3 text-right search-number">총 <b class="text-primary">$5$</b>건</div>
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="table table-center m-b-0">
-                                        <thead>
-                                        <tr>
-                                            <th scope="col" class="bg-muted">차번</th>
-                                            <th scope="col" class="bg-muted">접수일시</th>
-                                            <th scope="col" class="bg-muted">접보내용</th>
-                                            <th scope="col" class="bg-muted">처리상태</th>
-                                            <th scope="col" class="bg-muted">처리일시</th>
-                                            <th scope="col" class="bg-muted">처리내역</th>
-                                            <th scope="col" class="bg-muted">처리사원</th>
-                                            <th scope="col" class="bg-muted">비고</th>
-                                            <th scope="col" class="bg-muted">임차인</th>
-                                            <th scope="col" class="bg-muted">전화번호</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>차번</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>접보</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>담당자명</td>
-                                            <td><a href="#" class="btn-link btn-sm">상세보기</a></td>
-                                            <td>임차인명</td>
-                                            <td>전화번호</td>
-                                        </tr>
-                                        <tr>
-                                            <td>차번</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td><span class="text-primary">처리중</span></td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>담당자명</td>
-                                            <td><a href="#" class="btn-link btn-sm">상세보기</a></td>
-                                            <td>임차인명</td>
-                                            <td>전화번호</td>
-                                        </tr>
-                                        <tr>
-                                            <td>차번</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>접보</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>담당자명</td>
-                                            <td><a href="#" class="btn-link btn-sm">상세보기</a></td>
-                                            <td>임차인명</td>
-                                            <td>전화번호</td>
-                                        </tr>
-                                        <tr>
-                                            <td>차번</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>접보</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>담당자명</td>
-                                            <td><a href="#" class="btn-link btn-sm">상세보기</a></td>
-                                            <td>임차인명</td>
-                                            <td>전화번호</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="text-center">
-                                    <ul class="pagination pagination-split m-t-30">
-                                        <li class="footable-page-arrow disabled"><a data-page="first"
-                                                                                    href="#first">«</a></li>
-                                        <li class="footable-page-arrow disabled"><a data-page="prev" href="#prev">‹</a>
-                                        </li>
-                                        <li class="footable-page active"><a data-page="0" href="#">1</a></li>
-                                        <li class="footable-page"><a data-page="1" href="#">2</a></li>
-                                        <li class="footable-page-arrow"><a data-page="next" href="#next">›</a></li>
-                                        <li class="footable-page-arrow"><a data-page="last" href="#last">»</a></li>
-                                    </ul>
-                                </div>
+                                    <div class="form-group">
+                                        <label for="reservation-discount" class="col-xs-12 col-sm-2 control-label">예약접수 시 사용할 할인구분</label>
+                                        <div class="col-xs-12 col-sm-4">
+                                            <select class="form-control" id="reservation-discount">
+                                                <option>선택하세요</option>
+                                            </select>
+                                        </div>
+                                        <label for="reservation-staff" class="col-xs-12 col-sm-2 control-label">예약접수 시 사용할 작업자</label>
+                                        <div class="col-xs-12 col-sm-4">
+                                            <select class="form-control" id="reservation-staff">
+                                                <option>선택하세요</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="agent-note" class="col-xs-12 col-sm-2 control-label">비고</label>
+                                        <div class="col-xs-12 col-sm-10">
+                                            <input class="form-control" type="number" name="" id="agent-note">
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card-box">
+                                <div class="card-title-box">
+                                    차종코드 매핑정보
+                                </div>
+                                <table class="table table-center">
+                                    <thead>
+                                    <tr>
+                                        <th colspan="2" class="bg-muted table-cell-persist">당사에서 사용하는 차종</th>
+                                        <th colspan="2" class="bg-muted">Agent에서 사용하는 차종</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="bg-muted">차종코드</th>
+                                        <th class="bg-muted table-cell-persist">차종</th>
+                                        <th class="bg-muted">차종코드</th>
+                                        <th class="bg-muted">차종</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>$차종코드$</td>
+                                        <td class="table-cell-persist">$차량명$</td>
+                                        <td>
+                                            <div class="radio radio-primary">
+                                                <input type="radio" name="car-code" id="code1">
+                                                <label for="code1">$차종코드$</label>
+                                            </div>
+                                        </td>
+                                        <td>$차량명$</td>
+                                    </tr>
+                                    <tr>
+                                        <td>$차종코드$</td>
+                                        <td class="table-cell-persist">$차량명$</td>
+                                        <td>
+                                            <div class="radio radio-primary">
+                                                <input type="radio" name="car-code" id="code2">
+                                                <label for="code2">$차종코드$</label>
+                                            </div>
+                                        </td>
+                                        <td>$차량명$</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="card-box">
+                                <div class="card-title-box">
+                                    Agent 사용 차종정보
+                                </div>
+                                <div class="search-url">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="URL">
+                                        <span class="input-group-btn"><button type="button" class="btn btn-default">불러오기</button></span>
+                                    </div>
+                                </div>
+                                <table class="table table-center">
+                                    <thead>
+                                    <tr>
+                                        <th class="bg-muted">차종코드</th>
+                                        <th class="bg-muted">차종</th>
+                                        <th class="bg-muted">매핑선택</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>$차종코드$</td>
+                                        <td>$차량명$</td>
+                                        <td><button type="button" class="btn btn-success btn-rounded btn-md">선택</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>$차종코드$</td>
+                                        <td>$차량명$</td>
+                                        <td><button type="button" class="btn btn-success btn-rounded btn-md">선택</button></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bottom-info row">
+                        <div class="col-sm-12 text-center">
+                            <button class="btn btn-primary btn-lg waves-effect waves-light" type="submit">$등록$</button>
+                            <button class="btn btn-inverse btn-lg waves-effect waves-light" type="submit">취소</button>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn-top"><i class="fa fa-arrow-up"></i></button>
 
                 </div>
                 <!-- end container -->
@@ -717,7 +732,8 @@
 				$('form').parsley();
 
                 // Date Picker
-                jQuery('#datepicker-search-date').datepicker({toggleActive: true});
+                jQuery('#datepicker-pickup-date').datepicker({toggleActive: true});
+                jQuery('#datepicker-ship-date').datepicker({toggleActive: true});
             });
 		</script>
 

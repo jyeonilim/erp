@@ -8,7 +8,7 @@
 
         <link rel="shortcut icon" href="../../assets/images/favicon_1.ico">
 
-        <title>Minton - Responsive Admin Dashboard Template</title>
+        <title>편의장비 보유수량</title>
 
         <!-- Plugins css-->
         <link href="../../../plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
@@ -498,7 +498,7 @@
                                 <div class="breadcrumb pull-right">
                                     <button type="button" class="btn btn-default btn-rounded w-md waves-effect">즐겨찾기</button>
                                 </div>
-                                <h4 class="page-title">고장/사고접보</h4>
+                                <h4 class="page-title">편의장비 보유수량</h4>
                             </div>
                         </div>
                     </div>
@@ -508,32 +508,29 @@
                         <div class="col-sm-12">
                             <form class="form-inline" role="form">
                                 <div class="form-group">
-                                    <label for="datepicker-search-date">검색기간</label>
-                                    <div class="input-daterange input-group" id="datepicker-search-date">
-                                        <input type="text" class="form-control" name="start">
-                                        <span class="input-group-addon bg-muted b-0">-</span>
-                                        <input type="text" class="form-control" name="end">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="list-search" class="sr-only">목록검색</label>
-                                    <select class="form-control" id="list-search">
-                                        <option>차번</option>
-                                        <option>임차인</option>
-                                        <option>처리사원</option>
+                                    <label for="sort-option">옵션분류</label>
+                                    <select class="form-control" id="sort-option">
+                                        <option>안전</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
+                                    <label for="datepicker">적용일자</label>
                                     <div class="input-group">
-                                        <input type="text" id="example-input2-group2" name="example-input2-group2" class="form-control" placeholder="검색어 입력">
-                                        <span class="input-group-btn">
-                                                <button type="button" class="btn waves-effect waves-light btn-inverse">검색</button>
-                                        </span>
+                                        <input type="text" class="form-control" placeholder="mm/dd/yyyy" id="datepicker">
+                                        <div class="input-group-btn btn-blank">
+                                            <button type="button" class="btn waves-effect waves-light btn-default"><i class="fa fa-caret-left"></i></button>
+                                            <button type="button" class="btn waves-effect waves-light btn-default"><i class="fa fa-caret-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="checkbox checkbox-primary">
+                                        <input id="except" type="checkbox">
+                                        <label for="except">미사용 차종 제외</label>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <button type="button" class="btn btn-inverse waves-effect waves-light">엑셀저장</button>
-                                    <button type="button" class="btn btn-primary waves-effect waves-light">신규등록</button>
                                 </div>
                             </form>
                         </div>
@@ -543,111 +540,33 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="card-box">
-                                <div class="row table-option">
-                                    <div class="col-xs-4 col-sm-2">
-                                        <label for="sort-table" class="sr-only">정렬 목록</label>
-                                        <select class="form-control input-sm" id="sort-table">
-                                            <option>최근등록</option>
-                                            <option>예약자 명순</option>
-                                            <option>거래처명순</option>
-                                            <option>차량명순</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xs-8 col-sm-7">
-                                        <div class="checkbox checkbox-inline checkbox-primary">
-                                            <input id="all-date" type="checkbox">
-                                            <label for="all-date">전체기간</label>
-                                        </div>
-                                        <div class="checkbox checkbox-inline checkbox-primary">
-                                            <input id="only-processing" type="checkbox">
-                                            <label for="only-processing">처리 중 항목만 보기</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-3 text-right search-number">총 <b class="text-primary">$5$</b>건</div>
-                                </div>
                                 <div class="table-responsive">
                                     <table class="table table-center m-b-0">
                                         <thead>
                                         <tr>
-                                            <th scope="col" class="bg-muted">차번</th>
-                                            <th scope="col" class="bg-muted">접수일시</th>
-                                            <th scope="col" class="bg-muted">접보내용</th>
-                                            <th scope="col" class="bg-muted">처리상태</th>
-                                            <th scope="col" class="bg-muted">처리일시</th>
-                                            <th scope="col" class="bg-muted">처리내역</th>
-                                            <th scope="col" class="bg-muted">처리사원</th>
-                                            <th scope="col" class="bg-muted">비고</th>
-                                            <th scope="col" class="bg-muted">임차인</th>
-                                            <th scope="col" class="bg-muted">전화번호</th>
+                                            <th scope="col" class="bg-muted">차종코드</th>
+                                            <th scope="col" class="bg-muted">차종</th>
+                                            <th scope="col" class="bg-muted">$옵션명$</th>
+                                            <th scope="col" class="bg-muted">$옵션명$</th>
+                                            <th scope="col" class="bg-muted">$옵션명$</th>
+                                            <th scope="col" class="bg-muted">$옵션명$</th>
+                                            <th scope="col" class="bg-muted">$옵션명$</th>
+                                            <th scope="col" class="bg-muted">$옵션명$</th>
+                                            <th scope="col" class="bg-muted">수정</th>
+                                            <th scope="col" class="bg-muted">삭제</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td>차번</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>접보</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>담당자명</td>
-                                            <td><a href="#" class="btn-link btn-sm">상세보기</a></td>
-                                            <td>임차인명</td>
-                                            <td>전화번호</td>
-                                        </tr>
-                                        <tr>
-                                            <td>차번</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td><span class="text-primary">처리중</span></td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>담당자명</td>
-                                            <td><a href="#" class="btn-link btn-sm">상세보기</a></td>
-                                            <td>임차인명</td>
-                                            <td>전화번호</td>
-                                        </tr>
-                                        <tr>
-                                            <td>차번</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>접보</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>담당자명</td>
-                                            <td><a href="#" class="btn-link btn-sm">상세보기</a></td>
-                                            <td>임차인명</td>
-                                            <td>전화번호</td>
-                                        </tr>
-                                        <tr>
-                                            <td>차번</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>접보</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>담당자명</td>
-                                            <td><a href="#" class="btn-link btn-sm">상세보기</a></td>
-                                            <td>임차인명</td>
-                                            <td>전화번호</td>
+                                            <td colspan="10" class="table-no-result">검색 혹은 등록된 목록이 없습니다.</td>
                                         </tr>
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="text-center">
-                                    <ul class="pagination pagination-split m-t-30">
-                                        <li class="footable-page-arrow disabled"><a data-page="first"
-                                                                                    href="#first">«</a></li>
-                                        <li class="footable-page-arrow disabled"><a data-page="prev" href="#prev">‹</a>
-                                        </li>
-                                        <li class="footable-page active"><a data-page="0" href="#">1</a></li>
-                                        <li class="footable-page"><a data-page="1" href="#">2</a></li>
-                                        <li class="footable-page-arrow"><a data-page="next" href="#next">›</a></li>
-                                        <li class="footable-page-arrow"><a data-page="last" href="#last">»</a></li>
-                                    </ul>
-                                </div>
                             </div>
                         </div>
                     </div>
+                    <button type="button" class="btn-top"><i class="fa fa-arrow-up"></i></button>
 
                 </div>
                 <!-- end container -->
@@ -717,7 +636,7 @@
 				$('form').parsley();
 
                 // Date Picker
-                jQuery('#datepicker-search-date').datepicker({toggleActive: true});
+                jQuery('#datepicker').datepicker({toggleActive: true});
             });
 		</script>
 

@@ -28,6 +28,10 @@
   padding: 10px 16px !important;
   font-size: 16px;
 }
+.btn-group-md > .btn,
+.btn-md {
+  padding: 3px 10px 2px !important;
+}
 .btn-group-sm > .btn,
 .btn-sm {
   padding: 4px 8px !important;
@@ -253,7 +257,7 @@
   border-radius: 0px;
   border: none;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .panel .panel-body {
   padding: 20px;
@@ -328,10 +332,10 @@
   background-color: #ffffff;
   border-top: 3px solid #ccc !important;
   border-radius: 3px;
-  padding: 10px 20px 0px;
+  padding: 5px 10px 0px;
 }
 .panel-border .panel-body {
-  padding: 15px 20px 20px 20px;
+  padding: 10px 10px 5px;
 }
 .panel-border.panel-primary .panel-heading {
   border-color: #3bafda !important;

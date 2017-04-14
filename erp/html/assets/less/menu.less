@@ -20,7 +20,7 @@ File: Topbar,Left-sidebar,Right-sidebar
   .topbar-left {
     background: @primary;
     float: left;
-    height: 70px;
+    height: 25px;
     position: relative;
     width: 240px;
     z-index: 1;
@@ -32,7 +32,7 @@ File: Topbar,Left-sidebar,Right-sidebar
   font-size: 18px;
   font-weight: 700;
   letter-spacing: .02em;
-  line-height: 70px;
+  line-height: 35px;
   h1 {
     height: 50px;
     margin: 0 auto;
@@ -41,7 +41,6 @@ File: Topbar,Left-sidebar,Right-sidebar
 }
 
 .navbar-default {
-  background-color: @primary;
   border-radius: 0;
   border: none;
   margin-bottom: 0;
@@ -59,7 +58,7 @@ File: Topbar,Left-sidebar,Right-sidebar
 
 .nav > li > a {
   color: @white !important;
-  line-height: 70px;
+  line-height: 25px;
   padding: 0 15px;
   position: relative;
   i {
@@ -67,8 +66,8 @@ File: Topbar,Left-sidebar,Right-sidebar
   }
   .badge {
     position: absolute;
-    right: 10px;
-    top: 18px;
+    right: 6px;
+    top: 0;
   }
 
 }
@@ -171,11 +170,11 @@ File: Topbar,Left-sidebar,Right-sidebar
 
 .app-search {
   position: relative;
-  margin: 15px 0px 15px 10px;
+  margin-left: 5px;
 }
 .app-search a {
   position: absolute;
-  top: 10px;
+  top: 2px;
   right: 20px;
   color: fade(@white, 70%);
 
@@ -191,7 +190,6 @@ File: Topbar,Left-sidebar,Right-sidebar
   font-weight: 600;
   padding-left: 20px;
   padding-right: 40px;
-  margin-top: 3px;
   background: fade(@white, 20%);
   box-shadow: none;
   border-radius: 30px;
@@ -259,7 +257,7 @@ body.fixed-left {
   border: none;
   color: @white;
   font-size: 21px;
-  line-height: 70px;
+  line-height: 25px;
   padding: 0px 15px;
 
   &:hover {
@@ -443,7 +441,7 @@ body.fixed-left {
 }
 
 #wrapper.enlarged {
-  .menu-title ,.menu-arrow{
+  .menu-title {
     display: none !important;
   }
   #sidebar-menu {
@@ -455,9 +453,12 @@ body.fixed-left {
   }
   .left.side-menu {
     width: 70px;
-    z-index: 5;
+    z-index: 110;
     #sidebar-menu > ul > li > a {
       padding-left: 10px;
+      .menu-arrow {
+        display: none !important;
+      }
       &:hover {
         background-color: darken(@dark,5%) !important;
       }
@@ -528,8 +529,8 @@ body.fixed-left {
           }
         }
       }
-      ul > li > a {
-        span {
+      > ul > li > a {
+        > span {
           display: none;
           padding-left: 10px;
         }
@@ -578,6 +579,9 @@ body.fixed-left {
         i {
           margin-right: 0px;
         }
+      }
+      @media (max-width: 767px) {
+        width: 50px !important;
       }
     }
   }
@@ -744,4 +748,20 @@ body.fixed-left-void {
   min-height: 1140px;
 }
 
-
+.accessibility-bar {
+  margin: 0 -5px;
+  padding: 5px;
+  background-color: @primary;
+}
+.bookmark-bar {
+  margin: 0 -5px;
+  padding: 5px;
+  background-color: @inverse;
+  @media (max-width: 480px) {
+    padding: 7px 5px;
+    .btn {
+      padding: 4px 2px !important;
+      font-size: 11px;
+    }
+  }
+}

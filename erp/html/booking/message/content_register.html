@@ -8,7 +8,7 @@
 
         <link rel="shortcut icon" href="../../assets/images/favicon_1.ico">
 
-        <title>Minton - Responsive Admin Dashboard Template</title>
+        <title>SMS 메시지 설정</title>
 
         <!-- Plugins css-->
         <link href="../../../plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
@@ -494,160 +494,149 @@
                     <!-- Page-Title -->
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="page-title-box">
+                            <div class="page-title-box not-fixed">
                                 <div class="breadcrumb pull-right">
-                                    <button type="button" class="btn btn-default btn-rounded w-md waves-effect">즐겨찾기</button>
+                                    <button type="button" class="btn-link btn-sm"><i class="fa fa-angle-left"></i> 목록으로 돌아가기</button>
                                 </div>
-                                <h4 class="page-title">고장/사고접보</h4>
+                                <h4 class="page-title">SMS 메시지 $등록$ <span>(<i class="text-danger">*</i> 필수 입력사항)</span></h4>
                             </div>
                         </div>
                     </div>
 
-
-                    <div class="row m-b-10">
-                        <div class="col-sm-12">
-                            <form class="form-inline" role="form">
-                                <div class="form-group">
-                                    <label for="datepicker-search-date">검색기간</label>
-                                    <div class="input-daterange input-group" id="datepicker-search-date">
-                                        <input type="text" class="form-control" name="start">
-                                        <span class="input-group-addon bg-muted b-0">-</span>
-                                        <input type="text" class="form-control" name="end">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="panel panel-default panel-border">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">설정위치</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="radio radio-primary radio-inline">
+                                        <input type="radio" name="set-position" id="set-position1">
+                                        <label for="set-position1">예약접수 화면</label>
+                                    </div>
+                                    <div class="radio radio-primary radio-inline">
+                                        <input type="radio" name="set-position" id="set-position2">
+                                        <label for="set-position2">계약서 화면</label>
+                                    </div>
+                                    <div class="radio radio-primary radio-inline">
+                                        <input type="radio" name="set-position" id="set-position3">
+                                        <label for="set-position3">계약마감 화면</label>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="list-search" class="sr-only">목록검색</label>
-                                    <select class="form-control" id="list-search">
-                                        <option>차번</option>
-                                        <option>임차인</option>
-                                        <option>처리사원</option>
-                                    </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="panel panel-default panel-border">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">자동발송
+                                        <a href="#" class="badge bg-inverse"><i class="ion-refresh"></i> 선택초기화</a>
+                                    </h3>
                                 </div>
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <input type="text" id="example-input2-group2" name="example-input2-group2" class="form-control" placeholder="검색어 입력">
-                                        <span class="input-group-btn">
-                                                <button type="button" class="btn waves-effect waves-light btn-inverse">검색</button>
-                                        </span>
+                                <div class="panel-body">
+                                    <div class="radio radio-primary radio-inline">
+                                        <input type="radio" name="auto-send" id="auto-send1">
+                                        <label for="auto-send1">예약등록 시</label>
+                                    </div>
+                                    <div class="radio radio-primary radio-inline">
+                                        <input type="radio" name="auto-send" id="auto-send2">
+                                        <label for="auto-send2">예약금 입금 등록 시</label>
+                                    </div>
+                                    <div class="radio radio-primary radio-inline">
+                                        <input type="radio" name="auto-send" id="auto-send3">
+                                        <label for="auto-send3">예약확인 처리 시</label>
+                                    </div>
+                                    <div class="radio radio-primary">
+                                        <input type="radio" name="auto-send" id="auto-send4">
+                                        <label for="auto-send4">
+                                            <span class="input-group">
+                                                <span class="input-group-addon text-left bg-empty b-0">계약서 최초 등록 시</span>
+                                                <span>
+                                                    <input type="text" class="form-control input-inline w-70"> 시간 후
+                                                </span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="radio radio-primary">
+                                        <input type="radio" name="auto-send" id="auto-send5">
+                                        <label for="auto-send5">
+                                            <span class="input-group">
+                                                <span class="input-group-addon text-left bg-empty b-0">계약마감 최초 등록 시</span>
+                                                <span>
+                                                    <input type="text" class="form-control input-inline w-70"> 시간 후
+                                                </span>
+                                            </span>
+                                        </label>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <button type="button" class="btn btn-inverse waves-effect waves-light">엑셀저장</button>
-                                    <button type="button" class="btn btn-primary waves-effect waves-light">신규등록</button>
-                                </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
-
 
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="card-box">
-                                <div class="row table-option">
-                                    <div class="col-xs-4 col-sm-2">
-                                        <label for="sort-table" class="sr-only">정렬 목록</label>
-                                        <select class="form-control input-sm" id="sort-table">
-                                            <option>최근등록</option>
-                                            <option>예약자 명순</option>
-                                            <option>거래처명순</option>
-                                            <option>차량명순</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xs-8 col-sm-7">
-                                        <div class="checkbox checkbox-inline checkbox-primary">
-                                            <input id="all-date" type="checkbox">
-                                            <label for="all-date">전체기간</label>
+                                <form class="form-horizontal" role="form">
+                                    <div class="form-group">
+                                        <label for="subject" class="col-sm-2 control-label"><i class="text-danger">*</i> 제목</label>
+                                        <div class="col-sm-4">
+                                            <input type="text" class="form-control" id="subject">
                                         </div>
-                                        <div class="checkbox checkbox-inline checkbox-primary">
-                                            <input id="only-processing" type="checkbox">
-                                            <label for="only-processing">처리 중 항목만 보기</label>
+                                        <label for="phone" class="col-sm-2 control-label">회신번호</label>
+                                        <div class="col-sm-4">
+                                            <input type="text" class="form-control w-auto input-inline" id="phone">
+                                            <div class="checkbox checkbox-primary radio-inline">
+                                                <input type="checkbox" name="auto-send" id="not-use">
+                                                <label for="not-use">사용안함</label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-12 col-sm-3 text-right search-number">총 <b class="text-primary">$5$</b>건</div>
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="table table-center m-b-0">
-                                        <thead>
-                                        <tr>
-                                            <th scope="col" class="bg-muted">차번</th>
-                                            <th scope="col" class="bg-muted">접수일시</th>
-                                            <th scope="col" class="bg-muted">접보내용</th>
-                                            <th scope="col" class="bg-muted">처리상태</th>
-                                            <th scope="col" class="bg-muted">처리일시</th>
-                                            <th scope="col" class="bg-muted">처리내역</th>
-                                            <th scope="col" class="bg-muted">처리사원</th>
-                                            <th scope="col" class="bg-muted">비고</th>
-                                            <th scope="col" class="bg-muted">임차인</th>
-                                            <th scope="col" class="bg-muted">전화번호</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>차번</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>접보</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>담당자명</td>
-                                            <td><a href="#" class="btn-link btn-sm">상세보기</a></td>
-                                            <td>임차인명</td>
-                                            <td>전화번호</td>
-                                        </tr>
-                                        <tr>
-                                            <td>차번</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td><span class="text-primary">처리중</span></td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>담당자명</td>
-                                            <td><a href="#" class="btn-link btn-sm">상세보기</a></td>
-                                            <td>임차인명</td>
-                                            <td>전화번호</td>
-                                        </tr>
-                                        <tr>
-                                            <td>차번</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>접보</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>담당자명</td>
-                                            <td><a href="#" class="btn-link btn-sm">상세보기</a></td>
-                                            <td>임차인명</td>
-                                            <td>전화번호</td>
-                                        </tr>
-                                        <tr>
-                                            <td>차번</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>접보</td>
-                                            <td>연월일시</td>
-                                            <td>내용요약</td>
-                                            <td>담당자명</td>
-                                            <td><a href="#" class="btn-link btn-sm">상세보기</a></td>
-                                            <td>임차인명</td>
-                                            <td>전화번호</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="text-center">
-                                    <ul class="pagination pagination-split m-t-30">
-                                        <li class="footable-page-arrow disabled"><a data-page="first"
-                                                                                    href="#first">«</a></li>
-                                        <li class="footable-page-arrow disabled"><a data-page="prev" href="#prev">‹</a>
-                                        </li>
-                                        <li class="footable-page active"><a data-page="0" href="#">1</a></li>
-                                        <li class="footable-page"><a data-page="1" href="#">2</a></li>
-                                        <li class="footable-page-arrow"><a data-page="next" href="#next">›</a></li>
-                                        <li class="footable-page-arrow"><a data-page="last" href="#last">»</a></li>
-                                    </ul>
-                                </div>
+                                    <div class="form-group">
+                                        <label for="message" class="col-sm-2 control-label"><i class="text-danger">*</i> 메시지</label>
+                                        <div class="col-sm-10">
+                                            <div class="row send-message-box">
+                                                <div class="col-xs-6">
+                                                    <textarea rows="5" class="form-control" id="message"></textarea>
+                                                </div>
+                                                <div class="col-xs-6 alert-inverse send-message-help">
+                                                    <strong class="alert">상용구</strong>
+                                                    <ul>
+                                                        <li><a href="#">$줄바꿈</a></li>
+                                                        <li><a href="#">$고객명</a></li>
+                                                        <li><a href="#">$차종</a></li>
+                                                        <li><a href="#">$차번</a></li>
+                                                        <li><a href="#">$잔금</a></li>
+                                                        <li><a href="#">$예약금</a></li>
+                                                        <li><a href="#">$출발월</a></li>
+                                                        <li><a href="#">$출발일</a></li>
+                                                        <li><a href="#">$출발시</a></li>
+                                                        <li><a href="#">$출발분</a></li>
+                                                        <li><a href="#">$도착월</a></li>
+                                                        <li><a href="#">$도착월</a></li>
+                                                        <li><a href="#">$도착시</a></li>
+                                                        <li><a href="#">$도착분</a></li>
+                                                        <li><a href="#">$배차장소</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <p class="clearfix col-sm-6">
+                                                    <a href="#" class="pull-left text-dark"><i class="ion-refresh"></i> 내용초기화</a>
+                                                    <span class="pull-right">총 글자수 : <b class="text-primary">$0$</b>자 / 90Byte</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="bottom-info row">
+                            <div class="col-sm-12 text-center">
+                                <button class="btn btn-inverse btn-lg waves-effect waves-light" type="submit">취소</button>
+                                <button class="btn btn-primary btn-lg waves-effect waves-light" type="submit">$등록$</button>
                             </div>
                         </div>
                     </div>
+                    <button type="button" class="btn-top"><i class="fa fa-arrow-up"></i></button>
 
                 </div>
                 <!-- end container -->
@@ -717,7 +706,8 @@
 				$('form').parsley();
 
                 // Date Picker
-                jQuery('#datepicker-search-date').datepicker({toggleActive: true});
+                jQuery('#datepicker-pickup-date').datepicker({toggleActive: true});
+                jQuery('#datepicker-ship-date').datepicker({toggleActive: true});
             });
 		</script>
 
