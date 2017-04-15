@@ -46,6 +46,7 @@ button {
     min-width: 1200px;
 }
 .content {
+    min-width: 1079px;
     margin-left: 346px;
     padding: 92px 136px 150px 126px;
 }
@@ -79,6 +80,7 @@ button {
 }
 .list {
     .content {
+        margin-left: 346px;
         padding: 30px 87px 100px;
     }
 }
@@ -176,6 +178,7 @@ button {
     }
     @media (max-width: 1500px) {
         width: 248px;
+        margin: 60px auto 55px;
         .indicator {
             li {
                 width: 75px;
@@ -288,6 +291,17 @@ button {
                 }
             }
         }
+    }
+}
+.list {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        width: 346px;
+        height: 100%;
     }
 }
 .reservation {
@@ -651,6 +665,11 @@ button {
         padding: 0;
     }
 }
+.list {
+    .footer {
+        position: fixed;
+    }
+}
 .reservation {
     .footer {
         width: 34%;
@@ -996,6 +1015,9 @@ button {
     .section-title {
         padding-bottom: 0;
         border-bottom: 0;
+        @media (max-width: 1500px){
+            font-size: 45px;
+        }
     }
 }
 .reservation-step {
@@ -1011,6 +1033,9 @@ button {
         font-size: 24px;
         span {
             color: $brand-primary;
+        }
+        @media (max-width: 1500px){
+            font-size: 20px;
         }
     }
     .select-place {
@@ -1032,6 +1057,16 @@ button {
             height: 84px;
             padding: 0 20px;
             line-height: (84-2)/26;
+        }
+        @media (max-width: 1500px) {
+            .form-control {
+                height: 60px;
+                line-height: 60px;
+                font-size: 20px;
+            }
+            .btn {
+                height: 60px;
+            }
         }
     }
     > .active {
@@ -1258,10 +1293,11 @@ button {
         }
         @media (max-width: 1500px) {
             .select-date {
+                height: 60px;
                 padding: 0 17px;
                 .text-date {
                     &:before {
-                        margin-top: 3px;
+                        margin-top: 4px;
                     }
                     strong {
                         font-size: 26px;
@@ -1277,11 +1313,13 @@ button {
                 }
             }
             .select-time {
+                height: 60px;
                 padding: 0 17px;
                 .text-time {
                     font-size: 28px;
                     &:before {
-                        margin-top: 3px;
+                        margin-top: -2px;
+                        vertical-align: middle;
                     }
 
                 }
@@ -1324,6 +1362,12 @@ button {
             input[type=checkbox]:checked + .checkbox-label {
                 background-color: $brand-primary;
                 color: $white;
+            }
+            @media (max-width: 1500px) {
+                .checkbox-label {
+                    font-size: 18px;
+                    line-height: (60-2)/18;
+                }
             }
         }
     }
@@ -1500,6 +1544,9 @@ button {
                     margin-bottom: 7px;
                     content: '';
                 }
+                @media (max-width: 1500px) {
+                    padding: 34px;
+                }
             }
             .link-guide {
                 background-color: $brand-primary;
@@ -1538,9 +1585,6 @@ button {
         li {
             padding-top: 30px;
             color: $white;
-            &:last-child {
-                padding-top: 30px;
-            }
             .icon-calendar,
             .icon-clock-white {
                 margin-right: 10px;
@@ -1560,6 +1604,9 @@ button {
                         font-size: 14px;
                     }
                 }
+            }
+            @media (max-width: 1500px) {
+                padding-top: 20px;
             }
         }
     }
@@ -1581,6 +1628,7 @@ button {
 // 상단 이벤트
 .top-event {
     position: relative;
+    min-width: 1079px;
     margin-left: 346px;
     padding: 28px 0 26px;
     border-bottom: 1px solid $brand-primary;
@@ -1905,7 +1953,10 @@ button {
     }
     .detail-info {
         float: left;
+        overflow-x: hidden;
+        overflow-y: auto;
         width: 50%;
+        height: 100%;
         border-left: 1px solid #d1ddda;
         .view-info-group {
             border-top: 1px solid #d1ddda;

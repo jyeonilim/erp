@@ -1,12 +1,14 @@
 $(document).ready(function() {
 
+	$(".text-date").parent().removeClass('active').children('.datepicker').hide();
+	
     $('#fullpage').fullpage({
         anchors: ['firstPage', 'secondPage', 'thirdPage'],
         menu: '#menu-page',
         scrollingSpeed: 500,
         scrollOverflow: true
     });
-
+    
     // 메인메뉴
     $('.btn-menu').on('click',function () {
         var menuDis = $('.megamenu').css('display');
@@ -32,7 +34,7 @@ $(document).ready(function() {
         var activeTab = $(this).attr('rel');
         $('#' + activeTab).fadeIn();
     });
-
+    
     // Placeholder
     var placeholder = $('.placeholder .form-control');
     $(placeholder).focusin(function () {
@@ -43,7 +45,6 @@ $(document).ready(function() {
             $(this).siblings('label').show();
         }
     });
-
 
     // 메인
     // 예약하기 : 장소선택 - 레이어
@@ -57,33 +58,42 @@ $(document).ready(function() {
             $('.select-place-picker').show();
         }
     });
+    // 예약하기 : 장소선택 - 지역선택 탭
+    $('.tab-pane:first').show();
+    $('.tab').click(function () {
+        $('.tab').removeClass('active');
+        $(this).addClass('active');
+        $('.tab-pane').hide();
+        var activeTab = $(this).attr('rel');
+        $('#' + activeTab).fadeIn();
+    });
     // 예약하기 : 장소선택 - 지점선택 탭
     $('.select-place-seoul li:first .content-place').show();
     $('.select-place-jeju li:first .content-place').show();
     $('.select-place-busan li:first .content-place').show();
-    $('.content-select-place input[name=place-seoul]').change(function () {
-        $('.select-place-seoul .content-place').hide();
+    $(".content-select-place input[name=place-seoul]").change(function () {
+        $(".select-place-seoul .content-place").hide();
         // console.log($(this));
-        $('.'+$(this).val()).show();
+        $("."+$(this).val()).show();
     });
-    $('.content-select-place input[name=place-jeju]').change(function () {
-        $('.select-place-jeju .content-place').hide();
-        $('.'+$(this).val()).show();
+    $(".content-select-place input[name=place-jeju]").change(function () {
+        $(".select-place-jeju .content-place").hide();
+        $("."+$(this).val()).show();
     });
-    $('.content-select-place input[name=place-busan]').change(function () {
-        $('.select-place-busan .content-place').hide();
-        $('.'+$(this).val()).show();
+    $(".content-select-place input[name=place-busan]").change(function () {
+        $(".select-place-busan .content-place").hide();
+        $("."+$(this).val()).show();
     });
     // 예약하기 : 일정선택 - 날짜선택 레이어
-    // $('.text-date').on('click', function() {
-    //     var display = $(this).siblings('.datepicker').css('display');
-    //     if(display == 'none') {
-    //         $('.select-datetime').children('.select-date,.select-time').removeClass('active').children('.datepicker,.timepicker').hide();
-    //         $(this).parent().addClass('active').children('.datepicker').show();
-    //     } else {
-    //         $(this).parent().removeClass('active').children('.datepicker').hide();
-    //     }
-    // });
+    $('.text-date').on('click', function() {
+        var display = $(this).siblings('.datepicker').css('display');
+        if(display == 'none') {
+            $('.select-datetime').children('.select-date,.select-time').removeClass('active').children('.datepicker,.timepicker').hide();
+            $(this).parent().addClass('active').children('.datepicker').show();
+        } else {
+            $(this).parent().removeClass('active').children('.datepicker').hide();
+        }
+    });
     // 예약하기 : 일정선택 - 시간선택 레이어
     $('.text-time').on('click', function() {
         var display = $(this).siblings('.timepicker').css('display');
@@ -105,7 +115,7 @@ $(document).ready(function() {
         $(this).parent().hide();
     });
 
-    $('#coupon').selectmenu();
+    $("#coupon").selectmenu();
     $('.ui-selectmenu-menu').insertAfter('.footer');
 
     var h = $(window).height();
@@ -122,7 +132,7 @@ $(document).ready(function() {
         $(this).parent().hide();
         $('body').removeClass('scrollFixed');
     });
-
+    
     // 로그인 - 아이디/패스워드 찾기
     $('.find-id').on('click',function () {
         modalOpen('.forgot');
@@ -138,7 +148,7 @@ $(document).ready(function() {
         $('.tab:last').addClass('active');
         $('.tab-pane:last').show();
     });
-
+    
     // 자주하는 질문, 공지사항
     $(".board-title").on("click", function() {
         $(this).siblings().removeClass("open").next().slideUp();
@@ -166,4 +176,13 @@ function modalClose(modal) {
     var $this = $(modal);
     $this.removeClass('modal-backdrop').hide();
     $('body').removeClass('scrollFixed');
+}
+
+function modalOpen2(modal, index) {
+	jQuery("#modal"+index).addClass('modal-backdrop').show();
+	$('body').addClass('scrollFixed');
+}
+function modalClose2(modal, index) {
+	jQuery("#modal"+index).removeClass('modal-backdrop').hide();
+	$('body').removeClass('scrollFixed');
 }
