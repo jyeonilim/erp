@@ -300,6 +300,11 @@ table {
   height: 29px;
   background-position: -387px -172px; }
 
+.icon-logout {
+  width: 22px;
+  height: 21px;
+  background-position: -645px -172px; }
+
 .icon-person-plus {
   width: 31px;
   height: 25px;
@@ -309,6 +314,11 @@ table {
   width: 16px;
   height: 19px;
   background-position: -301px -344px; }
+
+.icon-person-white {
+  width: 21px;
+  height: 24px;
+  background-position: -688px -172px; }
 
 .icon-check {
   width: 25px;
@@ -321,7 +331,7 @@ table {
   background-position: -473px -387px; }
 
 .icon-electric-cord {
-  width: 15px;
+  width: 18px;
   height: 21px;
   background-position: -344px -344px; }
 
@@ -419,6 +429,11 @@ table {
   width: 53px;
   height: 53px;
   background-position: -559px -559px; }
+
+.icon-gasoline {
+  width: 18px;
+  height: 21px;
+  background-position: -344px -344px; }
 
 .badge {
   display: inline-block;
@@ -1349,6 +1364,9 @@ button {
           font-size: 16px; }
       .indicator-box .btn-upgrade {
         right: -90px; } }
+  @media (max-width: 1300px) {
+    .indicator-box {
+      margin: 35px auto 20px; } }
 
 .car-sample {
   padding: 0 80px; }
@@ -1491,6 +1509,11 @@ button {
           font-size: 70px; }
       .sub .side-container .image-area {
         padding: 0 30px; } }
+  @media (max-width: 1500px) {
+    .sub .side-container {
+      top: 286px; }
+      .sub .side-container .image-area {
+        padding: 0 60px; } }
 
 .sub.default .sidebar {
   position: fixed; }
@@ -1563,6 +1586,7 @@ button {
       font-weight: 700;
       font-size: 100px; }
   .megamenu .menu {
+    min-width: 1200px;
     margin: 60px 0 40px; }
     .megamenu .menu li {
       display: inline-block; }
@@ -1594,6 +1618,9 @@ button {
           content: ''; }
         .megamenu .menu li a:hover, .megamenu .menu li a.current {
           color: #4aaf9d; }
+        @media (max-width: 1300px) {
+          .megamenu .menu li a {
+            padding: 20px 46px; } }
     .megamenu .menu .item-login a:before {
       background-position: 0 -473px; }
     .megamenu .menu .item-login a:hover:before, .megamenu .menu .item-login a.current:before {
@@ -1602,6 +1629,10 @@ button {
       background-position: -87px -473px; }
     .megamenu .menu .item-join a:hover:before, .megamenu .menu .item-join a.current:before {
       background-position: -87px -559px; }
+    .megamenu .menu .item-reservation a:before {
+      background-position: -817px -473px; }
+    .megamenu .menu .item-reservation a:hover:before, .megamenu .menu .item-reservation a.current:before {
+      background-position: -817px -559px; }
     .megamenu .menu .item-reservation-confirm a:before {
       background-position: -172px -473px; }
     .megamenu .menu .item-reservation-confirm a:hover:before, .megamenu .menu .item-reservation-confirm a.current:before {
@@ -2006,6 +2037,9 @@ button {
     @media (max-width: 1500px) {
       .page-guide a {
         font-size: 19px; } }
+  @media (max-width: 1300px) {
+    .page-guide {
+      display: none; } }
 
 .main-reservation {
   text-align: center; }
@@ -2015,20 +2049,13 @@ button {
     @media (max-width: 1500px) {
       .main-reservation .section-title {
         font-size: 45px; } }
-    @media (max-width: 1300px) {
-      .main-reservation .section-title {
-        font-size: 35px; } }
-  @media (max-width: 1300px) {
-    .main-reservation .btn-align-center .btn {
-      font-size: 24px;
-      line-height: 2.25; } }
 
 .reservation-step {
   display: inline-block;
   width: 100%;
   padding: 0 116px 0 149px;
   text-align: left; }
-  @media (max-width: 1600px) {
+  @media (max-width: 1700px) {
     .reservation-step {
       padding: 0 24px 0 40px; } }
   .reservation-step .step-title {
@@ -2039,10 +2066,6 @@ button {
     @media (max-width: 1500px) {
       .reservation-step .step-title {
         font-size: 20px; } }
-    @media (max-width: 1300px) {
-      .reservation-step .step-title {
-        margin: 20px 0 7px;
-        font-size: 17px; } }
   .reservation-step .select-place {
     position: relative; }
     .reservation-step .select-place:before {
@@ -2072,13 +2095,6 @@ button {
         font-size: 20px; }
       .reservation-step .select-place .btn {
         height: 60px; } }
-    @media (max-width: 1300px) {
-      .reservation-step .select-place .form-control {
-        height: 42px;
-        line-height: 42px;
-        font-size: 17px; }
-      .reservation-step .select-place .btn {
-        height: 42px; } }
   .reservation-step > .active {
     position: relative; }
     .reservation-step > .active .select-place:before {
@@ -2293,13 +2309,6 @@ button {
           .reservation-step .select-datetime .select-time .text-time:before {
             margin-top: -2px;
             vertical-align: middle; } }
-    @media (max-width: 1300px) {
-      .reservation-step .select-datetime .select-date {
-        height: 40px;
-        padding: 3px 17px 0; }
-      .reservation-step .select-datetime .select-time {
-        height: 40px;
-        padding: 3px 17px 0; } }
     .reservation-step .select-datetime .ui-datepicker,
     .reservation-step .select-datetime .timepicker {
       display: none;
@@ -2307,6 +2316,10 @@ button {
       top: 84px;
       z-index: 11;
       cursor: default; }
+      @media (max-width: 1500px) {
+        .reservation-step .select-datetime .ui-datepicker,
+        .reservation-step .select-datetime .timepicker {
+          top: 60px; } }
     .reservation-step .select-datetime .ui-datepicker {
       left: -1px;
       width: 370px; }
@@ -2338,9 +2351,6 @@ button {
       .reservation-step .select-car .checkbox .checkbox-label {
         font-size: 18px;
         line-height: 3.222; } }
-    @media (max-width: 1300px) {
-      .reservation-step .select-car .checkbox .checkbox-label {
-        line-height: 2.222; } }
   .reservation-step .complete .select-place:before {
     display: inline-block;
     background: url("../images/sprites-icon.png") repeat -43px -86px;
@@ -2551,6 +2561,13 @@ button {
         background-position: 0 109%; }
         .search-condition .condition-list li {
           padding-top: 20px; } }
+  @media (max-width: 1300px) {
+    .search-condition {
+      margin: 13px 0 20px; }
+      .search-condition .condition-list {
+        background-position: 0 106%; }
+        .search-condition .condition-list li {
+          padding-top: 16px; } }
 
 .btn-change-schedule {
   display: block;
@@ -2797,9 +2814,11 @@ button {
 .detail-view .modal-content {
   position: absolute !important;
   top: 0 !important;
-  width: 1100px;
+  left: 0 !important;
+  right: 0;
+  width: 900px;
   height: 100%;
-  margin-left: -550px;
+  margin: 145px auto;
   background-color: white; }
   .detail-view .modal-content:before, .detail-view .modal-content:after {
     content: " ";
@@ -2808,12 +2827,15 @@ button {
     clear: both; }
   .detail-view .modal-content .btn-modal-close {
     background-position: -430px 0; }
+  @media (max-width: 1500px) {
+    .detail-view .modal-content {
+      margin: 60px auto; } }
 
 .detail-view .car-info {
   float: left;
   width: 50%;
   height: 100%;
-  background: #4aaf9d url("../images/modal-view-bg.png") repeat-x 0 0;
+  background: #4aaf9d url("../images/modal-view-bg.png") repeat-x 0 50%;
   padding: 60px 70px; }
   .detail-view .car-info .brand-name {
     font-size: 24px;
@@ -2841,10 +2863,10 @@ button {
     height: 100%; }
     .detail-view .car-info .image-area img {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: -150px;
+      left: -30px;
       bottom: 0;
-      width: 100%;
+      width: 120%;
       margin: auto; }
 
 .detail-view .detail-info {
@@ -2891,12 +2913,12 @@ button {
       position: relative;
       display: table-cell;
       width: 50%;
-      padding-left: 55px;
-      font: 200 16px 'NotoSans', sans-serif;
+      padding-left: 53px;
+      font: 200 13px 'NotoSans', sans-serif;
       vertical-align: middle; }
       .detail-view .detail-info .rent-regulation ul li i {
         position: absolute;
-        top: 4px;
+        top: 0;
         left: 0;
         height: 44px; }
   .detail-view .detail-info .car-option {
@@ -3203,95 +3225,16 @@ button {
     color: #7f7f7f;
     text-align: center;
     vertical-align: middle; }
-    .select-payment .payment-option-box .radio .radio-label:before,
-    .select-payment .discount-coupon .radio .radio-label:before {
-      display: inline-block;
-      background: url("../images/sprites-icon.png") repeat 0 0;
-      line-height: 0;
-      color: transparent;
-      vertical-align: middle;
-      width: 25px;
-      height: 25px;
-      margin-right: 5px;
-      vertical-align: middle;
-      content: ''; }
-    @media (max-width: 1500px) {
-      .select-payment .payment-option-box .radio .radio-label,
-      .select-payment .discount-coupon .radio .radio-label {
-        font-size: 13px; } }
   .select-payment .payment-option-box .radio input[type="radio"]:checked ~ .radio-label,
   .select-payment .discount-coupon .radio input[type="radio"]:checked ~ .radio-label {
     background-color: #4aaf9d;
     color: white; }
 
-.select-payment .payment-option-box .creditCard .radio-label:before,
-.select-payment .discount-coupon .creditCard .radio-label:before {
-  background-position: -473px -127px; }
-
-.select-payment .payment-option-box .creditCard input[type="radio"]:checked ~ .radio-label:before,
-.select-payment .discount-coupon .creditCard input[type="radio"]:checked ~ .radio-label:before {
-  background-position: -516px -127px; }
-
-.select-payment .payment-option-box .account-transfer .radio-label:before,
-.select-payment .discount-coupon .account-transfer .radio-label:before {
-  background-position: -559px -129px; }
-
-.select-payment .payment-option-box .account-transfer input[type="radio"]:checked ~ .radio-label:before,
-.select-payment .discount-coupon .account-transfer input[type="radio"]:checked ~ .radio-label:before {
-  background-position: -602px -129px; }
-
-.select-payment .payment-option-box .nPay .radio-label:before,
-.select-payment .discount-coupon .nPay .radio-label:before {
-  width: 80px;
-  height: 32px;
-  margin-right: 0;
-  background: url("../images/npay.png") no-repeat 0 0; }
-
-.select-payment .payment-option-box .nPay input[type="radio"]:checked ~ .radio-label:before,
-.select-payment .discount-coupon .nPay input[type="radio"]:checked ~ .radio-label:before {
-  background-image: url("../images/npay-on.png"); }
-
-.select-payment .payment-option-box .kakaoPay .radio-label:before,
-.select-payment .discount-coupon .kakaoPay .radio-label:before {
-  width: 109px;
-  height: 32px;
-  margin-right: 0;
-  background: url("../images/kakaopay.png") no-repeat 0 0; }
-
-.select-payment .payment-option-box .kakaoPay input[type="radio"]:checked ~ .radio-label:before,
-.select-payment .discount-coupon .kakaoPay input[type="radio"]:checked ~ .radio-label:before {
-  background-image: url("../images/kakaopay-on.png"); }
-
-@media (max-width: 1500px) {
-  .select-payment .payment-option-box .radio .radio-label,
-  .select-payment .discount-coupon .radio .radio-label {
-    font-size: 13px; }
-  .select-payment .payment-option-box .nPay .radio-label:before,
-  .select-payment .discount-coupon .nPay .radio-label:before {
-    width: 65px;
-    height: 26px;
-    background-size: 65px 26px; }
-  .select-payment .payment-option-box .kakaoPay .radio-label:before,
-  .select-payment .discount-coupon .kakaoPay .radio-label:before {
-    width: 89px;
-    height: 26px;
-    background-size: 89px 26px; } }
-
-.select-payment .discount-coupon .coupon .radio-label {
-  font-size: 18px; }
-  .select-payment .discount-coupon .coupon .radio-label:before {
-    display: none; }
-  @media (max-width: 1500px) {
-    .select-payment .discount-coupon .coupon .radio-label {
-      font-size: 16px; } }
-
-.select-payment .discount-coupon .promotion-code .radio-label:before {
-  width: 28px;
-  height: 24px;
-  background-position: -559px -172px; }
-
-.select-payment .discount-coupon .promotion-code input[type="radio"]:checked ~ .radio-label:before {
-  background-position: -602px -172px; }
+.select-payment .placeholder {
+  margin: 0; }
+  .select-payment .placeholder .form-control {
+    height: 61px;
+    line-height: 3.471; }
 
 .select-payment .select-coupon {
   margin-top: -1px; }

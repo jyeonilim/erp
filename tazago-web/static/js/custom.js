@@ -118,8 +118,23 @@ $(document).ready(function() {
     $("#coupon").selectmenu();
     $('.ui-selectmenu-menu').insertAfter('.footer');
 
+    var w = $(window).width();
     var h = $(window).height();
-    $('.detail-view .image-area').height(h);
+    var modalH = $('.detail-view .modal-content .car-info').height();
+    $('.detail-view .image-area').height(modalH);
+    if(w < 1500) {
+        $('.detail-view .modal-content').height(h-120);
+    } else {
+        $('.detail-view .modal-content').height(h-290);
+    }
+    $(window).resize(function(){
+        var rw = $(window).width();
+        if(rw < 1500) {
+            $('.detail-view .modal-content').height(h-120);
+        } else {
+            $('.detail-view .modal-content').height(h-290);
+        }
+    });
 
     // 차량검색 - 일정변경 레이어
     $('.btn-change-schedule').on('click',function () {

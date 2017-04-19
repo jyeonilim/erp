@@ -196,6 +196,10 @@ button {
             right: -90px;
         }
     }
+    @media (max-width: 1300px) {
+        margin: 35px auto 20px;
+        .indicator {}
+    }
 }
 .car-sample {
     padding: 0 80px;
@@ -381,6 +385,12 @@ button {
                 padding: 0 30px;
             }
         }
+        @media (max-width: 1500px) {
+            top: 286px;
+            .image-area {
+                padding: 0 60px;
+            }
+        }
     }
     &.default {
         .sidebar {
@@ -458,6 +468,7 @@ button {
         }
     }
     .menu {
+        min-width: 1200px;
         margin: 60px 0 40px;
         li {
             display: inline-block;
@@ -488,6 +499,9 @@ button {
                 &:hover, &.current {
                     color: $brand-primary;
                 }
+                @media (max-width: 1300px) {
+                    padding: 20px 46px;
+                }
             }
         }
         .item-login {
@@ -507,6 +521,16 @@ button {
                 }
                 &:hover:before, &.current:before {
                     background-position: -87px -559px;
+                }
+            }
+        }
+        .item-reservation {
+            a {
+                &:before {
+                    background-position: -817px -473px;
+                }
+                &:hover:before, &.current:before {
+                    background-position: -817px -559px;
                 }
             }
         }
@@ -1040,6 +1064,9 @@ button {
             font-size: 19px;
         }
     }
+    @media (max-width: 1300px) {
+        display: none;
+    }
 }
 // 예약하기
 .main-reservation {
@@ -1050,17 +1077,6 @@ button {
         @media (max-width: 1500px){
             font-size: 45px;
         }
-        @media (max-width: 1300px){
-            font-size: 35px;
-        }
-    }
-    @media (max-width: 1300px){
-        .btn-align-center {
-            .btn {
-                font-size: 24px;
-                line-height: (56-2)/24;
-            }
-        }
     }
 }
 .reservation-step {
@@ -1068,7 +1084,7 @@ button {
     width: 100%;
     padding: 0 116px 0 149px;
     text-align: left;
-    @media (max-width: 1600px){
+    @media (max-width: 1700px){
         padding: 0 24px 0 40px;
     }
     .step-title {
@@ -1079,10 +1095,6 @@ button {
         }
         @media (max-width: 1500px){
             font-size: 20px;
-        }
-        @media (max-width: 1300px){
-            margin: 20px 0 7px;
-            font-size: 17px;
         }
     }
     .select-place {
@@ -1113,16 +1125,6 @@ button {
             }
             .btn {
                 height: 60px;
-            }
-        }
-        @media (max-width: 1300px) {
-            .form-control {
-                height: 42px;
-                line-height: 42px;
-                font-size: 17px;
-            }
-            .btn {
-                height: 42px;
             }
         }
     }
@@ -1382,16 +1384,6 @@ button {
                 }
             }
         }
-        @media (max-width: 1300px) {
-            .select-date {
-                height: 40px;
-                padding: 3px 17px 0;
-            }
-            .select-time {
-                height: 40px;
-                padding: 3px 17px 0;
-            }
-        }
         .ui-datepicker,
         .timepicker {
             display: none;
@@ -1399,6 +1391,9 @@ button {
             top: 84px;
             z-index: 11;
             cursor: default;
+            @media (max-width: 1500px) {
+                top: 60px;
+            }
         }
         .ui-datepicker {
             left: -1px;
@@ -1434,11 +1429,6 @@ button {
                 .checkbox-label {
                     font-size: 18px;
                     line-height: (60-2)/18;
-                }
-            }
-            @media (max-width: 1300px) {
-                .checkbox-label {
-                    line-height: (42-2)/18;
                 }
             }
         }
@@ -1682,6 +1672,15 @@ button {
             background-position: 0 109%;
             li {
                 padding-top: 20px;
+            }
+        }
+    }
+    @media (max-width: 1300px) {
+        margin: 13px 0 20px;
+        .condition-list {
+            background-position: 0 106%;
+            li {
+                padding-top: 16px;
             }
         }
     }
@@ -1963,22 +1962,29 @@ button {
 .detail-view {
     //display: block !important;
     .modal-content {
+        @include clearfix;
         position: absolute !important;
         top: 0 !important;
-        @include clearfix;
-        width: 1100px;
+        left: 0 !important;
+        right: 0;
+        width: 900px;
         height: 100%;
-        margin-left: -550px;
+        //margin-top: -45%;
+        //margin-left: -450px;
+        margin: 145px auto;
         background-color: $white;
         .btn-modal-close {
             background-position: -430px 0;
+        }
+        @media (max-width: 1500px) {
+            margin: 60px auto;
         }
     }
     .car-info {
         float: left;
         width: 50%;
         height: 100%;
-        background: $brand-primary url("../images/modal-view-bg.png") repeat-x 0 0;
+        background: $brand-primary url("../images/modal-view-bg.png") repeat-x 0 50%;
         padding: 60px 70px;
         .brand-name {
             font-size: 24px;
@@ -2013,10 +2019,10 @@ button {
             height: 100%;
             img {
                 position: absolute;
-                top:0;
-                left: 0;
+                top: -150px;
+                left: -30px;
                 bottom: 0;
-                width: 100%;
+                width: 120%;
                 margin: auto;
 
             }
@@ -2076,12 +2082,12 @@ button {
                     position: relative;
                     display: table-cell;
                     width: 50%;
-                    padding-left: 55px;
-                    font: 200 16px 'NotoSans', sans-serif;
+                    padding-left: 53px;
+                    font: 200 13px 'NotoSans', sans-serif;
                     vertical-align: middle;
                     i {
                         position: absolute;
-                        top: 4px;
+                        top: 0;
                         left: 0;
                         height: 44px;
                     }
@@ -2462,126 +2468,18 @@ button {
                 color: #7f7f7f;
                 text-align: center;
                 vertical-align: middle;
-                &:before {
-                    @include sp-icon(0,0);
-                    @include sp-size(25px,25px);
-                    margin-right: 5px;
-                    vertical-align: middle;
-                    content: '';
-                }
-                @media (max-width: 1500px) {
-                    font-size: 13px;
-                }
             }
             input[type="radio"]:checked ~ .radio-label {
                 background-color: $brand-primary;
                 color: $white;
             }
         }
-        .creditCard {
-            .radio-label {
-                &:before {
-                    background-position: -473px -127px;
-                }
-            }
-            input[type="radio"]:checked ~ .radio-label {
-                &:before {
-                    background-position: -516px -127px;
-                }
-            }
-        }
-        .account-transfer {
-            .radio-label {
-                &:before {
-                    background-position: -559px -129px;
-                }
-            }
-            input[type="radio"]:checked ~ .radio-label {
-                &:before {
-                    background-position: -602px -129px;
-                }
-            }
-        }
-        .nPay {
-            .radio-label {
-                &:before {
-                    width: 80px;
-                    height: 32px;
-                    margin-right: 0;
-                    background: url("../images/npay.png") no-repeat 0 0;
-                }
-            }
-            input[type="radio"]:checked ~ .radio-label {
-                &:before {
-                    background-image: url("../images/npay-on.png");
-                }
-            }
-        }
-        .kakaoPay {
-            .radio-label {
-                &:before {
-                    width: 109px;
-                    height: 32px;
-                    margin-right: 0;
-                    background: url("../images/kakaopay.png") no-repeat 0 0;
-                }
-            }
-            input[type="radio"]:checked ~ .radio-label {
-                &:before {
-                    background-image: url("../images/kakaopay-on.png");
-                }
-            }
-        }
-        @media (max-width: 1500px) {
-            .radio {
-                .radio-label {
-                    font-size: 13px;
-                }
-            }
-            .nPay {
-                .radio-label {
-                    &:before {
-                        width: 65px;
-                        height: 26px;
-                        background-size: 65px 26px;
-                    }
-                }
-            }
-            .kakaoPay {
-                .radio-label {
-                    &:before {
-                        width: 89px;
-                        height: 26px;
-                        background-size: 89px 26px;
-                    }
-                }
-            }
-        }
     }
-    .discount-coupon {
-        .coupon {
-            .radio-label {
-                font-size: 18px;
-                &:before {
-                    display: none;
-                }
-                @media (max-width: 1500px) {
-                    font-size: 16px;
-                }
-            }
-        }
-        .promotion-code {
-            .radio-label {
-                &:before {
-                    @include sp-size(28px,24px);
-                    background-position: -559px -172px;
-                }
-            }
-            input[type="radio"]:checked ~ .radio-label {
-                &:before {
-                    background-position: -602px -172px;
-                }
-            }
+    .placeholder {
+        margin: 0;
+        .form-control {
+            height: 61px;
+            line-height: (61-2)/17;
         }
     }
     .select-coupon {
