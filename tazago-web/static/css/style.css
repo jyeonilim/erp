@@ -1424,11 +1424,22 @@ button {
         color: white; }
       .main .side-container .side-content #menu-page li.active:after {
         background-color: white; }
-    @media (max-width: 1500px) {
-      .main .side-container .side-content span {
-        font-size: 27px; }
-      .main .side-container .side-content strong {
-        font-size: 87px; } }
+
+@media (max-width: 1500px) {
+  .main .sidebar .image-area img {
+    width: 95%; }
+  .main .side-container .side-content {
+    top: -147px; }
+    .main .side-container .side-content span {
+      font-size: 27px; }
+    .main .side-container .side-content strong {
+      font-size: 87px; } }
+
+@media (max-width: 1300px) {
+  .main .sidebar .image-area img {
+    width: 80%; }
+  .main .side-container .side-content {
+    top: -167px; } }
 
 .list .sidebar {
   position: fixed;
@@ -1969,7 +1980,9 @@ button {
 .page-guide {
   position: absolute;
   left: 50%;
-  margin-left: -57px; }
+  width: 100px;
+  margin-left: -50px;
+  text-align: center; }
   .page-guide.page-up {
     top: 28px; }
     .page-guide.page-up i {
@@ -1990,6 +2003,9 @@ button {
         background-position: -258px 0; }
       .page-guide a:hover .icon-big-down {
         background-position: -86px 0; }
+    @media (max-width: 1500px) {
+      .page-guide a {
+        font-size: 19px; } }
 
 .main-reservation {
   text-align: center; }
@@ -1999,6 +2015,13 @@ button {
     @media (max-width: 1500px) {
       .main-reservation .section-title {
         font-size: 45px; } }
+    @media (max-width: 1300px) {
+      .main-reservation .section-title {
+        font-size: 35px; } }
+  @media (max-width: 1300px) {
+    .main-reservation .btn-align-center .btn {
+      font-size: 24px;
+      line-height: 2.25; } }
 
 .reservation-step {
   display: inline-block;
@@ -2016,6 +2039,10 @@ button {
     @media (max-width: 1500px) {
       .reservation-step .step-title {
         font-size: 20px; } }
+    @media (max-width: 1300px) {
+      .reservation-step .step-title {
+        margin: 20px 0 7px;
+        font-size: 17px; } }
   .reservation-step .select-place {
     position: relative; }
     .reservation-step .select-place:before {
@@ -2045,6 +2072,13 @@ button {
         font-size: 20px; }
       .reservation-step .select-place .btn {
         height: 60px; } }
+    @media (max-width: 1300px) {
+      .reservation-step .select-place .form-control {
+        height: 42px;
+        line-height: 42px;
+        font-size: 17px; }
+      .reservation-step .select-place .btn {
+        height: 42px; } }
   .reservation-step > .active {
     position: relative; }
     .reservation-step > .active .select-place:before {
@@ -2259,6 +2293,13 @@ button {
           .reservation-step .select-datetime .select-time .text-time:before {
             margin-top: -2px;
             vertical-align: middle; } }
+    @media (max-width: 1300px) {
+      .reservation-step .select-datetime .select-date {
+        height: 40px;
+        padding: 3px 17px 0; }
+      .reservation-step .select-datetime .select-time {
+        height: 40px;
+        padding: 3px 17px 0; } }
     .reservation-step .select-datetime .ui-datepicker,
     .reservation-step .select-datetime .timepicker {
       display: none;
@@ -2297,6 +2338,9 @@ button {
       .reservation-step .select-car .checkbox .checkbox-label {
         font-size: 18px;
         line-height: 3.222; } }
+    @media (max-width: 1300px) {
+      .reservation-step .select-car .checkbox .checkbox-label {
+        line-height: 2.222; } }
   .reservation-step .complete .select-place:before {
     display: inline-block;
     background: url("../images/sprites-icon.png") repeat -43px -86px;
@@ -2502,7 +2546,9 @@ button {
           .search-condition .condition-list li p b small {
             font-weight: 400;
             font-size: 14px; }
-      @media (max-width: 1500px) {
+    @media (max-width: 1500px) {
+      .search-condition .condition-list {
+        background-position: 0 109%; }
         .search-condition .condition-list li {
           padding-top: 20px; } }
 

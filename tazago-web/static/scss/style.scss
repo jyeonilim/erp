@@ -282,13 +282,39 @@ button {
                     }
                 }
             }
-            @media (max-width: 1500px) {
+        }
+    }
+    @media (max-width: 1500px) {
+        .sidebar {
+            .image-area {
+                img {
+                    width: 95%;
+                }
+            }
+        }
+        .side-container {
+            .side-content {
+                top: -147px;
                 span {
                     font-size: 27px;
                 }
                 strong {
                     font-size: 87px;
                 }
+            }
+        }
+    }
+    @media (max-width: 1300px) {
+        .sidebar {
+            .image-area {
+                img {
+                    width: 80%;
+                }
+            }
+        }
+        .side-container {
+            .side-content {
+                top: -167px;
             }
         }
     }
@@ -685,6 +711,7 @@ button {
     }
 }
 
+
 /*******************************
     Common
 *******************************/
@@ -978,7 +1005,9 @@ button {
 .page-guide {
     position: absolute;
     left: 50%;
-    margin-left: -57px;
+    width: 100px;
+    margin-left: -50px;
+    text-align: center;
     &.page-up {
         top: 28px;
         i {
@@ -1007,6 +1036,9 @@ button {
                 background-position: -86px 0;
             }
         }
+        @media (max-width: 1500px) {
+            font-size: 19px;
+        }
     }
 }
 // 예약하기
@@ -1017,6 +1049,17 @@ button {
         border-bottom: 0;
         @media (max-width: 1500px){
             font-size: 45px;
+        }
+        @media (max-width: 1300px){
+            font-size: 35px;
+        }
+    }
+    @media (max-width: 1300px){
+        .btn-align-center {
+            .btn {
+                font-size: 24px;
+                line-height: (56-2)/24;
+            }
         }
     }
 }
@@ -1036,6 +1079,10 @@ button {
         }
         @media (max-width: 1500px){
             font-size: 20px;
+        }
+        @media (max-width: 1300px){
+            margin: 20px 0 7px;
+            font-size: 17px;
         }
     }
     .select-place {
@@ -1066,6 +1113,16 @@ button {
             }
             .btn {
                 height: 60px;
+            }
+        }
+        @media (max-width: 1300px) {
+            .form-control {
+                height: 42px;
+                line-height: 42px;
+                font-size: 17px;
+            }
+            .btn {
+                height: 42px;
             }
         }
     }
@@ -1325,6 +1382,16 @@ button {
                 }
             }
         }
+        @media (max-width: 1300px) {
+            .select-date {
+                height: 40px;
+                padding: 3px 17px 0;
+            }
+            .select-time {
+                height: 40px;
+                padding: 3px 17px 0;
+            }
+        }
         .ui-datepicker,
         .timepicker {
             display: none;
@@ -1367,6 +1434,11 @@ button {
                 .checkbox-label {
                     font-size: 18px;
                     line-height: (60-2)/18;
+                }
+            }
+            @media (max-width: 1300px) {
+                .checkbox-label {
+                    line-height: (42-2)/18;
                 }
             }
         }
@@ -1605,7 +1677,10 @@ button {
                     }
                 }
             }
-            @media (max-width: 1500px) {
+        }
+        @media (max-width: 1500px) {
+            background-position: 0 109%;
+            li {
                 padding-top: 20px;
             }
         }
