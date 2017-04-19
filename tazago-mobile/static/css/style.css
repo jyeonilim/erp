@@ -473,8 +473,11 @@ table {
   position: relative; }
   .has-arrow [class^="icon-"] {
     position: absolute;
+    top: 50%;
     right: 20px;
-    z-index: 10; }
+    z-index: 10;
+    margin-top: -8px;
+    line-height: 15px !important; }
 
 .btn-lg.has-arrow [class^="icon-"] {
   font-size: 15px;
@@ -706,6 +709,9 @@ textarea.form-control {
     vertical-align: middle; }
   .table thead th {
     background-color: #edf7f5; }
+
+body > .ui-datepicker-wrap {
+  display: none; }
 
 .hasDatepicker .ui-datepicker-wrap .modal-content {
   position: fixed;
@@ -1629,7 +1635,7 @@ button {
     .select-place .place-picker .radio-group {
       margin: 0 -1px; }
       .select-place .place-picker .radio-group .radio {
-        width: 33.3%;
+        width: 25%;
         padding: 0 1px; }
         .select-place .place-picker .radio-group .radio .radio-label {
           display: inline-block;
@@ -2056,9 +2062,11 @@ button {
       width: 46%;
       padding: 0 8px 0 15px;
       vertical-align: bottom; }
+    .car-info-content .car-info .company-info {
+      position: absolute; }
     .car-info-content .car-info .car-option {
       display: table-cell;
-      padding: 0 0 20px 8px; }
+      padding: 30px 0 20px 8px; }
       .car-info-content .car-info .car-option:before, .car-info-content .car-info .car-option:after {
         content: " ";
         display: table; }
@@ -2268,6 +2276,8 @@ button {
     border-bottom: 1px solid #dedede; }
     .lowest-price-list li:nth-child(even) {
       background-color: #fff; }
+    .lowest-price-list li.selected {
+      border: 3px solid #4aaf9d; }
     .lowest-price-list li h3,
     .lowest-price-list li span {
       display: table-cell;
@@ -3006,14 +3016,14 @@ button {
       font-size: 18px;
       font-family: 'fontello';
       color: #939598;
-      content: '\e81c'; }
+      content: '\e81b'; }
     .board .board-title.open .icon-question {
       background-color: #4aaf9d; }
     .board .board-title.open + .board-content .icon-answer {
       background-color: #4aaf9d; }
     .board .board-title.open:after {
       color: #4aaf9d;
-      content: '\e81b'; }
+      content: '\e81c'; }
   .board .board-content {
     display: none;
     position: relative;

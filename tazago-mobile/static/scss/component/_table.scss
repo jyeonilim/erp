@@ -29,6 +29,11 @@
 }
 
 // Calendar(Datepicker)
+body {
+    > .ui-datepicker-wrap {
+        display: none;
+    }
+}
 .hasDatepicker {
     .ui-datepicker-wrap {
         .modal-content {

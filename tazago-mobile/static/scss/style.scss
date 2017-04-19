@@ -717,7 +717,7 @@ button {
         .radio-group {
             margin: 0 -1px;
             .radio {
-                width: 33.3%;
+                width: 25%;
                 padding: 0 1px;
                 .radio-label {
                     display: inline-block;
@@ -1236,9 +1236,12 @@ button {
             padding: 0 8px 0 15px;
             vertical-align: bottom;
         }
+        .company-info {
+            position: absolute;
+        }
         .car-option {
             display: table-cell;
-            padding: 0 0 20px 8px;
+            padding: 30px 0 20px 8px;
             @include clearfix;
             li {
                 float: left;
@@ -1465,6 +1468,9 @@ button {
         border-bottom: 1px solid #dedede;
         &:nth-child(even) {
             background-color: #fff;
+        }
+        &.selected {
+            border: 3px solid $brand-primary;
         }
         h3,
         span {
@@ -2331,7 +2337,7 @@ button {
             font-size: 18px;
             font-family: 'fontello';
             color: #939598;
-            content: '\e81c';
+            content: '\e81b';
         }
         &.open {
             .icon-question {
@@ -2344,7 +2350,7 @@ button {
             }
             &:after {
                 color: $brand-primary;
-                content: '\e81b';
+                content: '\e81c';
             }
         }
     }

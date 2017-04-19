@@ -61,8 +61,11 @@
     position: relative;
     [class^="icon-"] {
         position: absolute;
+        top: 50%;
         right: 20px;
         z-index: 10;
+        margin-top: -8px;
+        line-height: 15px !important;
     }
 }
 .btn-lg {
