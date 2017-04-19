@@ -571,6 +571,13 @@ table {
   font: 17px 'NotoSans', sans-serif;
   line-height: 3.412; }
 
+@media (max-width: 1300px) {
+  .form-label {
+    font-size: 19px; }
+  .form-control {
+    font-size: 16px;
+    line-height: 3.625; } }
+
 textarea.form-control {
   height: auto;
   line-height: 20px;
@@ -1272,6 +1279,10 @@ button {
 .list .content {
   margin-left: 346px;
   padding: 30px 87px 100px; }
+  @media (max-width: 1300px) {
+    .list .content {
+      min-width: 917px;
+      padding: 30px 10px 100px; } }
 
 .reservation .content {
   width: 66%;
@@ -1393,16 +1404,13 @@ button {
   height: 100%; }
 
 .main .side-container {
-  position: absolute;
-  right: 0;
-  bottom: 50px;
-  left: 0;
-  z-index: 10;
+  position: relative;
+  height: 100%;
   text-align: center;
   color: white; }
   .main .side-container .side-content {
     position: absolute;
-    top: -110px;
+    top: 50px;
     left: 0;
     width: 100%;
     z-index: 11; }
@@ -1442,22 +1450,28 @@ button {
         color: white; }
       .main .side-container .side-content #menu-page li.active:after {
         background-color: white; }
+  .main .side-container .image-area {
+    position: absolute;
+    bottom: 150px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    margin: auto; }
 
 @media (max-width: 1500px) {
-  .main .sidebar .image-area img {
-    width: 95%; }
-  .main .side-container .side-content {
-    top: -147px; }
-    .main .side-container .side-content span {
-      font-size: 27px; }
-    .main .side-container .side-content strong {
-      font-size: 87px; } }
+  .main .sidebar .image-area {
+    bottom: 140px;
+    padding: 0 30px; }
+  .main .side-container .side-content span {
+    font-size: 27px; }
+  .main .side-container .side-content strong {
+    font-size: 87px; } }
 
 @media (max-width: 1300px) {
-  .main .sidebar .image-area img {
-    width: 80%; }
+  .main .sidebar .image-area {
+    padding: 0 60px; }
   .main .side-container .side-content {
-    top: -167px; } }
+    top: 25px; } }
 
 .list .sidebar {
   position: fixed;
@@ -2765,8 +2779,10 @@ button {
     padding: 21px 20px 25px;
     font-family: 'NotoSans', sans-serif; }
     .car-list .product-info .car-name {
+      height: 44px;
       margin-bottom: 5px;
-      font-size: 25px; }
+      font-size: 25px;
+      line-height: 17px; }
       .car-list .product-info .car-name .car-type {
         margin-left: 10px;
         font-weight: 100;
@@ -2803,16 +2819,32 @@ button {
           font-size: 19px; }
     @media (max-width: 1500px) {
       .car-list .product-info {
-        padding: 11px 10px 15px; } }
+        padding: 11px 10px 15px; }
+        .car-list .product-info .product-option li {
+          font-size: 15px; }
+        .car-list .product-info .product-price .discount {
+          font-size: 15px; }
+        .car-list .product-info .product-price .price {
+          font-size: 28px; }
+          .car-list .product-info .product-price .price em {
+            font-size: 15px; } }
   .car-list .company-name {
     position: absolute;
     top: 22px;
     left: 22px;
     font-weight: 700;
     font-size: 20px; }
+  @media (max-width: 1300px) {
+    .car-list {
+      margin: 0 -7px; }
+      .car-list .item {
+        padding: 7px; }
+        .car-list .item .item-inner {
+          padding: 8px; }
+      .car-list .product-thumbnail {
+        margin: -8px -8px 0; } }
 
 .detail-view .modal-content {
-  position: absolute !important;
   top: 0 !important;
   left: 0 !important;
   right: 0;
@@ -2886,13 +2918,19 @@ button {
   .detail-view .detail-info .company-info {
     padding: 66px 49px 36px;
     background-color: #e3f0ed; }
+    .detail-view .detail-info .company-info .clearfix {
+      display: table;
+      width: 100%; }
     .detail-view .detail-info .company-info .company-name {
-      float: left;
-      font-size: 28px; }
+      display: table-cell;
+      font-size: 28px;
+      text-align: left;
+      vertical-align: text-top; }
     .detail-view .detail-info .company-info .price {
-      float: right;
+      display: table-cell;
       font-family: 'Montserrat', 'NanumSquare', sans-serif;
       font-size: 33px;
+      text-align: right;
       color: #4aaf9d; }
       .detail-view .detail-info .company-info .price em {
         font-size: 19px; }
@@ -3252,8 +3290,14 @@ button {
         border-color: #4aaf9d;
         background-color: #4aaf9d; }
 
-.select-payment .select-coupon-box .form-label {
-  vertical-align: middle; }
+@media (max-width: 1300px) {
+  .select-payment .select-payment {
+    padding: 45px 0; }
+  .select-payment .form-left,
+  .select-payment .form-right {
+    float: none;
+    width: 100%;
+    padding: 0 0 10px; } }
 
 .reservation-agreement {
   text-align: center; }
@@ -3697,6 +3741,7 @@ button {
   .dashboard-content .reservation-state {
     float: left;
     width: 40%;
+    height: 503px;
     padding: 45px 62px 39px;
     border-right: 1px solid #dfe3e2;
     font-family: 'Montserrat', 'NanumSquare', sans-serif;
@@ -3815,7 +3860,7 @@ button {
           margin-right: 5px; }
     .board .board-title:after {
       display: inline-block;
-      background: url("../images/sprites-icon.png") repeat -645px 0;
+      background: url("../images/sprites-icon.png") repeat -688px 0;
       line-height: 0;
       color: transparent;
       vertical-align: middle;
@@ -3830,7 +3875,7 @@ button {
     .board .board-title.open .icon-question {
       background-position: -688px -43px; }
     .board .board-title.open:after {
-      background-position: -688px 0; }
+      background-position: -645px 0; }
   .board .board-content {
     display: none;
     position: relative;

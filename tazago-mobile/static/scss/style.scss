@@ -276,6 +276,16 @@ button {
         }
     }
 }
+.reservation {
+    .header {
+        padding: 20px 40px 15px;
+        font-size: 20px;
+        color: $brand-primary;
+        .brand-logo {
+            margin: -5px auto 5px;
+        }
+    }
+}
 
 /*******************************
     Footer
@@ -1748,40 +1758,6 @@ button {
         .radio-label {
             i {
                 margin-right: 6px;
-            }
-        }
-    }
-    .account-transfer {
-        .radio-label {
-            //font-size: 11px;
-            //line-height: 37px;
-            &:before {
-                @include sprite-image(-560px,-490px);
-                @include image-size(36px,36px);
-                margin-right: 3px;
-                content: '';
-            }
-        }
-        input[type=radio]:checked + .radio-label {
-            &:before {
-                @include sprite-position(-630px,-490px);
-            }
-        }
-    }
-    .promotion-code {
-        .radio-label {
-            //font-size: 13px;
-            //line-height: (40-2)/13;
-            &:before {
-                @include sprite-image(-560px,-420px);
-                @include image-size(40px,34px);
-                margin-right: 3px;
-                content: '';
-            }
-        }
-        input[type=radio]:checked + .radio-label {
-            &:before {
-                @include sprite-position(-630px,-420px);
             }
         }
     }
