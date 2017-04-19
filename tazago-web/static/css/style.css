@@ -2751,9 +2751,9 @@ button {
 .detail-view .modal-content {
   position: absolute !important;
   top: 0 !important;
-  width: 1792px;
+  width: 1100px;
   height: 100%;
-  margin-left: -896px;
+  margin-left: -550px;
   background-color: white; }
   .detail-view .modal-content:before, .detail-view .modal-content:after {
     content: " ";
@@ -2762,10 +2762,6 @@ button {
     clear: both; }
   .detail-view .modal-content .btn-modal-close {
     background-position: -430px 0; }
-  @media (max-width: 1600px) {
-    .detail-view .modal-content {
-      width: 1200px;
-      margin-left: -600px; } }
 
 .detail-view .car-info {
   float: left;
