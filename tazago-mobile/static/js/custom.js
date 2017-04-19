@@ -70,6 +70,23 @@ $(document).ready(function() {
     });
 
 
+    // 로그인 - 아이디/패스워드 찾기
+    $('.find-id').on('click',function () {
+        modalOpen('.forgot');
+        $('.tab').removeClass('active');
+        $('.tab-pane').hide();
+        $('.tab:first').addClass('active');
+        $('.tab-pane:first').show();
+    });
+    $('.find-password').on('click',function () {
+        modalOpen('.forgot');
+        $('.tab').removeClass('active');
+        $('.tab-pane').hide();
+        $('.tab:last').addClass('active');
+        $('.tab-pane:last').show();
+    });
+
+
     // 자주하는 질문, 공지사항
     $(".board-title").on("click", function() {
         $(this).siblings().removeClass("open").next().slideUp();

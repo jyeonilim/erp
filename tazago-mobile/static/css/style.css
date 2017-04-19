@@ -3598,6 +3598,20 @@ button {
     font-size: 12px;
     color: #9a9a9a; }
 
+.forgot .modal-body {
+  padding: 20px; }
+
+.forgot .tab-content {
+  padding-top: 20px; }
+
+.forgot .form-inline {
+  border-bottom: 1px solid #bcbcbc; }
+  .forgot .form-inline .form-label {
+    width: 70px; }
+
+.forgot .btn-align {
+  margin-top: 25px; }
+
 .simple-signup .modal-body {
   padding: 16px 18px 40px; }
   .simple-signup .modal-body .email-signup-box {

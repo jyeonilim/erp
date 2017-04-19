@@ -2816,7 +2816,6 @@ button {
         }
     }
 }
-// 예약하기 - 업그레이드
 // 예약하기 - 딜리버리 선택
 .select-delivery {
     .modal-body {
@@ -2878,8 +2877,6 @@ button {
         }
     }
 }
-// 예약하기 - 프로모션 코드
-// 예약하기 - 취소 수수료 안내
 // 예약하기 - 인수/반납 안내
 .take-return-info {
     .modal-body {
@@ -3040,6 +3037,23 @@ button {
     }
 }
 // 아이디/비밀번호 찾기
+.forgot {
+    .modal-body {
+        padding: 20px;
+    }
+    .tab-content {
+        padding-top: 20px;
+    }
+    .form-inline {
+        border-bottom: 1px solid #bcbcbc;
+        .form-label {
+            width: 70px;
+        }
+    }
+    .btn-align {
+        margin-top: 25px;
+    }
+}
 // 회원가입
 .simple-signup {
     .modal-body {
